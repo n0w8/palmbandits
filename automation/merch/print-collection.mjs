@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
-import { C, SUNSET, div, fonts, img } from '../pinterest/render.mjs';
+import { C, SUNSET, div, fonts, img, stars } from '../pinterest/render.mjs';
 import { argValue } from '../lib/util.mjs';
 
 const [, , src, name, out] = process.argv;
@@ -17,11 +17,13 @@ const h0 = buf.readUInt32BE(20);
 const W = 3000;
 const artW = 2700;
 const artH = Math.round((h0 / w0) * artW);
-const H = artH + 760;
+const H = artH + 830 + 230;
 
 const el = div({ width: W, height: H, flexDirection: 'column', alignItems: 'center' },
+  // einheitlich 5 Sterne ueber jedem Motiv (die KI-Sterne schneidet make_print.py --ohne-sterne ab)
+  div({ marginBottom: 50 }, stars(5, 180, 44)),
   img(`data:image/png;base64,${buf.toString('base64')}`, artW, artH),
-  div({ marginTop: 40, fontFamily: 'Anton', fontSize: 360, lineHeight: 1, letterSpacing: 18, backgroundImage: SUNSET, backgroundClip: 'text', color: 'transparent' }, name.toUpperCase()),
+  div({ marginTop: 110, fontFamily: 'Anton', fontSize: 360, lineHeight: 1, letterSpacing: 18, backgroundImage: SUNSET, backgroundClip: 'text', color: 'transparent' }, name.toUpperCase()),
   div({ marginTop: 50, fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 120, letterSpacing: 36, color: C.text }, 'PALM BANDITS × NORDWALD'));
 
 const svg = await satori(el, { width: W, height: H, fonts: fonts() });
