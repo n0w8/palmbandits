@@ -112,4 +112,4 @@ GTA+ costs real money, but gives you GTA$500,000 every month, stacked bonuses on
 
 ## Stay away from glitches
 
-Money glitches and bought "recovery" packages look tempting, but in the worst case they cost you everything. We explain why in [GTA Online glitches and ban risk](/en/guides/gta-online-glitches-ban-risk/). You'll always find the current bonuses on the [GTA Online hub](/en/games/gta-online/). And if you just want to have fun in Story Mode: the [GTA 5 cheats](/en/cheats/gta-5/) work there without any risk.
+Money glitches and bought "recovery" packages look tempting, but in the worst case they cost you everything. We explain why in [GTA Online glitches and ban risk](/en/guides/gta-online-glitches-ban-risk/). You'll always find the current bonuses on the [GTA Online hub](/en/games/gta-online/). And if you just want to have fun in Story Mode: GTA 5 cheats work there without any risk.

@@ -8,7 +8,7 @@ import Photo from '../../components/Photo.astro';
 import { GAMES, gameL, type Game } from '../../data/games';
 import { CATEGORIES, catL } from '../../data/categories';
 import { langFromUrl, useT, href } from '../../i18n';
-import { getNews, getGuides, getCheatFile } from '../../lib/utils';
+import { getNews, getGuides } from '../../lib/utils';
 import { GTA6_RELEASE, SITE } from '../../config';
 
 export async function getStaticPaths() {
@@ -20,14 +20,13 @@ const h = (p: string) => href(lang, p);
 const g = gameL((Astro.props as { g: Game }).g, lang);
 const news = (await getNews(lang)).filter((n) => n.data.game === g.slug);
 const guides = (await getGuides(lang)).filter((x) => x.data.game === g.slug);
-const cheats = getCheatFile(g.slug);
 const cats = CATEGORIES.filter((c) => guides.some((x) => x.data.category === c.slug)).map((c) => catL(c.slug, lang));
 const L = {
   de: { games: 'Spiele', setting: 'Schauplatz', heroes: 'Hauptfiguren', platforms: 'Plattformen', release: 'Release', release6: '19. November 2026', date6: '19.11.2026',
-    titleSix: 'GTA 6: Release, Map, Story & alle News', title: (n: string) => `${n}: Cheats, Guides, Geheimnisse & News`, left: 'Noch', units: ['Tage', 'Std', 'Min', 'Sek'], out: 'Jetzt erhältlich',
+    titleSix: 'GTA 6: Release, Map, Story & alle News', title: (n: string) => `${n}: Guides, Geheimnisse, Easter Eggs & News`, left: 'Noch', units: ['Tage', 'Std', 'Min', 'Sek'], out: 'Jetzt erhältlich',
     allNews: 'Alle News', soon: 'Guides kommen', soonText: (n: string) => `Wir schreiben gerade die ersten ${n} Guides. Wünsche? Schreib uns im Discord.`, nlSix: 'GTA VI Alarm', nl: 'Kein Update verpassen' },
   en: { games: 'Games', setting: 'Setting', heroes: 'Protagonists', platforms: 'Platforms', release: 'Release', release6: 'November 19, 2026', date6: 'Nov 19, 2026',
-    titleSix: 'GTA 6: Release, Map, Story & All the News', title: (n: string) => `${n}: Cheats, Guides, Secrets & News`, left: '', units: ['Days', 'Hrs', 'Min', 'Sec'], out: 'Out now',
+    titleSix: 'GTA 6: Release, Map, Story & All the News', title: (n: string) => `${n}: Guides, Secrets, Easter Eggs & News`, left: '', units: ['Days', 'Hrs', 'Min', 'Sec'], out: 'Out now',
     allNews: 'All news', soon: 'Guides coming', soonText: (n: string) => `We are writing the first ${n} guides right now. Requests? Tell us on Discord.`, nlSix: 'GTA VI alert', nl: 'Never miss an update' },
 }[lang];
 const isSix = g.slug === 'gta-6';
@@ -72,11 +71,11 @@ const title = isSix ? L.titleSix : L.title(g.name);
         <div><dt class="cond">{L.platforms}</dt><dd>{g.platforms}</dd></div>
         <div><dt class="cond">{L.release}</dt><dd>{isSix ? L.release6 : g.year}</dd></div>
       </dl>
-      <div class="hub__links">
-        {cheats && <a class="btn btn--sun" href={h(`/cheats/${g.slug}/`)}><Icon name="code" /> {cheats.cheats.length} Cheats</a>}
-        {isSix && <a class="btn btn--sun" href={h('/cheats/gta-6/')}><Icon name="code" /> GTA 6 Cheats</a>}
-        {cats.map((c) => <a class="btn btn--ghost" href={h(`/guides/kategorie/${c.slug}/`)}><Icon name={c.icon} /> {c.label}</a>)}
-      </div>
+      {cats.length > 0 && (
+        <div class="hub__links">
+          {cats.map((c) => <a class="btn btn--ghost" href={h(`/guides/kategorie/${c.slug}/`)}><Icon name={c.icon} /> {c.label}</a>)}
+        </div>
+      )}
       {isSix && (
         <div class="cd6" data-countdown={GTA6_RELEASE}>
           {L.left && <span class="cond">{L.left}</span>}

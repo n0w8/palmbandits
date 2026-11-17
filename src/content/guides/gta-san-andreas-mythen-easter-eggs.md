@@ -106,8 +106,8 @@ Kein Easter Egg zum Suchen, aber Teil der Legende: In den Spieldateien von San A
 
 ## Selbst auf Spurensuche gehen
 
-- **Jetpack holen:** Am schnellsten geht es per Cheat, den Code findest du in unserer Cheat-Liste. Perfekt für die Gant Bridge.
+- **Jetpack holen:** Am schnellsten geht es per Cheat-Code. Perfekt für die Gant Bridge.
 - **Nachts unterwegs sein:** Die Atmosphäre in Back o' Beyond ist bei Nebel unschlagbar, auch ohne Bigfoot.
-- **Cheats nutzen:** Mit den richtigen Codes geht die Suche schneller. Alle Codes findest du in der [GTA San Andreas Cheat-Liste](/cheats/gta-san-andreas/).
+- **Cheats nutzen:** Mit den richtigen Codes geht die Suche schneller.
 
 Mehr zum Spiel, zu CJ und Grove Street findest du auf der [GTA San Andreas Übersicht](/spiele/gta-san-andreas/).

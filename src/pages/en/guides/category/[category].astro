@@ -4,7 +4,7 @@ import { CATEGORIES } from '../../../../data/categories';
 import { CAT_EN } from '../../../../i18n';
 
 export async function getStaticPaths() {
-  return CATEGORIES.filter((c) => c.slug !== 'cheats').map((c) => ({ params: { category: CAT_EN[c.slug] ?? c.slug }, props: { key: c.slug } }));
+  return CATEGORIES.map((c) => ({ params: { category: CAT_EN[c.slug] ?? c.slug }, props: { key: c.slug } }));
 }
 ---
 <Page {...Astro.props} />

@@ -79,12 +79,27 @@ const T = {
     s.async = true;
     document.body.appendChild(s);
   }
+  // "Kaufen" bei einem Produkt (Link mit #!/produkt...) zaehlt als Klick auf "Shop hier anzeigen"
+  const wantsProduct = () => location.hash.startsWith('#!/');
+  function openFor(root: HTMLElement) {
+    try { localStorage.setItem(KEY, '1'); } catch { /* ignore */ }
+    load(root);
+    setTimeout(() => root.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
   function init() {
     const root = document.querySelector<HTMLElement>('[data-sshop]');
     if (!root) return;
     let ok = false;
     try { ok = localStorage.getItem(KEY) === '1'; } catch { /* ignore */ }
-    if (ok) load(root);
+    if (wantsProduct()) openFor(root);
+    else if (ok) load(root);
+    if (!(window as any).__sshopHash) {
+      (window as any).__sshopHash = true;
+      window.addEventListener('hashchange', () => {
+        const r = document.querySelector<HTMLElement>('[data-sshop]');
+        if (r && wantsProduct()) openFor(r);
+      });
+    }
     root.querySelector('[data-sshop-load]')?.addEventListener('click', () => {
       try { localStorage.setItem(KEY, '1'); } catch { /* ignore */ }
       load(root);

@@ -35,35 +35,6 @@ export async function getGuides(lang: Lang = 'de'): Promise<Guide[]> {
   });
 }
 
-export interface CheatFile {
-  game: string;
-  updated: string;
-  howTo: Partial<Record<'pc' | 'phone' | 'playstation' | 'xbox', string>>;
-  howTo_en?: Partial<Record<'pc' | 'phone' | 'playstation' | 'xbox', string>>;
-  cheats: {
-    id: string;
-    effect: string;
-    category: string;
-    pc?: string;
-    phone?: string;
-    playstation?: string;
-    xbox?: string;
-    note?: string;
-    effect_en?: string;
-    note_en?: string;
-  }[];
-}
-
-/** Effekt/Hinweis eines Cheats in der gewuenschten Sprache (Fallback Deutsch) */
-export const cheatText = (c: CheatFile['cheats'][number], lang: Lang) => ({
-  effect: (lang === 'en' && c.effect_en) || c.effect,
-  note: (lang === 'en' && c.note_en) || c.note,
-});
-
-const BTN_EN: Record<string, string> = { Rechts: 'Right', Links: 'Left', Oben: 'Up', Unten: 'Down', Dreieck: 'Triangle', Kreis: 'Circle', Quadrat: 'Square' };
-/** Tastenkombination in der gewuenschten Sprache (die JSON-Daten nutzen deutsche Tastennamen) */
-export const comboL = (s: string, lang: Lang) => (lang === 'en' ? s.replace(/\b(Rechts|Links|Oben|Unten|Dreieck|Kreis|Quadrat)\b/g, (m) => BTN_EN[m]) : s);
-
 /** Pfad der anderen Sprachversion eines Artikels (oder null, wenn es keine gibt) */
 export async function altArticlePath(kind: 'news' | 'guide', entry: News | Guide, lang: Lang): Promise<string | null> {
   const seg = kind === 'news' ? 'news' : 'guides';
@@ -74,15 +45,6 @@ export async function altArticlePath(kind: 'news' | 'guide', entry: News | Guide
   const list: (News | Guide)[] = kind === 'news' ? await getCollection('newsEn') : await getCollection('guidesEn');
   const en = list.find((e) => e.data.translationOf === entry.id);
   return en ? `/en/${seg}/${en.id}/` : null;
-}
-
-export function getCheatFiles(): CheatFile[] {
-  const mods = import.meta.glob<{ default: CheatFile }>('../data/cheats/*.json', { eager: true });
-  return Object.values(mods).map((m) => m.default);
-}
-
-export function getCheatFile(game: string): CheatFile | undefined {
-  return getCheatFiles().find((f) => f.game === game);
 }
 
 export const absUrl = (path: string, site: URL | string) => new URL(path, site).toString();

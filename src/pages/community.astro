@@ -23,18 +23,20 @@ const PHASES_EN = [
   { n: '03', t: 'Forum', s: 'From about 5,000 active users', d: 'Our own forum with Discord login. Every thread is its own page on Google and brings in new visitors.' },
   { n: '04', t: 'RP servers & store', s: 'After that', d: 'Roleplay scripts, server partners, a creator program. The community becomes a marketplace.' },
 ];
-const RULES_EN = ['No hate, no racism, no harassment', 'No cheats, mod menus or account trading for GTA Online', 'No leaks based on illegally obtained material', 'Spoilers only in spoiler channels', 'Advertising only by arrangement'];
+const RULES_EN = ['No hate, no racism, no harassment', 'No hacks, mod menus or account trading for GTA Online', 'No leaks based on illegally obtained material', 'Spoilers only in spoiler channels', 'Advertising only by arrangement'];
 const L = en
   ? { title: 'GTA Community: Discord, Crews & Forum', desc: 'The GTA community: find crews for GTA Online, explore GTA 6 together, share clips and get help. Discord first, then our own forum.',
       h1: 'The', lead: 'We are building the community step by step. First where people already are, then on our own platform.', join: 'Join Discord',
       soon: 'The Discord server opens shortly. The link will appear right here.', members: 'members', online: 'online right now', inDc: 'On Discord',
       collect: 'Collect your', stars: 'stars', ogLeft: (a: string, b: string) => `⭐ ${a} of ${b} OG spots left`, rules: 'Rules', short: 'Short & clear', five: 'Five', fiveRules: 'stars, five rules',
-      nlTitle: 'Be there from day one', nlText: 'Early members get their own role on Discord and access to the forum beta. Sign up.', nlCta: 'Count me in' }
+      nlTitle: 'Be there from day one', nlText: 'Early members get their own role on Discord and access to the forum beta. Sign up.', nlCta: 'Count me in',
+      partnerQ: 'You stream or make videos?', partnerCta: 'Become a partner' }
   : { title: 'GTA Community: Discord, Crews & Forum', desc: 'Die deutsche GTA Community: Crews für GTA Online finden, GTA 6 gemeinsam entdecken, Clips teilen und Hilfe bekommen. Erst Discord, dann Forum.',
       h1: 'Die', lead: 'Wir bauen die Community Schritt für Schritt. Erst da, wo die Leute schon sind, dann auf unserer eigenen Plattform.', join: 'Discord beitreten',
       soon: 'Der Discord-Server öffnet in Kürze. Der Link erscheint dann genau hier.', members: 'Mitglieder', online: 'gerade online', inDc: 'Im Discord',
       collect: 'Sammel deine', stars: 'Sterne', ogLeft: (a: string, b: string) => `⭐ Noch ${a} von ${b} OG-Plätzen frei`, rules: 'Regeln', short: 'Kurz & klar', five: 'Fünf', fiveRules: 'Sterne, fünf Regeln',
-      nlTitle: 'Sei von Anfang an dabei', nlText: 'Early Members bekommen eine eigene Rolle im Discord und Zugang zur Forum-Beta. Trag dich ein.', nlCta: 'Dabei sein' };
+      nlTitle: 'Sei von Anfang an dabei', nlText: 'Early Members bekommen eine eigene Rolle im Discord und Zugang zur Forum-Beta. Trag dich ein.', nlCta: 'Dabei sein',
+      partnerQ: 'Du streamst oder machst Videos?', partnerCta: 'Werde Partner' };
 const BADGES_DE = [
   { n: '⭐ OG', d: `Nur für die ersten ${fmtNum(OG_LIMIT)} Mitglieder. Gibt es danach nie wieder.`, c: '#ffd23f' },
   { n: '🌴 Day One', d: 'Für alle, die zum GTA-VI-Launch dabei sind.', c: '#ff8a1f' },
@@ -49,7 +51,7 @@ const PHASES_DE = [
   { n: '03', t: 'Forum', s: 'Ab ca. 5.000 aktiven Nutzern', d: 'Eigenes Forum mit Login über Discord. Jeder Thread ist eine eigene Seite bei Google und bringt neue Besucher.' },
   { n: '04', t: 'RP-Server & Shop', s: 'Danach', d: 'Roleplay-Scripts, Server-Partner, Creator-Programm. Die Community wird zum Marktplatz.' },
 ];
-const RULES_DE = ['Kein Hate, kein Rassismus, keine Belästigung', 'Keine Cheats, Mod-Menüs oder Account-Handel für GTA Online', 'Keine Leaks mit illegal beschafftem Material', 'Spoiler nur in Spoiler-Kanälen', 'Werbung nur nach Absprache'];
+const RULES_DE = ['Kein Hate, kein Rassismus, keine Belästigung', 'Keine Hacks, Mod-Menüs oder Account-Handel für GTA Online', 'Keine Leaks mit illegal beschafftem Material', 'Spoiler nur in Spoiler-Kanälen', 'Werbung nur nach Absprache'];
 const BADGES = en ? BADGES_EN : BADGES_DE;
 const PHASES = en ? PHASES_EN : PHASES_DE;
 const RULES = en ? RULES_EN : RULES_DE;
@@ -89,6 +91,7 @@ const RULES = en ? RULES_EN : RULES_DE;
         </div>
       ))}
     </div>
+    <p class="partner-cta"><span>🎬 {L.partnerQ}</span> <a class="sec-head__link" href={href(lang, '/partner/')}>{L.partnerCta} <Icon name="arrow" size={18} /></a></p>
   </section>
 
   <section class="section--tight wrap">
@@ -126,6 +129,8 @@ const RULES = en ? RULES_EN : RULES_DE;
   .badge { padding: 20px; border-top: 3px solid var(--bc); }
   .badge b { font-weight: 400; font-size: 1.6rem; color: var(--bc); display: block; margin-bottom: 6px; }
   .badge p { margin: 0; font-size: 0.93rem; }
+  .partner-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin: 18px 0 0; font-weight: 600; }
+  .partner-cta .sec-head__link { color: #c9a6ff; }
   @media (max-width: 1100px) { .badges { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px) { .badges { grid-template-columns: 1fr; } }
   .phases { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }

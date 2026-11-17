@@ -39,7 +39,7 @@ const host = HOSTS[HOSTING];
     <ul>
       <li>Keine Cookies, kein Tracking, keine Werbe- oder Analyse-Dienste.</li>
       <li>Musik von YouTube oder Spotify lädt nur nach Ihrem Klick und Ihrer Zustimmung.</li>
-      <li>Schriften, Bilder und Musik liegen auf unserem eigenen Webspace. Beim Aufruf wird keine Verbindung zu Google Fonts oder ähnlichen Diensten aufgebaut.</li>
+      <li>Schriften, Bilder und Musik liegen auf unserem eigenen Webspace. Beim Aufruf wird keine Verbindung zu Google Fonts oder ähnlichen Diensten aufgebaut. Einzige Ausnahme: die Produktbilder unseres Merch-Shops kommen vom Bildserver von Spreadshirt (siehe Merch-Shop).</li>
       <li>Ein Cookie-Banner ist deshalb nicht nötig.</li>
     </ul>
 
@@ -95,7 +95,12 @@ const host = HOSTS[HOSTING];
       druckt, versendet und wickelt Bezahlung und Rückgabe ab und ist für die Daten im Bestellprozess selbst verantwortlich. Der Shop wird auf
       unserer Seite erst geladen, wenn Sie auf „Shop hier anzeigen“ klicken. Erst dann werden Daten wie Ihre IP-Adresse an Spreadshirt übertragen,
       Spreadshirt kann dabei eigene Cookies setzen. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), Ihre Entscheidung speichern
-      wir nur lokal in Ihrem Browser.
+      wir nur lokal in Ihrem Browser. Klicken Sie bei einem Produkt auf „Kaufen“, gilt das als dieser Klick.
+    </p>
+    <p id="produktbilder">
+      Produktbilder: Die Bilder unserer Produkte (auf der Startseite und auf der Shop-Seite) lädt Ihr Browser vom Bildserver
+      <code>image.spreadshirtmedia.net</code> der sprd.net AG. Dabei wird Ihre IP-Adresse an Spreadshirt übermittelt, Cookies werden dafür
+      nicht gesetzt. Rechtsgrundlage ist unser berechtigtes Interesse an der Darstellung unseres Angebots (Art. 6 Abs. 1 lit. f DSGVO).
     </p>
 
     <h2>{NEWSLETTER_ACTION ? '9' : '8'}. Links zu anderen Diensten</h2>

@@ -111,4 +111,4 @@ GTA+ kostet echtes Geld, bringt aber jeden Monat 500.000 GTA$, gestapelte Boni a
 
 ## Finger weg von Glitches
 
-Money-Glitches und gekaufte "Recovery"-Pakete wirken verlockend, kosten dich im schlimmsten Fall aber alles. Warum, erklären wir in [GTA Online Glitches und Ban-Risiko](/guides/gta-online-glitches-ban-risiko/). Die aktuellen Boni findest du immer auf der [GTA Online Übersicht](/spiele/gta-online/). Und falls du nur im Story-Modus Spaß haben willst: Die [GTA 5 Cheats](/cheats/gta-5/) funktionieren dort ohne Risiko.
+Money-Glitches und gekaufte "Recovery"-Pakete wirken verlockend, kosten dich im schlimmsten Fall aber alles. Warum, erklären wir in [GTA Online Glitches und Ban-Risiko](/guides/gta-online-glitches-ban-risiko/). Die aktuellen Boni findest du immer auf der [GTA Online Übersicht](/spiele/gta-online/). Und falls du nur im Story-Modus Spaß haben willst: Dort funktionieren die GTA 5 Cheats ohne Risiko.

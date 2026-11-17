@@ -248,13 +248,6 @@ function initDelegates() {
 
   document.addEventListener('click', async (e) => {
     const el = e.target as Element;
-    const copy = el.closest<HTMLElement>('[data-copy]');
-    if (copy) {
-      e.preventDefault();
-      try { await navigator.clipboard.writeText(copy.dataset.copy!); } catch { /* ignore */ }
-      copy.classList.add('is-copied');
-      setTimeout(() => copy.classList.remove('is-copied'), 1400);
-    }
     const share = el.closest<HTMLElement>('[data-share]');
     if (share) {
       e.preventDefault();
@@ -378,7 +371,7 @@ function page() {
     timers.push(window.setInterval(tick, 1000));
   });
 
-  // Filter (News, Guides, Cheats)
+  // Filter (News, Guides)
   $$('[data-filter-group]').forEach((group) => {
     const btns = $$('[data-filter]', group);
     const items = $$('[data-filter-item]', group);

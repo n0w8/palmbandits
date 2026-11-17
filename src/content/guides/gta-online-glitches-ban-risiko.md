@@ -99,6 +99,6 @@ GTA 6 startet am 19. November als Singleplayer-Spiel, zu einem Online-Modus hat 
 
 ## Story-Modus: hier darfst du cheaten
 
-Im Story-Modus von GTA 5 sind Cheats ausdrücklich erlaubt. Die offiziellen Codes, Handynummern und Tastenkombinationen findest du in unserer [GTA 5 Cheat-Liste](/cheats/gta-5/). Einziger Haken: Erfolge und Trophäen sind für die laufende Sitzung gesperrt. In GTA Online funktionieren diese Cheats nicht.
+Im Story-Modus von GTA 5 sind Cheats ausdrücklich erlaubt, egal ob per Code, Handynummer oder Tastenkombination. Einziger Haken: Erfolge und Trophäen sind für die laufende Sitzung gesperrt. In GTA Online funktionieren diese Cheats nicht.
 
 Mehr News und Tipps zum Online-Modus gibt es auf der [GTA Online Übersicht](/spiele/gta-online/).

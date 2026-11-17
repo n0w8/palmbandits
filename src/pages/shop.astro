@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { CONTACT_EMAIL, MERCH } from '../config';
 import SpreadShop from '../components/SpreadShop.astro';
+import MerchGrid from '../components/MerchGrid.astro';
 import { langFromUrl, useT, href } from '../i18n';
 const lang = langFromUrl(Astro.url);
 const t = useT(lang);
@@ -67,6 +68,8 @@ const IDEAS = en ? IDEAS_EN : IDEAS_DE;
     </div>
   </section>
 
+  <div class="wrap merch-grid"><MerchGrid onShopPage /></div>
+
   <div class="wrap merch-embed"><SpreadShop lang={lang} /></div>
 
   <section class="wrap">
@@ -107,6 +110,7 @@ const IDEAS = en ? IDEAS_EN : IDEAS_DE;
   .merch__text .muted { margin: 16px 0 22px; }
   @media (max-width: 860px) { .merch { grid-template-columns: 1fr; } }
   .scripts-h { margin-bottom: 24px; }
+  .merch-grid { margin-bottom: clamp(30px, 4vw, 50px); }
   .merch-embed { margin-bottom: clamp(50px, 7vw, 90px); }
   .feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .feat { padding: 24px; }

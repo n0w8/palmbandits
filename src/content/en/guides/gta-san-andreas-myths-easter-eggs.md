@@ -107,8 +107,8 @@ Not an easter egg to hunt for, but part of the legend: the San Andreas game file
 
 ## Go hunting yourself
 
-- **Get the jetpack:** The fastest way is with a cheat, and you'll find the code in our cheat list. Perfect for the Gant Bridge.
+- **Get the jetpack:** The fastest way is with a cheat code. Perfect for the Gant Bridge.
 - **Head out at night:** The atmosphere in Back o' Beyond is unbeatable in the fog, even without Bigfoot.
-- **Use cheats:** The right codes speed up your search. You'll find every code in the [GTA San Andreas cheats list](/en/cheats/gta-san-andreas/).
+- **Use cheats:** The right codes speed up your search.
 
 More about the game, CJ and Grove Street is on the [GTA San Andreas hub](/en/games/gta-san-andreas/).

@@ -71,11 +71,11 @@ export const GAMES: Game[] = [
     platforms: 'PS5, Xbox Series X|S, PC, PS4, Xbox One, PS3, Xbox 360',
     tagline: 'Drei Gangster, ein Los Santos, unendlich Geheimnisse.',
     intro:
-      'Alle GTA 5 Cheats für PC, Handy und Konsole, geheime Orte, Easter Eggs, das UFO-Rätsel vom Mount Chiliad und Tipps für 100 %.',
+      'Geheime Orte, Easter Eggs, das UFO-Rätsel vom Mount Chiliad, Fakten zu Los Santos und Tipps für 100 % in GTA 5.',
     from: '#19e3c8',
     to: '#1a7bff',
-    keywords: ['GTA 5', 'GTA V', 'GTA 5 Cheats', 'Los Santos'],
-    en: { setting: 'Los Santos & Blaine County', heroes: 'Michael, Franklin & Trevor', tagline: 'Three criminals, one Los Santos, endless secrets.', intro: 'Every GTA 5 cheat for PC, phone and console, secret locations, easter eggs, the Mount Chiliad UFO mystery and tips for 100% completion.' },
+    keywords: ['GTA 5', 'GTA V', 'Los Santos', 'Mount Chiliad'],
+    en: { setting: 'Los Santos & Blaine County', heroes: 'Michael, Franklin & Trevor', tagline: 'Three criminals, one Los Santos, endless secrets.', intro: 'Secret locations, easter eggs, the Mount Chiliad UFO mystery, facts about Los Santos and tips for 100% completion in GTA 5.' },
   },
   {
     slug: 'gta-4',
@@ -88,11 +88,11 @@ export const GAMES: Game[] = [
     platforms: 'PS3, Xbox 360, PC',
     tagline: 'Liberty City. Grau, rau, legendär.',
     intro:
-      'GTA 4 Handy-Cheats, Tauben-Fundorte, Tipps für Liberty City und alles über Niko Bellic, Lost and Damned und Ballad of Gay Tony.',
+      'Tauben-Fundorte, Tipps für Liberty City und alles über Niko Bellic, Lost and Damned und Ballad of Gay Tony.',
     from: '#8aa4c8',
     to: '#3a4a63',
     keywords: ['GTA 4', 'GTA IV', 'Liberty City', 'Niko Bellic'],
-    en: { setting: 'Liberty City', heroes: 'Niko Bellic', tagline: 'Liberty City. Grey, gritty, legendary.', intro: 'GTA 4 phone cheats, pigeon locations, Liberty City tips and everything about Niko Bellic, The Lost and Damned and The Ballad of Gay Tony.' },
+    en: { setting: 'Liberty City', heroes: 'Niko Bellic', tagline: 'Liberty City. Grey, gritty, legendary.', intro: 'Pigeon locations, Liberty City tips and everything about Niko Bellic, The Lost and Damned and The Ballad of Gay Tony.' },
   },
   {
     slug: 'gta-san-andreas',
@@ -103,13 +103,13 @@ export const GAMES: Game[] = [
     setting: 'San Andreas, 1992',
     heroes: 'Carl „CJ“ Johnson',
     platforms: 'PS2, PC, Xbox, Definitive Edition',
-    tagline: 'Grove Street, HESOYAM und Legenden. Der Klassiker.',
+    tagline: 'Grove Street, Mythen und Legenden. Der Klassiker.',
     intro:
-      'Alle GTA San Andreas Cheats (HESOYAM & Co.), Mythen, Easter Eggs, Geld-Tipps und versteckte Orte in Los Santos, San Fierro und Las Venturas.',
+      'Mythen, Easter Eggs, Geld-Tipps und versteckte Orte in Los Santos, San Fierro und Las Venturas, dazu Fakten rund um CJ und Grove Street.',
     from: '#3ddc5a',
     to: '#f5d63d',
-    keywords: ['GTA San Andreas', 'San Andreas Cheats', 'HESOYAM'],
-    en: { setting: 'San Andreas, 1992', heroes: 'Carl "CJ" Johnson', tagline: 'Grove Street, HESOYAM and legends. The classic.', intro: 'Every GTA San Andreas cheat (HESOYAM and co.), myths, easter eggs, money tips and hidden places in Los Santos, San Fierro and Las Venturas.' },
+    keywords: ['GTA San Andreas', 'Grove Street', 'CJ'],
+    en: { setting: 'San Andreas, 1992', heroes: 'Carl "CJ" Johnson', tagline: 'Grove Street, myths and legends. The classic.', intro: 'Myths, easter eggs, money tips and hidden places in Los Santos, San Fierro and Las Venturas, plus facts about CJ and Grove Street.' },
   },
   {
     slug: 'gta-vice-city',
@@ -122,11 +122,11 @@ export const GAMES: Game[] = [
     platforms: 'PS2, PC, Xbox, Definitive Edition',
     tagline: 'Neon, Miami-Vibes, 80er. Das Original.',
     intro:
-      'Alle GTA Vice City Cheats, versteckte Pakete, Easter Eggs und Tipps. Plus: was GTA 6 aus dem alten Vice City übernimmt.',
+      'Versteckte Pakete, Easter Eggs, Fakten und Tipps. Plus: was GTA 6 aus dem alten Vice City übernimmt.',
     from: '#ff4fd8',
     to: '#33e6ff',
-    keywords: ['GTA Vice City', 'Vice City Cheats'],
-    en: { setting: 'Vice City, 1986', heroes: 'Tommy Vercetti', tagline: 'Neon, Miami vibes, the 80s. The original.', intro: 'Every GTA Vice City cheat, hidden packages, easter eggs and tips. Plus: what GTA 6 takes from the original Vice City.' },
+    keywords: ['GTA Vice City', 'Tommy Vercetti'],
+    en: { setting: 'Vice City, 1986', heroes: 'Tommy Vercetti', tagline: 'Neon, Miami vibes, the 80s. The original.', intro: 'Hidden packages, easter eggs, facts and tips. Plus: what GTA 6 takes from the original Vice City.' },
   },
   {
     slug: 'gta-3',
@@ -138,11 +138,11 @@ export const GAMES: Game[] = [
     heroes: 'Claude',
     platforms: 'PS2, PC, Xbox, Definitive Edition',
     tagline: 'Der Anfang von allem in 3D.',
-    intro: 'Alle GTA 3 Cheats, Geheimnisse und Tipps zum Klassiker, der Open-World-Spiele für immer verändert hat.',
+    intro: 'Geheimnisse, Fakten und Tipps zum Klassiker, der Open-World-Spiele für immer verändert hat.',
     from: '#f5c518',
     to: '#9a7b2f',
-    keywords: ['GTA 3', 'GTA III', 'GTA 3 Cheats'],
-    en: { setting: 'Liberty City', heroes: 'Claude', tagline: 'Where it all began in 3D.', intro: 'Every GTA 3 cheat, secret and tip for the classic that changed open-world games forever.' },
+    keywords: ['GTA 3', 'GTA III', 'Liberty City'],
+    en: { setting: 'Liberty City', heroes: 'Claude', tagline: 'Where it all began in 3D.', intro: 'Secrets, facts and tips for the classic that changed open-world games forever.' },
   },
 ];
 

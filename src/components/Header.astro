@@ -16,7 +16,6 @@ const NAV = [
   { href: h('/news/'), label: t.nav.news },
   { href: h('/guides/'), label: t.nav.guides },
   { href: h('/spiele/'), label: t.nav.games, mega: true },
-  { href: h('/cheats/'), label: t.nav.cheats },
   { href: h('/radio/'), label: t.nav.radio },
   { href: h('/community/'), label: t.nav.community },
   { href: h('/shop/'), label: t.nav.shop, badge: t.nav.newBadge },
@@ -48,7 +47,7 @@ const switchTo = altProp ? altProp : altProp === null ? (lang === 'de' ? '/en/' 
               <div class="mega__cats">
                 <p class="cond muted">{t.nav.topics}</p>
                 {CATEGORIES.map((c) => (
-                  <a href={h(c.slug === 'cheats' ? '/cheats/' : `/guides/kategorie/${c.slug}/`)}><Icon name={c.icon} size={16} />{catL(c.slug, lang).label}</a>
+                  <a href={h(`/guides/kategorie/${c.slug}/`)}><Icon name={c.icon} size={16} />{catL(c.slug, lang).label}</a>
                 ))}
               </div>
             </div>

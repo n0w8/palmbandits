@@ -100,6 +100,6 @@ GTA 6 launches on November 19 as a single-player game, and Rockstar hasn't share
 
 ## Story Mode: cheating is allowed here
 
-In GTA 5 Story Mode, cheats are explicitly allowed. You'll find the official codes, phone numbers and button combinations in our [GTA 5 cheats list](/en/cheats/gta-5/). The only catch: achievements and trophies are disabled for the current session. These cheats don't work in GTA Online.
+In GTA 5 Story Mode, cheats are explicitly allowed, whether you use codes, phone numbers or button combinations. The only catch: achievements and trophies are disabled for the current session. These cheats don't work in GTA Online.
 
 More news and tips about the online mode are on the [GTA Online hub](/en/games/gta-online/).

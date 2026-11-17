@@ -51,7 +51,7 @@ Hast du **100 % Spielfortschritt** erreicht, taucht über dem Gipfel des Mount C
 - Wetter: Gewitter
 - Ort: direkt auf dem Gipfel, am besten nahe der Seilbahnstation warten
 
-**Tipp:** Mit dem Wetter-Cheat aus unserer [GTA 5 Cheat-Liste](/cheats/gta-5/) kannst du nachhelfen. Bedenke aber, dass Cheats Erfolge und Trophäen für die laufende Sitzung sperren.
+**Tipp:** Mit dem Wetter-Cheat kannst du nachhelfen. Bedenke aber, dass Cheats Erfolge und Trophäen für die laufende Sitzung sperren.
 
 ### Zwei weitere UFOs
 

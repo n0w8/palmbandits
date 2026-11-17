@@ -1,0 +1,208 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { CONTACT_EMAIL } from '../config';
+import { PARTNERS, PLATFORMS, PARTNER_INVITE } from '../data/partners';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const en = lang === 'en';
+
+const body = (en
+  ? ['Hi Palm Bandits team,', '', 'I would like to become a partner.', '', 'Channel name:', 'Platform (Twitch, YouTube, TikTok, Kick):', 'Link:', 'Language of my content:', 'What I stream or post (1 to 2 sentences):']
+  : ['Hallo Palm-Bandits-Team,', '', 'ich möchte Partner werden.', '', 'Kanalname:', 'Plattform (Twitch, YouTube, TikTok, Kick):', 'Link:', 'Sprache meiner Inhalte:', 'Was ich streame oder poste (1 bis 2 Sätze):']
+).join('\n');
+const mail = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(en ? 'Partner program: my channel' : 'Partnerprogramm: mein Kanal')}&body=${encodeURIComponent(body)}`;
+
+const L = en
+  ? { title: 'Partners: Streamers & Creators', desc: 'Streamers and creators who build the Palm Bandits GTA community with us. Become a partner: a spot on the website, the Creator role on Discord, shoutouts in our reels.',
+      h1: 'The', h1b: 'Partners', lead: 'Streamers and creators who live and breathe GTA and help build Palm Bandits. Drop by, follow them, say hi.',
+      become: 'Become a partner', listK: 'Streamers & creators', listK2: 'Live & on demand', listH: 'Check them', listH2: 'out',
+      note: 'Our partners promote Palm Bandits. In return we feature them on this page.', toChannel: 'Visit channel',
+      slotT: 'Your channel here', slotD: 'This spot is still free. Stream or post GTA content? Then it is yours.', slotCta: 'How it works',
+      perksK: 'For streamers & creators', perksK2: 'Free', perksH: 'Become a', perksH2: 'partner',
+      perksLead: 'You bring the crew, we bring the community. Every partner gets:',
+      termsK: 'Conditions', termsK2: 'Short & fair', termsH: 'The', termsH2: 'rules',
+      howT: 'How to become a partner', howD: 'Send us an email with your channel or join our Discord and message the team (👑 Boss or 🚔 Sheriff). We look at every channel and get back to you.',
+      steps: ['You get in touch by email or Discord', 'We check out your channel', 'You get the role, your own link and your spot on this page'],
+      mail: 'Apply by email', discord: 'Message us on Discord',
+      privacy: 'We only use your details for the partnership. More in our', privacyLink: 'privacy policy (German)' }
+  : { title: 'Partner: Streamer & Creator', desc: 'Streamer und Creator, die die GTA-Community Palm Bandits mit aufbauen. Werde Partner: Platz auf der Website, Rolle Creator im Discord, Shoutouts in unseren Reels.',
+      h1: 'Die', h1b: 'Partner', lead: 'Streamer und Creator, die GTA leben und Palm Bandits mit aufbauen. Schau rein, folg ihnen, sag Hallo.',
+      become: 'Partner werden', listK: 'Streamer & Creator', listK2: 'Live & on demand', listH: 'Schau', listH2: 'rein',
+      note: 'Unsere Partner machen Werbung für Palm Bandits. Dafür stellen wir sie auf dieser Seite vor.', toChannel: 'Zum Kanal',
+      slotT: 'Dein Kanal hier', slotD: 'Dieser Platz ist noch frei. Du streamst oder postest GTA-Content? Dann gehört er dir.', slotCta: 'So geht es',
+      perksK: 'Für Streamer & Creator', perksK2: 'Kostenlos', perksH: 'Werde', perksH2: 'Partner',
+      perksLead: 'Du bringst deine Crew mit, wir die Community. Jeder Partner bekommt:',
+      termsK: 'Bedingungen', termsK2: 'Kurz & fair', termsH: 'Die', termsH2: 'Regeln',
+      howT: 'So wirst du Partner', howD: 'Schreib uns eine Mail mit deinem Kanal oder komm in den Discord und schreib dem Team (👑 Boss oder 🚔 Sheriff). Wir schauen uns jeden Kanal an und melden uns.',
+      steps: ['Du meldest dich per Mail oder im Discord', 'Wir schauen uns deinen Kanal an', 'Du bekommst Rolle, eigenen Link und deinen Platz auf dieser Seite'],
+      mail: 'Per Mail bewerben', discord: 'Im Discord melden',
+      privacy: 'Deine Angaben nutzen wir nur für die Partnerschaft. Mehr im', privacyLink: 'Datenschutz' };
+
+const PERKS_DE = [
+  { i: 'star', t: 'Platz auf der Website', d: 'Dein Kanal mit Link und Kurzbeschreibung auf dieser Seite, auf Deutsch und Englisch.' },
+  { i: 'discord', t: 'Rolle 🎬 Creator', d: 'Eigene Rolle im Discord, ganz oben in der Mitgliederliste. Deine Clips teilen ist ausdrücklich erwünscht.' },
+  { i: 'play', t: 'Shoutouts in den Reels', d: 'Wir stellen dich in unseren Reels vor und zeigen deinen Kanal der ganzen Community.' },
+  { i: 'link', t: 'Eigener Einladungslink', d: 'Dein persönlicher Discord-Link für Panel, Beschreibung oder Chat-Befehl. So sehen wir, wie viele Leute über dich kommen.' },
+];
+const PERKS_EN = [
+  { i: 'star', t: 'A spot on the website', d: 'Your channel with link and short description on this page, in German and English.' },
+  { i: 'discord', t: '🎬 Creator role', d: 'Your own role on Discord, right at the top of the member list. Sharing your clips is explicitly welcome.' },
+  { i: 'play', t: 'Shoutouts in our reels', d: 'We feature you in our reels and show your channel to the whole community.' },
+  { i: 'link', t: 'Your own invite link', d: 'Your personal Discord link for your panel, description or chat command. That way we see how many people join through you.' },
+];
+const TERMS_DE = [
+  'Du machst regelmäßig GTA-Content: Streams, Videos oder Clips zu GTA VI, GTA Online, RP oder den Klassikern.',
+  'Du verlinkst Palm Bandits mit deinem eigenen Einladungslink, zum Beispiel im Panel, in der Beschreibung oder als Chat-Befehl.',
+  'Werbung kennzeichnen: Wenn du Palm Bandits vorstellst oder verlinkst, schreib gut sichtbar "Werbung" oder "Anzeige" dazu und nutze die Werbe-Kennzeichnung der Plattform, falls es eine gibt.',
+  'Keine Rockstar-Logos oder offiziellen Artworks zusammen mit Palm Bandits. Wir sind ein inoffizielles Fan-Projekt und nicht mit Rockstar Games verbunden.',
+  'Kein Hate, keine Hacks, Mod-Menüs oder Account-Handel für GTA Online. Es gelten unsere Discord-Regeln.',
+  'Keine Mindestzahl an Followern. Beide Seiten können die Partnerschaft jederzeit beenden, dann nehmen wir deinen Eintrag von der Seite.',
+];
+const TERMS_EN = [
+  'You regularly make GTA content: streams, videos or clips about GTA VI, GTA Online, RP or the classics.',
+  'You link to Palm Bandits with your own invite link, for example in your panel, your description or as a chat command.',
+  'Label it as advertising: when you feature or link Palm Bandits, add a clearly visible "Ad" (for German-language content "Werbung" or "Anzeige") and use the platform\'s own ad label if there is one.',
+  'No Rockstar logos or official artwork together with Palm Bandits. We are an unofficial fan project and not affiliated with Rockstar Games.',
+  'No hate, no hacks, mod menus or account trading for GTA Online. Our Discord rules apply.',
+  'No minimum follower count. Either side can end the partnership at any time, and we then remove your entry from this page.',
+];
+const PERKS = en ? PERKS_EN : PERKS_DE;
+const TERMS = en ? TERMS_EN : TERMS_DE;
+const SLOTS = Math.max(0, 3 - PARTNERS.length);
+const initials = (n: string) => n.replace(/[^A-Za-z0-9ÄÖÜäöü]/g, '').slice(0, 2).toUpperCase() || '★';
+---
+<Base title={L.title} description={L.desc}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">LIVE</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}>
+      <a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span>
+      <a href={href(lang, '/community/')}>Community</a><span aria-hidden="true">/</span><span>{L.h1b}</span>
+    </nav>
+    <h1 class="page-hero__title display">{L.h1} <span class="grad-text">{L.h1b}</span></h1>
+    <p class="page-hero__lead">{L.lead}</p>
+    <div class="cta">
+      <a class="btn btn--sun" href="#mitmachen"><Icon name="star" /> {L.become}</a>
+    </div>
+  </section>
+
+  <section class="section--tight wrap" aria-labelledby="list-h">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>{L.listK}</b> / {L.listK2}</p>
+        <h2 id="list-h" class="sec-head__title display">{L.listH} <span class="grad-text">{L.listH2}</span></h2>
+      </div>
+    </div>
+    <div class="partners">
+      {PARTNERS.map((p, i) => {
+        const pf = PLATFORMS[p.platform];
+        return (
+          <article class="card partner" data-reveal style={`--d:${i * 0.05}s;--pc:${pf.color}`}>
+            <div class="partner__top">
+              <span class="partner__av display" aria-hidden="true">{initials(p.name)}</span>
+              <div>
+                <h3 class="partner__name cond">{p.name}</h3>
+                <span class="chip partner__pf">{pf.label}</span>
+                {p.lang && <span class="chip">{p.lang.toUpperCase()}</span>}
+              </div>
+            </div>
+            <p class="muted">{en ? (p.descEn ?? p.desc) : p.desc}</p>
+            <a class="btn btn--ghost" href={p.url} target="_blank" rel="noopener sponsored">{L.toChannel} <Icon name="arrow" /></a>
+          </article>
+        );
+      })}
+      {Array.from({ length: SLOTS }).map((_, i) => (
+        <a class="card partner partner--slot" href="#mitmachen" data-reveal style={`--d:${(PARTNERS.length + i) * 0.05}s`}>
+          <div class="partner__top">
+            <span class="partner__av display" aria-hidden="true">?</span>
+            <h3 class="partner__name cond">{L.slotT}</h3>
+          </div>
+          <p class="muted">{L.slotD}</p>
+          <span class="sec-head__link">{L.slotCta} <Icon name="arrow" size={18} /></span>
+        </a>
+      ))}
+    </div>
+    {PARTNERS.length > 0 && <p class="note">{L.note}</p>}
+  </section>
+
+  <section id="mitmachen" class="section--tight wrap" aria-labelledby="perks-h">
+    <p class="sec-head__kicker cond"><b>{L.perksK}</b> / {L.perksK2}</p>
+    <h2 id="perks-h" class="sec-head__title display">{L.perksH} <span class="grad-text">{L.perksH2}</span></h2>
+    <p class="muted perks-lead">{L.perksLead}</p>
+    <div class="perks">
+      {PERKS.map((f, i) => (
+        <div class="card perk" data-reveal style={`--d:${i * 0.05}s`}>
+          <span class="perk__i"><Icon name={f.i} size={24} /></span>
+          <h3 class="cond">{f.t}</h3>
+          <p class="muted">{f.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section wrap terms" aria-labelledby="terms-h">
+    <div>
+      <p class="sec-head__kicker cond"><b>{L.termsK}</b> / {L.termsK2}</p>
+      <h2 id="terms-h" class="sec-head__title display">{L.termsH} <span class="grad-text">{L.termsH2}</span></h2>
+      <ul class="terms__list">
+        {TERMS.map((r, i) => <li data-reveal style={`--d:${i * 0.05}s`}><Icon name="check" size={18} /> <span>{r}</span></li>)}
+      </ul>
+    </div>
+    <div class="card how">
+      <p class="cond how__k">{L.howT}</p>
+      <p class="muted">{L.howD}</p>
+      <ol class="how__steps">{L.steps.map((s) => <li>{s}</li>)}</ol>
+      <a class="btn btn--sun" href={mail}><Icon name="mail" /> {L.mail}</a>
+      <a class="btn btn--discord" href={PARTNER_INVITE} target="_blank" rel="noopener"><Icon name="discord" /> {L.discord}</a>
+      <p class="small">{L.privacy} <a href="/datenschutz/">{L.privacyLink}</a>.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cta { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+  #mitmachen { scroll-margin-top: 90px; }
+  .partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .partner { --pc: var(--pink); padding: 22px; display: flex; flex-direction: column; gap: 14px; border-top: 3px solid var(--pc); }
+  .partner .muted { margin: 0; font-size: 0.95rem; flex: 1; }
+  .partner .btn { align-self: flex-start; }
+  .partner__top { display: flex; gap: 14px; align-items: center; }
+  .partner__top > div { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .partner__av {
+    flex: none; width: 56px; height: 56px; display: grid; place-items: center;
+    font-size: 1.6rem; color: #0b0710; background: var(--pc);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  }
+  .partner__name { width: 100%; font-size: 1.35rem; margin: 0; overflow-wrap: anywhere; }
+  .partner__pf { color: var(--pc); border-color: color-mix(in srgb, var(--pc) 55%, transparent); }
+  .partner--slot { border-top-style: dashed; border-top-color: var(--line2); }
+  .partner--slot .partner__av { background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line2); clip-path: none; }
+  .partner--slot:hover .sec-head__link { color: var(--text); gap: 14px; }
+  .note { margin: 16px 0 0; font-size: 0.85rem; color: var(--dim); }
+  .perks-lead { margin: 14px 0 24px; max-width: 620px; }
+  .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .perk { padding: 24px; }
+  .perk__i { width: 48px; height: 48px; display: grid; place-items: center; background: var(--sunset); color: #120812; margin-bottom: 14px; }
+  .perk h3 { font-size: 1.3rem; margin: 0 0 6px; }
+  .perk p { margin: 0; font-size: 0.95rem; }
+  .terms { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+  .terms__list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+  .terms__list li { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border: 1px solid var(--line); background: var(--panel); font-weight: 500; }
+  .terms__list li :global(svg) { color: var(--yellow); flex: none; margin-top: 3px; }
+  .how { padding: 24px; display: grid; gap: 12px; position: sticky; top: 100px; }
+  .how .btn { justify-content: center; }
+  .how__k { color: var(--text); margin: 0; font-size: 1.1rem; }
+  .how .muted { margin: 0; }
+  .how__steps { margin: 0 0 6px; padding-left: 1.3em; display: grid; gap: 6px; color: #ddd6e8; }
+  .how__steps li::marker { color: var(--pink); font-weight: 700; }
+  .small { font-size: 0.82rem; color: var(--dim); margin: 0; }
+  .small a { text-decoration: underline; }
+  @media (max-width: 1100px) { .perks { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 1000px) { .partners { grid-template-columns: 1fr 1fr; } .terms { grid-template-columns: 1fr; } .how { position: static; } }
+  @media (max-width: 600px) {
+    .partners, .perks { grid-template-columns: 1fr; }
+    .partner--slot ~ .partner--slot { display: none; }
+    .how .btn { white-space: normal; text-align: center; }
+  }
+</style>

@@ -1,7 +1,7 @@
 // Gemeinsame Bausteine fuer RSS und Suchindex (DE unter /, EN unter /en/)
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
-import { getNews, getGuides, getCheatFiles, cheatText } from './utils';
+import { getNews, getGuides } from './utils';
 import { GAMES, getGame, gameL } from '../data/games';
 import { SITE } from '../config';
 import { href, ui, type Lang } from '../i18n';
@@ -35,19 +35,6 @@ export async function searchIndex(lang: Lang) {
     }),
     ...news.map((n) => ({ t: n.data.title, d: n.data.description, u: h(`/news/${n.id}/`), k: 'News', x: `${getGame(n.data.game).name} ${n.data.tags.join(' ')}` })),
     ...guides.map((g) => ({ t: g.data.title, d: g.data.description, u: h(`/guides/${g.id}/`), k: 'Guide', x: `${getGame(g.data.game).name} ${g.data.category} ${g.data.tags.join(' ')}` })),
-    ...getCheatFiles().flatMap((f) =>
-      f.cheats.map((c) => {
-        const { effect } = cheatText(c, lang);
-        return {
-          t: `${c.pc ?? c.phone ?? effect}`,
-          d: `${getGame(f.game).name}: ${effect}`,
-          u: h(`/cheats/${f.game}/`) + `#${c.id}`,
-          k: 'Cheat',
-          // beide Sprachen durchsuchbar, damit "panzer" und "tank" funktionieren
-          x: [c.pc, c.phone, c.effect, c.effect_en, getGame(f.game).name, 'cheat'].filter(Boolean).join(' '),
-        };
-      }),
-    ),
   ];
   return new Response(JSON.stringify(out), { headers: { 'Content-Type': 'application/json; charset=utf-8' } });
 }

@@ -7,7 +7,7 @@ import { CATEGORIES, catL } from '../../../data/categories';
 import { langFromUrl, useT, href } from '../../../i18n';
 
 export async function getStaticPaths() {
-  return CATEGORIES.filter((c) => c.slug !== 'cheats').map((c) => ({ params: { category: c.slug }, props: { key: c.slug } }));
+  return CATEGORIES.map((c) => ({ params: { category: c.slug }, props: { key: c.slug } }));
 }
 const lang = langFromUrl(Astro.url);
 const t = useT(lang);

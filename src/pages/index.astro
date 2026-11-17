@@ -7,9 +7,10 @@ import GuideCard from '../components/GuideCard.astro';
 import GameCard from '../components/GameCard.astro';
 import RadioBand from '../components/RadioBand.astro';
 import Newsletter from '../components/Newsletter.astro';
-import { GAMES, getGame } from '../data/games';
+import MerchGrid from '../components/MerchGrid.astro';
+import { GAMES } from '../data/games';
 import { CATEGORIES, catL } from '../data/categories';
-import { getNews, getGuides, getCheatFiles, cheatText } from '../lib/utils';
+import { getNews, getGuides } from '../lib/utils';
 import { langFromUrl, useT, href, LOCALE } from '../i18n';
 import { SITE, discordFor } from '../config';
 import { discordStats, fmtNum, SHOW_COUNT_FROM, OG_LIMIT } from '../lib/discord';
@@ -20,11 +21,6 @@ const h = (p: string) => href(lang, p);
 const news = await getNews(lang);
 const guides = await getGuides(lang);
 const [lead, ...rest] = news;
-const cheats = getCheatFiles().flatMap((f) =>
-  f.cheats.map((c) => ({ game: getGame(f.game).name, slug: f.game, effect: cheatText(c, lang).effect, code: c.pc ?? c.phone ?? '', phone: c.phone ?? '', id: c.id })),
-);
-// Beliebteste Codes (nach PC-Code), erscheinen ohne Suche im Cheat-Finder
-const POPULAR = ['HESOYAM', 'PAINKILLER', 'AEZAKMI', 'YECGAA', 'BUZZOFF', 'ASPIRINE'];
 const countFor = (slug: string) => news.filter((n) => n.data.game === slug).length + guides.filter((g) => g.data.game === slug).length;
 const catCount = (slug: string) => guides.filter((g) => g.data.category === slug).length;
 const lastUpdate = news[0]?.data.pubDate;
@@ -114,18 +110,25 @@ const jsonLd = [
       {CATEGORIES.map((c0, i) => {
         const c = catL(c0.slug, lang);
         return (
-          <a href={h(c.slug === 'cheats' ? '/cheats/' : `/guides/kategorie/${c.slug}/`)} class="card cat" data-reveal style={`--d:${i * 0.04}s`}>
+          <a href={h(`/guides/kategorie/${c.slug}/`)} class="card cat" data-reveal style={`--d:${i * 0.04}s`}>
             <span class="cat__icon"><Icon name={c.icon} size={26} /></span>
             <span class="cat__label display">{c.label}</span>
             <span class="cat__text">{c.text}</span>
-            <span class="cat__count cond">{c.slug === 'cheats' ? `${cheats.length} ${t.home.cheatsCount}` : `${catCount(c.slug)} ${t.home.guidesCount}`}</span>
+            <span class="cat__count cond">{catCount(c.slug)} {t.home.guidesCount}</span>
           </a>
         );
       })}
+      {/* Kachel "Alle Guides" schliesst das Raster (4 Spalten, erste Kachel doppelt hoch) */}
+      <a href={h('/guides/')} class="card cat cat--all" data-reveal style={`--d:${CATEGORIES.length * 0.04}s`}>
+        <span class="cat__icon"><Icon name="grid" size={26} /></span>
+        <span class="cat__label display">{t.home.allTopicsLabel}</span>
+        <span class="cat__text">{t.home.allTopicsText}</span>
+        <span class="cat__count cond">{guides.length} {t.home.guidesCount} <Icon name="arrow" size={14} /></span>
+      </a>
     </div>
   </section>
 
-  <!-- GUIDES + CHEAT-FINDER -->
+  <!-- GUIDES -->
   <section class="section wrap" aria-labelledby="sec-guides">
     <div class="sec-head">
       <div>
@@ -134,41 +137,24 @@ const jsonLd = [
       </div>
       <a href={h('/guides/')} class="sec-head__link">{t.home.allGuides} <Icon name="arrow" /></a>
     </div>
-    <div class="guides-split">
-      <div class="guides-list">
-        {guides.slice(0, 4).map((g, i) => <GuideCard item={g} index={i} delay={i * 0.06} />)}
-      </div>
-
-      <aside class="card finder" data-cheat-finder aria-labelledby="finder-h">
-        <p class="cond finder__kicker"><Icon name="code" size={16} /> {t.home.finder}</p>
-        <h3 id="finder-h" class="display finder__title">{t.home.finderTitle}</h3>
-        <label class="field">
-          <Icon name="search" />
-          <span class="sr-only">{t.home.finderSearch}</span>
-          <input data-finder-input type="search" placeholder={t.home.finderPh} autocomplete="off" />
-        </label>
-        <ul class="finder__list" data-finder-list>
-          {cheats.map((c) => (
-            <li data-finder-item data-text={`${c.effect} ${c.code} ${c.game}`} hidden={!POPULAR.includes(c.code)} data-popular={POPULAR.includes(c.code) ? '1' : undefined}>
-              <a href={`${h(`/cheats/${c.slug}/`)}#${c.id}`} class="finder__info">
-                <small class="cond">{c.game}</small>
-                <span>{c.effect}</span>
-              </a>
-              {c.code && (
-                <button class="finder__code" data-copy={c.code} aria-label={`${c.code} copy`}>
-                  <code>{c.code}</code><Icon name="copy" size={14} />
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
-        <p class="finder__empty muted" data-finder-empty hidden>{t.home.finderEmpty} <a href={h('/cheats/')}>{t.home.finderDb}</a>.</p>
-        <a href={h('/cheats/')} class="btn btn--ghost finder__all">{t.home.allCheats(cheats.length)} <Icon name="arrow" /></a>
-      </aside>
+    <div class="guides-list">
+      {guides.slice(0, 6).map((g, i) => <GuideCard item={g} index={i} delay={(i % 3) * 0.06} />)}
     </div>
   </section>
 
   <RadioBand />
+
+  <!-- MERCH: Produktvorschau, Kaufen oeffnet den Shop direkt beim Produkt -->
+  <section class="section wrap" aria-labelledby="sec-merch">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>Merch</b> / Drop 01</p>
+        <h2 id="sec-merch" class="sec-head__title display">{lang === 'en' ? 'Dress like the' : 'Zieh dich an wie die'} <span class="grad-text">Crew</span></h2>
+      </div>
+      <a href={h('/shop/')} class="sec-head__link">{lang === 'en' ? 'Visit the store' : 'Zum Shop'} <Icon name="arrow" /></a>
+    </div>
+    <MerchGrid limit={3} />
+  </section>
 
   <!-- COMMUNITY + SHOP -->
   <section class="section wrap" aria-labelledby="sec-comm">
@@ -207,27 +193,6 @@ const jsonLd = [
   <Newsletter />
 </Base>
 
-<script>
-  const norm = (s: string) => s.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
-  document.addEventListener('astro:page-load', () => {
-    const root = document.querySelector('[data-cheat-finder]');
-    if (!root) return;
-    const input = root.querySelector<HTMLInputElement>('[data-finder-input]')!;
-    const items = [...root.querySelectorAll<HTMLElement>('[data-finder-item]')];
-    const empty = root.querySelector<HTMLElement>('[data-finder-empty]')!;
-    input.addEventListener('input', () => {
-      const q = norm(input.value.trim());
-      let shown = 0;
-      for (const it of items) {
-        const ok = q ? norm(it.dataset.text ?? '').includes(q) && shown < 7 : it.dataset.popular === '1';
-        it.hidden = !ok;
-        if (ok) shown++;
-      }
-      empty.hidden = shown > 0;
-    });
-  });
-</script>
-
 <style>
   .bot-status { display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; padding: 3px 8px; background: rgba(43, 217, 107, 0.1); color: var(--green); font-size: 0.75rem; }
   .bot-status .dot-live { background: var(--green); }
@@ -252,29 +217,10 @@ const jsonLd = [
   .cat__count { font-size: 0.78rem; color: var(--dim); }
   .cats > :first-child { grid-row: span 2; background: linear-gradient(160deg, rgba(43, 217, 107, 0.16), var(--panel) 60%); }
   .cats > :first-child .cat__label { font-size: 2.6rem; }
+  .cat--all { background: linear-gradient(160deg, rgba(255, 45, 135, 0.14), var(--panel) 60%); }
+  .cat--all .cat__count { display: inline-flex; align-items: center; gap: 6px; color: var(--text); }
 
-  .guides-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(14px, 2vw, 22px); align-items: start; }
-  .guides-list { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 20px); }
-  .finder { padding: 24px; position: sticky; top: calc(var(--header-h) + var(--ticker-h) + 20px); display: flex; flex-direction: column; gap: 14px; }
-  .finder__kicker { display: flex; align-items: center; gap: 8px; color: var(--teal); margin: 0; font-size: 0.85rem; }
-  .finder__title { font-size: 2.2rem; }
-  .finder__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-  .finder__list li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); }
-  .finder__list li[hidden] { display: none; }
-  .finder__info { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
-  .finder__info small { color: var(--dim); font-size: 0.72rem; }
-  .finder__info span { font-size: 0.93rem; font-weight: 500; }
-  .finder__code {
-    display: inline-flex; align-items: center; gap: 6px; flex: none;
-    padding: 6px 8px; background: rgba(25, 227, 200, 0.08); color: var(--teal);
-    border: 1px solid rgba(25, 227, 200, 0.25); transition: background 0.2s;
-  }
-  .finder__code code { font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; font-weight: 700; }
-  .finder__code:hover { background: rgba(25, 227, 200, 0.18); }
-  .finder__code:global(.is-copied) { background: var(--teal); color: #041512; }
-  .finder__empty { margin: 0; font-size: 0.93rem; }
-  .finder__empty a { color: var(--teal); }
-  .finder__all { justify-content: center; }
+  .guides-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 20px); }
 
   .crew { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 20px); }
   .crew__card { display: flex; flex-direction: column; gap: 14px; padding: 28px; min-height: 320px; transition: transform 0.25s ease-out, border-color 0.3s; }
@@ -293,8 +239,7 @@ const jsonLd = [
     .games-grid { grid-template-columns: repeat(2, 1fr); }
     .cats { grid-template-columns: repeat(2, 1fr); }
     .cats > :first-child { grid-row: auto; grid-column: span 2; }
-    .guides-split { grid-template-columns: 1fr; }
-    .finder { position: static; }
+    .guides-list { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 860px) {
     .news-grid { grid-template-columns: 1fr; }

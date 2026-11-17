@@ -16,3 +16,6 @@ sm.xml
 
 # Discord-Webhook-URLs (geheim, kommen per push-secrets.mjs als GitHub-Secrets)
 automation/discord/.secrets.json
+
+# Interne Vorlagen (z. B. Streamer-Anschreiben), nicht ins oeffentliche Repo
+marketing/

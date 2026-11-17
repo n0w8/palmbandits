@@ -11,7 +11,7 @@ export function langFromUrl(url: URL): Lang {
 
 // Kategorie-Slugs (intern Deutsch, in der URL je Sprache)
 export const CAT_EN: Record<string, string> = {
-  geld: 'money', fundorte: 'locations', glitches: 'glitches', cheats: 'cheats',
+  geld: 'money', fundorte: 'locations', glitches: 'glitches',
   'easter-eggs': 'easter-eggs', tipps: 'tips', wissen: 'lore',
 };
 export const CAT_DE = Object.fromEntries(Object.entries(CAT_EN).map(([k, v]) => [v, k]));

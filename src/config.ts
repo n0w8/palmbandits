@@ -6,7 +6,7 @@ export const SITE = {
   lang: 'de',
   locale: 'de_DE',
   description:
-    'Die deutsche GTA-Community: GTA 6 News in Minuten, Guides, Cheats, Geld-Tipps, versteckte Orte und Glitches für GTA VI, GTA Online, GTA 5 und alle Klassiker.',
+    'Die deutsche GTA-Community: GTA 6 News in Minuten, Guides, Geld-Tipps, versteckte Orte, Easter Eggs und Glitches für GTA VI, GTA Online, GTA 5 und alle Klassiker.',
   // Leer lassen, bis der echte Link steht: dann blendet die Seite den Button aus bzw. verweist auf /community/
   discord: 'https://discord.gg/R7mNwd4YYk',
   pinterest: '',

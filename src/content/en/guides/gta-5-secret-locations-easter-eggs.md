@@ -52,7 +52,7 @@ Once you reach **100% completion**, a UFO appears above the summit of Mount Chil
 - Weather: thunderstorm
 - Location: right on the summit, ideally wait near the cable car station
 
-**Tip:** You can give the weather a nudge with the weather cheat from our [GTA 5 cheats list](/en/cheats/gta-5/). Keep in mind that cheats disable achievements and trophies for the current session.
+**Tip:** You can give the weather a nudge with the weather cheat. Keep in mind that cheats disable achievements and trophies for the current session.
 
 ### Two more UFOs
 
