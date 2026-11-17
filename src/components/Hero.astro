@@ -57,6 +57,11 @@ const released = Date.now() >= releaseDate.getTime();
           <stop offset="0" stop-color="#2a0e3e" />
           <stop offset="1" stop-color="#14081f" />
         </linearGradient>
+        <!-- Leuchtschein der Sonne mit grosszuegigem Filterbereich: der Standardbereich (+10 %) schnitt den
+             60-px-Schein gerade ab, das ergab einen senkrechten Strich im Himmel -->
+        <filter id="h-glow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+          <feDropShadow dx="0" dy="0" stdDeviation="30" flood-color="#ff7850" flood-opacity="0.6" />
+        </filter>
         <mask id="h-sunmask">
           <rect width="1600" height="900" fill="#fff" />
           <g class="sun-stripes">
@@ -83,7 +88,7 @@ const released = Date.now() >= releaseDate.getTime();
         ))}
       </g>
 
-      <g data-depth="0.15"> <circle class="sun" cx="800" cy="500" r="265" fill="url(#h-sun)" mask="url(#h-sunmask)" /></g>
+      <g data-depth="0.15" filter="url(#h-glow)"><circle class="sun" cx="800" cy="500" r="265" fill="url(#h-sun)" mask="url(#h-sunmask)" /></g>
 
       <g class="heli" data-depth="0.5">
         <g class="heli__fly">
@@ -170,7 +175,7 @@ const released = Date.now() >= releaseDate.getTime();
       linear-gradient(90deg, rgba(7, 6, 11, 0.85) 0%, rgba(7, 6, 11, 0.35) 45%, transparent 70%),
       linear-gradient(0deg, var(--bg) 0%, transparent 35%);
   }
-  .sun { filter: drop-shadow(0 0 60px rgba(255, 120, 80, 0.6)); }
+  /* Leuchtschein der Sonne: SVG-Filter #h-glow (siehe oben) */
   .sun-stripes { animation: stripes 6s linear infinite; }
   @keyframes stripes { from { transform: translateY(0); } to { transform: translateY(26px); } }
   .stars-bg circle { animation: twinkle 3.5s ease-in-out infinite; }
