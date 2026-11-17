@@ -331,3 +331,6 @@ export async function renderPin(design) {
   const svg = await satori(el, { width: W, height: H, fonts: fonts() });
   return new Resvg(svg, { fitTo: { mode: 'width', value: W }, font: { loadSystemFonts: false } }).render().asPng();
 }
+
+// Bausteine auch fuer die Reels (social/reel.mjs), damit alles gleich aussieht
+export { fonts, div, img, svgUri, stars, wordmark, chip, gradientBar, buttonIcon, label, SUNSET_V };

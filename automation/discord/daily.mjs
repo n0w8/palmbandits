@@ -5,11 +5,12 @@
 //                                      und Fahndungslevel-Sterne nach Aktivitaet (siehe levels.mjs)
 //                                      braucht DISCORD_BOT_TOKEN, DISCORD_GUILD_ID und im Developer Portal "Server Members Intent"
 //   --dry-run                       -> nur anzeigen, nichts aendern
-import { readdirSync, readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { AUTOMATION_DIR, ROOT_DIR, env, hasFlag, loadDotEnv } from '../lib/util.mjs';
 import { api, postWebhook } from './api.mjs';
 import { BRAND, ROLES, SITE } from './blueprint.mjs';
+import { cheatOfTheDay } from '../lib/cheat-of-day.mjs';
 import { STAR_ROLES, applyMessages, collectNew, helperHandles, loadActivity, matchesHandle, planStars, saveActivity } from './levels.mjs';
 
 loadDotEnv();
@@ -23,18 +24,6 @@ const localHooks = existsSync(secretsFile) ? JSON.parse(readFileSync(secretsFile
 const OG_LIMIT = Number(env('OG_LIMIT', '1000'));
 const DAY_ONE_UNTIL = new Date(env('DAY_ONE_UNTIL', '2026-11-23T23:59:59+01:00'));
 const GAME_NAMES = { 'gta-5': 'GTA V', 'gta-san-andreas': 'GTA San Andreas', 'gta-vice-city': 'GTA Vice City', 'gta-4': 'GTA IV', 'gta-3': 'GTA III' };
-
-function cheatOfTheDay(date = new Date()) {
-  const dir = path.join(ROOT_DIR, 'src', 'data', 'cheats');
-  const all = readdirSync(dir).filter((f) => f.endsWith('.json')).sort().flatMap((f) => {
-    const j = JSON.parse(readFileSync(path.join(dir, f), 'utf8'));
-    return j.cheats.map((c) => ({ ...c, game: j.game }));
-  });
-  const day = Math.floor(date.getTime() / 86_400_000);
-  // feste, aber gut gemischte Reihenfolge: jeder Cheat kommt dran, bevor sich etwas wiederholt
-  const idx = (day * 7919) % all.length;
-  return all[idx];
-}
 
 async function postCheat() {
   const c = cheatOfTheDay();

@@ -1,0 +1,83 @@
+# Reels fuer Instagram (und als Download fuer TikTok/YouTube Shorts), 3x am Tag:
+#  - 11:30 Cheat des Tages, 16:00 neueste News (nur wenn frisch), 19:30 Guide (Winterzeit DE/AT)
+# Ohne IG_USER_ID/IG_ACCESS_TOKEN werden die Reels nur gebaut und als Download (Artefakt) bereitgestellt.
+name: Social Reels
+
+on:
+  schedule:
+    - cron: '30 10 * * *'   # Cheat
+    - cron: '0 15 * * *'    # News
+    - cron: '30 18 * * *'   # Guide
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'cheat, news oder guide (leer = alle)'
+        default: ''
+      post:
+        description: 'Auf Instagram posten'
+        type: boolean
+        default: true
+
+concurrency:
+  group: social
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  reels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      SITE_URL: ${{ vars.SITE_URL || 'https://palmbandits.com' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+      - name: ffmpeg bereitstellen
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Abhaengigkeiten installieren
+        working-directory: automation
+        run: npm ci --no-audit --no-fund
+      - name: Reels bauen und posten
+        working-directory: automation
+        run: |
+          KIND="${{ inputs.kind }}"
+          if [ -z "$KIND" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            case "${{ github.event.schedule }}" in
+              "30 10 * * *") KIND=cheat ;;
+              "0 15 * * *") KIND=news ;;
+              *) KIND=guide ;;
+            esac
+          fi
+          POST=""
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.post }}" = "true" ]; then POST="--post"; fi
+          node social/run.mjs ${KIND:+--only=$KIND} $POST
+      - name: Reels zum Herunterladen bereitstellen
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: reels-${{ github.run_id }}
+          path: automation/social/out/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Post-Log committen
+        run: |
+          git config user.name "social-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/data/social-posted.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Nichts zu committen."; exit 0; fi
+          git commit -m "social-bot: Reel gepostet"
+          for i in 1 2 3; do
+            if git push origin "HEAD:${{ github.ref_name }}"; then exit 0; fi
+            git pull --rebase origin "${{ github.ref_name }}" || { git rebase --abort; exit 1; }
+          done
+          exit 1
