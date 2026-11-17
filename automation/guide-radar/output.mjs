@@ -23,37 +23,21 @@ export function englishDate(now = new Date()) {
   return new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Berlin', day: 'numeric', month: 'long', year: 'numeric' }).format(now);
 }
 
-function cheatGamesOnSite(cheatGames) {
-  return cheatGames ?? (() => {
-    try {
-      return readdirSync(path.join(ROOT_DIR, 'src', 'data', 'cheats')).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, ''));
-    } catch {
-      return ['gta-5', 'gta-san-andreas', 'gta-vice-city', 'gta-4', 'gta-3'];
-    }
-  })();
-}
-
 // Interne Links, die es auf der Seite wirklich gibt
-export function allowedInternalLinks(existingGuides = [], cheatGames = null) {
-  const cheats = cheatGamesOnSite(cheatGames);
+export function allowedInternalLinks(existingGuides = []) {
   return [
     '/guides/',
     ...CATEGORIES.map((c) => `/guides/kategorie/${c}/`),
     ...GAMES.filter((g) => g !== 'allgemein').map((g) => `/spiele/${g}/`),
-    '/cheats/',
-    ...[...new Set([...cheats, 'gta-6'])].map((g) => `/cheats/${g}/`),
     ...existingGuides.map((g) => `/guides/${g.slug}/`),
   ];
 }
 
 // Interne Links fuer die englische Fassung. enGuideSlugs: Slugs vorhandener englischer Guides.
-export function allowedInternalLinksEn(enGuideSlugs = [], cheatGames = null) {
-  const cheats = cheatGamesOnSite(cheatGames);
+export function allowedInternalLinksEn(enGuideSlugs = []) {
   return [
     '/en/guides/',
     ...GAMES.filter((g) => g !== 'allgemein').map((g) => `/en/games/${g}/`),
-    '/en/cheats/',
-    ...[...new Set([...cheats, 'gta-6'])].map((g) => `/en/cheats/${g}/`),
     ...enGuideSlugs.map((s) => `/en/guides/${s}/`),
   ];
 }

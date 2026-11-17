@@ -1,5 +1,4 @@
 // Taegliche/stuendliche Discord-Automatik (laeuft auf GitHub Actions, kein eigener Bot-Server noetig).
-//   node discord/daily.mjs cheat    -> "Cheat des Tages" in #cheats-und-tricks (Webhook DISCORD_WEBHOOK_CHEATS)
 //   node discord/daily.mjs badges   -> stuendlich alle automatischen Rollen:
 //                                      OG (erste 1.000), Day One (Beitritt bis Stichtag), Guide-Helfer (Name im Artikel)
 //                                      und Fahndungslevel-Sterne nach Aktivitaet (siehe levels.mjs)
@@ -8,9 +7,8 @@
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { AUTOMATION_DIR, ROOT_DIR, env, hasFlag, loadDotEnv } from '../lib/util.mjs';
-import { api, postWebhook } from './api.mjs';
-import { BRAND, ROLES, SITE } from './blueprint.mjs';
-import { cheatOfTheDay } from '../lib/cheat-of-day.mjs';
+import { api } from './api.mjs';
+import { ROLES } from './blueprint.mjs';
 import { STAR_ROLES, applyMessages, collectNew, helperHandles, loadActivity, matchesHandle, planStars, saveActivity } from './levels.mjs';
 
 loadDotEnv();
@@ -18,40 +16,9 @@ const DRY = hasFlag('dry-run');
 const mode = process.argv[2];
 const stateFile = path.join(AUTOMATION_DIR, 'discord', 'state.json');
 const state = existsSync(stateFile) ? JSON.parse(readFileSync(stateFile, 'utf8')) : {};
-const secretsFile = path.join(AUTOMATION_DIR, 'discord', '.secrets.json');
-const localHooks = existsSync(secretsFile) ? JSON.parse(readFileSync(secretsFile, 'utf8')).webhooks ?? {} : {};
 
 const OG_LIMIT = Number(env('OG_LIMIT', '1000'));
 const DAY_ONE_UNTIL = new Date(env('DAY_ONE_UNTIL', '2026-11-23T23:59:59+01:00'));
-const GAME_NAMES = { 'gta-5': 'GTA V', 'gta-san-andreas': 'GTA San Andreas', 'gta-vice-city': 'GTA Vice City', 'gta-4': 'GTA IV', 'gta-3': 'GTA III' };
-
-async function postCheat() {
-  const c = cheatOfTheDay();
-  const game = GAME_NAMES[c.game] ?? c.game;
-  const url = `${SITE}/cheats/${c.game}/?utm_source=discord&utm_medium=social&utm_campaign=cheat-des-tages#${c.id}`;
-  const fields = [
-    c.pc && { name: 'PC', value: `\`${c.pc}\``, inline: true },
-    c.phone && { name: 'Handy', value: `\`${c.phone}\``, inline: true },
-    c.playstation && { name: 'PlayStation', value: c.playstation, inline: false },
-    c.xbox && { name: 'Xbox', value: c.xbox, inline: false },
-  ].filter(Boolean);
-  const payload = {
-    username: `${BRAND} Bot`,
-    allowed_mentions: { parse: [] },
-    embeds: [{
-      title: `🧾 Cheat des Tages: ${c.effect}`,
-      description: `**${game}**${c.note ? `\n${c.note}` : ''}\n\n[Alle ${game} Cheats mit Kopier-Button](${url})`,
-      url,
-      color: 0x19e3c8,
-      fields,
-      footer: { text: 'Cheats nur im Story-Modus · Spielstand vorher sichern' },
-    }],
-  };
-  const hook = env('DISCORD_WEBHOOK_CHEATS') || localHooks.cheats;
-  if (DRY || !hook) { console.log(`${hook ? 'PROBELAUF' : 'Kein Webhook'}: wuerde posten:`, JSON.stringify(payload.embeds[0], null, 1)); return; }
-  await postWebhook(hook, payload);
-  console.log(`Cheat des Tages gepostet: ${c.effect} (${game})`);
-}
 
 // Rolle geben/nehmen (im Probelauf nur anzeigen)
 const ROLE_NAME = Object.fromEntries(ROLES.map((r) => [r.key, r.name]));
@@ -143,6 +110,5 @@ async function stars(guild, humans) {
   if (moved || !stored.length) await saveActivity(store, data, stored);
 }
 
-if (mode === 'cheat') await postCheat();
-else if (mode === 'badges') await badges();
-else console.log('Aufruf: node discord/daily.mjs cheat|badges [--dry-run]');
+if (mode === 'badges') await badges();
+else console.log('Aufruf: node discord/daily.mjs badges [--dry-run]');

@@ -2,7 +2,7 @@
 // oder nur eine News (Trailer, Verkaufszahlen, Termine)? Reine Text-Regeln, deutsch und englisch, ohne KI.
 import { deUmlaut } from '../lib/util.mjs';
 
-export const CATEGORIES = ['geld', 'fundorte', 'glitches', 'cheats', 'tipps', 'easter-eggs', 'wissen'];
+export const CATEGORIES = ['geld', 'fundorte', 'glitches', 'tipps', 'easter-eggs', 'wissen'];
 
 const norm = (s) => deUmlaut(String(s ?? '')).toLowerCase().replace(/[’`´]/g, "'");
 
@@ -20,7 +20,6 @@ export const INTENT_RULES = [
   [3, /\b(fastest|best|easiest|quickest) (way|method)s?\b|\bam schnellsten\b|\bbeste (methode|art|weg)\b/, 'tipps'],
   [3, /\bunlock(s|ed|ing)?\b|\bfreischalt(en|ung)\b|\bfreigeschaltet\b/, 'tipps'],
   [3, /\btroph(y|ies)\b|\btrophaee(n)?\b|\bachievements?\b|\berfolge\b|\bplatin\b|\bplatinum\b|\b100 ?(%|prozent|percent)\b/, 'tipps'],
-  [3, /\bcheats?\b|\bcheat ?codes?\b/, 'cheats'],
   [3, /\bsecrets?\b|\bgeheim(e|er|es|en|nis|nisse|tipps?)?\b|\bhidden\b|\bversteckt(e|er|es|en)?\b/, 'easter-eggs'],
   [3, /\btips\b|\btipps\b|\btricks?\b|\bkniffe?\b/, 'tipps'],
   [3, /\bbeginners?\b|\banfaenger\b|\beinsteiger\b|\bthings? (i wish|to know|you should)\b|\bdinge,? die (du|ihr)\b/, 'tipps'],

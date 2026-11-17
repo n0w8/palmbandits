@@ -1,6 +1,6 @@
 // Reels fuer heute bauen und (optional) posten.
 //   node social/run.mjs                    -> alle Reels von heute nach social/out/<datum>/ (Video, Titelbild, Caption)
-//   node social/run.mjs --only=cheat       -> nur eine Sorte (cheat | news | guide | fact)
+//   node social/run.mjs --only=fact        -> nur eine Sorte (fact | fact2 | news | guide)
 //   node social/run.mjs --post             -> zusaetzlich auf Instagram posten (IG_USER_ID + IG_ACCESS_TOKEN noetig)
 //   --date=2026-11-19   --fixtures (Testdaten)
 // Schon gepostete Reels stehen in automation/data/social-posted.json und werden nie doppelt gepostet.
@@ -17,7 +17,7 @@ const POST = hasFlag('post');
 const POSTED_FILE = path.join(DATA_DIR, 'social-posted.json');
 const outDir = path.join(AUTOMATION_DIR, 'social', 'out', date.toISOString().slice(0, 10));
 
-const plans = planReels(loadContent(hasFlag('fixtures')), date, loadFacts()).filter((p) => !only || p.kind === only);
+const plans = planReels(loadContent(hasFlag('fixtures')), date, loadFacts()).filter((p) => !only || (p.slot ? p.slot === only : p.kind === only));
 if (!plans.length) { console.log(`Heute nichts zu tun${only ? ` (${only})` : ''}.`); process.exit(0); }
 
 const posted = readJson(POSTED_FILE, {});

@@ -1,8 +1,23 @@
 {
   "_hinweis": "id = Board-ID aus Pinterest (nur Ziffern, fuer den API-Weg). name = exakter Board-Name (fuer den CSV-Weg). Boards vorher in Pinterest anlegen. IDs findest du mit: node pinterest/post.mjs --list-boards",
-  "guides": { "id": "", "name": "GTA Guides | Palm Bandits" },
-  "cheats": { "id": "", "name": "GTA Cheats | PC, PS, Xbox und Handy" },
-  "news": { "id": "", "name": "GTA 6 News | Palm Bandits" },
-  "wallpaper": { "id": "", "name": "Neon Sunset Wallpaper | Handy-Hintergründe" },
-  "tipps": { "id": "", "name": "GTA Tipps und Tricks" }
+  "guides": {
+    "id": "",
+    "name": "GTA Guides | Palm Bandits"
+  },
+  "news": {
+    "id": "",
+    "name": "GTA 6 News | Palm Bandits"
+  },
+  "wallpaper": {
+    "id": "",
+    "name": "Neon Sunset Wallpaper | Handy-Hintergründe"
+  },
+  "tipps": {
+    "id": "",
+    "name": "GTA Tipps und Tricks"
+  },
+  "fakten": {
+    "id": "",
+    "name": "GTA Fakten und Wissen | Palm Bandits"
+  }
 }

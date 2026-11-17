@@ -12,9 +12,8 @@ export const OUT_DIR = path.join(AUTOMATION_DIR, 'pinterest', 'out');
 export const MAX_PER_URL_PER_DAY = 3;
 export const HARD_DAY_LIMIT = 25;
 
-const CHEAT_CAT = { spieler: 'Spieler', waffen: 'Waffen', fahrzeuge: 'Fahrzeuge', wanted: 'Fahndung', welt: 'Welt & Wetter', spass: 'Spaß' };
-const TIPS_WORD = { tipps: 'TIPPS', geld: 'GELD-TIPPS', fundorte: 'ORTE', glitches: 'GLITCHES', 'easter-eggs': 'EASTER EGGS', cheats: 'CHEATS', wissen: 'FAKTEN' };
-const TIPS_LABEL = { tipps: 'Tipps', geld: 'Geld-Tipps', fundorte: 'versteckte Orte', glitches: 'Glitches', 'easter-eggs': 'Easter Eggs', cheats: 'Cheats', wissen: 'Fakten' };
+const TIPS_WORD = { tipps: 'TIPPS', geld: 'GELD-TIPPS', fundorte: 'ORTE', glitches: 'GLITCHES', 'easter-eggs': 'EASTER EGGS', wissen: 'FAKTEN' };
+const TIPS_LABEL = { tipps: 'Tipps', geld: 'Geld-Tipps', fundorte: 'versteckte Orte', glitches: 'Glitches', 'easter-eggs': 'Easter Eggs', wissen: 'Fakten' };
 const DIFF = { leicht: 'Leicht', mittel: 'Mittel', schwer: 'Schwer' };
 
 export function linkFor(urlPath, type, id, hash = '') {
@@ -111,31 +110,21 @@ export function buildPins(content, now = new Date()) {
     });
   }
 
-  for (const c of content.cheats) {
-    const game = GAME_NAMES[c.game] ?? 'GTA';
-    const tagsC = GAME_TAGS[c.game] ?? GAME_TAGS.allgemein;
-    const id = `cheat-${c.game}-${c.id}`;
-    const seq = c.playstation ?? c.xbox ?? null;
-    const how = [
-      c.pc ? `Auf dem PC gibst du ${c.pc} ein.` : '',
-      c.phone ? `Am Handy im Spiel wählst du ${c.phone}.` : '',
-      seq ? `Für ${c.playstation ? 'PlayStation' : 'Xbox'} steht die Tastenfolge auf dem Bild.` : '',
-    ].filter(Boolean).join(' ');
+  // GTA-Fakten (belegt, mit Quelle) aus automation/social/facts.json
+  for (const f of content.facts ?? []) {
+    const game = GAME_NAMES[f.game] ?? 'GTA';
+    const tagsF = GAME_TAGS[f.game] ?? GAME_TAGS.allgemein;
+    const id = `fact-${f.id}`;
+    const urlPath = f.game && f.game !== 'allgemein' ? `/spiele/${f.game}/` : '/spiele/';
     pins.push({
-      id, type: 'cheat', board: 'cheats',
-      title: truncate(noLongDashes(`${game} Cheat: ${c.effect}${c.pc ? ` (${c.pc})` : ''}`), 100),
-      description: description(`So bekommst du in ${game} "${c.effect}". ${how} Alle ${game} Cheats für PC, Konsole und Handy findest du auf ${BRAND}.`, [tagsC[0], 'gtacheats', 'cheats']),
-      link: linkFor(`/cheats/${c.game}/`, 'cheat', id, c.id),
-      altText: truncate(`Pin-Grafik: ${game} Cheat "${c.effect}"${c.pc ? ` mit dem PC-Code ${c.pc} in großer Schrift` : ''}${seq ? ' und der Tastenfolge für die Konsole' : ''}${c.phone ? ` und der Handynummer ${c.phone}` : ''}.`, 500),
-      game: c.game,
-      sortKey: [Object.keys(CHEAT_CAT).indexOf(c.category ?? 'spieler'), c.id],
-      design: {
-        type: 'cheat', headline: c.effect, gameName: game, category: CHEAT_CAT[c.category] ?? null,
-        code: c.pc ?? null, codeLabel: 'PC-CODE', phone: c.phone ?? null,
-        howTo: c.pc ? c.howTo?.pc : c.phone ? c.howTo?.phone : c.howTo?.playstation ?? c.howTo?.xbox ?? null, note: c.note ?? null,
-        sequence: seq, sequencePlatform: c.playstation ? 'playstation' : 'xbox', sequenceLabel: c.playstation ? 'PLAYSTATION' : 'XBOX',
-        cta: `Alle ${game} Cheats »`, domain,
-      },
+      id, type: 'fact', board: 'fakten',
+      title: truncate(noLongDashes(`${game} Fakt: ${f.hook}`), 100),
+      description: description(`${f.fact} Quelle: ${f.source.name}. Mehr GTA-Wissen, Guides und News findest du auf ${BRAND}.`, [tagsF[0], 'gtafacts', 'gaming']),
+      link: linkFor(urlPath, 'fact', id),
+      altText: truncate(`Pin-Grafik mit einem GTA-Fakt zu ${game}: "${f.hook}" in großer Schrift, darunter der Fakt und die Quelle.`, 500),
+      game: f.game,
+      sortKey: [f.id],
+      design: { type: 'fact', headline: f.hook, text: f.fact, source: f.source.name, gameName: game, cta: 'Mehr GTA-Wissen »', domain },
     });
   }
 
@@ -163,8 +152,8 @@ export function buildPins(content, now = new Date()) {
   return pins;
 }
 
-// Reihenfolge: frische News zuerst, danach abwechselnd Guide, Cheat, Tipps, Wallpaper (Cheats nach Spiel gemischt)
-const PATTERN = ['guide', 'cheat', 'tips', 'cheat', 'wallpaper', 'cheat', 'guide', 'cheat', 'tips', 'cheat'];
+// Reihenfolge: frische News zuerst, danach abwechselnd Guide, Fakt, Tipps, Wallpaper (Fakten nach Spiel gemischt)
+const PATTERN = ['guide', 'fact', 'tips', 'fact', 'wallpaper', 'fact', 'guide', 'fact', 'tips', 'fact'];
 
 function cmpKey(a, b) {
   for (let i = 0; i < Math.max(a.sortKey.length, b.sortKey.length); i++) {
@@ -178,21 +167,21 @@ export function orderPins(pins) {
   const buckets = {};
   for (const p of pins) (buckets[p.type] ??= []).push(p);
   for (const list of Object.values(buckets)) list.sort(cmpKey);
-  // Cheats reihum nach Spiel
-  if (buckets.cheat) {
+  // Fakten reihum nach Spiel
+  if (buckets.fact) {
     const byGame = {};
-    for (const c of buckets.cheat) (byGame[c.game] ??= []).push(c);
+    for (const c of buckets.fact) (byGame[c.game] ??= []).push(c);
     const games = Object.keys(byGame).sort();
     const mixed = [];
-    for (let i = 0; mixed.length < buckets.cheat.length; i++) for (const g of games) if (byGame[g][i]) mixed.push(byGame[g][i]);
-    buckets.cheat = mixed;
+    for (let i = 0; mixed.length < buckets.fact.length; i++) for (const g of games) if (byGame[g][i]) mixed.push(byGame[g][i]);
+    buckets.fact = mixed;
   }
   const ordered = [...(buckets.news ?? [])];
-  const rest = ['guide', 'cheat', 'tips', 'wallpaper'].reduce((n, t) => n + (buckets[t]?.length ?? 0), 0);
+  const rest = ['guide', 'fact', 'tips', 'wallpaper'].reduce((n, t) => n + (buckets[t]?.length ?? 0), 0);
   for (let i = 0; ordered.length < (buckets.news?.length ?? 0) + rest; i++) {
     const t = PATTERN[i % PATTERN.length];
     let pick = buckets[t]?.shift();
-    if (!pick) for (const alt of ['cheat', 'guide', 'tips', 'wallpaper']) if ((pick = buckets[alt]?.shift())) break;
+    if (!pick) for (const alt of ['fact', 'guide', 'tips', 'wallpaper']) if ((pick = buckets[alt]?.shift())) break;
     if (pick) ordered.push(pick);
   }
   return ordered;

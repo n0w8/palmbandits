@@ -13,7 +13,7 @@ const u = (p, src = 'discord') => `${SITE}${p}${p.includes('?') ? '&' : '?'}utm_
 
 export const GUILD = {
   name: `${BRAND} · GTA Community`,
-  description: 'Die deutsche GTA-Community: GTA 6 News in Minuten, Guides, Cheats, Crew-Suche und GTA RP.',
+  description: 'Die deutsche GTA-Community: GTA 6 News in Minuten, Guides, GTA-Wissen, Crew-Suche und GTA RP.',
   locale: 'de',
 };
 
@@ -101,7 +101,7 @@ export const CATEGORIES = [
     channels: [
       T({ key: 'gta5', name: '💬・gta5-chat', topic: 'GTA V Story-Modus.' }),
       T({ key: 'retro', name: '📼・iii-vc-sa-iv', topic: 'GTA III, Vice City, San Andreas, IV und die Definitive Editions.' }),
-      T({ key: 'cheats', name: '🧾・cheats-und-tricks', topic: 'Cheats, Tricks, Glitches. Jeden Tag ein Cheat des Tages.', webhook: true }),
+      T({ key: 'cheats', name: '💡・tipps-und-tricks', topic: 'Tipps, Tricks und Easter Eggs aus allen GTA-Teilen. Keine Mod-Menüs, keine Exploits für GTA Online.' }),
     ],
   },
   {
@@ -233,7 +233,7 @@ export const MESSAGES = [
       ].join('\n'),
       color: 0xff2d87,
     }],
-    components: [{ type: 1, components: [BTN('Zur Website', u('/')), BTN('GTA 6 Hub', u('/spiele/gta-6/')), BTN('Alle Cheats', u('/cheats/'))] }],
+    components: [{ type: 1, components: [BTN('Zur Website', u('/')), BTN('GTA 6 Hub', u('/spiele/gta-6/')), BTN('Alle Guides', u('/guides/'))] }],
   },
   {
     key: 'rulesMsg', channel: 'rules',

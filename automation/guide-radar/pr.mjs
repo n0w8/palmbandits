@@ -4,7 +4,7 @@ const GAME_NAMES = {
   'gta-san-andreas': 'GTA San Andreas', 'gta-vice-city': 'GTA Vice City', 'gta-3': 'GTA 3', allgemein: 'Allgemein',
 };
 const CATEGORY_NAMES = {
-  geld: 'Geld', fundorte: 'Fundorte', glitches: 'Glitches', cheats: 'Cheats', tipps: 'Tipps', 'easter-eggs': 'Easter Eggs', wissen: 'Wissen',
+  geld: 'Geld', fundorte: 'Fundorte', glitches: 'Glitches', tipps: 'Tipps', 'easter-eggs': 'Easter Eggs', wissen: 'Wissen',
 };
 
 export function prTitle(meta) {

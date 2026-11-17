@@ -324,7 +324,23 @@ async function wallpaperPin(p) {
       div({ fontFamily: 'Barlow Condensed', fontWeight: 700, fontSize: 24, letterSpacing: 4, color: 'rgba(244,241,250,0.65)' }, p.domain.toUpperCase())));
 }
 
-const RENDERERS = { guide: guidePin, tips: tipsPin, cheat: cheatPin, news: newsPin, wallpaper: wallpaperPin };
+async function factPin(p) {
+  const head = await headline(p.headline, { maxLines: 3, max: 140, min: 64, gradient: true });
+  return background([
+    header(5),
+    middle(
+      div({ gap: 14, alignItems: 'center', flexWrap: 'wrap', width: INNER },
+        chip('GTA-Fakt', { color: C.yellow, bg: 'rgba(255,210,63,0.08)' }),
+        chip(p.gameName, { size: 28 })),
+      div({ marginTop: 30 }, head),
+      div({ marginTop: 28 }, gradientBar(300)),
+      div({ marginTop: 32, fontFamily: 'Barlow', fontWeight: 600, fontSize: 44, lineHeight: 1.35, color: 'rgba(244,241,250,0.92)', width: INNER }, truncate(p.text, 200)),
+      div({ marginTop: 30, fontFamily: 'Barlow Condensed', fontWeight: 700, fontSize: 28, letterSpacing: 1, color: C.muted }, truncate(`Quelle: ${p.source}`, 70))),
+    bottom(p),
+  ], { glowTop: 'rgba(255,210,63,0.24)', glowBottom: 'rgba(25,227,200,0.24)' });
+}
+
+const RENDERERS = { guide: guidePin, tips: tipsPin, cheat: cheatPin, news: newsPin, wallpaper: wallpaperPin, fact: factPin };
 
 export async function renderPin(design) {
   const el = await RENDERERS[design.type](design);

@@ -22,7 +22,6 @@
     "discord:setup": "node discord/setup.mjs",
     "discord:check": "node discord/setup.mjs --dry-run",
     "discord:secrets": "node discord/push-secrets.mjs",
-    "discord:cheat": "node discord/daily.mjs cheat",
     "discord:badges": "node discord/daily.mjs badges",
     "social": "node social/run.mjs",
     "social:post": "node social/run.mjs --post"

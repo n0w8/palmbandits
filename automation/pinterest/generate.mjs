@@ -1,4 +1,4 @@
-// Pin-Generator: baut die Warteschlange aus Guides, News und Cheats und rendert die Bilder.
+// Pin-Generator: baut die Warteschlange aus Guides, News und GTA-Fakten und rendert die Bilder.
 // Aufruf:
 //   node pinterest/generate.mjs              Warteschlange aktualisieren (automation/data/pin-queue.json)
 //   node pinterest/generate.mjs --render     zusaetzlich alle Bilder nach pinterest/out/ rendern
@@ -34,7 +34,7 @@ async function main() {
     const real = buildPins(loadContent(false));
     const fake = buildPins(loadContent(true), new Date('2026-11-17T12:00:00+01:00'));
     const dir = path.join(AUTOMATION_DIR, 'pinterest', 'samples');
-    const want = argValue('types', 'guide,cheat,tips,news,wallpaper').split(',');
+    const want = argValue('types', 'guide,fact,tips,news,wallpaper').split(',');
     for (const type of want) {
       const pin = (fixtures ? null : real.find((p) => p.type === type)) ?? fake.find((p) => p.type === type);
       if (!pin) { console.log(`Kein Beispiel fuer ${type}`); continue; }
@@ -57,7 +57,7 @@ async function main() {
   const existing = readJson(queueFile, { pins: [] }).pins;
   const queue = buildQueue(pins, posted, existing, nowIso);
   const byType = queue.reduce((m, p) => ({ ...m, [p.type]: (m[p.type] ?? 0) + 1 }), {});
-  console.log(`Inhalte: ${content.guides.length} Guides, ${content.news.length} News, ${content.cheats.length} Cheats${fixtures ? ' (Testdaten)' : ''}`);
+  console.log(`Inhalte: ${content.guides.length} Guides, ${content.news.length} News, ${content.facts.length} Fakten${fixtures ? ' (Testdaten)' : ''}`);
   console.log(`Warteschlange: ${queue.length} Pins (${Object.entries(byType).map(([k, v]) => `${k} ${v}`).join(', ')}), schon gepostet: ${posted.entries.length}${bad ? `, ${bad} mit Problemen` : ''}`);
   if (!hasFlag('dry-run')) writeJson(queueFile, { updated: nowIso, pins: queue });
 

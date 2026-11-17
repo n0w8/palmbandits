@@ -51,7 +51,7 @@ const PRECHECK_SYSTEM = `Du pruefst fuer den Guide-Radar von ${BRAND}, einer deu
 
 actionable = true nur, wenn die Quellen SELBST eine konkrete, nachspielbare Information enthalten: ein Ort, eine Methode, ein Ablauf, eine Belohnung, ein Easter Egg mit Fundstelle, ein Tipp mit Inhalt. Es zaehlt nur, was in den Texten steht, nicht was du ueber GTA weisst.
 actionable = false bei: Fragen ohne Antwort, Memes, Fan-Theorien, Wunschlisten, Meinungen, reinen News (Trailer, Verkaufszahlen, Termine, Preise, Partnerschaften), zeitlich begrenzten Wochenboni oder Rabatten, Werbung, Clickbait ohne Inhalt.
-game: das Hauptspiel. category: geld | fundorte | glitches | cheats | tipps | easter-eggs | wissen.
+game: das Hauptspiel. category: geld | fundorte | glitches | tipps | easter-eggs | wissen.
 keyword: das deutsche Suchwort, das Spieler bei Google eingeben wuerden (2 bis 6 Woerter, klein, zum Beispiel "gta 6 geld verdienen").
 online_exploit: true, wenn es um einen Glitch oder Exploit in GTA Online geht, mit dem man Geld, Fahrzeuge, Gegenstaende oder Auszahlungen erschleicht oder vervielfaeltigt.
 reason: kurzer Grund, hoechstens 15 Woerter.`;

@@ -28,7 +28,7 @@ const tree = div(
     { position: 'absolute', left: 70, top: 0, height: H, flexDirection: 'column', justifyContent: 'center' },
     div({ fontFamily: 'Barlow Condensed', fontWeight: 700, fontSize: 30, letterSpacing: 4, color: '#ffd23f', textTransform: 'uppercase' }, 'Die deutsche GTA-Community'),
     div({ fontFamily: 'Anton', fontSize: 128, lineHeight: 1, marginTop: 10, backgroundImage: SUNSET, backgroundClip: 'text', color: 'transparent' }, BRAND.toUpperCase()),
-    div({ fontFamily: 'Anton', fontSize: 58, lineHeight: 1.05, color: '#f4f1fa', marginTop: 14, textTransform: 'uppercase' }, 'GTA 6 News, Guides & Cheats'),
+    div({ fontFamily: 'Anton', fontSize: 58, lineHeight: 1.05, color: '#f4f1fa', marginTop: 14, textTransform: 'uppercase' }, 'GTA 6 News, Guides & Fakten'),
     div({ fontFamily: 'Barlow Condensed', fontWeight: 700, fontSize: 30, letterSpacing: 3, color: '#19e3c8', marginTop: 22, textTransform: 'uppercase' }, 'Schneller als die Cops'),
   ),
 );

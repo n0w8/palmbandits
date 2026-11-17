@@ -69,5 +69,9 @@ export function loadContent(useFixtures = false) {
       }
     }
   }
-  return { guides, news, cheats, roots };
+  let facts = [];
+  try {
+    facts = (JSON.parse(readFileSync(path.join(AUTOMATION_DIR, 'social', 'facts.json'), 'utf8')).facts ?? []).filter((f) => f.id && f.hook && f.fact && f.source?.url);
+  } catch { /* keine Fakten */ }
+  return { guides, news, cheats, facts, roots };
 }

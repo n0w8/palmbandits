@@ -1,16 +1,14 @@
 # Discord-Automatik ohne eigenen Bot-Server:
 #  - stuendlich: Badges OG (erste 1.000) und Day One, Guide-Helfer und Fahndungslevel-Sterne vergeben
-#  - taeglich 18:00 (Winterzeit DE/AT): Cheat des Tages in #cheats-und-tricks
 name: Discord
 
 on:
   schedule:
     - cron: '17 * * * *'   # Badges
-    - cron: '0 17 * * *'   # Cheat des Tages (17:00 UTC = 18:00 MEZ)
   workflow_dispatch:
     inputs:
       task:
-        description: 'badges oder cheat'
+        description: 'badges'
         default: 'badges'
 
 concurrency:
@@ -46,7 +44,7 @@ jobs:
         run: |
           TASK="${{ inputs.task }}"
           if [ -z "$TASK" ]; then
-            if [ "${{ github.event.schedule }}" = "0 17 * * *" ]; then TASK=cheat; else TASK=badges; fi
+            TASK=badges
           fi
           if [ "$TASK" = "badges" ] && [ -z "$DISCORD_BOT_TOKEN" ]; then echo "Kein DISCORD_BOT_TOKEN, uebersprungen."; exit 0; fi
           node discord/daily.mjs "$TASK"

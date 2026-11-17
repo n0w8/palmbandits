@@ -58,7 +58,6 @@ export function toEnPath(p, { guides = new Map(), news = new Map() } = {}) {
   if (p === '/news/') return '/en/news/';
   if ((m = p.match(/^\/news\/([a-z0-9-]+)\/$/))) return news.has(m[1]) ? `/en/news/${news.get(m[1])}/` : null;
   if ((m = p.match(/^\/spiele\/([a-z0-9-]+)\/$/))) return `/en/games/${m[1]}/`;
-  if (p === '/cheats/' || /^\/cheats\/[a-z0-9-]+\/$/.test(p)) return `/en${p}`;
   return null;
 }
 

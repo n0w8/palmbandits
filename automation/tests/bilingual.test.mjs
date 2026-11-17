@@ -59,7 +59,7 @@ const rawArticle = (over = {}) => ({
   en: {
     title: 'GTA 6 second patch arrives before launch — what changes', slug: 'gta-6-second-patch-before-launch',
     description: 'Rockstar is shipping a second GTA 6 patch before launch. Here are the confirmed facts and what the update means for you on day one.',
-    tags: ['GTA 6', 'Patch', 'Update'], body: `Rockstar confirmed a second update.\n\n## What we know\n\nSee [the hub](/spiele/gta-6/) and [cheats](/cheats/gta-5).\n\n${words(200, 'word')}`,
+    tags: ['GTA 6', 'Patch', 'Update'], body: `Rockstar confirmed a second update.\n\n## What we know\n\nSee [the hub](/spiele/gta-6/) and [money tips](/guides/kategorie/geld).\n\n${words(200, 'word')}`,
   },
   ...over,
 });
@@ -86,7 +86,7 @@ function fakeExec() {
 test('i18n: Pfade nach /en/ und Links im englischen Text', () => {
   const guides = new Map([['gta-6-launch-checkliste', 'gta-6-launch-checklist']]);
   assert.equal(toEnPath('/spiele/gta-6/'), '/en/games/gta-6/');
-  assert.equal(toEnPath('/cheats/gta-5/'), '/en/cheats/gta-5/');
+  assert.equal(toEnPath('/cheats/gta-5/'), null); // Cheat-Bereich gibt es nicht mehr
   assert.equal(toEnPath('/guides/kategorie/geld/'), '/en/guides/category/money/');
   assert.equal(toEnPath('/guides/kategorie/unbekannt/'), '/en/guides/');
   assert.equal(toEnPath('/guides/gta-6-launch-checkliste/', { guides }), '/en/guides/gta-6-launch-checklist/');
@@ -124,7 +124,7 @@ test('News gruen: ein Claude-Aufruf -> deutsche und englische Datei mit passende
     assert.ok(a.description.length >= 120 && a.description.length <= 160, `${a.lang} Beschreibung ${a.description.length}`);
   }
   assert.match(pair.en.body, /\[the hub\]\(\/en\/games\/gta-6\/\)/, 'interne Links zeigen auf /en/');
-  assert.match(pair.en.body, /\[cheats\]\(\/en\/cheats\/gta-5\/\)/);
+  assert.match(pair.en.body, /\[money tips\]\(\/en\/guides\/category\/money\/\)/);
 
   const file = writeArticleFiles(pair, story, { color: 'green', reason: 'test' }, NOW);
   assert.equal(file.slug, '2026-11-17-gta-6-zweites-update-vor-release');

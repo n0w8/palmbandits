@@ -6,20 +6,23 @@ import { DURATION, SLIDES, ffmpegArgs, hashtags, planReels } from '../social/ree
 
 const content = loadContent(true); // Testdaten in automation/fixtures
 
-test('Reel-Plan: Cheat, frische News und Guide, stabile IDs', () => {
+const FACTS = ['a', 'b', 'c'].map((id, i) => ({ id, game: i ? 'gta-5' : 'gta-san-andreas', hook: `Hook ${id}`, fact: `Fakt ${id}.`, source: { name: `Quelle ${id}`, url: `https://example.org/${id}` } }));
+
+test('Reel-Plan: zwei Fakten, frische News und Guide, stabile IDs, keine Cheats', () => {
   const date = new Date('2026-11-17T12:00:00Z');
-  const plans = planReels(content, date);
-  const kinds = plans.map((p) => p.kind);
-  assert.ok(kinds.includes('cheat'));
-  assert.ok(kinds.includes('guide'));
+  const plans = planReels(content, date, FACTS);
+  const slots = plans.map((p) => p.slot ?? p.kind);
+  assert.deepEqual(slots.filter((s) => s.startsWith('fact')), ['fact', 'fact2']);
+  assert.ok(slots.includes('guide'));
+  assert.equal(plans.some((p) => p.kind === 'cheat'), false);
   for (const p of plans) {
-    assert.match(p.id, /^2026-11-17-(cheat|news|guide)-/);
+    assert.match(p.id, /^2026-11-17-(fact|news|guide)-/);
     assert.ok(p.photo.endsWith('.jpg'));
     assert.ok(p.hook.title.length > 0);
     assert.ok(p.url.startsWith('http'));
   }
   // gleicher Tag = gleiche Plaene
-  assert.deepEqual(planReels(content, date).map((p) => p.id), plans.map((p) => p.id));
+  assert.deepEqual(planReels(content, date, FACTS).map((p) => p.id), plans.map((p) => p.id));
 });
 
 test('Alte News kommen nicht ins Reel', () => {
@@ -28,13 +31,14 @@ test('Alte News kommen nicht ins Reel', () => {
 });
 
 test('Captions: kein langer Strich, Link-Hinweis, hoechstens 10 Hashtags, unter 2200 Zeichen', () => {
-  for (const p of planReels(content, new Date('2026-11-17T12:00:00Z'))) {
+  for (const p of planReels(content, new Date('2026-11-17T12:00:00Z'), FACTS)) {
     assert.doesNotMatch(p.caption, /[–—]/);
+    assert.doesNotMatch(p.caption, /cheat/i);
     assert.match(p.caption, /Link in Bio/);
     assert.ok((p.caption.match(/#\w+/g) ?? []).length <= 10);
     assert.ok(p.caption.length < 2200);
   }
-  assert.match(hashtags('cheat', 'gta-5'), /#gtacheats/);
+  assert.match(hashtags('fact', 'gta-5'), /#gtafacts/);
 });
 
 test('Guide-Punkte ohne doppelte Nummern und ohne "Kurzfassung"', () => {
@@ -56,15 +60,15 @@ test('ffmpeg: drei Tafeln, Ton, richtige Laenge, Tafeln ueberlappen fuer Ueberbl
   assert.ok(silent.includes('anullsrc=r=44100:cl=stereo'));
 });
 
-test('Fakten-Reel: nur mit Quelle, der Reihe nach, Quelle in der Caption', () => {
-  const facts = [
-    { id: 'b', game: 'gta-5', hook: 'Rekord', fact: 'Ein belegter Fakt.', source: { name: 'Quelle B', url: 'https://example.org/b' } },
-    { id: 'a', game: 'gta-san-andreas', hook: 'Grove Street', fact: 'Noch ein Fakt.', source: { name: 'Quelle A', url: 'https://example.org/a' } },
-  ];
-  const d1 = planReels(content, new Date('2026-11-17T12:00:00Z'), facts).find((p) => p.kind === 'fact');
-  const d2 = planReels(content, new Date('2026-11-18T12:00:00Z'), facts).find((p) => p.kind === 'fact');
-  assert.notEqual(d1.id.split('-fact-')[1], d2.id.split('-fact-')[1]);
-  assert.match(d1.caption, /Quelle: Quelle [AB]/);
-  assert.match(d1.caption, /#gtafacts/);
+test('Fakten-Reel: zwei verschiedene pro Tag, der Reihe nach, Quelle in der Caption', () => {
+  const day = (d) => planReels(content, new Date(d), FACTS).filter((p) => p.kind === 'fact').map((p) => p.id.split('-fact-')[1]);
+  const d1 = day('2026-11-17T12:00:00Z');
+  const d2 = day('2026-11-18T12:00:00Z');
+  assert.equal(d1.length, 2);
+  assert.notEqual(d1[0], d1[1]);
+  assert.notDeepEqual(d1, d2);
+  const f = planReels(content, new Date('2026-11-17T12:00:00Z'), FACTS).find((p) => p.kind === 'fact');
+  assert.match(f.caption, /Quelle: Quelle [abc]/);
+  assert.match(f.caption, /#gtafacts/);
   assert.equal(planReels(content, new Date('2026-11-17T12:00:00Z'), []).some((p) => p.kind === 'fact'), false);
 });

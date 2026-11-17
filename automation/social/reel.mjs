@@ -1,4 +1,4 @@
-// Reels / Shorts / TikToks (9:16, 1080 x 1920, ca. 13 s) aus Cheats, News und Guides der Seite.
+// Reels / Shorts / TikToks (9:16, 1080 x 1920, ca. 13 s) aus GTA-Fakten, News und Guides der Seite.
 // Hintergrund: eigenes KI-Foto aus src/assets/pool mit langsamer Kamerafahrt. Text-Tafeln im Look der Website
 // (gleiche Bausteine wie die Pinterest-Pins). Ton: Mikes eigener Song (public/audio/song.mp3), keine Fremdmusik.
 // Keine Rockstar-Logos, keine offiziellen Bilder.
@@ -8,9 +8,8 @@ import path from 'node:path';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import { AUTOMATION_DIR, BRAND, ROOT_DIR, noLongDashes, siteUrl, truncate } from '../lib/util.mjs';
-import { pickCheat } from '../lib/cheat-of-day.mjs';
 import { GAME_NAMES, GAME_TAGS } from '../pinterest/content.mjs';
-import { C, SUNSET, SUNSET_V, buttonIcon, chip, div, fitText, fonts, gradientBar, parseSequence, stars } from '../pinterest/render.mjs';
+import { C, SUNSET, SUNSET_V, chip, div, fitText, fonts, gradientBar, stars } from '../pinterest/render.mjs';
 
 export const RW = 1080;
 export const RH = 1920;
@@ -25,17 +24,12 @@ const INNER = RW - PADX * 2;
 export const SLIDES = { hook: [0, 3.1], body: [2.9, 9.7], cta: [9.5, DURATION] };
 
 const PHOTOS = {
-  cheat: ['17-crt-retro', '20-controller', '19-glitch-city', '08-cash'],
-  vehicle: ['12-garage', '14-retro-80s', '13-desert-highway', '15-90s-street'],
   news: ['23-launch-night', '01-neon-avenue', '00-sunset-skyline', '06-heli-searchlight', '05-police-chase', '07-marina'],
   fact: ['16-grey-city', '18-ufo-mountain', '22-radio-studio', '11-nightclub', '10-vault', '09-heist-crew'],
   guide: ['21-map-pins', '13-desert-highway', '02-overseas-bridge', '03-swamp-gator', '04-beach-sunset', '15-90s-street'],
 };
 const BASE_TAGS = ['gta', 'gaming', 'gamer', 'palmbandits'];
-const VEHICLE = /spawn|fahrzeug|auto|wagen|panzer|jet|heli|flugzeug|motorrad|bike|boot|car|comet|limo/i;
-// Kurze, vollstaendige Anleitung statt abgeschnittener Langtexte
-const HOW = { pc: 'Im Spiel einfach eintippen, ohne Enter.', phone: 'Handy raus, Nummer wählen, anrufen.' };
-const KIND_TAGS = { cheat: ['gtacheats', 'cheats'], news: ['gtanews', 'gamingnews'], guide: ['gtatipps', 'gtaguide'], fact: ['gtafacts', 'gamingfacts'] };
+const KIND_TAGS = { news: ['gtanews', 'gamingnews'], guide: ['gtatipps', 'gtaguide'], fact: ['gtafacts', 'gamingfacts'] };
 
 const dayNo = (date) => Math.floor(date.getTime() / 86_400_000);
 const isoDay = (date) => date.toISOString().slice(0, 10);
@@ -59,37 +53,6 @@ const toDate = (v) => (v instanceof Date ? v : new Date(v));
 const GENERIC_POINT = /^(die |das )?(kurzfassung|kurz gesagt|überblick|ueberblick|fazit|einleitung|zusammenfassung|faq|häufige fragen.*)$/i;
 
 // ---------- Plaene: was kommt heute ----------
-function cheatPlan(c, date) {
-  const game = gameName(c.game);
-  const lines = [
-    c.pc && `PC: ${c.pc}`,
-    c.playstation && `PlayStation: ${c.playstation}`,
-    c.xbox && `Xbox: ${c.xbox}`,
-    c.phone && `Handy: ${c.phone}`,
-  ].filter(Boolean);
-  const caption = [
-    `🧾 Cheat des Tages: ${c.effect} (${game})`,
-    '',
-    ...lines,
-    c.note ? `\nAchtung: ${c.note}` : null,
-    '',
-    `Alle ${game} Cheats mit Kopier-Button: Link in Bio 👉 ${domain()}`,
-    'Cheats nur im Story-Modus. Spielstand vorher sichern.',
-    '',
-    hashtags('cheat', c.game),
-  ].filter((x) => x !== null).join('\n');
-  return {
-    id: `${isoDay(date)}-cheat-${c.game}-${c.id}`,
-    kind: 'cheat',
-    photo: photoFor(VEHICLE.test(c.effect) ? 'vehicle' : 'cheat', dayNo(date)),
-    hook: { label: `Cheat des Tages · ${game}`, title: c.effect, kicker: 'Kanntest du den schon?' },
-    body: { code: c.pc ?? null, phone: c.phone ?? null, playstation: c.playstation, xbox: c.xbox, note: c.note, howTo: c.pc ? HOW.pc : c.phone ? HOW.phone : null },
-    cta: { line: `Alle ${game} Cheats mit Kopier-Button` },
-    url: `${siteUrl()}/cheats/${c.game}/#${c.id}`,
-    caption: noLongDashes(caption),
-  };
-}
-
 function newsPlan(n, date) {
   const d = n.data;
   const game = gameName(d.game);
@@ -152,7 +115,7 @@ export function loadFacts(file = path.join(AUTOMATION_DIR, 'social', 'facts.json
   } catch { return []; }
 }
 
-function factPlan(f, date) {
+function factPlan(f, date, slot = 'fact') {
   const game = gameName(f.game);
   const caption = [
     `🤯 ${f.hook}`,
@@ -161,35 +124,36 @@ function factPlan(f, date) {
     '',
     `Quelle: ${f.source.name}`,
     '',
-    `Mehr GTA-Wissen, Guides und Cheats: Link in Bio 👉 ${domain()}`,
+    `Mehr GTA-Wissen, Guides und News: Link in Bio 👉 ${domain()}`,
     '',
     hashtags('fact', f.game),
   ].join('\n');
   return {
     id: `${isoDay(date)}-fact-${f.id}`,
     kind: 'fact',
-    photo: photoFor('fact', dayNo(date)),
+    slot,
+    photo: photoFor('fact', dayNo(date) * 2 + (slot === 'fact' ? 0 : 1)),
     hook: { label: `GTA-Fakt · ${game}`, title: f.hook, kicker: 'Wusstest du das?' },
     body: { text: f.fact, source: f.source.name },
-    cta: { line: 'Mehr GTA-Wissen, Guides und Cheats' },
+    cta: { line: 'Mehr GTA-Wissen, Guides und News' },
     url: `${siteUrl()}/`,
     caption: noLongDashes(caption),
   };
 }
 
-// Pro Tag: Cheat des Tages, neueste News (nur wenn juenger als 36 Stunden), ein Guide im Wechsel
+// Pro Tag: zwei GTA-Fakten (11:30 und 13:30), neueste News (nur wenn juenger als 36 Stunden), ein Guide im Wechsel
 export function planReels(content, date = new Date(), facts = []) {
   const plans = [];
-  const cheat = pickCheat(content.cheats, date);
-  if (cheat) plans.push(cheatPlan(cheat, date));
+  const day = dayNo(date);
+  // Fakten der Reihe nach, zwei pro Tag: jeder kommt dran, bevor sich einer wiederholt
+  if (facts.length) plans.push(factPlan(facts[(day * 2) % facts.length], date, 'fact'));
+  if (facts.length > 1) plans.push(factPlan(facts[(day * 2 + 1) % facts.length], date, 'fact2'));
   const fresh = content.news
     .filter((n) => n.data.pubDate && date - toDate(n.data.pubDate) < 36 * 3600_000 && date - toDate(n.data.pubDate) >= 0)
     .sort((a, b) => toDate(b.data.pubDate) - toDate(a.data.pubDate));
   if (fresh[0]) plans.push(newsPlan(fresh[0], date));
   const guides = [...content.guides].sort((a, b) => a.slug.localeCompare(b.slug));
-  if (guides.length) plans.push(guidePlan(guides[dayNo(date) % guides.length], date));
-  // Fakten der Reihe nach: jeder kommt dran, bevor sich einer wiederholt
-  if (facts.length) plans.push(factPlan(facts[dayNo(date) % facts.length], date));
+  if (guides.length) plans.push(guidePlan(guides[day % guides.length], date));
   return plans;
 }
 
@@ -205,17 +169,6 @@ async function bigTitle(text, { maxLines = 4, max = 150, min = 64, gradient = tr
   return div({ fontFamily: 'Anton', fontSize: size, lineHeight: 1.1, letterSpacing: 0.5, flexDirection: 'column' }, lines.map((l) => div(lineStyle, l)));
 }
 
-function keys(seq, platform) {
-  const tokens = parseSequence(seq, platform).slice(0, 16);
-  const size = tokens.length > 10 ? 58 : 66;
-  return div({ flexWrap: 'wrap', gap: 12, width: PANEL_W },
-    tokens.map((t) => div({
-      height: size, minWidth: size, padding: '0 14px', borderRadius: 14, alignItems: 'center', justifyContent: 'center',
-      border: '2px solid rgba(244,241,250,0.22)', background: 'rgba(244,241,250,0.08)',
-      fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 34, color: C.text,
-    }, t.icon ? buttonIcon(t.icon, 34) : t.text)));
-}
-
 async function hookSlide(p) {
   return frame(panel({ gap: 0 },
     div({ flexWrap: 'wrap', gap: 12 }, chip(p.hook.label, { size: 36 })),
@@ -223,28 +176,6 @@ async function hookSlide(p) {
     div({ marginTop: 30, alignItems: 'center', justifyContent: 'space-between', width: PANEL_W },
       div({ fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 40, letterSpacing: 2, color: C.yellow }, p.hook.kicker.toUpperCase()),
       stars(5, 44, 6))));
-}
-
-async function cheatBody(p) {
-  const b = p.body;
-  const parts = [];
-  // Ohne PC-Code (z. B. GTA IV) kommt die Handynummer gross in den Code-Kasten
-  const main = b.code ?? b.phone;
-  const mainLabel = b.code ? 'PC-CODE' : 'HANDY-NUMMER';
-  if (main) {
-    const fit = await fitText(String(main).toUpperCase(), { maxLines: 1, max: 140, min: 40, step: 2, maxWidth: PANEL_W - 70, spacing: 4 });
-    parts.push(div({ flexDirection: 'column', gap: 6 }, label(mainLabel),
-      div({ padding: 5, borderRadius: 26, backgroundImage: SUNSET, width: PANEL_W },
-        div({ width: PANEL_W - 10, borderRadius: 22, background: '#100d18', padding: '14px 30px' },
-          div({ fontFamily: 'Anton', fontSize: fit.size, letterSpacing: 4, backgroundImage: SUNSET, backgroundClip: 'text', color: 'transparent' }, fit.lines[0])))));
-  }
-  if (b.playstation) parts.push(div({ flexDirection: 'column', gap: 10 }, label('PLAYSTATION'), keys(b.playstation, 'playstation')));
-  if (b.xbox && parts.length < 3) parts.push(div({ flexDirection: 'column', gap: 10 }, label('XBOX'), keys(b.xbox, 'xbox')));
-  if (b.phone && b.code && parts.length < 3) parts.push(div({ alignItems: 'center', gap: 18 }, label('HANDY'), div({ fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 50, color: C.teal }, b.phone)));
-  if (b.note) parts.push(div({ fontFamily: 'Barlow', fontWeight: 700, fontSize: 36, lineHeight: 1.3, color: C.yellow }, truncate(`Achtung: ${b.note}`, 80)));
-  parts.unshift(div({ fontFamily: 'Anton', fontSize: 64, lineHeight: 1.1, color: C.text }, truncate(p.hook.title.toUpperCase(), 34)));
-  if (b.howTo) parts.push(div({ fontFamily: 'Barlow', fontWeight: 600, fontSize: 38, lineHeight: 1.3, color: 'rgba(244,241,250,0.9)' }, `So geht's: ${b.howTo}`));
-  return frame(panel({ gap: 30 }, ...parts));
 }
 
 async function newsBody(p) {
@@ -281,7 +212,7 @@ async function factBody(p) {
     div({ marginTop: 30, fontFamily: 'Barlow Condensed', fontWeight: 700, fontSize: 32, letterSpacing: 1, color: C.muted }, truncate(`Quelle: ${p.body.source}`, 60))));
 }
 
-const BODIES = { cheat: cheatBody, news: newsBody, guide: guideBody, fact: factBody };
+const BODIES = { news: newsBody, guide: guideBody, fact: factBody };
 
 async function png(el) {
   const svg = await satori(el, { width: RW, height: RH, fonts: fonts() });
