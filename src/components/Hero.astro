@@ -207,7 +207,8 @@ const released = Date.now() >= releaseDate.getTime();
   .palm--b { animation-duration: 5.5s; animation-delay: -2s; }
   .palm--c { animation-duration: 8s; animation-delay: -4s; }
   @keyframes sway { from { rotate: -1.6deg; } to { rotate: 1.8deg; } }
-  .heli__fly { animation: heli 34s linear infinite; }
+  /* startet schon im Bild (negative Verzoegerung), damit man ihn beim Laden sofort sieht */
+  .heli__fly { animation: heli 26s linear -9s infinite; }
   /* tiefer als frueher (y 90-140 lag auf breiten Bildschirmen ausserhalb des Ausschnitts): fliegt jetzt auf Hoehe der Sonnenoberkante */
   @keyframes heli {
     0% { transform: translate(1760px, 268px) scale(1.25); }
