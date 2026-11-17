@@ -1,0 +1,25 @@
+# Palm Bandits auf easyname (Apache). HTTPS-Weiterleitung kommt aus dem easyname-Panel ("HTTP auf HTTPS weiterleiten").
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # www.palmbandits.com -> palmbandits.com (eine Adresse fuer Google)
+  RewriteCond %{HTTP_HOST} ^www\.palmbandits\.com$ [NC]
+  RewriteRule ^ https://palmbandits.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Dateien mit Hash im Namen aendern sich nie: 1 Jahr Cache
+  <If "%{REQUEST_URI} =~ m#^/_astro/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType application/rss+xml .xml
+</IfModule>

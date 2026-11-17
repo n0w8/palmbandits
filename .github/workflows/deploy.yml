@@ -1,0 +1,69 @@
+# Website bauen und per FTPS auf den easyname-Webspace laden (Ordner /palmbandits/, Domain palmbandits.com).
+# Laeuft bei Aenderungen an der Seite, nach jedem Lauf von News-Bot und Guide-Radar (deren Commits loesen
+# keinen push-Trigger aus) und einmal taeglich (News-Sitemap, Countdown). Laedt nur geaenderte Dateien hoch.
+# Braucht: Secret FTP_PASSWORD, Variablen FTP_SERVER und FTP_USERNAME (optional FTP_DIR, FTP_PROTOCOL).
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'public/**', 'astro.config.mjs', 'package.json', 'package-lock.json', '.github/workflows/deploy.yml']
+  workflow_run:
+    workflows: ['News-Bot', 'Guide-Radar']
+    types: [completed]
+  schedule:
+    - cron: '5 0 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Zugang vorhanden?
+        id: check
+        env:
+          PW: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$PW" ] || [ -z "${{ vars.FTP_SERVER }}" ] || [ -z "${{ vars.FTP_USERNAME }}" ]; then
+            echo "FTP-Zugang fehlt (Secret FTP_PASSWORD, Variablen FTP_SERVER/FTP_USERNAME), uebersprungen."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v5
+        if: steps.check.outputs.ok == 'true'
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        if: steps.check.outputs.ok == 'true'
+        with:
+          node-version: 24
+          cache: npm
+      - name: Seite bauen
+        if: steps.check.outputs.ok == 'true'
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+          test -f dist/index.html && test -f dist/.htaccess
+      - name: Per FTPS hochladen (nur Aenderungen)
+        if: steps.check.outputs.ok == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ vars.FTP_SERVER }}
+          username: ${{ vars.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_DIR || '/palmbandits/' }}
+          state-name: .ftp-deploy-sync-state.json
+          log-level: minimal

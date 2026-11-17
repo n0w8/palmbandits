@@ -30,7 +30,7 @@ export const NEWSLETTER_ACTION = '';
 export const CONTACT_EMAIL = 'office@fuchsmedia.at';
 
 // Hosting fuer die Datenschutzerklaerung: 'cloudflare' | 'github'
-export const HOSTING: 'cloudflare' | 'github' = 'cloudflare';
+export const HOSTING: 'easyname' | 'cloudflare' | 'github' = 'easyname';
 
 // Merch-Shop bei Spreadshirt (Spreadshop). Leer = "öffnet in Kürze".
 export const MERCH = {
