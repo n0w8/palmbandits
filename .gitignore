@@ -19,3 +19,6 @@ automation/discord/.secrets.json
 
 # Interne Vorlagen (z. B. Streamer-Anschreiben), nicht ins oeffentliche Repo
 marketing/
+
+# Nordwald-Entwuerfe (unveroeffentlicht)
+merch/nordwald/
