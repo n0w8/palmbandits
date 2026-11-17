@@ -3,11 +3,11 @@
 // (gleiche Bausteine wie die Pinterest-Pins). Ton: Mikes eigener Song (public/audio/song.mp3), keine Fremdmusik.
 // Keine Rockstar-Logos, keine offiziellen Bilder.
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
-import { BRAND, ROOT_DIR, noLongDashes, siteUrl, truncate } from '../lib/util.mjs';
+import { AUTOMATION_DIR, BRAND, ROOT_DIR, noLongDashes, siteUrl, truncate } from '../lib/util.mjs';
 import { pickCheat } from '../lib/cheat-of-day.mjs';
 import { GAME_NAMES, GAME_TAGS } from '../pinterest/content.mjs';
 import { C, SUNSET, SUNSET_V, buttonIcon, chip, div, fitText, fonts, gradientBar, parseSequence, stars } from '../pinterest/render.mjs';
@@ -28,13 +28,14 @@ const PHOTOS = {
   cheat: ['17-crt-retro', '20-controller', '19-glitch-city', '08-cash'],
   vehicle: ['12-garage', '14-retro-80s', '13-desert-highway', '15-90s-street'],
   news: ['23-launch-night', '01-neon-avenue', '00-sunset-skyline', '06-heli-searchlight', '05-police-chase', '07-marina'],
+  fact: ['16-grey-city', '18-ufo-mountain', '22-radio-studio', '11-nightclub', '10-vault', '09-heist-crew'],
   guide: ['21-map-pins', '13-desert-highway', '02-overseas-bridge', '03-swamp-gator', '04-beach-sunset', '15-90s-street'],
 };
 const BASE_TAGS = ['gta', 'gaming', 'gamer', 'palmbandits'];
 const VEHICLE = /spawn|fahrzeug|auto|wagen|panzer|jet|heli|flugzeug|motorrad|bike|boot|car|comet|limo/i;
 // Kurze, vollstaendige Anleitung statt abgeschnittener Langtexte
 const HOW = { pc: 'Im Spiel einfach eintippen, ohne Enter.', phone: 'Handy raus, Nummer wählen, anrufen.' };
-const KIND_TAGS = { cheat: ['gtacheats', 'cheats'], news: ['gtanews', 'gamingnews'], guide: ['gtatipps', 'gtaguide'] };
+const KIND_TAGS = { cheat: ['gtacheats', 'cheats'], news: ['gtanews', 'gamingnews'], guide: ['gtatipps', 'gtaguide'], fact: ['gtafacts', 'gamingfacts'] };
 
 const dayNo = (date) => Math.floor(date.getTime() / 86_400_000);
 const isoDay = (date) => date.toISOString().slice(0, 10);
@@ -143,8 +144,41 @@ function guidePlan(g, date) {
   };
 }
 
+// Belegte GTA-Fakten (social/facts.json, jeder mit Quelle). Fehlt die Datei, gibt es keine Fakten-Reels.
+export function loadFacts(file = path.join(AUTOMATION_DIR, 'social', 'facts.json')) {
+  try {
+    const j = JSON.parse(readFileSync(file, 'utf8'));
+    return (j.facts ?? []).filter((f) => f.id && f.hook && f.fact && f.source?.url).sort((a, b) => a.id.localeCompare(b.id));
+  } catch { return []; }
+}
+
+function factPlan(f, date) {
+  const game = gameName(f.game);
+  const caption = [
+    `🤯 ${f.hook}`,
+    '',
+    f.fact,
+    '',
+    `Quelle: ${f.source.name}`,
+    '',
+    `Mehr GTA-Wissen, Guides und Cheats: Link in Bio 👉 ${domain()}`,
+    '',
+    hashtags('fact', f.game),
+  ].join('\n');
+  return {
+    id: `${isoDay(date)}-fact-${f.id}`,
+    kind: 'fact',
+    photo: photoFor('fact', dayNo(date)),
+    hook: { label: `GTA-Fakt · ${game}`, title: f.hook, kicker: 'Wusstest du das?' },
+    body: { text: f.fact, source: f.source.name },
+    cta: { line: 'Mehr GTA-Wissen, Guides und Cheats' },
+    url: `${siteUrl()}/`,
+    caption: noLongDashes(caption),
+  };
+}
+
 // Pro Tag: Cheat des Tages, neueste News (nur wenn juenger als 36 Stunden), ein Guide im Wechsel
-export function planReels(content, date = new Date()) {
+export function planReels(content, date = new Date(), facts = []) {
   const plans = [];
   const cheat = pickCheat(content.cheats, date);
   if (cheat) plans.push(cheatPlan(cheat, date));
@@ -154,6 +188,8 @@ export function planReels(content, date = new Date()) {
   if (fresh[0]) plans.push(newsPlan(fresh[0], date));
   const guides = [...content.guides].sort((a, b) => a.slug.localeCompare(b.slug));
   if (guides.length) plans.push(guidePlan(guides[dayNo(date) % guides.length], date));
+  // Fakten der Reihe nach: jeder kommt dran, bevor sich einer wiederholt
+  if (facts.length) plans.push(factPlan(facts[dayNo(date) % facts.length], date));
   return plans;
 }
 
@@ -237,7 +273,15 @@ async function ctaSlide(p) {
     div({ marginTop: 26, fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 38, letterSpacing: 3, color: C.teal }, 'LINK IN BIO · DISCORD-CREW BEITRETEN')));
 }
 
-const BODIES = { cheat: cheatBody, news: newsBody, guide: guideBody };
+async function factBody(p) {
+  return frame(panel({ gap: 0 },
+    label('FAKT'),
+    div({ marginTop: 22 }, gradientBar(260)),
+    div({ marginTop: 30, fontFamily: 'Barlow', fontWeight: 600, fontSize: 52, lineHeight: 1.3, color: C.text, width: PANEL_W }, truncate(p.body.text, 200)),
+    div({ marginTop: 30, fontFamily: 'Barlow Condensed', fontWeight: 700, fontSize: 32, letterSpacing: 1, color: C.muted }, truncate(`Quelle: ${p.body.source}`, 60))));
+}
+
+const BODIES = { cheat: cheatBody, news: newsBody, guide: guideBody, fact: factBody };
 
 async function png(el) {
   const svg = await satori(el, { width: RW, height: RH, fonts: fonts() });

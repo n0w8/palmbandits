@@ -1,17 +1,18 @@
-# Reels fuer Instagram (und als Download fuer TikTok/YouTube Shorts), 3x am Tag:
-#  - 11:30 Cheat des Tages, 16:00 neueste News (nur wenn frisch), 19:30 Guide (Winterzeit DE/AT)
+# Reels fuer Instagram (und als Download fuer TikTok/YouTube Shorts), 4x am Tag:
+#  - 11:30 Cheat des Tages, 13:30 GTA-Fakt, 16:00 neueste News (nur wenn frisch), 19:30 Guide (Winterzeit DE/AT)
 # Ohne IG_USER_ID/IG_ACCESS_TOKEN werden die Reels nur gebaut und als Download (Artefakt) bereitgestellt.
 name: Social Reels
 
 on:
   schedule:
     - cron: '30 10 * * *'   # Cheat
+    - cron: '30 12 * * *'   # Fakt
     - cron: '0 15 * * *'    # News
     - cron: '30 18 * * *'   # Guide
   workflow_dispatch:
     inputs:
       kind:
-        description: 'cheat, news oder guide (leer = alle)'
+        description: 'cheat, fact, news oder guide (leer = alle)'
         default: ''
       post:
         description: 'Auf Instagram posten'
@@ -54,6 +55,7 @@ jobs:
           if [ -z "$KIND" ] && [ "${{ github.event_name }}" = "schedule" ]; then
             case "${{ github.event.schedule }}" in
               "30 10 * * *") KIND=cheat ;;
+              "30 12 * * *") KIND=fact ;;
               "0 15 * * *") KIND=news ;;
               *) KIND=guide ;;
             esac

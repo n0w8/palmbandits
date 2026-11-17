@@ -55,3 +55,16 @@ test('ffmpeg: drei Tafeln, Ton, richtige Laenge, Tafeln ueberlappen fuer Ueberbl
   const silent = ffmpegArgs({ photo: 'bg.jpg', slides: { hook: 'h', body: 'b', cta: 'c' }, audio: null, out: 'o.mp4' });
   assert.ok(silent.includes('anullsrc=r=44100:cl=stereo'));
 });
+
+test('Fakten-Reel: nur mit Quelle, der Reihe nach, Quelle in der Caption', () => {
+  const facts = [
+    { id: 'b', game: 'gta-5', hook: 'Rekord', fact: 'Ein belegter Fakt.', source: { name: 'Quelle B', url: 'https://example.org/b' } },
+    { id: 'a', game: 'gta-san-andreas', hook: 'Grove Street', fact: 'Noch ein Fakt.', source: { name: 'Quelle A', url: 'https://example.org/a' } },
+  ];
+  const d1 = planReels(content, new Date('2026-11-17T12:00:00Z'), facts).find((p) => p.kind === 'fact');
+  const d2 = planReels(content, new Date('2026-11-18T12:00:00Z'), facts).find((p) => p.kind === 'fact');
+  assert.notEqual(d1.id.split('-fact-')[1], d2.id.split('-fact-')[1]);
+  assert.match(d1.caption, /Quelle: Quelle [AB]/);
+  assert.match(d1.caption, /#gtafacts/);
+  assert.equal(planReels(content, new Date('2026-11-17T12:00:00Z'), []).some((p) => p.kind === 'fact'), false);
+});
