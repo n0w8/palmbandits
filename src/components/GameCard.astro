@@ -1,0 +1,74 @@
+---
+import Icon from './Icon.astro';
+import { gameL, type Game } from '../data/games';
+import { langFromUrl, useT, href } from '../i18n';
+interface Props { game: Game; count?: number; delay?: number; big?: boolean }
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const { count = 0, delay = 0, big = false } = Astro.props;
+const g = gameL(Astro.props.game, lang);
+---
+<a
+  href={href(lang, `/spiele/${g.slug}/`)}
+  class:list={['card gamecard', { 'gamecard--big': big }]}
+  data-reveal
+  data-tilt
+  style={`--d:${delay}s;--g-from:${g.from};--g-to:${g.to}`}
+>
+  <span class="gamecard__bg" aria-hidden="true"></span>
+  <span class="gamecard__num display" aria-hidden="true">{g.numeral}</span>
+  <span class="gamecard__year cond">{g.year}{g.slug === 'gta-6' ? ` · ${t.card.isNew}` : ''}</span>
+  <span class="gamecard__body">
+    <span class="gamecard__name display">{g.name}</span>
+    <span class="gamecard__tag">{g.tagline}</span>
+    <span class="gamecard__foot cond">
+      {count > 0 ? `${count} ${t.card.posts}` : t.card.hub} <Icon name="arrow" size={16} />
+    </span>
+  </span>
+</a>
+
+<style>
+  .gamecard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 300px;
+    padding: 22px;
+    overflow: hidden;
+    transition: transform 0.25s ease-out, border-color 0.3s;
+  }
+  .gamecard--big { min-height: 420px; }
+  .gamecard__bg {
+    position: absolute; inset: 0; z-index: -2;
+    background:
+      linear-gradient(180deg, transparent 20%, rgba(7, 6, 11, 0.95) 85%),
+      linear-gradient(135deg, var(--g-from), var(--g-to));
+    opacity: 0.32;
+    transition: opacity 0.4s;
+  }
+  .gamecard:hover .gamecard__bg { opacity: 0.55; }
+  .gamecard__num {
+    position: absolute;
+    top: -0.08em;
+    right: -0.04em;
+    z-index: -1;
+    font-size: clamp(9rem, 14vw, 13rem);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.28);
+    transition: transform 0.6s var(--ease), -webkit-text-stroke-color 0.4s;
+  }
+  .gamecard--big .gamecard__num { font-size: clamp(12rem, 20vw, 19rem); }
+  .gamecard:hover .gamecard__num { transform: translate(-10px, 8px) scale(1.04); -webkit-text-stroke-color: rgba(255, 255, 255, 0.6); }
+  .gamecard__year {
+    position: absolute; top: 20px; left: 22px;
+    font-size: 0.8rem; color: #fff;
+    padding: 4px 8px; background: rgba(0, 0, 0, 0.45);
+  }
+  .gamecard__body { display: flex; flex-direction: column; gap: 8px; }
+  .gamecard__name { font-size: 2.3rem; }
+  .gamecard--big .gamecard__name { font-size: clamp(2.6rem, 5vw, 4rem); }
+  .gamecard__tag { color: #d8d1e3; font-size: 0.97rem; line-height: 1.4; max-width: 34ch; }
+  .gamecard__foot { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; margin-top: 6px; color: var(--g-from); transition: gap 0.2s; }
+  .gamecard:hover .gamecard__foot { gap: 14px; }
+</style>

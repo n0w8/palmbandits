@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+import { langFromUrl, useT } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+---
+<div class="srch" data-search hidden transition:persist="search" data-index={lang === 'en' ? '/en/search.json' : '/search.json'} data-none={t.search.none} data-other={t.search.other}>
+  <div class="srch__backdrop" data-search-close></div>
+  <div class="srch__box" role="dialog" aria-modal="true" aria-label={t.search.label}>
+    <div class="field srch__field">
+      <Icon name="search" />
+      <input data-search-input type="search" placeholder={t.search.placeholder} autocomplete="off" />
+      <button class="srch__esc cond" data-search-close>Esc</button>
+    </div>
+    <div class="srch__results" data-search-results>
+      <p class="srch__hint muted">{t.search.hint}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .srch { position: fixed; inset: 0; z-index: 95; display: grid; justify-items: center; align-items: start; padding: 10vh 16px 16px; }
+  .srch[hidden] { display: none; }
+  .srch__backdrop { position: absolute; inset: 0; background: rgba(4, 3, 7, 0.75); backdrop-filter: blur(6px); }
+  .srch__box {
+    position: relative;
+    width: min(680px, 100%);
+    background: #110e16;
+    border: 1px solid var(--line2);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 45, 135, 0.15);
+    animation: srch-in 0.25s var(--ease);
+  }
+  @keyframes srch-in { from { opacity: 0; transform: translateY(-10px) scale(0.98); } }
+  .srch__field { border: 0; border-bottom: 1px solid var(--line2); background: transparent; }
+  .srch__field input { font-size: 1.15rem; padding: 18px 0; }
+  .srch__esc { font-size: 0.75rem; color: var(--dim); border: 1px solid var(--line2); padding: 3px 8px; }
+  .srch__results { max-height: 60vh; overflow-y: auto; padding: 8px; }
+  .srch__hint { padding: 14px; margin: 0; font-size: 0.95rem; }
+  .srch__results :global(a) {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+  }
+  .srch__results :global(a:hover), .srch__results :global(a.is-sel) { background: rgba(255, 255, 255, 0.05); border-color: var(--line); }
+  .srch__results :global(.sr-type) {
+    flex: none; width: 64px;
+    font-family: var(--f-cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem;
+    color: var(--pink);
+  }
+  .srch__results :global(.sr-main) { display: flex; flex-direction: column; min-width: 0; }
+  .srch__results :global(.sr-main b) { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .srch__results :global(.sr-main small) { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .srch__results :global(code) { color: var(--teal); font-family: ui-monospace, Consolas, monospace; }
+</style>

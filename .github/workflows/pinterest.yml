@@ -1,0 +1,133 @@
+# Palm Bandits Pinterest-Bot: stuendlich von ca. 06 bis 23 Uhr deutscher Zeit einen Pin posten (Ziel ~20 pro Tag).
+# Alternativ (manuell starten, Modus "csv"): CSV fuer morgen bauen, die man in Pinterest oder Tailwind importiert.
+name: Pinterest-Bot
+
+on:
+  schedule:
+    # Cron laeuft in UTC: 05:07 bis 22:07 UTC = 06:07 bis 23:07 Uhr im Winter (MEZ).
+    # Im Sommer (MESZ) eine Stunde spaeter; der Bot postet nur zwischen 06 und 23 Uhr deutscher Zeit.
+    - cron: '7 5-22 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'post = per API posten, csv = CSV fuer Pinterest/Tailwind bauen, dry = Probelauf'
+        type: choice
+        options: [post, csv, dry]
+        default: post
+      csv_date:
+        description: 'Nur fuer csv: Tag (YYYY-MM-DD), leer = morgen'
+        type: string
+        default: ''
+
+concurrency:
+  group: pinterest
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  pins:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL || 'https://palmbandits.com' }}
+      PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+      PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+      PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+      PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+      PINTEREST_API_BASE: ${{ vars.PINTEREST_API_BASE || 'https://api.pinterest.com/v5' }}
+      PINS_PER_RUN: ${{ vars.PINS_PER_RUN || '1' }}
+      PINS_PER_DAY: ${{ vars.PINS_PER_DAY || '20' }}
+      MODE: ${{ inputs.mode || 'post' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation
+        run: npm ci --no-audit --no-fund
+
+      - name: Warteschlange aus den aktuellen Inhalten bauen
+        working-directory: automation
+        run: node pinterest/generate.mjs
+
+      - name: Pins posten
+        if: ${{ env.MODE == 'post' || env.MODE == 'dry' }}
+        id: post
+        working-directory: automation
+        run: node pinterest/post.mjs ${{ env.MODE == 'dry' && '--dry-run' || '' }}
+
+      # Optional: Wurde das Pinterest-Token erneuert, die GitHub-Secrets automatisch aktualisieren.
+      # Braucht das Secret GH_SECRETS_TOKEN (Fine-grained Token nur fuer dieses Repo, Recht "Secrets: Read and write").
+      - name: Erneuerte Pinterest-Tokens speichern
+        if: ${{ steps.post.outputs.token_refreshed == 'true' }}
+        env:
+          GH_SECRETS_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
+        run: |
+          if [ -z "$GH_SECRETS_TOKEN" ]; then
+            echo "::warning::Pinterest-Token wurde erneuert, aber GH_SECRETS_TOKEN fehlt. Bitte Secrets spaetestens alle 50 Tage von Hand erneuern (siehe README)."
+            exit 0
+          fi
+          export GH_TOKEN="$GH_SECRETS_TOKEN"
+          [ -f "$RUNNER_TEMP/pinterest-access-token" ] && gh secret set PINTEREST_ACCESS_TOKEN < "$RUNNER_TEMP/pinterest-access-token"
+          [ -f "$RUNNER_TEMP/pinterest-refresh-token" ] && gh secret set PINTEREST_REFRESH_TOKEN < "$RUNNER_TEMP/pinterest-refresh-token"
+          rm -f "$RUNNER_TEMP"/pinterest-*-token
+
+      - name: CSV fuer Pinterest/Tailwind bauen
+        if: ${{ env.MODE == 'csv' }}
+        id: csv
+        working-directory: automation
+        run: node pinterest/export-csv.mjs ${{ inputs.csv_date != '' && format('--date {0}', inputs.csv_date) || '' }}
+
+      # Pinterest holt die Bilder beim CSV-Import von einer oeffentlichen Adresse. Dafuer liegen sie auf dem
+      # Branch "pin-media" (nur die letzten 7 Tage, Verlauf wird jedes Mal ersetzt). Klappt nur bei oeffentlichem Repo.
+      - name: Bilder fuer die CSV auf Branch pin-media legen
+        if: ${{ env.MODE == 'csv' && steps.csv.outputs.date != '' }}
+        run: |
+          DATE="${{ steps.csv.outputs.date }}"
+          REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          rm -rf /tmp/pm && mkdir -p /tmp/pm
+          if git ls-remote --exit-code --heads origin pin-media >/dev/null 2>&1; then
+            git clone --quiet --depth 1 --branch pin-media "$REMOTE" /tmp/pm
+            rm -rf /tmp/pm/.git
+          fi
+          CUTOFF=$(date -u -d '7 days ago' +%F)
+          for d in /tmp/pm/20*; do [ -d "$d" ] && [ "$(basename "$d")" \< "$CUTOFF" ] && rm -rf "$d"; done
+          mkdir -p "/tmp/pm/$DATE"
+          cp automation/pinterest/export/"$DATE"/*.png "/tmp/pm/$DATE/"
+          cd /tmp/pm
+          git init -q -b pin-media
+          git add -A
+          git -c user.name="pinterest-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Pin-Bilder bis $DATE"
+          git push -q -f "$REMOTE" pin-media
+
+      - name: CSV zum Herunterladen bereitstellen
+        if: ${{ env.MODE == 'csv' && steps.csv.outputs.date != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinterest-csv-${{ steps.csv.outputs.date }}
+          path: automation/pinterest/export/${{ steps.csv.outputs.date }}/*.csv
+          retention-days: 14
+
+      - name: Warteschlange und Post-Log committen
+        if: ${{ env.MODE != 'dry' }}
+        run: |
+          git config user.name "pinterest-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/data/pin-queue.json automation/data/pins-posted.json
+          if git diff --cached --quiet; then echo "Nichts zu committen."; exit 0; fi
+          git commit -m "pinterest-bot: Warteschlange und Post-Log"
+          for i in 1 2 3; do
+            if git push origin "HEAD:${{ github.ref_name }}"; then exit 0; fi
+            git pull --rebase origin "${{ github.ref_name }}" || { git rebase --abort; exit 1; }
+          done
+          exit 1

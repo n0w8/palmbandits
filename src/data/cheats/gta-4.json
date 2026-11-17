@@ -1,0 +1,145 @@
+{
+  "game": "gta-4",
+  "updated": "2026-11-17",
+  "howTo": {
+    "phone": "Handy rausholen (Konsole: Steuerkreuz nach oben, PC: Pfeiltaste nach oben), Nummer eintippen und anrufen. Einmal gewählte Cheats landen im Handy-Menü \"Cheats\". Die Cheats funktionieren auch in den Episodes from Liberty City."
+  },
+  "howTo_en": {
+    "phone": "Take out your phone (console: D-pad up, PC: up arrow key), dial the number and call. Every cheat you have dialed once is saved in the phone's \"Cheats\" menu. The cheats also work in Episodes from Liberty City."
+  },
+  "cheats": [
+    {
+      "id": "gesundheit-ruestung-munition",
+      "effect": "Gesundheit, Rüstung und Munition auffüllen",
+      "effect_en": "Restore health, armor and ammo",
+      "category": "spieler",
+      "phone": "482-555-0100",
+      "note": "Sperrt einige Erfolge und Trophäen für den aktuellen Spielstand.",
+      "note_en": "Disables some achievements and trophies for the current save."
+    },
+    {
+      "id": "ruestung",
+      "effect": "Rüstung auffüllen",
+      "effect_en": "Restore armor",
+      "category": "spieler",
+      "phone": "362-555-0100",
+      "note": "Sperrt einige Erfolge und Trophäen für den aktuellen Spielstand.",
+      "note_en": "Disables some achievements and trophies for the current save."
+    },
+    {
+      "id": "waffenpaket-1",
+      "effect": "Waffenpaket 1 mit voller Munition (u. a. Baseballschläger, Granaten, Raketenwerfer)",
+      "effect_en": "Weapons pack 1 with full ammo (incl. baseball bat, grenades, rocket launcher)",
+      "category": "waffen",
+      "phone": "486-555-0100",
+      "note": "Sperrt einige Erfolge und Trophäen für den aktuellen Spielstand.",
+      "note_en": "Disables some achievements and trophies for the current save."
+    },
+    {
+      "id": "waffenpaket-2",
+      "effect": "Waffenpaket 2 mit voller Munition (u. a. Messer, Molotowcocktails, Raketenwerfer)",
+      "effect_en": "Weapons pack 2 with full ammo (incl. knife, Molotov cocktails, rocket launcher)",
+      "category": "waffen",
+      "phone": "486-555-0150",
+      "note": "Sperrt einige Erfolge und Trophäen für den aktuellen Spielstand.",
+      "note_en": "Disables some achievements and trophies for the current save."
+    },
+    {
+      "id": "fahndung-loeschen",
+      "effect": "Fahndungslevel löschen",
+      "effect_en": "Clear wanted level",
+      "category": "wanted",
+      "phone": "267-555-0100",
+      "note": "Sperrt einige Erfolge und Trophäen für den aktuellen Spielstand.",
+      "note_en": "Disables some achievements and trophies for the current save."
+    },
+    {
+      "id": "fahndung-erhoehen",
+      "effect": "Fahndungslevel um einen Stern erhöhen",
+      "effect_en": "Raise wanted level by one star",
+      "category": "wanted",
+      "phone": "267-555-0150"
+    },
+    {
+      "id": "annihilator",
+      "effect": "Annihilator (Kampfhubschrauber) spawnen",
+      "effect_en": "Spawn Annihilator (attack helicopter)",
+      "category": "fahrzeuge",
+      "phone": "359-555-0100",
+      "note": "Sperrt einige Erfolge und Trophäen für den aktuellen Spielstand.",
+      "note_en": "Disables some achievements and trophies for the current save."
+    },
+    {
+      "id": "jetmax",
+      "effect": "Jetmax (Speedboot) spawnen",
+      "effect_en": "Spawn Jetmax (speedboat)",
+      "category": "fahrzeuge",
+      "phone": "938-555-0100"
+    },
+    {
+      "id": "nrg-900",
+      "effect": "NRG 900 (Sportmotorrad) spawnen",
+      "effect_en": "Spawn NRG 900 (sport bike)",
+      "category": "fahrzeuge",
+      "phone": "625-555-0100"
+    },
+    {
+      "id": "sanchez",
+      "effect": "Sanchez (Crossmaschine) spawnen",
+      "effect_en": "Spawn Sanchez (dirt bike)",
+      "category": "fahrzeuge",
+      "phone": "625-555-0150"
+    },
+    {
+      "id": "fib-buffalo",
+      "effect": "FIB Buffalo spawnen",
+      "effect_en": "Spawn FIB Buffalo",
+      "category": "fahrzeuge",
+      "phone": "227-555-0100"
+    },
+    {
+      "id": "comet",
+      "effect": "Comet spawnen",
+      "effect_en": "Spawn Comet",
+      "category": "fahrzeuge",
+      "phone": "227-555-0175"
+    },
+    {
+      "id": "cognoscenti",
+      "effect": "Cognoscenti spawnen",
+      "effect_en": "Spawn Cognoscenti",
+      "category": "fahrzeuge",
+      "phone": "227-555-0142"
+    },
+    {
+      "id": "turismo",
+      "effect": "Turismo spawnen",
+      "effect_en": "Spawn Turismo",
+      "category": "fahrzeuge",
+      "phone": "227-555-0147"
+    },
+    {
+      "id": "supergt",
+      "effect": "SuperGT spawnen",
+      "effect_en": "Spawn SuperGT",
+      "category": "fahrzeuge",
+      "phone": "227-555-0168"
+    },
+    {
+      "id": "wetter-wechseln",
+      "effect": "Wetter wechseln",
+      "effect_en": "Change weather",
+      "category": "welt",
+      "phone": "468-555-0100"
+    },
+    {
+      "id": "song-erkennen",
+      "effect": "Laufenden Radiosong erkennen (ZiT)",
+      "effect_en": "Identify the song playing on the radio (ZiT)",
+      "category": "spass",
+      "phone": "948-555-0100",
+      "note": "Kein Cheat im engeren Sinn, sperrt nichts.",
+      "note_en": "Not a cheat in the strict sense, it does not disable anything."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+import GameCard from '../../components/GameCard.astro';
+import { GAMES } from '../../data/games';
+import { getNews, getGuides } from '../../lib/utils';
+import { langFromUrl, useT, href } from '../../i18n';
+
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const h = (p: string) => href(lang, p);
+const en = lang === 'en';
+const news = await getNews(lang);
+const guides = await getGuides(lang);
+const count = (s: string) => news.filter((n) => n.data.game === s).length + guides.filter((g) => g.data.game === s).length;
+
+// Alle Hauptteile und Ableger in Erscheinungsreihenfolge
+const TIMELINE = [
+  { y: 1997, n: 'Grand Theft Auto', s: 'Liberty City, Vice City, San Andreas (Top-down)', e: 'Liberty City, Vice City, San Andreas (top-down)' },
+  { y: 1999, n: 'GTA: London 1969', s: 'Erweiterung im London der 60er', e: 'Expansion set in 1960s London' },
+  { y: 1999, n: 'GTA 2', s: 'Anywhere City (Top-down)', e: 'Anywhere City (top-down)' },
+  { y: 2001, n: 'GTA III', s: 'Der Sprung in 3D', e: 'The leap into 3D', slug: 'gta-3' },
+  { y: 2002, n: 'GTA Vice City', s: 'Vice City, 1986', e: 'Vice City, 1986', slug: 'gta-vice-city' },
+  { y: 2004, n: 'GTA Advance', s: 'Game Boy Advance', e: 'Game Boy Advance' },
+  { y: 2004, n: 'GTA San Andreas', s: 'Los Santos, San Fierro, Las Venturas', e: 'Los Santos, San Fierro, Las Venturas', slug: 'gta-san-andreas' },
+  { y: 2005, n: 'GTA Liberty City Stories', s: 'PSP, später PS2', e: 'PSP, later PS2' },
+  { y: 2006, n: 'GTA Vice City Stories', s: 'PSP, später PS2', e: 'PSP, later PS2' },
+  { y: 2008, n: 'GTA IV', s: 'Liberty City, HD-Ära', e: 'Liberty City, the HD era', slug: 'gta-4' },
+  { y: 2009, n: 'The Lost and Damned & The Ballad of Gay Tony', s: 'Episoden aus Liberty City', e: 'Episodes from Liberty City' },
+  { y: 2009, n: 'GTA Chinatown Wars', s: 'Nintendo DS, später PSP & Mobile', e: 'Nintendo DS, later PSP & mobile' },
+  { y: 2013, n: 'GTA V', s: 'Los Santos & Blaine County', e: 'Los Santos & Blaine County', slug: 'gta-5' },
+  { y: 2013, n: 'GTA Online', s: 'Der Online-Modus, der nie aufgehört hat', e: 'The online mode that never stopped', slug: 'gta-online' },
+  { y: 2021, n: 'GTA Trilogy: Definitive Edition', s: 'Remaster von III, Vice City & San Andreas', e: 'Remaster of III, Vice City & San Andreas' },
+  { y: 2026, n: 'GTA VI', s: 'Leonida & Vice City', e: 'Leonida & Vice City', slug: 'gta-6' },
+];
+const L = en
+  ? { list: 'Every GTA game in order', title: 'Every GTA Game in Release Order (1997 to 2026)', desc: 'Every GTA game in order: from Grand Theft Auto in 1997 through San Andreas and GTA 5 to GTA 6 on November 19, 2026. With hubs, cheats and guides for each game.',
+      games: 'Games', h1a: 'Every', h1b: 'game', lead: 'Every GTA has its own hub with news, guides and cheats. Below: the complete order since 1997.', tl: 'Timeline', h2a: 'GTA games in', h2b: 'order' }
+  : { list: 'Alle GTA Teile in Reihenfolge', title: 'Alle GTA Teile in der richtigen Reihenfolge (1997 bis 2026)', desc: 'Alle GTA Teile in der Reihenfolge: von Grand Theft Auto 1997 über San Andreas und GTA 5 bis GTA 6 am 19.11.2026. Mit Hubs, Cheats und Guides zu jedem Spiel.',
+      games: 'Spiele', h1a: 'Alle', h1b: 'Teile', lead: 'Jedes GTA hat seinen eigenen Hub mit News, Guides und Cheats. Darunter: die komplette Reihenfolge seit 1997.', tl: 'Zeitstrahl', h2a: 'GTA Teile in', h2b: 'Reihenfolge' };
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: L.list,
+    itemListElement: TIMELINE.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: `${t.n} (${t.y})` })),
+  },
+];
+---
+<Base title={L.title} description={L.desc} jsonLd={jsonLd}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">GTA</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={h('/')}>{t.article.home}</a><span aria-hidden="true">/</span><span>{L.games}</span></nav>
+    <h1 class="page-hero__title display">{L.h1a} <span class="grad-text">{L.h1b}</span></h1>
+    <p class="page-hero__lead">{L.lead}</p>
+  </section>
+
+  <section class="wrap grid-games">
+    {GAMES.map((g, i) => <GameCard game={g} count={count(g.slug)} delay={(i % 4) * 0.05} big={i === 0} />)}
+  </section>
+
+  <section class="section wrap" aria-labelledby="tl-h">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>{en ? '1997 to 2026' : '1997 bis 2026'}</b> / {L.tl}</p>
+        <h2 id="tl-h" class="sec-head__title display">{L.h2a} <span class="grad-text">{L.h2b}</span></h2>
+      </div>
+    </div>
+    <ol class="tl">
+      {TIMELINE.map((t, i) => (
+        <li data-reveal style={`--d:${(i % 4) * 0.04}s`} class:list={{ 'is-hub': !!t.slug }}>
+          <span class="tl__y display">{t.y}</span>
+          <span class="tl__dot" aria-hidden="true"></span>
+          <span class="tl__body">
+            {t.slug ? <a href={h(`/spiele/${t.slug}/`)}><b>{t.n}</b></a> : <b>{t.n}</b>}
+            <small>{en ? t.e : t.s}</small>
+          </span>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Base>
+
+<style>
+  .grid-games { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .grid-games :global(.gamecard--big) { grid-column: span 2; grid-row: span 2; }
+  .tl { list-style: none; margin: 0; padding: 0; position: relative; }
+  .tl::before { content: ''; position: absolute; left: 131px; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--yellow), var(--pink), var(--violet)); opacity: 0.5; }
+  .tl li { display: grid; grid-template-columns: 110px 44px 1fr; align-items: center; padding: 12px 0; }
+  .tl__y { font-size: 2rem; color: var(--dim); text-align: right; }
+  .tl__dot { width: 14px; height: 14px; margin-left: 15px; background: var(--bg); border: 2px solid var(--line2); transform: rotate(45deg); position: relative; z-index: 1; }
+  .is-hub .tl__dot { background: var(--pink); border-color: var(--pink); box-shadow: 0 0 16px var(--pink); }
+  .is-hub .tl__y { color: var(--text); }
+  .tl__body { display: flex; flex-direction: column; }
+  .tl__body b { font-family: var(--f-cond); font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.02em; }
+  .tl__body a b { text-decoration: underline; text-decoration-color: var(--pink); text-underline-offset: 4px; }
+  .tl__body small { color: var(--muted); font-size: 0.95rem; }
+  @media (max-width: 1000px) { .grid-games { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) {
+    .grid-games { gap: 10px; }
+    .grid-games :global(.gamecard) { min-height: 200px; padding: 16px; }
+    .grid-games :global(.gamecard--big) { grid-row: auto; }
+    .grid-games :global(.gamecard__tag) { display: none; }
+    .grid-games :global(.gamecard__name) { font-size: 1.6rem; }
+    .tl::before { left: 83px; }
+    .tl li { grid-template-columns: 64px 40px 1fr; }
+    .tl__y { font-size: 1.35rem; }
+    .tl__dot { margin-left: 13px; }
+    .tl__body b { font-size: 1.1rem; }
+  }
+</style>

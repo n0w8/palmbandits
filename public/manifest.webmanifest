@@ -1,0 +1,13 @@
+{
+  "name": "Palm Bandits: GTA News, Guides & Cheats",
+  "short_name": "Palm Bandits",
+  "description": "Die deutsche GTA-Community: News, Guides, Cheats.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07060b",
+  "theme_color": "#07060b",
+  "lang": "de",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,16 @@
+---
+import { langFromUrl, useT } from '../i18n';
+interface Props { value: number; label?: string }
+const t = useT(langFromUrl(Astro.url));
+const { value, label = t.card.hype } = Astro.props;
+---
+<span class="stars" title={`${label}: ${value} ${t.card.of} 5`} aria-label={`${label}: ${value} ${t.card.of} 5`}>
+  {[1, 2, 3, 4, 5].map((i) => (
+    <svg viewBox="0 0 24 24" class:list={{ on: i <= value }}><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" /></svg>
+  ))}
+</span>
+<style>
+  .stars { display: inline-flex; gap: 2px; vertical-align: middle; }
+  .stars svg { width: 12px; height: 12px; fill: rgba(255, 255, 255, 0.15); }
+  .stars svg.on { fill: #fff; filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5)); }
+</style>

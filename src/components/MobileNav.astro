@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const path = Astro.url.pathname;
+const home = href(lang, '/');
+const TABS = [
+  { href: home, label: t.nav.home, icon: 'home' },
+  { href: href(lang, '/news/'), label: t.nav.news, icon: 'news' },
+  { href: href(lang, '/guides/'), label: t.nav.guides, icon: 'guide' },
+  { href: href(lang, '/cheats/'), label: t.nav.cheats, icon: 'code' },
+  { href: href(lang, '/radio/'), label: t.nav.radio, icon: 'radio' },
+];
+const active = (h: string) => (h === home ? path === home : path.startsWith(h));
+---
+<nav class="tabbar" aria-label={t.nav.quick}>
+  {TABS.map((t) => (
+    <a href={t.href} class:list={{ 'is-active': active(t.href) }} aria-current={active(t.href) ? 'page' : undefined}>
+      <Icon name={t.icon} size={22} />
+      <span>{t.label}</span>
+    </a>
+  ))}
+</nav>
+
+<style>
+  .tabbar { display: none; }
+  @media (max-width: 860px) {
+    .tabbar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 60;
+      height: calc(var(--tabbar-h) + env(safe-area-inset-bottom));
+      padding-bottom: env(safe-area-inset-bottom);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      background: rgba(10, 8, 14, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--line);
+    }
+    .tabbar a {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+      font-family: var(--f-cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      font-size: 0.72rem;
+      color: var(--dim);
+      position: relative;
+      transition: color 0.2s;
+    }
+    .tabbar a.is-active { color: var(--text); }
+    .tabbar a.is-active::before {
+      content: '';
+      position: absolute; top: 0; left: 28%; right: 28%; height: 3px;
+      background: var(--sunset);
+    }
+    .tabbar a.is-active :global(svg) { color: var(--pink); }
+  }
+</style>

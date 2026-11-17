@@ -1,0 +1,766 @@
+{
+  "game": "gta-san-andreas",
+  "updated": "2026-11-17",
+  "howTo": {
+    "pc": "Code einfach während des Spiels eintippen, ein Eingabefeld gibt es nicht. Eine Meldung bestätigt den Cheat. Vor dem Cheaten separat speichern: Manche Cheats lassen sich nicht abschalten, in der Definitive Edition sperren Cheats außerdem Erfolge für den Spielstand.",
+    "playstation": "Die Tastenkombinationen für PlayStation folgen in Kürze.",
+    "xbox": "Die Tastenkombinationen für Xbox folgen in Kürze."
+  },
+  "howTo_en": {
+    "pc": "Simply type the code during gameplay, there is no input box. A message confirms the cheat. Make a separate save before cheating: some cheats cannot be turned off, and in the Definitive Edition cheats also disable achievements for that save.",
+    "playstation": "PlayStation button combinations are coming soon.",
+    "xbox": "Xbox button combinations are coming soon."
+  },
+  "cheats": [
+    {
+      "id": "gesundheit-ruestung-geld",
+      "effect": "Gesundheit, Rüstung und 250.000 $, repariert dein Fahrzeug",
+      "effect_en": "Health, armor and $250,000, also repairs your vehicle",
+      "category": "spieler",
+      "pc": "HESOYAM",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: INEEDSOMEHELP",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: INEEDSOMEHELP"
+    },
+    {
+      "id": "unendliche-gesundheit",
+      "effect": "Unendliche Gesundheit (schützt nicht vor jeder Schadensart)",
+      "effect_en": "Infinite health (does not protect against every type of damage)",
+      "category": "spieler",
+      "pc": "BAGUVIX",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: NOONECANHURTME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: NOONECANHURTME"
+    },
+    {
+      "id": "unendlich-luft",
+      "effect": "Unendlich Luft unter Wasser",
+      "effect_en": "Infinite oxygen underwater",
+      "category": "spieler",
+      "pc": "CVWKXAM",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: MANFROMATLANTIS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: MANFROMATLANTIS"
+    },
+    {
+      "id": "nie-hungrig",
+      "effect": "Nie wieder Hunger",
+      "effect_en": "Never get hungry",
+      "category": "spieler",
+      "pc": "AEDUWNV",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: IAMNEVERHUNGRY",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: IAMNEVERHUNGRY"
+    },
+    {
+      "id": "maximales-fett",
+      "effect": "Maximales Fett",
+      "effect_en": "Max fat",
+      "category": "spieler",
+      "pc": "BTCDBCB",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: WHOATEALLTHEPIES",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: WHOATEALLTHEPIES"
+    },
+    {
+      "id": "maximale-muskeln",
+      "effect": "Maximale Muskeln",
+      "effect_en": "Max muscle",
+      "category": "spieler",
+      "pc": "JYSDSOD",
+      "note": "Alternativ: BUFFMEUP",
+      "note_en": "Alternative code: BUFFMEUP"
+    },
+    {
+      "id": "minimal-fett-muskeln",
+      "effect": "Minimales Fett und minimale Muskeln",
+      "effect_en": "Minimum fat and muscle",
+      "category": "spieler",
+      "pc": "KVGYZQK",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: LEANANDMEAN",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: LEANANDMEAN"
+    },
+    {
+      "id": "maximaler-respekt",
+      "effect": "Maximaler Respekt",
+      "effect_en": "Max respect",
+      "category": "spieler",
+      "pc": "OGXSDAG",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: WORSHIPME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: WORSHIPME"
+    },
+    {
+      "id": "maximaler-sexappeal",
+      "effect": "Maximaler Sexappeal",
+      "effect_en": "Max sex appeal",
+      "category": "spieler",
+      "pc": "EHIBXQS",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: HELLOLADIES",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: HELLOLADIES"
+    },
+    {
+      "id": "maximale-ausdauer",
+      "effect": "Maximale Ausdauer",
+      "effect_en": "Max stamina",
+      "category": "spieler",
+      "pc": "VKYPQCF",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ICANGOALLNIGHT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ICANGOALLNIGHT"
+    },
+    {
+      "id": "maximale-fahrzeug-skills",
+      "effect": "Maximale Fahrzeug-Skills",
+      "effect_en": "Max vehicle skills",
+      "category": "spieler",
+      "pc": "VQIMAHA",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: NATURALTALENT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: NATURALTALENT"
+    },
+    {
+      "id": "supersprung",
+      "effect": "Supersprung",
+      "effect_en": "Mega jump",
+      "category": "spieler",
+      "pc": "LFGMHAL",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: KANGAROO",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: KANGAROO"
+    },
+    {
+      "id": "superschlag",
+      "effect": "Superschlag",
+      "effect_en": "Super punch",
+      "category": "spieler",
+      "pc": "IAVENJQ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: STINGLIKEABEE",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: STINGLIKEABEE"
+    },
+    {
+      "id": "adrenalin",
+      "effect": "Adrenalin-Modus",
+      "effect_en": "Adrenaline mode",
+      "category": "spieler",
+      "pc": "MUNASEF",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TAKEACHILLPILL",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TAKEACHILLPILL"
+    },
+    {
+      "id": "waffenset-1",
+      "effect": "Waffenset 1 (einfache Waffen)",
+      "effect_en": "Weapon set 1 (basic weapons)",
+      "category": "waffen",
+      "pc": "LXGIWYL",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: THUGSARMOURY",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: THUGSARMOURY"
+    },
+    {
+      "id": "waffenset-2",
+      "effect": "Waffenset 2 (Profi-Waffen)",
+      "effect_en": "Weapon set 2 (professional weapons)",
+      "category": "waffen",
+      "pc": "KJKSZPJ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: PROFESSIONALSKIT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: PROFESSIONALSKIT"
+    },
+    {
+      "id": "waffenset-3",
+      "effect": "Waffenset 3 (schwere Waffen)",
+      "effect_en": "Weapon set 3 (heavy weapons)",
+      "category": "waffen",
+      "pc": "UZUMYMW",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: NUTTERSTOYS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: NUTTERSTOYS"
+    },
+    {
+      "id": "unendlich-munition",
+      "effect": "Unendlich Munition, kein Nachladen",
+      "effect_en": "Infinite ammo, no reload",
+      "category": "waffen",
+      "pc": "WANRLTW",
+      "note": "Alternativ: FULLCLIP",
+      "note_en": "Alternative code: FULLCLIP"
+    },
+    {
+      "id": "hitman-alle-waffen",
+      "effect": "Hitman-Stufe für alle Waffen",
+      "effect_en": "Hitman level for all weapons",
+      "category": "waffen",
+      "pc": "NCSGDAG",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: PROFESSIONALKILLER",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: PROFESSIONALKILLER"
+    },
+    {
+      "id": "zielen-im-fahrzeug",
+      "effect": "Freies Zielen aus dem Fahrzeug",
+      "effect_en": "Full weapon aiming while driving",
+      "category": "waffen",
+      "pc": "OUIQDMW",
+      "note": "Funktioniert nicht in der Definitive Edition.",
+      "note_en": "Does not work in the Definitive Edition."
+    },
+    {
+      "id": "fahndung-plus-zwei",
+      "effect": "Fahndungslevel um zwei Sterne erhöhen",
+      "effect_en": "Raise wanted level by two stars",
+      "category": "wanted",
+      "pc": "OSRBLHH",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TURNUPTHEHEAT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TURNUPTHEHEAT"
+    },
+    {
+      "id": "fahndung-loeschen",
+      "effect": "Fahndungslevel löschen",
+      "effect_en": "Clear wanted level",
+      "category": "wanted",
+      "pc": "ASNAEB",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TURNDOWNTHEHEAT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TURNDOWNTHEHEAT"
+    },
+    {
+      "id": "sechs-sterne",
+      "effect": "Sechs Fahndungssterne",
+      "effect_en": "Six-star wanted level",
+      "category": "wanted",
+      "pc": "LJSPQK",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: BRINGITON",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: BRINGITON"
+    },
+    {
+      "id": "fahndung-einfrieren",
+      "effect": "Fahndungslevel einfrieren (ohne Sterne aktiviert: nie mehr gesucht)",
+      "effect_en": "Lock wanted level (activated with no stars: never wanted)",
+      "category": "wanted",
+      "pc": "AEZAKMI",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: IDOASIPLEASE",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: IDOASIPLEASE"
+    },
+    {
+      "id": "jetpack",
+      "effect": "Jetpack",
+      "effect_en": "Spawn jetpack",
+      "category": "fahrzeuge",
+      "pc": "YECGAA",
+      "note": "Alternativ: ROCKETMAN",
+      "note_en": "Alternative code: ROCKETMAN"
+    },
+    {
+      "id": "fallschirm",
+      "effect": "Fallschirm",
+      "effect_en": "Spawn parachute",
+      "category": "fahrzeuge",
+      "pc": "AIYPWZQP",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: LETSGOBASEJUMPING",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: LETSGOBASEJUMPING"
+    },
+    {
+      "id": "rhino",
+      "effect": "Rhino (Panzer) spawnen",
+      "effect_en": "Spawn Rhino tank",
+      "category": "fahrzeuge",
+      "pc": "AIWPRTON",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TIMETOKICKASS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TIMETOKICKASS"
+    },
+    {
+      "id": "hunter",
+      "effect": "Hunter (Kampfhubschrauber) spawnen",
+      "effect_en": "Spawn Hunter (attack helicopter)",
+      "category": "fahrzeuge",
+      "pc": "OHDUDE"
+    },
+    {
+      "id": "hydra",
+      "effect": "Hydra (Senkrechtstarter-Jet) spawnen",
+      "effect_en": "Spawn Hydra (VTOL jet)",
+      "category": "fahrzeuge",
+      "pc": "JUMPJET"
+    },
+    {
+      "id": "monster-truck",
+      "effect": "Monster Truck spawnen",
+      "effect_en": "Spawn Monster Truck",
+      "category": "fahrzeuge",
+      "pc": "AGBDLCID",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: MONSTERMASH",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: MONSTERMASH"
+    },
+    {
+      "id": "quad",
+      "effect": "Quad spawnen",
+      "effect_en": "Spawn Quad",
+      "category": "fahrzeuge",
+      "pc": "AKJJYGLC",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: FOURWHEELFUN",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: FOURWHEELFUN"
+    },
+    {
+      "id": "vortex",
+      "effect": "Vortex (Luftkissenboot) spawnen",
+      "effect_en": "Spawn Vortex (hovercraft)",
+      "category": "fahrzeuge",
+      "pc": "KGGGDKP",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: IWANTTOHOVER",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: IWANTTOHOVER"
+    },
+    {
+      "id": "bloodring-banger",
+      "effect": "Bloodring Banger spawnen",
+      "effect_en": "Spawn Bloodring Banger",
+      "category": "fahrzeuge",
+      "pc": "CQZIJMB",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: OLDSPEEDDEMON",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: OLDSPEEDDEMON"
+    },
+    {
+      "id": "hotring-racer-a",
+      "effect": "Hotring Racer spawnen",
+      "effect_en": "Spawn Hotring Racer",
+      "category": "fahrzeuge",
+      "pc": "PDNEJOH",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: VROCKPOKEY",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: VROCKPOKEY"
+    },
+    {
+      "id": "hotring-racer-b",
+      "effect": "Hotring Racer (zweite Variante) spawnen",
+      "effect_en": "Spawn Hotring Racer (second variant)",
+      "category": "fahrzeuge",
+      "pc": "VPJTQWV",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: JUSTTRYANDSTOPME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: JUSTTRYANDSTOPME"
+    },
+    {
+      "id": "rancher",
+      "effect": "Rancher spawnen",
+      "effect_en": "Spawn Rancher",
+      "category": "fahrzeuge",
+      "pc": "JQNTDMH",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: DOUGHNUTHANDICAP",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: DOUGHNUTHANDICAP"
+    },
+    {
+      "id": "romero",
+      "effect": "Romero (Leichenwagen) spawnen",
+      "effect_en": "Spawn Romero (hearse)",
+      "category": "fahrzeuge",
+      "pc": "AQTBCODX",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: WHERESTHEFUNERAL",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: WHERESTHEFUNERAL"
+    },
+    {
+      "id": "stretch",
+      "effect": "Stretch-Limousine spawnen",
+      "effect_en": "Spawn Stretch limo",
+      "category": "fahrzeuge",
+      "pc": "KRIJEBR",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: CELEBRITYSTATUS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: CELEBRITYSTATUS"
+    },
+    {
+      "id": "trashmaster",
+      "effect": "Müllwagen (Trashmaster) spawnen",
+      "effect_en": "Spawn Trashmaster (garbage truck)",
+      "category": "fahrzeuge",
+      "pc": "UBHYZHQ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TRUEGRIME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TRUEGRIME"
+    },
+    {
+      "id": "caddy",
+      "effect": "Caddy (Golfwagen) spawnen",
+      "effect_en": "Spawn Caddy (golf cart)",
+      "category": "fahrzeuge",
+      "pc": "RZHSUEW",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: 18HOLES",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: 18HOLES"
+    },
+    {
+      "id": "stuntflugzeug",
+      "effect": "Stuntflugzeug spawnen",
+      "effect_en": "Spawn stunt plane",
+      "category": "fahrzeuge",
+      "pc": "URKQSRK",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: FLYINGTOSTUNT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: FLYINGTOSTUNT"
+    },
+    {
+      "id": "dozer",
+      "effect": "Dozer (Planierraupe) spawnen",
+      "effect_en": "Spawn Dozer (bulldozer)",
+      "category": "fahrzeuge",
+      "pc": "EEGCYXT",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ITSALLBULL",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ITSALLBULL"
+    },
+    {
+      "id": "tanklaster",
+      "effect": "Tanklaster mit Anhänger spawnen",
+      "effect_en": "Spawn tanker truck with trailer",
+      "category": "fahrzeuge",
+      "pc": "AMOMHRER",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: HITTHEROADJACK",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: HITTHEROADJACK"
+    },
+    {
+      "id": "alle-fahrzeuge-explodieren",
+      "effect": "Alle Fahrzeuge in der Nähe explodieren",
+      "effect_en": "Blow up all nearby vehicles",
+      "category": "fahrzeuge",
+      "pc": "CPKTNWT",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ALLCARSGOBOOM",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ALLCARSGOBOOM"
+    },
+    {
+      "id": "bessere-handhabung",
+      "effect": "Bessere Fahrzeug-Handhabung",
+      "effect_en": "Better vehicle handling",
+      "category": "fahrzeuge",
+      "pc": "PGGOMOY",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: STICKLIKEGLUE",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: STICKLIKEGLUE"
+    },
+    {
+      "id": "fliegende-autos",
+      "effect": "Fliegende Autos",
+      "effect_en": "Flying cars",
+      "category": "fahrzeuge",
+      "pc": "RIPAZHA",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: CHITTYCHITTYBANGBANG",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: CHITTYCHITTYBANGBANG"
+    },
+    {
+      "id": "fliegende-boote",
+      "effect": "Fliegende Boote",
+      "effect_en": "Flying boats",
+      "category": "fahrzeuge",
+      "pc": "AFSNMSMW",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: FLYINGFISH",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: FLYINGFISH"
+    },
+    {
+      "id": "nitro-alle-autos",
+      "effect": "Alle Autos haben Nitro",
+      "effect_en": "All cars have nitro",
+      "category": "fahrzeuge",
+      "pc": "COXEFGU",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SPEEDFREAK",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SPEEDFREAK"
+    },
+    {
+      "id": "autos-fliegen-weg",
+      "effect": "Autos fliegen bei Berührung davon",
+      "effect_en": "Cars float away when hit",
+      "category": "fahrzeuge",
+      "pc": "BSXSGGC",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: BUBBLECARS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: BUBBLECARS"
+    },
+    {
+      "id": "zerstoerer-auto",
+      "effect": "Dein Fahrzeug zerstört andere bei Berührung",
+      "effect_en": "Your vehicle destroys others on contact",
+      "category": "fahrzeuge",
+      "pc": "JCNRUAD",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TOUCHMYCARYOUDIE",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TOUCHMYCARYOUDIE"
+    },
+    {
+      "id": "mega-bunny-hop",
+      "effect": "Riesige Sprünge mit dem Fahrrad",
+      "effect_en": "Mega bunny hop on bicycles",
+      "category": "fahrzeuge",
+      "pc": "JHJOECW",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: CJPHONEHOME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: CJPHONEHOME"
+    },
+    {
+      "id": "unsichtbare-autos",
+      "effect": "Unsichtbare Autos (nur Räder sichtbar)",
+      "effect_en": "Invisible cars (only the wheels are visible)",
+      "category": "fahrzeuge",
+      "pc": "XICWMD",
+      "note": "Funktioniert nicht in der Definitive Edition.",
+      "note_en": "Does not work in the Definitive Edition."
+    },
+    {
+      "id": "gruene-ampeln",
+      "effect": "Alle Ampeln grün",
+      "effect_en": "All traffic lights green",
+      "category": "welt",
+      "pc": "ZEIIVG",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: DONTTRYANDSTOPME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: DONTTRYANDSTOPME"
+    },
+    {
+      "id": "aggressive-fahrer",
+      "effect": "Aggressive Fahrer",
+      "effect_en": "Aggressive drivers",
+      "category": "welt",
+      "pc": "YLTEICZ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ALLDRIVERSARECRIMINALS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ALLDRIVERSARECRIMINALS"
+    },
+    {
+      "id": "pinker-verkehr",
+      "effect": "Pinker Verkehr",
+      "effect_en": "Pink traffic",
+      "category": "welt",
+      "pc": "LLQPFBN",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: PINKISTHENEWCOOL",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: PINKISTHENEWCOOL"
+    },
+    {
+      "id": "schwarzer-verkehr",
+      "effect": "Schwarzer Verkehr",
+      "effect_en": "Black traffic",
+      "category": "welt",
+      "pc": "IOWDLAC",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SOLONGASITSBLACK",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SOLONGASITSBLACK"
+    },
+    {
+      "id": "weniger-verkehr",
+      "effect": "Weniger Verkehr und Passanten",
+      "effect_en": "Less traffic and fewer pedestrians",
+      "category": "welt",
+      "pc": "THGLOJ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: GHOSTTOWN",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: GHOSTTOWN"
+    },
+    {
+      "id": "sonnig",
+      "effect": "Sonniges Wetter",
+      "effect_en": "Sunny weather",
+      "category": "welt",
+      "pc": "AFZLLQLL"
+    },
+    {
+      "id": "sehr-sonnig",
+      "effect": "Sehr sonniges Wetter",
+      "effect_en": "Very sunny weather",
+      "category": "welt",
+      "pc": "ICIKPYH",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TOODAMNHOT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TOODAMNHOT"
+    },
+    {
+      "id": "bewoelkt",
+      "effect": "Bewölktes Wetter",
+      "effect_en": "Cloudy weather",
+      "category": "welt",
+      "pc": "ALNSFMZO",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: DULLDULLDAY",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: DULLDULLDAY"
+    },
+    {
+      "id": "regen",
+      "effect": "Regen",
+      "effect_en": "Rain",
+      "category": "welt",
+      "pc": "AUIFRVQS",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: STAYINANDWATCHTV",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: STAYINANDWATCHTV"
+    },
+    {
+      "id": "nebel",
+      "effect": "Nebel",
+      "effect_en": "Fog",
+      "category": "welt",
+      "pc": "CFVFGMJ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: CANTSEEWHEREIMGOING",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: CANTSEEWHEREIMGOING"
+    },
+    {
+      "id": "gewitter",
+      "effect": "Stürmisches Wetter (Gewitter)",
+      "effect_en": "Stormy weather (thunderstorm)",
+      "category": "welt",
+      "pc": "MGHXYRM",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SCOTTISHSUMMER",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SCOTTISHSUMMER"
+    },
+    {
+      "id": "sandsturm",
+      "effect": "Sandsturm",
+      "effect_en": "Sandstorm",
+      "category": "welt",
+      "pc": "CWJXUOC",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SANDINMYEARS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SANDINMYEARS"
+    },
+    {
+      "id": "oranger-himmel",
+      "effect": "Oranger Abendhimmel",
+      "effect_en": "Orange evening sky",
+      "category": "welt",
+      "pc": "OFVIAC",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: DONTBRINGONTHENIGHT",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: DONTBRINGONTHENIGHT"
+    },
+    {
+      "id": "immer-mitternacht",
+      "effect": "Immer Mitternacht",
+      "effect_en": "Always midnight",
+      "category": "welt",
+      "pc": "XJVSNAJ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: NIGHTPROWLER",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: NIGHTPROWLER"
+    },
+    {
+      "id": "uhr-schneller",
+      "effect": "Uhr läuft schneller",
+      "effect_en": "Faster clock",
+      "category": "welt",
+      "pc": "YSOHNUL",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: TIMEJUSTFLIESBY",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: TIMEJUSTFLIESBY"
+    },
+    {
+      "id": "spiel-schneller",
+      "effect": "Schnelleres Spieltempo",
+      "effect_en": "Faster gameplay",
+      "category": "welt",
+      "pc": "PPGWJHT",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SPEEDITUP",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SPEEDITUP"
+    },
+    {
+      "id": "spiel-langsamer",
+      "effect": "Langsameres Spieltempo",
+      "effect_en": "Slower gameplay",
+      "category": "welt",
+      "pc": "LIYOAAY",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SLOWITDOWN",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SLOWITDOWN"
+    },
+    {
+      "id": "passanten-randale",
+      "effect": "Passanten randalieren",
+      "effect_en": "Pedestrians riot",
+      "category": "spass",
+      "pc": "IOJUFZN",
+      "note": "Lässt sich nicht abschalten. Vorher speichern und den Spielstand danach nicht überschreiben.",
+      "note_en": "Cannot be turned off. Save your game first and do not overwrite that save afterward."
+    },
+    {
+      "id": "passanten-chaos",
+      "effect": "Passanten gehen aufeinander los",
+      "effect_en": "Pedestrians attack each other",
+      "category": "spass",
+      "pc": "AJLOJYQY",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ROUGHNEIGHBOURHOOD",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ROUGHNEIGHBOURHOOD"
+    },
+    {
+      "id": "passanten-bewaffnet",
+      "effect": "Passanten sind bewaffnet",
+      "effect_en": "Pedestrians carry weapons",
+      "category": "spass",
+      "pc": "FOOOXFT",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: SURROUNDEDBYNUTTERS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: SURROUNDEDBYNUTTERS"
+    },
+    {
+      "id": "passanten-greifen-an",
+      "effect": "Passanten greifen dich an",
+      "effect_en": "Pedestrians attack you",
+      "category": "spass",
+      "pc": "BAGOWPG",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: STOPPICKINGONME",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: STOPPICKINGONME"
+    },
+    {
+      "id": "passanten-schiessen",
+      "effect": "Passanten greifen dich mit Waffen an",
+      "effect_en": "Pedestrians attack you with weapons",
+      "category": "spass",
+      "pc": "BGLUAWML",
+      "note": "Lässt sich nicht abschalten. Vorher speichern und den Spielstand danach nicht überschreiben.",
+      "note_en": "Cannot be turned off. Save your game first and do not overwrite that save afterward."
+    },
+    {
+      "id": "strand-party",
+      "effect": "Strand-Party-Thema",
+      "effect_en": "Beach party theme",
+      "category": "spass",
+      "pc": "CIKGCGX",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: LIFESABEACH",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: LIFESABEACH"
+    },
+    {
+      "id": "funhouse",
+      "effect": "Funhouse-Thema",
+      "effect_en": "Funhouse theme",
+      "category": "spass",
+      "pc": "PRIEBJ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: CRAZYTOWN",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: CRAZYTOWN"
+    },
+    {
+      "id": "ninja",
+      "effect": "Ninja-Thema",
+      "effect_en": "Ninja theme",
+      "category": "spass",
+      "pc": "AFPHULTL",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: NINJATOWN",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: NINJATOWN"
+    },
+    {
+      "id": "land-thema",
+      "effect": "Land-Thema mit Landbewohnern",
+      "effect_en": "Countryside theme with rural pedestrians",
+      "category": "spass",
+      "pc": "FVTMNBZ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: HICKSVILLE",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: HICKSVILLE"
+    },
+    {
+      "id": "elvis",
+      "effect": "Überall Elvis-Doubles",
+      "effect_en": "Elvis impersonators everywhere",
+      "category": "spass",
+      "pc": "ASBHGRB",
+      "note": "Alternativ: BLUESUEDESHOES",
+      "note_en": "Alternative code: BLUESUEDESHOES"
+    },
+    {
+      "id": "gangs-kontrollieren-strassen",
+      "effect": "Gangs kontrollieren die Straßen",
+      "effect_en": "Gangs control the streets",
+      "category": "spass",
+      "pc": "BIFBUZZ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: BETTERSTAYINDOORS",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: BETTERSTAYINDOORS"
+    },
+    {
+      "id": "gangmitglieder-ueberall",
+      "effect": "Gangmitglieder überall",
+      "effect_en": "Gang members everywhere",
+      "category": "spass",
+      "pc": "MROEMZH",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ONLYHOMIESALLOWED",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ONLYHOMIESALLOWED"
+    },
+    {
+      "id": "rekrutieren-pistole",
+      "effect": "Jeden rekrutieren (mit Pistole)",
+      "effect_en": "Recruit anyone (with a pistol)",
+      "category": "spass",
+      "pc": "SJMAHPE",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: WANNABEINMYGANG",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: WANNABEINMYGANG"
+    },
+    {
+      "id": "rekrutieren-raketen",
+      "effect": "Jeden rekrutieren (mit Raketenwerfer)",
+      "effect_en": "Recruit anyone (with a rocket launcher)",
+      "category": "spass",
+      "pc": "ZSOXFSQ",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: ROCKETMAYHEM",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: ROCKETMAYHEM"
+    },
+    {
+      "id": "selbstmord",
+      "effect": "Selbstmord (CJ stirbt sofort)",
+      "effect_en": "Suicide (CJ dies instantly)",
+      "category": "spass",
+      "pc": "SZCMAWO",
+      "note": "Alternativ in der Definitive Edition und der Mobile-Version: GOODBYECRUELWORLD",
+      "note_en": "Alternative code in the Definitive Edition and mobile version: GOODBYECRUELWORLD"
+    }
+  ]
+}

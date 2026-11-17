@@ -1,0 +1,70 @@
+---
+import { SITE } from '../config';
+import { langFromUrl, OG_LOCALE, useT, href as hrefL, deFromEn } from '../i18n';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  published?: Date;
+  modified?: Date;
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+  alt?: string | null;
+}
+
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const {
+  title,
+  description = t.site.description,
+  image = '/og-default.png',
+  type = 'website',
+  published,
+  modified,
+  jsonLd = [],
+  noindex = false,
+  alt,
+} = Astro.props;
+
+const site = Astro.site ?? new URL(SITE.url);
+const canonical = new URL(Astro.url.pathname, site).toString();
+const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+const img = new URL(image, site).toString();
+// Sprachversionen: explizit uebergeben (Artikel) oder aus dem Pfad abgeleitet
+const path = Astro.url.pathname;
+const altPath = alt === undefined ? (lang === 'de' ? hrefL('en', path) : deFromEn(path)) : alt;
+const dePath = lang === 'de' ? path : altPath;
+const enPath = lang === 'en' ? path : altPath;
+const legal = /^\/(impressum|datenschutz)\//.test(path) || path === '/404.html' || path === '/404/';
+---
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
+
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content={OG_LOCALE[lang]} />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={img} />
+{image === '/og-default.png' ? (
+  <><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /></>
+) : (
+  <><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="675" /></>
+)}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={img} />
+{published && <meta property="article:published_time" content={published.toISOString()} />}
+{modified && <meta property="article:modified_time" content={modified.toISOString()} />}
+
+{!legal && dePath && <link rel="alternate" hreflang="de" href={new URL(dePath, site).toString()} />}
+{!legal && enPath && <link rel="alternate" hreflang="en" href={new URL(enPath, site).toString()} />}
+{!legal && dePath && <link rel="alternate" hreflang="x-default" href={new URL(dePath, site).toString()} />}
+<link rel="alternate" type="application/rss+xml" title={`${SITE.name} News`} href={lang === 'en' ? '/en/rss.xml' : '/rss.xml'} />
+{jsonLd.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}

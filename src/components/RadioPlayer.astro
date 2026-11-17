@@ -1,0 +1,100 @@
+---
+// Bandits FM: spielt den Song ueber YouTube oder Spotify (zaehlt als Aufruf/Stream),
+// laedt den Anbieter aber erst nach Klick und Zustimmung (DSGVO). Ohne Links: lokale Datei als Vorschau.
+import Icon from './Icon.astro';
+import { RADIO } from '../config';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+
+const provider = RADIO.youtubeId ? 'youtube' : RADIO.spotifyUri ? 'spotify' : 'file';
+const providerName = provider === 'youtube' ? 'YouTube (Google)' : 'Spotify';
+---
+<div
+  class="radio"
+  data-radio
+  transition:persist="radio"
+  data-state="idle"
+  data-provider={provider}
+  data-youtube={RADIO.youtubeId}
+  data-spotify={RADIO.spotifyUri}
+>
+  {provider === 'file' && <audio data-radio-audio preload="none" src={RADIO.src}></audio>}
+  <div class="radio__embed" data-radio-embed hidden><div data-radio-mount></div></div>
+  <div class="radio__consent" data-radio-consent hidden>
+    <p>{t.radio.consent(providerName)} <a href="/datenschutz/">{t.radio.privacy}</a></p>
+    <div class="radio__consent-btns">
+      <button class="btn btn--sun" data-radio-accept>{t.radio.accept}</button>
+      <button class="btn btn--ghost" data-radio-decline>{t.radio.decline}</button>
+    </div>
+  </div>
+  <div class="radio__row">
+    <button class="radio__play" data-radio-toggle aria-label={`${RADIO.station} ${t.radio.play}`}>
+      <span class="radio__icon-play"><Icon name="play" size={18} /></span>
+      <span class="radio__icon-pause"><Icon name="pause" size={18} /></span>
+    </button>
+    <div class="radio__meta">
+      <span class="radio__station cond">{RADIO.station} <i class="radio__eq" aria-hidden="true"><b></b><b></b><b></b><b></b></i></span>
+      <span class="radio__title">{RADIO.artist} · {RADIO.title}</span>
+      <span class="radio__bar"><span data-radio-progress></span></span>
+    </div>
+    <a href={href(lang, '/radio/')} class="radio__more" aria-label={t.radio.toPage}><Icon name="chevron" size={18} /></a>
+  </div>
+</div>
+
+<style>
+  .radio {
+    position: fixed;
+    right: 18px;
+    bottom: calc(18px + var(--tabbar-h));
+    z-index: 55;
+    width: 300px;
+    background: rgba(16, 12, 22, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--line2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+    transform: translateY(calc(100% + 40px));
+    transition: transform 0.5s var(--ease), width 0.3s var(--ease);
+  }
+  .radio.is-visible { transform: none; }
+  .radio.has-video { width: 380px; }
+  .radio__row { display: flex; align-items: center; gap: 12px; padding: 8px; }
+  .radio__embed { background: #000; }
+  .radio__embed :global(iframe) { display: block; width: 100%; border: 0; }
+  .radio[data-provider='youtube'] .radio__embed :global(iframe) { aspect-ratio: 16 / 9; height: auto; min-height: 200px; }
+  .radio__consent { padding: 14px 14px 4px; font-size: 0.88rem; color: #ddd6e8; }
+  .radio__consent p { margin: 0 0 10px; line-height: 1.45; }
+  .radio__consent a { text-decoration: underline; }
+  .radio__consent-btns { display: flex; gap: 8px; }
+  .radio__consent .btn { padding: 0.65em 1em; font-size: 0.85rem; }
+  .radio__play {
+    flex: none;
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    background: var(--sunset);
+    color: #120812;
+  }
+  .radio__icon-pause { display: none; }
+  .radio[data-state='playing'] .radio__icon-play { display: none; }
+  .radio[data-state='playing'] .radio__icon-pause { display: block; }
+  .radio__meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .radio__station { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--pink); }
+  .radio__title { font-size: 0.88rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .radio__bar { height: 3px; background: var(--line2); margin-top: 4px; overflow: hidden; }
+  .radio__bar span { display: block; height: 100%; width: 0%; background: var(--sunset); }
+  .radio[data-provider='spotify'] .radio__bar, .radio[data-provider='youtube'] .radio__bar { display: none; }
+  .radio__more { width: 32px; height: 46px; display: grid; place-items: center; color: var(--muted); }
+  .radio__more:hover { color: var(--text); }
+  .radio__eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 10px; }
+  .radio__eq b { width: 2px; height: 30%; background: currentColor; }
+  .radio[data-state='playing'] .radio__eq b { animation: eq 0.9s ease-in-out infinite alternate; }
+  .radio__eq b:nth-child(2) { animation-delay: -0.3s !important; }
+  .radio__eq b:nth-child(3) { animation-delay: -0.6s !important; }
+  .radio__eq b:nth-child(4) { animation-delay: -0.15s !important; }
+  @keyframes eq { 0% { height: 20%; } 100% { height: 100%; } }
+  @media (max-width: 860px) {
+    .radio, .radio.has-video { left: 10px; right: 10px; width: auto; bottom: calc(var(--tabbar-h) + 10px + env(safe-area-inset-bottom)); }
+  }
+</style>

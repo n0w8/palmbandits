@@ -1,0 +1,244 @@
+---
+import Icon from './Icon.astro';
+import { GTA6_RELEASE, SITE, discordFor } from '../config';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+
+
+// Skyline deterministisch erzeugen (gleiches Bild bei jedem Build)
+let seed = 7;
+const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+const base = 655;
+let x = 120;
+let sky = `M120,${base}`;
+const windows: { x: number; y: number; d: number }[] = [];
+while (x < 1480) {
+  const w = 16 + Math.floor(rnd() * 34);
+  const center = Math.max(0, 1 - Math.abs(x + w / 2 - 800) / 680);
+  const tower = rnd() > 0.9 ? 70 + rnd() * 60 : 0;
+  const hgt = 22 + rnd() * 60 + center * center * 120 + tower;
+  const top = base - hgt;
+  sky += ` L${x},${top.toFixed(0)}`;
+  if (rnd() > 0.72) sky += ` L${x + w / 2},${(top - 18 - rnd() * 40).toFixed(0)}`;
+  sky += ` L${x + w},${top.toFixed(0)} L${x + w},${base}`;
+  for (let i = 0; i < 3; i++) {
+    if (rnd() > 0.45) windows.push({ x: x + 6 + rnd() * (w - 14), y: top + 10 + rnd() * (hgt - 24), d: rnd() * 6 });
+  }
+  x += w + Math.floor(rnd() * 6);
+}
+sky += ` L1480,${base} Z`;
+const stripes = Array.from({ length: 8 }, (_, i) => ({ y: 520 + i * 24, h: 2 + i * 2.6 }));
+const reflections = Array.from({ length: 9 }, (_, i) => ({ y: 676 + i * 22, w: 420 - i * 38, o: 0.85 - i * 0.08, d: i * 0.35 }));
+const releaseDate = new Date(GTA6_RELEASE);
+const released = Date.now() >= releaseDate.getTime();
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__scene" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0c0616" />
+          <stop offset=".32" stop-color="#3a1257" />
+          <stop offset=".55" stop-color="#b3206f" />
+          <stop offset=".68" stop-color="#ff4f6e" />
+          <stop offset=".74" stop-color="#ff9a3c" />
+        </linearGradient>
+        <linearGradient id="h-sun" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff27a" />
+          <stop offset=".5" stop-color="#ff9a3c" />
+          <stop offset="1" stop-color="#ff2d87" />
+        </linearGradient>
+        <linearGradient id="h-sea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3b0d4a" />
+          <stop offset="1" stop-color="#07060b" />
+        </linearGradient>
+        <linearGradient id="h-city" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2a0e3e" />
+          <stop offset="1" stop-color="#14081f" />
+        </linearGradient>
+        <mask id="h-sunmask">
+          <rect width="1600" height="900" fill="#fff" />
+          <g class="sun-stripes">
+            {stripes.map((s) => <rect x="0" y={s.y} width="1600" height={s.h} fill="#000" />)}
+          </g>
+        </mask>
+        <symbol id="palm" viewBox="0 0 300 620">
+          <path d="M140,620 C150,470 160,320 168,140 L182,142 C176,320 168,470 160,620 Z" />
+          <path d="M175,136 C125,100 68,110 18,182 C76,136 126,132 176,144Z" />
+          <path d="M175,136 C140,78 95,52 46,58 C98,74 138,100 172,142Z" />
+          <path d="M175,136 C170,80 186,40 218,12 C202,54 190,96 180,140Z" />
+          <path d="M176,136 C216,84 266,70 300,86 C256,90 220,110 180,142Z" />
+          <path d="M177,137 C232,114 282,140 298,208 C264,160 226,146 178,146Z" />
+          <path d="M175,140 C138,142 100,178 84,244 C110,192 140,162 176,148Z" />
+          <path d="M178,140 C216,152 246,192 252,252 C232,202 206,172 176,149Z" />
+          <circle cx="170" cy="150" r="8" /><circle cx="184" cy="153" r="7" />
+        </symbol>
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#h-sky)" />
+      <g class="stars-bg" fill="#fff">
+        {Array.from({ length: 40 }, (_, i) => (
+          <circle cx={(i * 397) % 1600} cy={(i * 131) % 330} r={i % 5 === 0 ? 1.6 : 0.9} style={`animation-delay:${(i % 7) * 0.6}s`} />
+        ))}
+      </g>
+
+      <g data-depth="0.15"> <circle class="sun" cx="800" cy="500" r="265" fill="url(#h-sun)" mask="url(#h-sunmask)" /></g>
+
+      <g class="heli" data-depth="0.5">
+        <g class="heli__fly">
+          <path d="M0,10 C10,0 40,0 52,8 L88,8 L92,4 L96,4 L94,12 L52,14 C40,22 8,22 0,10Z" fill="#0d0716" />
+          <path d="M-14,0 L66,-2" stroke="#0d0716" stroke-width="2" class="heli__rotor" />
+          <circle cx="8" cy="12" r="2.2" class="heli__light" />
+          <path d="M6,16 L-60,200 L60,200 Z" class="heli__beam" />
+        </g>
+      </g>
+
+      <g data-depth="0.3">
+        <path d={sky} fill="url(#h-city)" />
+        <g class="windows">
+          {windows.map((w) => <rect x={w.x.toFixed(0)} y={w.y.toFixed(0)} width="3" height="4" style={`animation-delay:${w.d.toFixed(1)}s`} />)}
+        </g>
+      </g>
+
+      <rect y="655" width="1600" height="245" fill="url(#h-sea)" />
+      <g class="refl">
+        {reflections.map((r) => <rect x={800 - r.w / 2} y={r.y} width={r.w} height="4" rx="2" fill="#ff9a3c" opacity={r.o} style={`animation-delay:${r.d}s`} />)}
+      </g>
+
+      <g data-depth="0.7" fill="#07040c">
+        <use href="#palm" x="-40" y="160" width="390" height="800" class="palm" />
+        <use href="#palm" x="140" y="300" width="260" height="560" class="palm palm--b" />
+        <use href="#palm" x="1260" y="120" width="420" height="860" class="palm palm--c" transform="translate(2900,0) scale(-1,1)" />
+        <use href="#palm" x="1170" y="330" width="240" height="520" class="palm palm--b" transform="translate(2580,0) scale(-1,1)" />
+      </g>
+    </svg>
+    <div class="hero__scan"></div>
+    <div class="hero__fade"></div>
+  </div>
+
+  <div class="hero__content wrap">
+    <p class="hero__kicker cond intro"><Icon name="star" size={16} /> {t.site.community}</p>
+    <h1 id="hero-title" class="hero__title display intro" style="--d:.08s">
+      <span class="sr-only">{t.hero.srTitle}</span>
+      <span class="hero__line">{t.hero.lines[0]}</span>
+      <span class="hero__line">{t.hero.lines[1]}</span>
+      <span class="hero__line grad-text">{t.hero.lines[2]}</span>
+    </h1>
+    <p class="hero__lead intro" style="--d:.16s">
+      {t.hero.lead}
+    </p>
+    <div class="hero__cta intro" style="--d:.24s">
+      <a class="btn btn--sun" href={href(lang, '/news/')}><Icon name="news" /> {t.hero.toNews}</a>
+      <a class="btn btn--ghost" {...discordFor(lang)}><Icon name="discord" /> {t.nav.joinDiscord}</a>
+    </div>
+
+    <a href={href(lang, '/spiele/gta-6/')} class:list={['cd intro', { 'is-live': released }]} data-countdown={GTA6_RELEASE} style="--d:.32s">
+      <span class="cd__label cond"><span class="dot-live"></span> {t.hero.release}</span>
+      <span class="cd__grid">
+        <span><b data-cd="d">--</b><small>{t.hero.units[0]}</small></span>
+        <span><b data-cd="h">--</b><small>{t.hero.units[1]}</small></span>
+        <span><b data-cd="m">--</b><small>{t.hero.units[2]}</small></span>
+        <span><b data-cd="s">--</b><small>{t.hero.units[3]}</small></span>
+      </span>
+      <span class="cd__live display">{t.hero.out}</span>
+      <span class="cd__foot cond">{t.hero.date} <Icon name="arrow" size={14} /></span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: min(100svh - var(--header-h) - var(--ticker-h), 920px);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero__scene { position: absolute; inset: 0; z-index: -1; }
+  .hero__scene svg { width: 100%; height: 100%; }
+  .hero__scene [data-depth] { will-change: transform; }
+  .hero__scan {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px);
+    mix-blend-mode: multiply;
+  }
+  .hero__fade {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(7, 6, 11, 0.85) 0%, rgba(7, 6, 11, 0.35) 45%, transparent 70%),
+      linear-gradient(0deg, var(--bg) 0%, transparent 35%);
+  }
+  .sun { filter: drop-shadow(0 0 60px rgba(255, 120, 80, 0.6)); }
+  .sun-stripes { animation: stripes 6s linear infinite; }
+  @keyframes stripes { from { transform: translateY(0); } to { transform: translateY(26px); } }
+  .stars-bg circle { animation: twinkle 3.5s ease-in-out infinite; }
+  @keyframes twinkle { 50% { opacity: 0.2; } }
+  .windows rect { fill: #ffcf6e; opacity: 0.75; animation: win 7s steps(1) infinite; }
+  @keyframes win { 40% { opacity: 0.15; } 55% { opacity: 0.85; } }
+  .refl rect { animation: refl 2.6s ease-in-out infinite alternate; transform-origin: 800px 0; transform-box: view-box; }
+  @keyframes refl { to { opacity: 0.25; transform: scaleX(0.7); } }
+  .palm { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 7s ease-in-out infinite alternate; }
+  .palm--b { animation-duration: 5.5s; animation-delay: -2s; }
+  .palm--c { animation-duration: 8s; animation-delay: -4s; }
+  @keyframes sway { from { rotate: -1.6deg; } to { rotate: 1.8deg; } }
+  .heli__fly { animation: heli 34s linear infinite; }
+  @keyframes heli {
+    0% { transform: translate(1750px, 140px) scale(1.1); }
+    100% { transform: translate(-200px, 90px) scale(1.1); }
+  }
+  .heli__rotor { animation: rotor 0.12s linear infinite; transform-origin: 26px 0; transform-box: view-box; }
+  @keyframes rotor { 50% { transform: scaleX(0.2); } }
+  .heli__light { fill: #ff3b3b; animation: siren 0.8s steps(1) infinite; }
+  @keyframes siren { 50% { fill: #3b7bff; } }
+  .heli__beam { fill: rgba(255, 255, 230, 0.07); transform-origin: 6px 16px; transform-box: view-box; animation: beam 4s ease-in-out infinite alternate; }
+  @keyframes beam { from { rotate: -14deg; } to { rotate: 16deg; } }
+
+  .hero__content { position: relative; padding-top: 60px; padding-bottom: clamp(40px, 7vw, 90px); }
+  .hero__kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--yellow); font-size: 0.95rem; margin: 0 0 16px; }
+  .hero__title { font-size: clamp(4.2rem, 13vw, 11rem); line-height: 0.86; display: flex; flex-direction: column; }
+  .hero__line { display: block; }
+  .hero__title .grad-text { filter: drop-shadow(0 0 40px rgba(255, 45, 135, 0.35)); padding-right: 0.05em; }
+  .hero__lead { max-width: 560px; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: #e2dcea; margin: 24px 0 28px; }
+  .hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .cd {
+    position: absolute;
+    right: var(--gutter);
+    bottom: clamp(40px, 7vw, 90px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 20px;
+    min-width: 330px;
+    background: rgba(10, 6, 16, 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+    transition: border-color 0.3s, transform 0.3s var(--ease);
+  }
+  .cd:hover { border-color: var(--pink); transform: translateY(-3px); }
+  .cd__label { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--pink); }
+  .cd__label .dot-live { background: var(--pink); }
+  .cd__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .cd__grid span { display: flex; flex-direction: column; align-items: center; padding: 8px 4px; background: rgba(255, 255, 255, 0.05); }
+  .cd__grid b { font-family: var(--f-display); font-weight: 400; font-size: 2.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .cd__grid small { font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; color: var(--muted); }
+  .cd__foot { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--muted); }
+  .cd__live { display: none; font-size: 2.6rem; }
+  .cd.is-live .cd__grid { display: none; }
+  .cd.is-live .cd__live { display: block; background: var(--sunset); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  @media (max-width: 1000px) {
+    .hero { min-height: auto; }
+    .hero__content { padding-top: 34vh; }
+    .cd { position: relative; right: auto; bottom: auto; margin-top: 30px; min-width: 0; max-width: 420px; }
+    .hero__fade { background: linear-gradient(0deg, var(--bg) 8%, rgba(7, 6, 11, 0.55) 55%, transparent 85%); }
+  }
+  @media (max-width: 520px) {
+    .hero__content { padding-top: 26vh; }
+    .cd__grid b { font-size: 2rem; }
+  }
+</style>

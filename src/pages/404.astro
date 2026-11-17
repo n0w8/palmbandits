@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+---
+<Base title="Seite nicht gefunden" description="Diese Seite gibt es nicht." noindex alt={null}>
+  <section class="lost wrap">
+    <p class="lost__code display" aria-hidden="true">404</p>
+    <h1 class="lost__title display">Falsche <span class="grad-text">Ausfahrt</span></h1>
+    <p class="muted">Diese Seite ist abgetaucht. Vielleicht hat sie ein Fahndungslevel von fünf Sternen.</p>
+    <p class="muted" lang="en">Wrong exit. This page has gone into hiding. <a href="/en/">Go to the English homepage</a>.</p>
+    <div class="lost__cta">
+      <a href="/" class="btn btn--sun"><Icon name="home" /> Zur Startseite</a>
+      <button class="btn btn--ghost" data-search-open><Icon name="search" /> Suchen</button>
+    </div>
+  </section>
+</Base>
+<style>
+  .lost { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding-block: 60px; position: relative; }
+  .lost__code {
+    position: absolute; right: var(--gutter); top: 50%; transform: translateY(-50%) rotate(-6deg);
+    font-size: clamp(10rem, 30vw, 24rem); color: rgba(255, 59, 59, 0.12); margin: 0; z-index: -1;
+  }
+  .lost__title { font-size: clamp(3rem, 10vw, 7rem); }
+  .lost__cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+</style>

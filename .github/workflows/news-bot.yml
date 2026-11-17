@@ -1,0 +1,102 @@
+# Palm Bandits News-Bot: alle 20 Minuten Feeds pruefen, gruene News direkt veroeffentlichen,
+# gelbe News als Pull Request zur Freigabe in der GitHub-App anlegen.
+name: News-Bot
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Nur Probelauf (nichts schreiben)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: news-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      DISCORD_WEBHOOK_GTA6: ${{ secrets.DISCORD_WEBHOOK_GTA6 }}
+      DISCORD_WEBHOOK_ONLINE: ${{ secrets.DISCORD_WEBHOOK_ONLINE }}
+      DISCORD_WEBHOOK_NEWS: ${{ secrets.DISCORD_WEBHOOK_NEWS }}
+      DISCORD_WEBHOOK_STAFF: ${{ secrets.DISCORD_WEBHOOK_STAFF }}
+      DISCORD_ROLE_ALERT: ${{ vars.DISCORD_ROLE_ALERT }}
+      DISCORD_ROLE_WEEKLY: ${{ vars.DISCORD_ROLE_WEEKLY }}
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL || 'https://palmbandits.com' }}
+      MAX_ARTICLES: ${{ vars.MAX_ARTICLES || '3' }}
+      DAILY_CAP: ${{ vars.DAILY_CAP || '25' }}
+      DAILY_DRAFT_CAP: ${{ vars.DAILY_DRAFT_CAP || '12' }}
+      FRESH_HOURS: ${{ vars.FRESH_HOURS || '12' }}
+      YELLOW_HOLD_MINUTES: ${{ vars.YELLOW_HOLD_MINUTES || '40' }}
+      WRITER_EFFORT: ${{ vars.WRITER_EFFORT || 'medium' }}
+      GH_TOKEN: ${{ github.token }}
+      BASE_BRANCH: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation
+        run: npm ci --no-audit --no-fund
+
+      - name: News-Bot ausfuehren
+        id: bot
+        working-directory: automation
+        run: node news-bot/run.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      # Zweisprachig: deutsche News, englische News (src/content/en/news) und die Zuordnung src/data/en-slugs.json
+      - name: Gruene News und Bot-Gedaechtnis committen
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "news-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src/content/news automation/data
+          if [ -d src/content/en/news ]; then git add -A src/content/en/news; fi
+          if [ -f src/data/en-slugs.json ]; then git add src/data/en-slugs.json; fi
+          if git diff --cached --quiet; then
+            echo "Nichts zu committen."
+            exit 0
+          fi
+          git commit -m "news-bot: ${{ steps.bot.outputs.published || 0 }} neue News, Gedaechtnis aktualisiert"
+          for i in 1 2 3; do
+            if git push origin "HEAD:${BASE_BRANCH}"; then exit 0; fi
+            echo "Push abgelehnt, hole neuen Stand (Versuch $i)"
+            git pull --rebase origin "${BASE_BRANCH}" || { git rebase --abort; exit 1; }
+          done
+          exit 1
+
+      - name: Gelbe Entwuerfe als Pull Requests anlegen
+        if: ${{ !inputs.dry_run && steps.bot.outputs.drafts != '' && steps.bot.outputs.drafts != '0' }}
+        working-directory: automation
+        run: |
+          git fetch --depth=1 origin "+refs/heads/${BASE_BRANCH}:refs/remotes/origin/${BASE_BRANCH}"
+          node news-bot/open-prs.mjs
+
+      # Cloudflare Pages braucht nach dem Push ca. 1 bis 3 Minuten zum Bauen. Erst danach URLs melden.
+      - name: IndexNow-Ping fuer neue URLs
+        if: ${{ !inputs.dry_run && steps.bot.outputs.urls != '' && env.INDEXNOW_KEY != '' }}
+        working-directory: automation
+        env:
+          INDEXNOW_URLS: ${{ steps.bot.outputs.urls }}
+        run: |
+          sleep 150
+          node news-bot/indexnow.mjs

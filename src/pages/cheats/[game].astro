@@ -1,0 +1,218 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { getCheatFiles, cheatText, comboL, type CheatFile } from '../../lib/utils';
+import { getGame } from '../../data/games';
+import { CHEAT_CATEGORIES, CHEAT_CATEGORIES_EN } from '../../data/categories';
+import { SITE } from '../../config';
+import { langFromUrl, useT, href, fmtDateL } from '../../i18n';
+
+export async function getStaticPaths() {
+  const files = getCheatFiles();
+  return [
+    ...files.map((f) => ({ params: { game: f.game }, props: { file: f as CheatFile | null, slug: f.game } })),
+    { params: { game: 'gta-6' }, props: { file: null, slug: 'gta-6' } },
+  ];
+}
+const { file, slug } = Astro.props as { file: CheatFile | null; slug: string };
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const h = (p: string) => href(lang, p);
+const en = lang === 'en';
+const g = getGame(slug);
+const CATS = en ? CHEAT_CATEGORIES_EN : CHEAT_CATEGORIES;
+const howTo = file ? (en && file.howTo_en ? file.howTo_en : file.howTo) : {};
+const rows = file ? file.cheats.map((c) => ({ ...c, ...cheatText(c, lang), playstation: c.playstation && comboL(c.playstation, lang), xbox: c.xbox && comboL(c.xbox, lang) })) : [];
+const cats = file ? Object.keys(CHEAT_CATEGORIES).filter((k) => file.cheats.some((c) => c.category === k)) : [];
+const cols = file
+  ? (['pc', 'phone', 'playstation', 'xbox'] as const).filter((k) => file.cheats.some((c) => c[k]))
+  : [];
+const COL: Record<string, string> = { pc: en ? 'PC code' : 'PC-Code', phone: en ? 'Phone' : 'Handy', playstation: 'PlayStation', xbox: 'Xbox' };
+const HOW: Record<string, string> = { pc: 'PC', phone: en ? 'Phone' : 'Handy', playstation: 'PlayStation', xbox: 'Xbox' };
+const n = file?.cheats.length ?? 0;
+const L = en
+  ? { title: file ? `${g.name} Cheats: All ${n} Codes (PC, Phone & Console)` : 'GTA 6 Cheats: Are There Cheat Codes in GTA VI?',
+      desc: file ? `Every ${g.name} cheat: ${n} codes for money, weapons, vehicles, wanted level and fun. With instructions and a copy button.` : 'GTA 6 cheats: are there cheat codes in GTA VI? What we know, how cheats worked in earlier games and where we add new codes the moment they appear.',
+      lead: (full: string, d: string) => `All ${n} cheats for ${full}. Updated: ${d}. Click a code to copy it.`,
+      sixLead: 'GTA VI launches on November 19, 2026. Rockstar has not officially said whether classic cheats are back. As soon as a code is confirmed, you will find it here.',
+      howLabel: 'How to enter cheats', search: 'Search cheats', ph: 'Search effect or code …', cat: 'Category', all: 'All', effect: 'Effect', copy: (c: string) => `Copy ${c}`, copied: 'Copied', none: 'No cheat found.',
+      nlFile: 'New codes first', nlSix: 'GTA 6 cheats instantly', nlText: 'We let you know as soon as new cheats, glitches or money methods are confirmed. Once a week, no spam.' }
+  : { title: file ? `${g.name} Cheats: alle ${n} Codes (PC, Handy & Konsole)` : 'GTA 6 Cheats: Gibt es Cheat-Codes in GTA VI?',
+      desc: file ? `Alle ${g.name} Cheats auf Deutsch: ${n} Codes für Geld, Waffen, Fahrzeuge, Wanted-Level und Spaß. Mit Anleitung und Kopier-Button.` : 'GTA 6 Cheats: Gibt es Cheat-Codes in GTA VI? Was bekannt ist, wie Cheats in den Vorgängern funktionierten und wo wir neue Codes sofort eintragen.',
+      lead: (full: string, d: string) => `Alle ${n} Cheats für ${full}. Stand: ${d}. Code anklicken = kopiert.`,
+      sixLead: 'GTA VI erscheint am 19.11.2026. Ob Rockstar wieder klassische Cheats einbaut, ist offiziell noch nicht bekannt. Sobald es einen bestätigten Code gibt, steht er hier.',
+      howLabel: 'So gibst du Cheats ein', search: 'Cheats durchsuchen', ph: 'Effekt oder Code suchen …', cat: 'Kategorie', all: 'Alle', effect: 'Effekt', copy: (c: string) => `${c} kopieren`, copied: 'Kopiert', none: 'Kein Cheat gefunden.',
+      nlFile: 'Neue Codes zuerst', nlSix: 'GTA 6 Cheats sofort', nlText: 'Wir melden uns, sobald neue Cheats, Glitches oder Geld-Methoden bestätigt sind. Einmal pro Woche, kein Spam.' };
+const title = L.title;
+const description = L.desc;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.article.home, item: `${SITE.url}${h('/')}` },
+      { '@type': 'ListItem', position: 2, name: 'Cheats', item: `${SITE.url}${h('/cheats/')}` },
+      { '@type': 'ListItem', position: 3, name: `${g.name} Cheats`, item: `${SITE.url}${h(`/cheats/${slug}/`)}` },
+    ],
+  },
+];
+---
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <section class="page-hero wrap" style={`--g-from:${g.from};--g-to:${g.to}`}>
+    <span class="page-hero__bg" aria-hidden="true">{g.numeral}</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={h('/')}>{t.article.home}</a><span aria-hidden="true">/</span><a href={h('/cheats/')}>Cheats</a><span aria-hidden="true">/</span><span>{g.name}</span></nav>
+    <h1 class="page-hero__title display">{g.name} <span class="grad-text">Cheats</span></h1>
+    {file ? (
+      <p class="page-hero__lead">{L.lead(g.full, fmtDateL(lang, new Date(file.updated)))}</p>
+    ) : (
+      <p class="page-hero__lead">{L.sixLead}</p>
+    )}
+  </section>
+
+  {file ? (
+    <>
+      <section class="wrap" aria-label={L.howLabel}>
+        <div class="how">
+          {Object.entries(howTo).map(([k, v]) => (
+            <div class="how__item">
+              <p class="cond">{HOW[k]}</p>
+              <p>{v}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="wrap" data-filter-group>
+        <div class="tools">
+          <label class="field">
+            <Icon name="search" />
+            <span class="sr-only">{L.search}</span>
+            <input type="search" data-filter-search placeholder={L.ph} autocomplete="off" />
+          </label>
+          <div class="filter-row" role="toolbar" aria-label={L.cat}>
+            <button class="filter-btn" data-filter="alle" aria-pressed="true">{L.all} <span data-filter-count>{file.cheats.length}</span></button>
+            {cats.map((c) => <button class="filter-btn" data-filter={c} aria-pressed="false">{CATS[c]}</button>)}
+          </div>
+        </div>
+
+        <div class="ctable" role="table" aria-label={`${g.name} Cheats`} style={`--cols:${cols.length || 1}`}>
+          <div class="ctable__head cond" role="row">
+            <span role="columnheader">{L.effect}</span>
+            {cols.map((c) => <span role="columnheader">{COL[c]}</span>)}
+          </div>
+          {rows.map((c) => (
+            <div class="ctable__row" role="row" id={c.id} data-filter-item data-tags={c.category} data-text={`${c.effect} ${c.pc ?? ''} ${c.phone ?? ''} ${c.note ?? ''}`}>
+              <span role="cell" class="ctable__effect">
+                <b>{c.effect}</b>
+                <small class="cond">{CATS[c.category] ?? c.category}</small>
+                {c.note && <em>{c.note}</em>}
+              </span>
+              {cols.map((k) => (
+                <span role="cell" class="ctable__code" data-label={COL[k]}>
+                  {c[k] ? (
+                    k === 'pc' || k === 'phone' ? (
+                      <button data-copy={c[k]} aria-label={L.copy(c[k] as string)}>
+                        <code>{c[k]}</code>
+                        <Icon name="copy" size={14} />
+                        <i class="cond">{L.copied}</i>
+                      </button>
+                    ) : (
+                      <code class="combo">{c[k]}</code>
+                    )
+                  ) : (
+                    <span class="na">–</span>
+                  )}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+        <p class="muted" data-filter-empty hidden>{L.none}</p>
+      </section>
+    </>
+  ) : (
+    <section class="wrap">
+      {en ? (
+      <div class="prose six">
+        <h2>Are there cheats in GTA 6?</h2>
+        <p>As of November 17, 2026: Rockstar has not announced any cheat codes for GTA VI. GTA V had cheats via the console, button combos and phone numbers, but never in the online mode. As soon as confirmed codes turn up after the November 19 launch, we add them here, with platform and instructions.</p>
+        <h2>Until then: cheats for the earlier games</h2>
+        <ul>
+          <li><a href="/en/cheats/gta-5/">GTA 5 cheats</a> (PC, phone, console)</li>
+          <li><a href="/en/cheats/gta-san-andreas/">GTA San Andreas cheats</a> (HESOYAM & co.)</li>
+          <li><a href="/en/cheats/gta-vice-city/">GTA Vice City cheats</a></li>
+          <li><a href="/en/cheats/gta-4/">GTA 4 phone cheats</a></li>
+          <li><a href="/en/cheats/gta-3/">GTA 3 cheats</a></li>
+        </ul>
+      </div>
+      ) : (
+      <div class="prose six">
+        <h2>Gibt es Cheats in GTA 6?</h2>
+        <p>Stand 17. November 2026: Rockstar hat keine Cheat-Codes für GTA VI angekündigt. In GTA V gab es Cheats per Konsole, Tastenkombination und Handynummer, im Online-Modus dagegen nie. Sobald nach dem Release am 19. November bestätigte Codes auftauchen, tragen wir sie hier ein, mit Plattform und Anleitung.</p>
+        <h2>Bis dahin: Cheats für die Vorgänger</h2>
+        <ul>
+          <li><a href="/cheats/gta-5/">GTA 5 Cheats</a> (PC, Handy, Konsole)</li>
+          <li><a href="/cheats/gta-san-andreas/">GTA San Andreas Cheats</a> (HESOYAM & Co.)</li>
+          <li><a href="/cheats/gta-vice-city/">GTA Vice City Cheats</a></li>
+          <li><a href="/cheats/gta-4/">GTA 4 Handy-Cheats</a></li>
+          <li><a href="/cheats/gta-3/">GTA 3 Cheats</a></li>
+        </ul>
+      </div>
+      )}
+    </section>
+  )}
+
+  <Newsletter title={file ? L.nlFile : L.nlSix} text={L.nlText} />
+</Base>
+
+<style>
+  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 26px; }
+  .how__item { background: var(--panel); padding: 16px 18px; }
+  .how__item p { margin: 0; font-size: 0.95rem; color: #ddd6e8; }
+  .how__item p.cond { color: var(--pink); font-size: 0.8rem; margin-bottom: 4px; }
+  .tools { display: grid; gap: 12px; margin-bottom: 18px; }
+
+  .ctable { border: 1px solid var(--line); }
+  .ctable__head, .ctable__row {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.6fr) repeat(var(--cols, 3), minmax(0, 1fr));
+    gap: 16px;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  .ctable__head { background: rgba(255, 255, 255, 0.04); color: var(--dim); font-size: 0.78rem; position: sticky; top: calc(var(--header-h) + var(--ticker-h)); z-index: 2; backdrop-filter: blur(10px); }
+  .ctable__row { border-top: 1px solid var(--line); transition: background 0.15s; }
+  .ctable__row:hover { background: rgba(255, 255, 255, 0.025); }
+  .ctable__row:target { background: rgba(255, 45, 135, 0.1); box-shadow: inset 3px 0 0 var(--pink); }
+  .ctable__row[hidden] { display: none; }
+  .ctable__effect { display: flex; flex-direction: column; gap: 2px; }
+  .ctable__effect b { font-weight: 600; }
+  .ctable__effect small { color: var(--dim); font-size: 0.72rem; }
+  .ctable__effect em { font-style: normal; font-size: 0.85rem; color: var(--yellow); }
+  .ctable__code button {
+    position: relative;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 10px;
+    background: rgba(25, 227, 200, 0.07);
+    border: 1px solid rgba(25, 227, 200, 0.25);
+    color: var(--teal);
+    max-width: 100%;
+    transition: background 0.2s;
+  }
+  .ctable__code button:hover { background: rgba(25, 227, 200, 0.16); }
+  .ctable__code code { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-weight: 700; font-size: 0.92rem; word-break: break-all; text-align: left; }
+  .ctable__code i { position: absolute; inset: 0; display: grid; place-items: center; background: var(--teal); color: #041512; font-style: normal; font-size: 0.8rem; opacity: 0; transition: opacity 0.2s; }
+  .ctable__code :global(button.is-copied) i { opacity: 1; }
+  .combo { font-family: var(--f-cond); font-weight: 600; font-size: 0.92rem; color: #ddd6e8; letter-spacing: 0.02em; }
+  .na { color: var(--dim); }
+  .six { max-width: 760px; }
+
+  @media (max-width: 860px) {
+    .ctable__head { display: none; }
+    .ctable__row { grid-template-columns: 1fr; gap: 8px; padding: 14px; }
+    .ctable__code { display: flex; align-items: center; gap: 10px; }
+    .ctable__code::before { content: attr(data-label); font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; color: var(--dim); min-width: 78px; }
+    .ctable__code:has(.na) { display: none; }
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { getGuides } from '../../lib/utils';
+import { CATEGORIES, catL } from '../../data/categories';
+import { langFromUrl, useT, href } from '../../i18n';
+
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const guides = await getGuides(lang);
+const cats = CATEGORIES.filter((c) => guides.some((g) => g.data.category === c.slug)).map((c) => catL(c.slug, lang));
+---
+<Base title={t.pages.guidesTitle} description={t.pages.guidesDesc}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">GUIDE</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span><span>Guides</span></nav>
+    <h1 class="page-hero__title display">GTA <span class="grad-text">Guides</span></h1>
+    <p class="page-hero__lead">{t.pages.guidesLead}</p>
+  </section>
+  <section class="wrap" data-filter-group>
+    <div class="filter-row" role="toolbar" aria-label={t.pages.filterTopic}>
+      <button class="filter-btn" data-filter="alle" aria-pressed="true">{t.pages.all} <span data-filter-count>{guides.length}</span></button>
+      {cats.map((c) => <button class="filter-btn" data-filter={c.slug} aria-pressed="false">{c.label}</button>)}
+    </div>
+    <div class="list">
+      {guides.map((g, i) => <GuideCard item={g} index={i} delay={(i % 3) * 0.05} />)}
+    </div>
+    <p class="muted" data-filter-empty hidden>{t.pages.noGuides}</p>
+  </section>
+  <Newsletter />
+</Base>
+<style>
+  .list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+  .filter-btn span { opacity: 0.6; margin-left: 4px; }
+  @media (max-width: 1000px) { .list { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .list { grid-template-columns: 1fr; } }
+</style>

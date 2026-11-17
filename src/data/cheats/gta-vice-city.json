@@ -1,0 +1,404 @@
+{
+  "game": "gta-vice-city",
+  "updated": "2026-11-17",
+  "howTo": {
+    "pc": "Code einfach während des Spiels eintippen, ein Eingabefeld gibt es nicht. Eine Meldung bestätigt den Cheat. Einen Geld-Cheat gibt es in Vice City nicht. In der Definitive Edition sperren Cheats Erfolge für den Spielstand, also vorher separat speichern.",
+    "playstation": "Die Tastenkombinationen für PlayStation folgen in Kürze.",
+    "xbox": "Die Tastenkombinationen für Xbox folgen in Kürze."
+  },
+  "howTo_en": {
+    "pc": "Simply type the code during gameplay, there is no input box. A message confirms the cheat. Vice City has no money cheat. In the Definitive Edition, cheats disable achievements for that save, so make a separate save first.",
+    "playstation": "PlayStation button combinations are coming soon.",
+    "xbox": "Xbox button combinations are coming soon."
+  },
+  "cheats": [
+    {
+      "id": "gesundheit",
+      "effect": "Volle Gesundheit",
+      "effect_en": "Full health",
+      "category": "spieler",
+      "pc": "ASPIRINE"
+    },
+    {
+      "id": "schutzweste",
+      "effect": "Volle Schutzweste",
+      "effect_en": "Full armor",
+      "category": "spieler",
+      "pc": "PRECIOUSPROTECTION"
+    },
+    {
+      "id": "waffenset-1",
+      "effect": "Waffenset 1 (einfache Waffen)",
+      "effect_en": "Weapon set 1 (basic weapons)",
+      "category": "waffen",
+      "pc": "THUGSTOOLS"
+    },
+    {
+      "id": "waffenset-2",
+      "effect": "Waffenset 2 (Profi-Waffen)",
+      "effect_en": "Weapon set 2 (professional weapons)",
+      "category": "waffen",
+      "pc": "PROFESSIONALTOOLS"
+    },
+    {
+      "id": "waffenset-3",
+      "effect": "Waffenset 3 (schwere Waffen)",
+      "effect_en": "Weapon set 3 (heavy weapons)",
+      "category": "waffen",
+      "pc": "NUTTERTOOLS"
+    },
+    {
+      "id": "fahndung-plus-zwei",
+      "effect": "Fahndungslevel um zwei Sterne erhöhen",
+      "effect_en": "Raise wanted level by two stars",
+      "category": "wanted",
+      "pc": "YOUWONTTAKEMEALIVE"
+    },
+    {
+      "id": "fahndung-loeschen",
+      "effect": "Fahndungslevel löschen",
+      "effect_en": "Clear wanted level",
+      "category": "wanted",
+      "pc": "LEAVEMEALONE"
+    },
+    {
+      "id": "rhino",
+      "effect": "Rhino (Panzer) spawnen",
+      "effect_en": "Spawn Rhino tank",
+      "category": "fahrzeuge",
+      "pc": "PANZER"
+    },
+    {
+      "id": "bloodring-banger",
+      "effect": "Bloodring Banger spawnen",
+      "effect_en": "Spawn Bloodring Banger",
+      "category": "fahrzeuge",
+      "pc": "TRAVELINSTYLE"
+    },
+    {
+      "id": "bloodring-banger-2",
+      "effect": "Bloodring Banger (zweite Variante) spawnen",
+      "effect_en": "Spawn Bloodring Banger (second variant)",
+      "category": "fahrzeuge",
+      "pc": "GETTHEREQUICKLY"
+    },
+    {
+      "id": "sabre-turbo",
+      "effect": "Sabre Turbo spawnen",
+      "effect_en": "Spawn Sabre Turbo",
+      "category": "fahrzeuge",
+      "pc": "GETTHEREFAST"
+    },
+    {
+      "id": "hotring-racer",
+      "effect": "Hotring Racer spawnen",
+      "effect_en": "Spawn Hotring Racer",
+      "category": "fahrzeuge",
+      "pc": "GETTHEREVERYFASTINDEED"
+    },
+    {
+      "id": "hotring-racer-2",
+      "effect": "Hotring Racer (zweite Variante) spawnen",
+      "effect_en": "Spawn Hotring Racer (second variant)",
+      "category": "fahrzeuge",
+      "pc": "GETTHEREAMAZINGLYFAST"
+    },
+    {
+      "id": "romero",
+      "effect": "Romero's Leichenwagen spawnen",
+      "effect_en": "Spawn Romero's Hearse",
+      "category": "fahrzeuge",
+      "pc": "THELASTRIDE"
+    },
+    {
+      "id": "love-fist-limo",
+      "effect": "Love-Fist-Limousine spawnen",
+      "effect_en": "Spawn Love Fist limo",
+      "category": "fahrzeuge",
+      "pc": "ROCKANDROLLCAR"
+    },
+    {
+      "id": "trashmaster",
+      "effect": "Müllwagen (Trashmaster) spawnen",
+      "effect_en": "Spawn Trashmaster (garbage truck)",
+      "category": "fahrzeuge",
+      "pc": "RUBBISHCAR"
+    },
+    {
+      "id": "caddy",
+      "effect": "Caddy (Golfwagen) spawnen",
+      "effect_en": "Spawn Caddy (golf cart)",
+      "category": "fahrzeuge",
+      "pc": "BETTERTHANWALKING"
+    },
+    {
+      "id": "alle-fahrzeuge-explodieren",
+      "effect": "Alle Fahrzeuge in der Nähe explodieren",
+      "effect_en": "Blow up all nearby vehicles",
+      "category": "fahrzeuge",
+      "pc": "BIGBANG"
+    },
+    {
+      "id": "bessere-handhabung",
+      "effect": "Bessere Fahrzeug-Handhabung",
+      "effect_en": "Better vehicle handling",
+      "category": "fahrzeuge",
+      "pc": "GRIPISEVERYTHING"
+    },
+    {
+      "id": "autos-auf-wasser",
+      "effect": "Autos fahren auf dem Wasser",
+      "effect_en": "Cars drive on water",
+      "category": "fahrzeuge",
+      "pc": "SEAWAYS"
+    },
+    {
+      "id": "fliegende-autos",
+      "effect": "Fliegende Autos",
+      "effect_en": "Flying cars",
+      "category": "fahrzeuge",
+      "pc": "COMEFLYWITHME"
+    },
+    {
+      "id": "fliegende-boote",
+      "effect": "Fliegende Boote",
+      "effect_en": "Flying boats",
+      "category": "fahrzeuge",
+      "pc": "AIRSHIP"
+    },
+    {
+      "id": "groessere-raeder",
+      "effect": "Größere Räder",
+      "effect_en": "Bigger wheels",
+      "category": "fahrzeuge",
+      "pc": "LOADSOFLITTLETHINGS"
+    },
+    {
+      "id": "unsichtbare-autos",
+      "effect": "Unsichtbare Autos (nur Räder sichtbar)",
+      "effect_en": "Invisible cars (only the wheels are visible)",
+      "category": "fahrzeuge",
+      "pc": "WHEELSAREALLINEED",
+      "note": "Funktioniert nicht in der Definitive Edition.",
+      "note_en": "Does not work in the Definitive Edition."
+    },
+    {
+      "id": "gruene-ampeln",
+      "effect": "Alle Ampeln grün",
+      "effect_en": "All traffic lights green",
+      "category": "welt",
+      "pc": "GREENLIGHT"
+    },
+    {
+      "id": "aggressive-fahrer",
+      "effect": "Aggressive Fahrer",
+      "effect_en": "Aggressive drivers",
+      "category": "welt",
+      "pc": "MIAMITRAFFIC"
+    },
+    {
+      "id": "pinker-verkehr",
+      "effect": "Pinker Verkehr",
+      "effect_en": "Pink traffic",
+      "category": "welt",
+      "pc": "AHAIRDRESSERSCAR"
+    },
+    {
+      "id": "schwarzer-verkehr",
+      "effect": "Schwarzer Verkehr",
+      "effect_en": "Black traffic",
+      "category": "welt",
+      "pc": "IWANTITPAINTEDBLACK"
+    },
+    {
+      "id": "sehr-sonnig",
+      "effect": "Sehr sonniges Wetter",
+      "effect_en": "Very sunny weather",
+      "category": "welt",
+      "pc": "ALOVELYDAY"
+    },
+    {
+      "id": "sonnig",
+      "effect": "Sonniges Wetter mit leichten Wolken",
+      "effect_en": "Sunny weather with light clouds",
+      "category": "welt",
+      "pc": "APLEASANTDAY"
+    },
+    {
+      "id": "bewoelkt",
+      "effect": "Bewölktes Wetter",
+      "effect_en": "Cloudy weather",
+      "category": "welt",
+      "pc": "ABITDRIEG"
+    },
+    {
+      "id": "regen",
+      "effect": "Regen",
+      "effect_en": "Rain",
+      "category": "welt",
+      "pc": "CATSANDDOGS"
+    },
+    {
+      "id": "nebel",
+      "effect": "Nebel",
+      "effect_en": "Fog",
+      "category": "welt",
+      "pc": "CANTSEEATHING"
+    },
+    {
+      "id": "uhr-schneller",
+      "effect": "Uhr läuft schneller",
+      "effect_en": "Faster clock",
+      "category": "welt",
+      "pc": "LIFEISPASSINGMEBY"
+    },
+    {
+      "id": "spiel-schneller",
+      "effect": "Schnelleres Spieltempo",
+      "effect_en": "Faster gameplay",
+      "category": "welt",
+      "pc": "ONSPEED"
+    },
+    {
+      "id": "zeitlupe",
+      "effect": "Zeitlupe",
+      "effect_en": "Slow motion",
+      "category": "welt",
+      "pc": "BOOOOOORING",
+      "note": "Mit sechs O.",
+      "note_en": "With six O's."
+    },
+    {
+      "id": "passanten-randale",
+      "effect": "Passanten randalieren",
+      "effect_en": "Pedestrians riot",
+      "category": "spass",
+      "pc": "FIGHTFIGHTFIGHT",
+      "note": "Lässt sich nicht abschalten. Vorher speichern.",
+      "note_en": "Cannot be turned off. Save your game first."
+    },
+    {
+      "id": "passanten-greifen-an",
+      "effect": "Passanten greifen dich an",
+      "effect_en": "Pedestrians attack you",
+      "category": "spass",
+      "pc": "NOBODYLIKESME",
+      "note": "Lässt sich nicht abschalten. Vorher speichern.",
+      "note_en": "Cannot be turned off. Save your game first."
+    },
+    {
+      "id": "passanten-bewaffnet",
+      "effect": "Passanten sind bewaffnet",
+      "effect_en": "Pedestrians carry weapons",
+      "category": "spass",
+      "pc": "OURGODGIVENRIGHTTOBEARARMS"
+    },
+    {
+      "id": "frauen-mit-waffen",
+      "effect": "Frauen im Bikini mit Waffen",
+      "effect_en": "Bikini women with guns",
+      "category": "spass",
+      "pc": "CHICKSWITHGUNS"
+    },
+    {
+      "id": "frauen-folgen-dir",
+      "effect": "Frauen folgen dir",
+      "effect_en": "Women follow you",
+      "category": "spass",
+      "pc": "FANNYMAGNET"
+    },
+    {
+      "id": "zigarette",
+      "effect": "Tommy raucht eine Zigarette",
+      "effect_en": "Tommy smokes a cigarette",
+      "category": "spass",
+      "pc": "CERTAINDEATH",
+      "note": "Funktioniert nicht in der Definitive Edition.",
+      "note_en": "Does not work in the Definitive Edition."
+    },
+    {
+      "id": "selbstmord",
+      "effect": "Selbstmord (Tommy stirbt sofort)",
+      "effect_en": "Suicide (Tommy dies instantly)",
+      "category": "spass",
+      "pc": "ICANTTAKEITANYMORE"
+    },
+    {
+      "id": "zufaelliges-outfit",
+      "effect": "Zufälliges Outfit",
+      "effect_en": "Random outfit",
+      "category": "spass",
+      "pc": "STILLLIKEDRESSINGUP"
+    },
+    {
+      "id": "skin-ricardo-diaz",
+      "effect": "Als Ricardo Diaz spielen",
+      "effect_en": "Play as Ricardo Diaz",
+      "category": "spass",
+      "pc": "CHEATSHAVEBEENCRACKED"
+    },
+    {
+      "id": "skin-lance-vance",
+      "effect": "Als Lance Vance spielen",
+      "effect_en": "Play as Lance Vance",
+      "category": "spass",
+      "pc": "LOOKLIKELANCE"
+    },
+    {
+      "id": "skin-ken-rosenberg",
+      "effect": "Als Ken Rosenberg spielen",
+      "effect_en": "Play as Ken Rosenberg",
+      "category": "spass",
+      "pc": "MYSONISALAWYER"
+    },
+    {
+      "id": "skin-jezz-torrent",
+      "effect": "Als Love-Fist-Sänger Jezz Torrent spielen",
+      "effect_en": "Play as Love Fist singer Jezz Torrent",
+      "category": "spass",
+      "pc": "ROCKANDROLLMAN"
+    },
+    {
+      "id": "skin-dick",
+      "effect": "Als Love-Fist-Mitglied Dick spielen",
+      "effect_en": "Play as Love Fist member Dick",
+      "category": "spass",
+      "pc": "WELOVEOURDICK"
+    },
+    {
+      "id": "skin-mercedes",
+      "effect": "Als Mercedes spielen",
+      "effect_en": "Play as Mercedes",
+      "category": "spass",
+      "pc": "FOXYLITTLETHING"
+    },
+    {
+      "id": "skin-phil-cassidy",
+      "effect": "Als Phil Cassidy spielen",
+      "effect_en": "Play as Phil Cassidy",
+      "category": "spass",
+      "pc": "ONEARMEDBANDIT"
+    },
+    {
+      "id": "skin-sonny-forelli",
+      "effect": "Als Sonny Forelli spielen",
+      "effect_en": "Play as Sonny Forelli",
+      "category": "spass",
+      "pc": "IDONTHAVETHEMONEYSONNY"
+    },
+    {
+      "id": "duenner-tommy",
+      "effect": "Dünner Tommy",
+      "effect_en": "Skinny Tommy",
+      "category": "spass",
+      "pc": "PROGRAMMER"
+    },
+    {
+      "id": "dicker-tommy",
+      "effect": "Dicker Tommy",
+      "effect_en": "Fat Tommy",
+      "category": "spass",
+      "pc": "DEEPFRIEDMARSBARS"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+---
+// Generierte Titelbilder: keine fremden Bilder, kein Urheberrechtsrisiko, jedes Motiv eindeutig.
+import { getGame } from '../data/games';
+interface Props { seed: string; game: string; label?: string; class?: string; eager?: boolean }
+const { seed, game, label, class: cls } = Astro.props;
+const g = getGame(game);
+let h = 0;
+for (const c of seed) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+const v = h % 4;
+const id = `c${h.toString(36)}`;
+const num = label ?? g.numeral;
+const sunX = 760 + (h % 260);
+const lines = Array.from({ length: 14 }, (_, i) => i);
+---
+<svg class:list={['cover', cls]} viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" role="img" aria-label={`Titelbild ${g.name}`}>
+  <defs>
+    <linearGradient id={`${id}g`} x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color={g.from} />
+      <stop offset="1" stop-color={g.to} />
+    </linearGradient>
+    <linearGradient id={`${id}sky`} x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0712" />
+      <stop offset=".55" stop-color={g.to} stop-opacity=".55" />
+      <stop offset="1" stop-color={g.from} />
+    </linearGradient>
+    <mask id={`${id}m`}>
+      <rect width="1200" height="630" fill="#fff" />
+      {lines.slice(0, 7).map((i) => <rect x="0" y={360 + i * 26} width="1200" height={3 + i * 2.6} fill="#000" />)}
+    </mask>
+    <pattern id={`${id}dots`} width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="9" r="3.2" fill={g.from} />
+    </pattern>
+    <radialGradient id={`${id}fade`} cx=".75" cy=".4" r=".7">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#000" />
+    </radialGradient>
+    <mask id={`${id}dm`}><rect width="1200" height="630" fill={`url(#${id}fade)`} /></mask>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0b0810" />
+
+  {v === 0 && (
+    <g>
+      <rect width="1200" height="630" fill={`url(#${id}sky)`} />
+      <circle cx={sunX} cy="360" r="210" fill={`url(#${id}g)`} mask={`url(#${id}m)`} />
+      <rect y="470" width="1200" height="160" fill="#0b0810" opacity=".85" />
+      {lines.slice(0, 6).map((i) => <rect x={sunX - 180 + i * 12} y={490 + i * 22} width={360 - i * 24} height="3" fill={g.from} opacity={0.7 - i * 0.1} />)}
+    </g>
+  )}
+  {v === 1 && (
+    <g>
+      <rect width="1200" height="630" fill={`url(#${id}g)`} opacity=".18" />
+      {lines.map((i) => (
+        <rect x={-200 + i * 110} y="-100" width={8 + (i % 3) * 10} height="900" fill={`url(#${id}g)`} opacity={0.15 + (i % 4) * 0.12} transform="rotate(28 600 315)" />
+      ))}
+    </g>
+  )}
+  {v === 2 && (
+    <g>
+      <rect width="1200" height="630" fill={`url(#${id}g)`} opacity=".22" />
+      <rect width="1200" height="630" fill={`url(#${id}dots)`} mask={`url(#${id}dm)`} opacity=".8" />
+    </g>
+  )}
+  {v === 3 && (
+    <g>
+      <rect width="1200" height="380" fill={`url(#${id}sky)`} />
+      <g stroke={g.from} stroke-width="2" opacity=".7">
+        {lines.map((i) => <line x1={600} y1="380" x2={-900 + i * 230} y2="630" />)}
+        {lines.slice(0, 7).map((i) => <line x1="0" x2="1200" y1={380 + Math.pow(i, 1.9) * 6} y2={380 + Math.pow(i, 1.9) * 6} />)}
+      </g>
+      <circle cx="600" cy="300" r="140" fill={`url(#${id}g)`} mask={`url(#${id}m)`} />
+    </g>
+  )}
+
+  <text x="1170" y="600" text-anchor="end" font-family="Anton, Impact, sans-serif" font-size={num.length > 2 ? 330 : 430} fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3" letter-spacing="-4">{num}</text>
+</svg>
+
+<style>
+  .cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>

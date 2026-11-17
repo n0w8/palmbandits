@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import Icon from '../../components/Icon.astro';
+import { getNews } from '../../lib/utils';
+import { GAMES } from '../../data/games';
+import { langFromUrl, useT, href } from '../../i18n';
+
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const news = await getNews(lang);
+const used = GAMES.filter((g) => news.some((n) => n.data.game === g.slug));
+const last = news[0]?.data.pubDate;
+---
+<Base title={t.pages.newsTitle} description={t.pages.newsDesc}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">NEWS</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span><span>News</span></nav>
+    <h1 class="page-hero__title display">GTA <span class="grad-text">News</span></h1>
+    <p class="page-hero__lead">{t.pages.newsLead}</p>
+    {last && <p class="live cond"><span class="dot-live"></span> {t.pages.lastNews} <time data-rel datetime={last.toISOString()}></time> · <a href={lang === 'en' ? '/en/rss.xml' : '/rss.xml'}><Icon name="rss" size={14} /> RSS</a></p>}
+  </section>
+
+  <section class="wrap" data-filter-group>
+    <div class="filter-row" role="toolbar" aria-label={t.pages.filterGame}>
+      <button class="filter-btn" data-filter="alle" aria-pressed="true">{t.pages.all} <span data-filter-count>{news.length}</span></button>
+      {used.map((g) => <button class="filter-btn" data-filter={g.slug} aria-pressed="false">{g.name}</button>)}
+    </div>
+    <div class="list">
+      {news.map((n, i) => <NewsCard item={n} size={i === 0 ? 'lg' : 'md'} delay={(i % 3) * 0.05} />)}
+    </div>
+    <p class="muted" data-filter-empty hidden>{t.pages.noNews}</p>
+  </section>
+
+  <Newsletter />
+</Base>
+
+<style>
+  .live { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-size: 0.85rem; margin-top: 18px; }
+  .live .dot-live { background: var(--green); }
+  .live a { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); }
+  .list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+  .list :global(.ncard--lg) { grid-column: span 2; grid-row: span 2; }
+  .filter-btn span { opacity: 0.6; margin-left: 4px; }
+  @media (max-width: 1000px) { .list { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .list { grid-template-columns: 1fr; } .list :global(.ncard--lg) { grid-column: auto; grid-row: auto; } }
+</style>

@@ -1,0 +1,317 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import NewsCard from '../components/NewsCard.astro';
+import GuideCard from '../components/GuideCard.astro';
+import GameCard from '../components/GameCard.astro';
+import RadioBand from '../components/RadioBand.astro';
+import Newsletter from '../components/Newsletter.astro';
+import { GAMES, getGame } from '../data/games';
+import { CATEGORIES, catL } from '../data/categories';
+import { getNews, getGuides, getCheatFiles, cheatText } from '../lib/utils';
+import { langFromUrl, useT, href, LOCALE } from '../i18n';
+import { SITE, discordFor } from '../config';
+import { discordStats, fmtNum, SHOW_COUNT_FROM, OG_LIMIT } from '../lib/discord';
+
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const h = (p: string) => href(lang, p);
+const news = await getNews(lang);
+const guides = await getGuides(lang);
+const [lead, ...rest] = news;
+const cheats = getCheatFiles().flatMap((f) =>
+  f.cheats.map((c) => ({ game: getGame(f.game).name, slug: f.game, effect: cheatText(c, lang).effect, code: c.pc ?? c.phone ?? '', phone: c.phone ?? '', id: c.id })),
+);
+// Beliebteste Codes (nach PC-Code), erscheinen ohne Suche im Cheat-Finder
+const POPULAR = ['HESOYAM', 'PAINKILLER', 'AEZAKMI', 'YECGAA', 'BUZZOFF', 'ASPIRINE'];
+const countFor = (slug: string) => news.filter((n) => n.data.game === slug).length + guides.filter((g) => g.data.game === slug).length;
+const catCount = (slug: string) => guides.filter((g) => g.data.category === slug).length;
+const lastUpdate = news[0]?.data.pubDate;
+const dc = await discordStats();
+const ogLeft = dc ? Math.max(0, OG_LIMIT - dc.members) : OG_LIMIT;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: `${SITE.url}${h('/')}`,
+    inLanguage: LOCALE[lang],
+    description: t.site.description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    logo: `${SITE.url}/favicon.svg`,
+    sameAs: [SITE.discord, SITE.pinterest, SITE.youtube, SITE.instagram, SITE.tiktok].filter(Boolean),
+  },
+];
+---
+<Base title={t.site.homeTitle} description={t.site.description} jsonLd={jsonLd}>
+  <Hero />
+
+  <div class="band" aria-hidden="true">
+    <div class="band__track">
+      {[0, 1].map(() => (
+        <span>{t.home.band.map((w) => <>{w} <i>★</i> </>)}&nbsp;</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <section class="section wrap" aria-labelledby="sec-news">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>01</b> / {t.home.newsroom}
+          {lastUpdate && <span class="bot-status"><span class="dot-live"></span> {t.home.lastUpdate} <time data-rel datetime={lastUpdate.toISOString()}></time></span>}
+        </p>
+        <h2 id="sec-news" class="sec-head__title display">{t.home.fresh1} <span class="grad-text">{t.home.fresh2}</span></h2>
+      </div>
+      <a href={h('/news/')} class="sec-head__link">{t.home.allNews} <Icon name="arrow" /></a>
+    </div>
+
+    {lead ? (
+      <div class="news-grid">
+        <NewsCard item={lead} size="lg" />
+        <div class="news-side">
+          {rest.slice(0, 4).map((n, i) => <NewsCard item={n} size="row" delay={i * 0.06} />)}
+        </div>
+      </div>
+    ) : (
+      <div class="card empty">
+        <p class="display">{t.home.emptyTitle}</p>
+        <p class="muted">{t.home.emptyText}</p>
+      </div>
+    )}
+  </section>
+
+  <!-- SPIELE -->
+  <section class="section section--tight wrap" aria-labelledby="sec-games">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>02</b> / {t.home.gamesKicker}</p>
+        <h2 id="sec-games" class="sec-head__title display">{t.home.games1} <span class="grad-text">{t.home.games2}</span></h2>
+      </div>
+      <a href={h('/spiele/')} class="sec-head__link">{t.home.allGames} <Icon name="arrow" /></a>
+    </div>
+    <div class="games-grid">
+      {GAMES.map((g, i) => <GameCard game={g} count={countFor(g.slug)} delay={i * 0.05} big={i === 0} />)}
+    </div>
+  </section>
+
+  <!-- THEMEN -->
+  <section class="section section--tight wrap" aria-labelledby="sec-cats">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>03</b> / {t.home.topicsKicker}</p>
+        <h2 id="sec-cats" class="sec-head__title display">{t.home.topics1} <span class="grad-text">{t.home.topics2}</span> {t.home.topics3}</h2>
+      </div>
+    </div>
+    <div class="cats">
+      {CATEGORIES.map((c0, i) => {
+        const c = catL(c0.slug, lang);
+        return (
+          <a href={h(c.slug === 'cheats' ? '/cheats/' : `/guides/kategorie/${c.slug}/`)} class="card cat" data-reveal style={`--d:${i * 0.04}s`}>
+            <span class="cat__icon"><Icon name={c.icon} size={26} /></span>
+            <span class="cat__label display">{c.label}</span>
+            <span class="cat__text">{c.text}</span>
+            <span class="cat__count cond">{c.slug === 'cheats' ? `${cheats.length} ${t.home.cheatsCount}` : `${catCount(c.slug)} ${t.home.guidesCount}`}</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- GUIDES + CHEAT-FINDER -->
+  <section class="section wrap" aria-labelledby="sec-guides">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>04</b> / {t.home.guidesKicker}</p>
+        <h2 id="sec-guides" class="sec-head__title display">{t.home.top1} <span class="grad-text">{t.home.top2}</span></h2>
+      </div>
+      <a href={h('/guides/')} class="sec-head__link">{t.home.allGuides} <Icon name="arrow" /></a>
+    </div>
+    <div class="guides-split">
+      <div class="guides-list">
+        {guides.slice(0, 4).map((g, i) => <GuideCard item={g} index={i} delay={i * 0.06} />)}
+      </div>
+
+      <aside class="card finder" data-cheat-finder aria-labelledby="finder-h">
+        <p class="cond finder__kicker"><Icon name="code" size={16} /> {t.home.finder}</p>
+        <h3 id="finder-h" class="display finder__title">{t.home.finderTitle}</h3>
+        <label class="field">
+          <Icon name="search" />
+          <span class="sr-only">{t.home.finderSearch}</span>
+          <input data-finder-input type="search" placeholder={t.home.finderPh} autocomplete="off" />
+        </label>
+        <ul class="finder__list" data-finder-list>
+          {cheats.map((c) => (
+            <li data-finder-item data-text={`${c.effect} ${c.code} ${c.game}`} hidden={!POPULAR.includes(c.code)} data-popular={POPULAR.includes(c.code) ? '1' : undefined}>
+              <a href={`${h(`/cheats/${c.slug}/`)}#${c.id}`} class="finder__info">
+                <small class="cond">{c.game}</small>
+                <span>{c.effect}</span>
+              </a>
+              {c.code && (
+                <button class="finder__code" data-copy={c.code} aria-label={`${c.code} copy`}>
+                  <code>{c.code}</code><Icon name="copy" size={14} />
+                </button>
+              )}
+            </li>
+          ))}
+        </ul>
+        <p class="finder__empty muted" data-finder-empty hidden>{t.home.finderEmpty} <a href={h('/cheats/')}>{t.home.finderDb}</a>.</p>
+        <a href={h('/cheats/')} class="btn btn--ghost finder__all">{t.home.allCheats(cheats.length)} <Icon name="arrow" /></a>
+      </aside>
+    </div>
+  </section>
+
+  <RadioBand />
+
+  <!-- COMMUNITY + SHOP -->
+  <section class="section wrap" aria-labelledby="sec-comm">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>05</b> / {t.home.crewKicker}</p>
+        <h2 id="sec-comm" class="sec-head__title display">{t.home.crew1} <span class="grad-text">{t.home.crew2}</span></h2>
+      </div>
+    </div>
+    <div class="crew">
+      <a {...discordFor(lang)} class="card crew__card crew__card--discord" data-reveal data-tilt>
+        <Icon name="discord" size={42} />
+        <h3 class="display">Discord</h3>
+        <p>{t.home.discordText}</p>
+        {dc && dc.members >= SHOW_COUNT_FROM && <span class="chip chip--bot"><span class="dot-live"></span>{fmtNum(dc.members)} {t.home.members} · {fmtNum(dc.online)} {t.home.online}</span>}
+        {ogLeft > 0 && <span class="chip chip--rumor">⭐ {t.home.ogLeft(fmtNum(ogLeft))}</span>}
+        <span class="btn btn--discord">{t.home.join} <Icon name="arrow" /></span>
+      </a>
+      <a href={h('/shop/')} class="card crew__card crew__card--shop" data-reveal data-tilt style="--d:.08s">
+        <span class="chip chip--bot">{t.home.soon}</span>
+        <Icon name="cart" size={42} />
+        <h3 class="display">{t.home.scriptsTitle}</h3>
+        <p>{t.home.scriptsText}</p>
+        <span class="btn btn--sun">{t.home.waitlist} <Icon name="arrow" /></span>
+      </a>
+      <a href={`${h('/shop/')}#merch`} class="card crew__card crew__card--merch" data-reveal data-tilt style="--d:.16s">
+        <span class="chip chip--live">{t.card.isNew}</span>
+        <img class="crew__merch" src="/merch-logo.png" alt="Palm Bandits Logo" width="1000" height="262" loading="lazy" />
+        <h3 class="display">{t.home.merchTitle}</h3>
+        <p>{t.home.merchText}</p>
+        <span class="btn btn--ghost">{t.home.toMerch} <Icon name="arrow" /></span>
+      </a>
+    </div>
+  </section>
+
+  <Newsletter />
+</Base>
+
+<script>
+  const norm = (s: string) => s.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+  document.addEventListener('astro:page-load', () => {
+    const root = document.querySelector('[data-cheat-finder]');
+    if (!root) return;
+    const input = root.querySelector<HTMLInputElement>('[data-finder-input]')!;
+    const items = [...root.querySelectorAll<HTMLElement>('[data-finder-item]')];
+    const empty = root.querySelector<HTMLElement>('[data-finder-empty]')!;
+    input.addEventListener('input', () => {
+      const q = norm(input.value.trim());
+      let shown = 0;
+      for (const it of items) {
+        const ok = q ? norm(it.dataset.text ?? '').includes(q) && shown < 7 : it.dataset.popular === '1';
+        it.hidden = !ok;
+        if (ok) shown++;
+      }
+      empty.hidden = shown > 0;
+    });
+  });
+</script>
+
+<style>
+  .bot-status { display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; padding: 3px 8px; background: rgba(43, 217, 107, 0.1); color: var(--green); font-size: 0.75rem; }
+  .bot-status .dot-live { background: var(--green); }
+  .news-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(14px, 2vw, 22px); }
+  .news-side { display: grid; gap: 14px; align-content: start; }
+  .empty { padding: 40px; }
+  .empty p.display { font-size: 2rem; margin: 0 0 8px; }
+
+  .games-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 20px); }
+  .games-grid :global(.gamecard--big) { grid-column: span 2; grid-row: span 2; }
+
+  .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .cat { display: flex; flex-direction: column; gap: 10px; padding: 22px; min-height: 210px; }
+  .cat__icon {
+    width: 52px; height: 52px; display: grid; place-items: center;
+    background: rgba(255, 255, 255, 0.06); color: var(--pink);
+    transition: background 0.3s, color 0.3s, transform 0.4s var(--ease);
+  }
+  .cat:hover .cat__icon { background: var(--sunset); color: #120812; transform: rotate(-8deg) scale(1.05); }
+  .cat__label { font-size: 1.7rem; }
+  .cat__text { color: var(--muted); font-size: 0.93rem; line-height: 1.45; flex: 1; }
+  .cat__count { font-size: 0.78rem; color: var(--dim); }
+  .cats > :first-child { grid-row: span 2; background: linear-gradient(160deg, rgba(43, 217, 107, 0.16), var(--panel) 60%); }
+  .cats > :first-child .cat__label { font-size: 2.6rem; }
+
+  .guides-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(14px, 2vw, 22px); align-items: start; }
+  .guides-list { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 20px); }
+  .finder { padding: 24px; position: sticky; top: calc(var(--header-h) + var(--ticker-h) + 20px); display: flex; flex-direction: column; gap: 14px; }
+  .finder__kicker { display: flex; align-items: center; gap: 8px; color: var(--teal); margin: 0; font-size: 0.85rem; }
+  .finder__title { font-size: 2.2rem; }
+  .finder__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .finder__list li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); }
+  .finder__list li[hidden] { display: none; }
+  .finder__info { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
+  .finder__info small { color: var(--dim); font-size: 0.72rem; }
+  .finder__info span { font-size: 0.93rem; font-weight: 500; }
+  .finder__code {
+    display: inline-flex; align-items: center; gap: 6px; flex: none;
+    padding: 6px 8px; background: rgba(25, 227, 200, 0.08); color: var(--teal);
+    border: 1px solid rgba(25, 227, 200, 0.25); transition: background 0.2s;
+  }
+  .finder__code code { font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; font-weight: 700; }
+  .finder__code:hover { background: rgba(25, 227, 200, 0.18); }
+  .finder__code:global(.is-copied) { background: var(--teal); color: #041512; }
+  .finder__empty { margin: 0; font-size: 0.93rem; }
+  .finder__empty a { color: var(--teal); }
+  .finder__all { justify-content: center; }
+
+  .crew { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 20px); }
+  .crew__card { display: flex; flex-direction: column; gap: 14px; padding: 28px; min-height: 320px; transition: transform 0.25s ease-out, border-color 0.3s; }
+  .crew__card h3 { font-size: 2.6rem; }
+  .crew__card p { color: var(--muted); margin: 0; flex: 1; }
+  .crew__card .btn { align-self: flex-start; }
+  .crew__card--shop .chip { position: absolute; top: 22px; right: 22px; }
+  .crew__card--discord .chip { align-self: flex-start; }
+  .crew__card--discord { background: linear-gradient(160deg, rgba(88, 101, 242, 0.28), var(--panel) 65%); }
+  .crew__card--merch { background: linear-gradient(160deg, rgba(255, 138, 31, 0.18), var(--panel) 65%); }
+  .crew__card--merch .chip { position: absolute; top: 22px; right: 22px; }
+  .crew__merch { width: 78%; height: auto; margin: 4px 0 2px; }
+  .crew__card--shop { background: linear-gradient(160deg, rgba(255, 45, 135, 0.22), var(--panel) 65%); }
+
+  @media (max-width: 1100px) {
+    .games-grid { grid-template-columns: repeat(2, 1fr); }
+    .cats { grid-template-columns: repeat(2, 1fr); }
+    .cats > :first-child { grid-row: auto; grid-column: span 2; }
+    .guides-split { grid-template-columns: 1fr; }
+    .finder { position: static; }
+  }
+  @media (max-width: 860px) {
+    .news-grid { grid-template-columns: 1fr; }
+    .crew { grid-template-columns: 1fr; }
+    .crew__card { min-height: 0; }
+  }
+  @media (max-width: 620px) {
+    .games-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .games-grid :global(.gamecard) { min-height: 210px; padding: 16px; }
+    .games-grid :global(.gamecard--big) { grid-column: span 2; grid-row: auto; min-height: 300px; }
+    .games-grid :global(.gamecard__name) { font-size: 1.6rem; }
+    .games-grid :global(.gamecard__tag) { display: none; }
+    .guides-list { grid-template-columns: 1fr; }
+    .cats { gap: 10px; }
+    .cat { min-height: 0; padding: 16px; }
+    .cat__text { display: none; }
+    .cat__label { font-size: 1.35rem; }
+    .cats > :first-child .cat__label { font-size: 2rem; }
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import Base from '../../../layouts/Base.astro';
+import GuideCard from '../../../components/GuideCard.astro';
+import Icon from '../../../components/Icon.astro';
+import { getGuides } from '../../../lib/utils';
+import { CATEGORIES, catL } from '../../../data/categories';
+import { langFromUrl, useT, href } from '../../../i18n';
+
+export async function getStaticPaths() {
+  return CATEGORIES.filter((c) => c.slug !== 'cheats').map((c) => ({ params: { category: c.slug }, props: { key: c.slug } }));
+}
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const { key } = Astro.props as { key: string };
+const cat = catL(key, lang);
+const items = (await getGuides(lang)).filter((g) => g.data.category === key);
+---
+<Base title={t.pages.catTitle(cat.label)} description={t.pages.catDesc(cat.label, cat.text)}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">{cat.short.toUpperCase()}</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span><a href={href(lang, '/guides/')}>Guides</a><span aria-hidden="true">/</span><span>{cat.label}</span></nav>
+    <h1 class="page-hero__title display"><Icon name={cat.icon} size={56} class="ic" /> <span class="grad-text">{cat.label}</span></h1>
+    <p class="page-hero__lead">{cat.text}</p>
+  </section>
+  <section class="wrap">
+    {items.length ? (
+      <div class="list">{items.map((g, i) => <GuideCard item={g} delay={(i % 3) * 0.05} />)}</div>
+    ) : (
+      <div class="card soon">
+        <p class="display">{t.pages.catSoonTitle}</p>
+        <p class="muted">{t.pages.catSoonText}</p>
+      </div>
+    )}
+  </section>
+</Base>
+<style>
+  .page-hero__title { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .page-hero__title :global(.ic) { color: var(--pink); width: 0.7em; height: 0.7em; }
+  .list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .soon { padding: 36px; }
+  .soon .display { font-size: 2rem; margin: 0 0 6px; }
+  @media (max-width: 1000px) { .list { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .list { grid-template-columns: 1fr; } }
+</style>

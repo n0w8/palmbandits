@@ -1,0 +1,78 @@
+---
+import { getNews } from '../lib/utils';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const base = href(lang, '/news/');
+const news = (await getNews(lang)).slice(0, 8);
+const items = news.length
+  ? news.map((n) => ({ href: `${base}${n.id}/`, text: n.data.title, time: n.data.pubDate.toISOString(), breaking: n.data.breaking }))
+  : [{ href: base, text: t.ticker.empty, time: '', breaking: false }];
+const loop = [...items, ...items];
+---
+<div class="ticker" aria-label={t.ticker.label}>
+  <div class="ticker__label cond"><span class="dot-live"></span>{t.ticker.live}</div>
+  <div class="ticker__viewport">
+    <div class="ticker__track" style={`--dur:${Math.max(30, items.length * 9)}s`}>
+      {loop.map((it, i) => (
+        <a href={it.href} aria-hidden={i >= items.length ? 'true' : undefined} tabindex={i >= items.length ? -1 : undefined}>
+          {it.breaking && <b>{t.ticker.breaking}</b>}
+          {it.time && <time data-rel datetime={it.time}></time>}
+          <span>{it.text}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .ticker {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 40;
+    height: var(--ticker-h);
+    display: flex;
+    background: #000;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .ticker__label {
+    flex: none;
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 14px 0 var(--gutter);
+    background: var(--red);
+    font-size: 0.82rem;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+    padding-right: 22px;
+  }
+  .ticker__viewport {
+    flex: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 92%, transparent);
+  }
+  .ticker__track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: marquee var(--dur) linear infinite;
+  }
+  .ticker:hover .ticker__track { animation-play-state: paused; }
+  .ticker__track a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 28px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #ddd7e6;
+    border-right: 1px solid var(--line);
+  }
+  .ticker__track a:hover span { color: #fff; text-decoration: underline; }
+  .ticker__track b {
+    font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.08em;
+    font-size: 0.75rem; color: var(--yellow);
+  }
+  .ticker__track time {
+    font-family: var(--f-cond); font-weight: 600; letter-spacing: 0.05em;
+    color: var(--pink); font-size: 0.82rem; text-transform: uppercase;
+  }
+</style>

@@ -1,0 +1,70 @@
+{
+  "_hinweis": "Quellen des Guide-Radars. Alle Feeds am 17.11.2026 per Abruf geprueft (HTTP 200, gueltiges RSS/Atom). type: outlet = Fachmedium, reddit = Reddit-Feed, youtube = YouTube-Kanal. tier: official = Rockstar, A = grosse Fachmedien, B = kleinere Seiten und YouTube-Kanaele, rumor = Reddit. gtaOnly = Quelle bringt nur GTA-Themen (dann muss 'GTA' nicht im Titel stehen). Die Stufen pro Domain (outletTiers) kommen zusaetzlich aus news-bot/sources.json. Reddit erlaubt ohne Anmeldung nur etwa 1 Abruf pro Minute, deshalb steckt alles in EINEM Feed mit mehreren Subreddits (r/A+B+C). Neuen Subreddit: Namen mit + an die Reddit-URL haengen und in subredditGames eintragen. Neuen YouTube-Kanal: Kanal-ID (beginnt mit UC) in https://www.youtube.com/feeds/videos.xml?channel_id=... einsetzen.",
+  "feeds": [
+    { "name": "Rockstar Newswire (via Google News)", "url": "https://news.google.com/rss/search?q=site:rockstargames.com&hl=en-US&gl=US&ceid=US:en", "type": "outlet", "tier": "official", "lang": "en", "aggregator": true, "outletName": "Rockstar Games Newswire" },
+    { "name": "Google News EN: GTA-Guides", "url": "https://news.google.com/rss/search?q=%28%22GTA+6%22+OR+%22GTA+VI%22+OR+%22GTA+Online%22%29+%28guide+OR+%22how+to%22+OR+location+OR+%22easter+egg%22+OR+glitch+OR+money+OR+secret+OR+tips%29+when:3d&hl=en-US&gl=US&ceid=US:en", "type": "outlet", "tier": "B", "lang": "en", "aggregator": true },
+    { "name": "Google News DE: GTA-Guides", "url": "https://news.google.com/rss/search?q=%28%22GTA+6%22+OR+%22GTA+Online%22%29+%28Fundort+OR+Guide+OR+Geld+OR+%22Easter+Egg%22+OR+Tipps+OR+Glitch+OR+freischalten%29+when:3d&hl=de&gl=DE&ceid=DE:de", "type": "outlet", "tier": "B", "lang": "de", "aggregator": true },
+
+    { "name": "IGN", "url": "https://www.ign.com/rss/v2/articles/feed?categories=guides", "type": "outlet", "tier": "A", "lang": "en" },
+    { "name": "GamesRadar+ (GTA)", "url": "https://www.gamesradar.com/feeds/tag/grand-theft-auto/", "type": "outlet", "tier": "A", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "GamesRadar+" },
+    { "name": "Eurogamer", "url": "https://www.eurogamer.net/feed", "type": "outlet", "tier": "A", "lang": "en" },
+    { "name": "Eurogamer.de", "url": "https://www.eurogamer.de/feed", "type": "outlet", "tier": "A", "lang": "de" },
+    { "name": "GameStar", "url": "https://www.gamestar.de/news/rss/news.rss", "type": "outlet", "tier": "A", "lang": "de" },
+    { "name": "PC Games", "url": "https://www.pcgames.de/feed.cfm?menu_alias=home", "type": "outlet", "tier": "A", "lang": "de" },
+    { "name": "GameSpot", "url": "https://www.gamespot.com/feeds/game-news", "type": "outlet", "tier": "A", "lang": "en" },
+
+    { "name": "RockstarINTEL", "url": "https://www.rockstarintel.com/feed", "type": "outlet", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true },
+    { "name": "GTABOOM", "url": "https://www.gtaboom.com/feed/", "type": "outlet", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true },
+    { "name": "Dexerto (GTA)", "url": "https://www.dexerto.com/gta/feed/", "type": "outlet", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "Dexerto" },
+    { "name": "TheGamer", "url": "https://www.thegamer.com/feed/", "type": "outlet", "tier": "B", "lang": "en" },
+    { "name": "Game Rant", "url": "https://gamerant.com/feed/", "type": "outlet", "tier": "B", "lang": "en" },
+    { "name": "Push Square", "url": "https://www.pushsquare.com/feeds/latest", "type": "outlet", "tier": "B", "lang": "en" },
+    { "name": "Mein-MMO", "url": "https://mein-mmo.de/feed/", "type": "outlet", "tier": "B", "lang": "de" },
+    { "name": "netzwelt", "url": "https://www.netzwelt.de/feed/news.rss", "type": "outlet", "tier": "B", "lang": "de" },
+
+    { "name": "Reddit: Top des Tages (r/GTA6, r/gtaonline, r/GTA, r/GTAV)", "url": "https://www.reddit.com/r/GTA6+gtaonline+GTA+GTAV/top/.rss?t=day&limit=100", "type": "reddit", "tier": "rumor", "lang": "en", "focus": "gta", "gtaOnly": true, "optional": true },
+
+    { "name": "YouTube: Rockstar Games", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC6VcWc1rAoWdBCM0JxrRQ3A", "type": "youtube", "tier": "official", "lang": "en", "outletName": "YouTube: Rockstar Games" },
+    { "name": "YouTube: GTA Series Videos", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCuWcjpKbIDAbZfHoru1toFg", "type": "youtube", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "YouTube: GTA Series Videos" },
+    { "name": "YouTube: MrBossFTW", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0PMQXAwF6O6aeTpv962miA", "type": "youtube", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "YouTube: MrBossFTW" },
+    { "name": "YouTube: TGG", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC72PuhDwKtZ5MikpGNhPAtA", "type": "youtube", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "YouTube: TGG" },
+    { "name": "YouTube: Broughy1322", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCcZ3sRk9z6jjgfYQbMGTpig", "type": "youtube", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "YouTube: Broughy1322" },
+    { "name": "YouTube: GhillieMaster", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1PhTs67PPip_Ys0_xmk8Bg", "type": "youtube", "tier": "B", "lang": "en", "focus": "gta", "gtaOnly": true, "outletName": "YouTube: GhillieMaster" }
+  ],
+  "subredditGames": {
+    "GTA6": "gta-6",
+    "gtaonline": "gta-online",
+    "GTAV": "gta-5",
+    "GTA": null
+  },
+  "blockedDomains": [
+    "mmoexp.com", "u4gm.com", "mmogah.com", "eldorado.gg", "playerauctions.com", "lootbar.gg",
+    "g2a.com", "eneba.com", "kinguin.net", "cdkeys.com", "instant-gaming.com", "gamivo.com", "mmopixel.com", "aoeah.com"
+  ],
+  "outletTiers": {
+    "ign.com": "A",
+    "gamesradar.com": "A",
+    "gamespot.com": "A",
+    "polygon.com": "A",
+    "gamerant.com": "B",
+    "sportskeeda.com": "B",
+    "screenrant.com": "B",
+    "pcgamesn.com": "B",
+    "vg247.com": "B",
+    "giga.de": "B",
+    "gamepro.de": "A",
+    "spieletipps.de": "B",
+    "play3.de": "B",
+    "xboxdynasty.de": "B",
+    "gamezone.de": "B",
+    "4players.de": "B",
+    "trueachievements.com": "B",
+    "truetrophies.com": "B",
+    "powerpyx.com": "B",
+    "psnprofiles.com": "B",
+    "gtabase.com": "B",
+    "rockpapershotgun.com": "B",
+    "videogamer.com": "B",
+    "youtube.com": "B"
+  }
+}

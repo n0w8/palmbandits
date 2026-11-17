@@ -1,0 +1,39 @@
+{
+  "name": "wanted-automation",
+  "private": true,
+  "version": "1.0.0",
+  "description": "News-Bot und Pinterest-Bot fuer die Palm Bandits GTA-Community-Seite (laeuft auf GitHub Actions).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "news": "node news-bot/run.mjs",
+    "news:dry": "node news-bot/run.mjs --dry-run",
+    "indexnow": "node news-bot/indexnow.mjs",
+    "pins:generate": "node pinterest/generate.mjs",
+    "pins:samples": "node pinterest/generate.mjs --samples",
+    "pins:post": "node pinterest/post.mjs",
+    "pins:csv": "node pinterest/export-csv.mjs",
+    "radar": "node guide-radar/run.mjs",
+    "radar:dry": "node guide-radar/run.mjs --dry-run",
+    "radar:prs": "node guide-radar/open-prs.mjs",
+    "test": "node --test tests/syntax.test.mjs tests/core.test.mjs tests/writer.test.mjs tests/radar.test.mjs tests/radar-writer.test.mjs tests/bilingual.test.mjs tests/levels.test.mjs",
+    "discord:setup": "node discord/setup.mjs",
+    "discord:check": "node discord/setup.mjs --dry-run",
+    "discord:secrets": "node discord/push-secrets.mjs",
+    "discord:cheat": "node discord/daily.mjs cheat",
+    "discord:badges": "node discord/daily.mjs badges"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.9.0",
+    "@fontsource/anton": "^5.3.0",
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "fast-xml-parser": "^5.12.1",
+    "gray-matter": "^4.0.3",
+    "satori": "^0.63.2",
+    "zod": "^4.6.7"
+  }
+}

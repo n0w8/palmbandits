@@ -1,0 +1,101 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { GAMES } from '../data/games';
+import { CATEGORIES, catL } from '../data/categories';
+import { SITE, RADIO, MERCH, discordFor } from '../config';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const h = (p: string) => href(lang, p);
+const year = new Date().getFullYear();
+const band = t.footer.band;
+const rss = lang === 'en' ? '/en/rss.xml' : '/rss.xml';
+---
+<footer class="ftr">
+  <div class="band band--dark" aria-hidden="true">
+    <div class="band__track">
+      {[0, 1].map(() => (
+        <span>{[...band, ...band].map((w) => <>{w} <i>★</i> </>)}&nbsp;</span>
+      ))}
+    </div>
+  </div>
+
+  <div class="wrap ftr__grid">
+    <div class="ftr__brand">
+      <Logo size="lg" />
+      <p class="muted">{t.site.description}</p>
+      <div class="ftr__social">
+        <a {...discordFor(lang)} aria-label="Discord"><Icon name="discord" /></a>
+        {SITE.pinterest && <a href={SITE.pinterest} aria-label="Pinterest" target="_blank" rel="noopener"><Icon name="pinterest" /></a>}
+        {SITE.youtube && <a href={SITE.youtube} aria-label="YouTube" target="_blank" rel="noopener"><Icon name="play" /></a>}
+        <a href={rss} aria-label="RSS"><Icon name="rss" /></a>
+      </div>
+    </div>
+    <div>
+      <p class="cond ftr__h">{t.footer.games}</p>
+      <ul>{GAMES.map((g) => <li><a href={h(`/spiele/${g.slug}/`)}>{g.name}</a></li>)}</ul>
+    </div>
+    <div>
+      <p class="cond ftr__h">{t.footer.topics}</p>
+      <ul>{CATEGORIES.map((c) => <li><a href={h(c.slug === 'cheats' ? '/cheats/' : `/guides/kategorie/${c.slug}/`)}>{catL(c.slug, lang).label}</a></li>)}</ul>
+    </div>
+    <div>
+      <p class="cond ftr__h">{t.footer.community}</p>
+      <ul>
+        <li><a href={h('/community/')}>{t.footer.discordForum}</a></li>
+        <li><a href={h('/radio/')}>{RADIO.station}</a></li>
+        {MERCH.url && <li><a href={`${h('/shop/')}#merch`}>{t.footer.merch}</a></li>}
+        <li><a href={h('/shop/')}>{t.footer.scripts}</a></li>
+        <li><a href={h('/cheats/')}>{t.footer.cheatDb}</a></li>
+        <li><a href={rss}>{t.footer.rss}</a></li>
+        <li><a href={lang === 'en' ? '/' : '/en/'} hreflang={lang === 'en' ? 'de' : 'en'} data-astro-reload>{lang === 'en' ? 'Deutsche Version' : 'English version'}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap ftr__legal">
+    <p>© {year} {SITE.name}. {t.footer.disclaimer}</p>
+    <nav aria-label={t.footer.legalNav}>
+      <a href="/impressum/">{t.footer.imprint}</a>
+      <a href="/datenschutz/">{t.footer.privacy}</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .ftr { margin-top: clamp(60px, 10vw, 140px); padding-bottom: 30px; overflow: hidden; }
+  .ftr__grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-top: clamp(50px, 7vw, 90px);
+    padding-bottom: 50px;
+  }
+  .ftr__brand p { max-width: 380px; font-size: 0.95rem; margin: 18px 0; }
+  .ftr__social { display: flex; gap: 8px; }
+  .ftr__social a {
+    width: 42px; height: 42px; display: grid; place-items: center;
+    border: 1px solid var(--line2); color: var(--muted);
+    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .ftr__social a:hover { color: var(--text); border-color: var(--pink); transform: translateY(-2px); }
+  .ftr__h { color: var(--text); font-size: 0.9rem; margin: 6px 0 14px; }
+  .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .ftr ul a { color: var(--muted); font-size: 0.97rem; }
+  .ftr ul a:hover { color: var(--text); }
+  .ftr__legal {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    font-size: 0.85rem;
+    color: var(--dim);
+  }
+  .ftr__legal p { margin: 0; max-width: 760px; }
+  .ftr__legal nav { display: flex; gap: 18px; }
+  .ftr__legal a:hover { color: var(--text); }
+  @media (max-width: 860px) {
+    .ftr__grid { grid-template-columns: 1fr 1fr; }
+    .ftr__brand { grid-column: 1 / -1; }
+  }
+</style>

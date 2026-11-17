@@ -1,0 +1,12 @@
+---
+import Page from '../../cheats/[game].astro';
+import { getCheatFiles, type CheatFile } from '../../../lib/utils';
+export async function getStaticPaths() {
+  const files = getCheatFiles();
+  return [
+    ...files.map((f) => ({ params: { game: f.game }, props: { file: f as CheatFile | null, slug: f.game } })),
+    { params: { game: 'gta-6' }, props: { file: null, slug: 'gta-6' } },
+  ];
+}
+---
+<Page {...Astro.props} />

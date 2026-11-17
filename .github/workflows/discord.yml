@@ -1,0 +1,52 @@
+# Discord-Automatik ohne eigenen Bot-Server:
+#  - stuendlich: Badges OG (erste 1.000) und Day One, Guide-Helfer und Fahndungslevel-Sterne vergeben
+#  - taeglich 18:00 (Winterzeit DE/AT): Cheat des Tages in #cheats-und-tricks
+name: Discord
+
+on:
+  schedule:
+    - cron: '17 * * * *'   # Badges
+    - cron: '0 17 * * *'   # Cheat des Tages (17:00 UTC = 18:00 MEZ)
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'badges oder cheat'
+        default: 'badges'
+
+concurrency:
+  group: discord
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+      DISCORD_WEBHOOK_CHEATS: ${{ secrets.DISCORD_WEBHOOK_CHEATS }}
+      DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID }}
+      SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+      - name: Abhaengigkeiten installieren
+        working-directory: automation
+        run: npm ci --no-audit --no-fund
+      - name: Aufgabe ausfuehren
+        working-directory: automation
+        run: |
+          TASK="${{ inputs.task }}"
+          if [ -z "$TASK" ]; then
+            if [ "${{ github.event.schedule }}" = "0 17 * * *" ]; then TASK=cheat; else TASK=badges; fi
+          fi
+          if [ "$TASK" = "badges" ] && [ -z "$DISCORD_BOT_TOKEN" ]; then echo "Kein DISCORD_BOT_TOKEN, uebersprungen."; exit 0; fi
+          node discord/daily.mjs "$TASK"

@@ -1,0 +1,15 @@
+{
+  "game": "gta-san-andreas",
+  "updated": "2026-11-15",
+  "howTo": {
+    "pc": "Während des Spiels einfach den Code eintippen (kein Eingabefeld nötig).",
+    "playstation": "Die Tastenfolge während des Spiels zügig drücken.",
+    "xbox": "Die Tastenfolge während des Spiels zügig drücken."
+  },
+  "cheats": [
+    { "id": "hesoyam", "effect": "Volle Gesundheit, Rüstung und 250.000 $", "category": "spieler", "pc": "HESOYAM", "playstation": "R1, R2, L1, X, Links, Unten, Rechts, Oben, Links, Unten, Rechts, Oben", "xbox": "RB, RT, LB, A, Links, Unten, Rechts, Oben, Links, Unten, Rechts, Oben", "note": "Fixture-Daten zum Testen" },
+    { "id": "aezakmi", "effect": "Nie gesucht werden", "category": "wanted", "pc": "AEZAKMI", "playstation": "Kreis, Rechts, Kreis, Rechts, Links, Quadrat, Dreieck, Oben" },
+    { "id": "rocketman", "effect": "Jetpack", "category": "fahrzeuge", "pc": "ROCKETMAN", "playstation": "L1, L2, R1, R2, Oben, Unten, Links, Rechts, L1, L2, R1, R2, Oben, Unten, Links, Rechts" },
+    { "id": "lxgiwyl", "effect": "Waffenset 1 (Schläger-Set)", "category": "waffen", "pc": "LXGIWYL", "playstation": "R1, R2, L1, R2, Links, Unten, Rechts, Oben, Links, Unten, Rechts, Oben" }
+  ]
+}

@@ -1,0 +1,76 @@
+---
+import Icon from './Icon.astro';
+import Photo from './Photo.astro';
+import { getGame } from '../data/games';
+import { catL } from '../data/categories';
+import { langFromUrl, useT, href } from '../i18n';
+import { readingTime, type Guide } from '../lib/utils';
+interface Props { item: Guide; index?: number; delay?: number }
+const { item, index, delay = 0 } = Astro.props;
+const d = item.data;
+const g = getGame(d.game);
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const c = catL(d.category, lang);
+---
+<article
+  class="card gcard"
+  data-reveal
+  data-tilt
+  data-filter-item
+  data-tags={`${d.category} ${d.game}`}
+  style={`--d:${delay}s;--g-from:${g.from};--g-to:${g.to}`}
+>
+  <a href={`${href(lang, '/guides/')}${item.id}/`} class="gcard__link">
+    <div class="gcard__media">
+      <Photo seed={d.translationOf ?? item.id} tags={[d.category, d.game]} override={d.image} sizes="(max-width: 640px) 100vw, 30vw" widths={[480, 800]} />
+    </div>
+    <div class="gcard__top">
+      <span class="gcard__icon"><Icon name={c.icon} size={22} /></span>
+      {index !== undefined && <span class="gcard__idx display">{String(index + 1).padStart(2, '0')}</span>}
+    </div>
+    <div class="gcard__meta">
+      <span class="chip chip--game">{g.name}</span>
+      <span class="chip">{c.short}</span>
+    </div>
+    <h3 class="gcard__title">{d.title}</h3>
+    <p class="gcard__desc">{d.description}</p>
+    <div class="gcard__foot cond">
+      <span><Icon name="clock" size={14} /> {readingTime(item.body)} {t.card.min}</span>
+      {d.difficulty && <span>{t.difficulty[d.difficulty]}</span>}
+      <span class="gcard__go">{t.card.read} <Icon name="arrow" size={16} /></span>
+    </div>
+  </a>
+  <span class="gcard__glow" aria-hidden="true"></span>
+</article>
+
+<style>
+  .gcard { transition: transform 0.25s ease-out, border-color 0.3s, background 0.3s; transform-style: preserve-3d; }
+  .gcard__link { display: flex; flex-direction: column; gap: 12px; padding: 0 22px 22px; height: 100%; }
+  .gcard__media { margin: 0 -22px 0; aspect-ratio: 16 / 7; overflow: hidden; position: relative; }
+  .gcard__media :global(.photo) { transition: transform 0.8s var(--ease); }
+  .gcard:hover .gcard__media :global(.photo) { transform: scale(1.06); }
+  .gcard__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, var(--panel)); }
+  .gcard:hover .gcard__media::after { background: linear-gradient(180deg, transparent 40%, var(--panel2)); }
+  .gcard__top { display: flex; justify-content: space-between; align-items: flex-start; margin-top: -34px; position: relative; z-index: 1; }
+  .gcard__icon {
+    width: 46px; height: 46px; display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--g-from), var(--g-to));
+    color: #0b0710;
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 72% 100%, 0 100%);
+  }
+  .gcard__idx { font-size: 3.2rem; line-height: 0.8; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25); }
+  .gcard__meta { display: flex; gap: 6px; flex-wrap: wrap; }
+  .gcard__title { font-family: var(--f-cond); font-weight: 700; font-size: 1.45rem; line-height: 1.12; }
+  .gcard__desc { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .gcard__foot { display: flex; gap: 14px; align-items: center; font-size: 0.8rem; color: var(--dim); }
+  .gcard__foot span { display: inline-flex; align-items: center; gap: 5px; }
+  .gcard__go { margin-left: auto; color: var(--text); transition: gap 0.2s, color 0.2s; }
+  .gcard:hover .gcard__go { gap: 10px; color: var(--pink); }
+  .gcard__glow {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: linear-gradient(90deg, var(--g-from), var(--g-to));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease);
+  }
+  .gcard:hover .gcard__glow { transform: scaleX(1); }
+</style>

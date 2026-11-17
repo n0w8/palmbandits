@@ -1,0 +1,371 @@
+{
+  "game": "gta-5",
+  "updated": "2026-11-17",
+  "howTo": {
+    "pc": "Konsole mit der Taste ^ (deutsches Tastaturlayout) bzw. ~ (US-Layout) öffnen, Code eintippen und mit Enter bestätigen. Gilt nur im Story-Modus. Cheats sperren Erfolge für die laufende Sitzung.",
+    "phone": "Im Story-Modus das Handy öffnen, die Tastatur aufrufen und die komplette Nummer inklusive 1-999 wählen. Funktioniert auf allen Plattformen. In GTA Online gibt es keine Cheats.",
+    "playstation": "Die Tastenkombination im laufenden Story-Modus zügig eingeben, Richtungen über das Steuerkreuz. Gilt für PS3, PS4 und PS5. Cheats sperren Trophäen für die laufende Sitzung.",
+    "xbox": "Die Tastenkombination im laufenden Story-Modus zügig eingeben, Richtungen über das Steuerkreuz. Gilt für Xbox 360, Xbox One und Xbox Series X|S. Cheats sperren Erfolge für die laufende Sitzung."
+  },
+  "howTo_en": {
+    "pc": "Open the console with the ~ key (US layout) or ^ (German layout), type the code and press Enter. Story Mode only. Cheats disable achievements for the current session.",
+    "phone": "In Story Mode, open the phone, bring up the keypad and dial the full number including 1-999. Works on all platforms. There are no cheats in GTA Online.",
+    "playstation": "Enter the button combination quickly during Story Mode gameplay, using the D-pad for directions. Works on PS3, PS4 and PS5. Cheats disable trophies for the current session.",
+    "xbox": "Enter the button combination quickly during Story Mode gameplay, using the D-pad for directions. Works on Xbox 360, Xbox One and Xbox Series X|S. Cheats disable achievements for the current session."
+  },
+  "cheats": [
+    {
+      "id": "unverwundbarkeit",
+      "effect": "Unverwundbarkeit für 5 Minuten",
+      "effect_en": "Invincibility for 5 minutes",
+      "category": "spieler",
+      "pc": "PAINKILLER",
+      "phone": "1-999-724-654-5537",
+      "playstation": "Rechts, X, Rechts, Links, Rechts, R1, Rechts, Links, X, Dreieck",
+      "xbox": "Rechts, A, Rechts, Links, Rechts, RB, Rechts, Links, A, Y"
+    },
+    {
+      "id": "gesundheit-schutzweste",
+      "effect": "Volle Gesundheit und Schutzweste",
+      "effect_en": "Max health and armor",
+      "category": "spieler",
+      "pc": "TURTLE",
+      "phone": "1-999-887-853",
+      "playstation": "Kreis, L1, Dreieck, R2, X, Quadrat, Kreis, Rechts, Quadrat, L1, L1, L1",
+      "xbox": "B, LB, Y, RT, A, X, B, Rechts, X, LB, LB, LB"
+    },
+    {
+      "id": "supersprung",
+      "effect": "Supersprung",
+      "effect_en": "Super jump",
+      "category": "spieler",
+      "pc": "HOPTOIT",
+      "phone": "1-999-467-8648",
+      "playstation": "Links, Links, Dreieck, Dreieck, Rechts, Rechts, Links, Rechts, Quadrat, R1, R2",
+      "xbox": "Links, Links, Y, Y, Rechts, Rechts, Links, Rechts, X, RB, RT"
+    },
+    {
+      "id": "schneller-rennen",
+      "effect": "Schneller rennen",
+      "effect_en": "Fast run",
+      "category": "spieler",
+      "pc": "CATCHME",
+      "phone": "1-999-228-2463",
+      "playstation": "Dreieck, Links, Rechts, Rechts, L2, L1, Quadrat",
+      "xbox": "Y, Links, Rechts, Rechts, LT, LB, X"
+    },
+    {
+      "id": "schneller-schwimmen",
+      "effect": "Schneller schwimmen",
+      "effect_en": "Fast swim",
+      "category": "spieler",
+      "pc": "GOTGILLS",
+      "phone": "1-999-468-44557",
+      "playstation": "Links, Links, L1, Rechts, Rechts, R2, Links, L2, Rechts",
+      "xbox": "Links, Links, LB, Rechts, Rechts, RT, Links, LT, Rechts"
+    },
+    {
+      "id": "spezialfaehigkeit",
+      "effect": "Spezialfähigkeit sofort aufladen",
+      "effect_en": "Recharge special ability",
+      "category": "spieler",
+      "pc": "POWERUP",
+      "phone": "1-999-769-3787",
+      "playstation": "X, X, Quadrat, R1, L1, X, Rechts, Links, X",
+      "xbox": "A, A, X, RB, LB, A, Rechts, Links, A"
+    },
+    {
+      "id": "fallschirm",
+      "effect": "Fallschirm erhalten",
+      "effect_en": "Give parachute",
+      "category": "spieler",
+      "pc": "SKYDIVE",
+      "phone": "1-999-759-3483",
+      "playstation": "Links, Rechts, L1, L2, R1, R2, R2, Links, Links, Rechts, L1",
+      "xbox": "Links, Rechts, LB, LT, RB, RT, RT, Links, Links, Rechts, LB"
+    },
+    {
+      "id": "waffen",
+      "effect": "Waffenpaket mit Munition (u. a. Messer, MP, Sturmgewehr, Pumpgun, Scharfschützengewehr, Granaten, Raketenwerfer)",
+      "effect_en": "Give weapons and ammo (incl. knife, SMG, assault rifle, pump shotgun, sniper rifle, grenades, RPG)",
+      "category": "waffen",
+      "pc": "TOOLUP",
+      "phone": "1-999-866-587",
+      "playstation": "Dreieck, R2, Links, L1, X, Rechts, Dreieck, Unten, Quadrat, L1, L1, L1",
+      "xbox": "Y, RT, Links, LB, A, Rechts, Y, Unten, X, LB, LB, LB"
+    },
+    {
+      "id": "explosive-munition",
+      "effect": "Explosive Munition",
+      "effect_en": "Explosive ammo rounds",
+      "category": "waffen",
+      "pc": "HIGHEX",
+      "phone": "1-999-444-439",
+      "playstation": "Rechts, Quadrat, X, Links, R1, R2, Links, Rechts, Rechts, L1, L1, L1",
+      "xbox": "Rechts, X, A, Links, RB, RT, Links, Rechts, Rechts, LB, LB, LB"
+    },
+    {
+      "id": "brandmunition",
+      "effect": "Brandmunition (Flammengeschosse)",
+      "effect_en": "Flaming bullets (incendiary ammo)",
+      "category": "waffen",
+      "pc": "INCENDIARY",
+      "phone": "1-999-462-363-4279",
+      "playstation": "L1, R1, Quadrat, R1, Links, R2, R1, Links, Quadrat, Rechts, L1, L1",
+      "xbox": "LB, RB, X, RB, Links, RT, RB, Links, X, Rechts, LB, LB"
+    },
+    {
+      "id": "explosive-nahkampfangriffe",
+      "effect": "Explosive Nahkampfangriffe",
+      "effect_en": "Explosive melee attacks",
+      "category": "waffen",
+      "pc": "HOTHANDS",
+      "phone": "1-999-4684-2637",
+      "playstation": "Rechts, Links, X, Dreieck, R1, Kreis, Kreis, Kreis, L2",
+      "xbox": "Rechts, Links, A, Y, RB, B, B, B, LT"
+    },
+    {
+      "id": "zeitlupe-zielen",
+      "effect": "Zeitlupe beim Zielen",
+      "effect_en": "Slow-motion aim",
+      "category": "waffen",
+      "pc": "DEADEYE",
+      "phone": "1-999-332-3393",
+      "playstation": "Quadrat, L2, R1, Dreieck, Links, Quadrat, L2, Rechts, X",
+      "xbox": "X, LT, RB, Y, Links, X, LT, Rechts, A"
+    },
+    {
+      "id": "fahndungslevel-senken",
+      "effect": "Fahndungslevel um einen Stern senken",
+      "effect_en": "Lower wanted level by one star",
+      "category": "wanted",
+      "pc": "LAWYERUP",
+      "phone": "1-999-529-93787",
+      "playstation": "R1, R1, Kreis, R2, Rechts, Links, Rechts, Links, Rechts, Links",
+      "xbox": "RB, RB, B, RT, Rechts, Links, Rechts, Links, Rechts, Links"
+    },
+    {
+      "id": "fahndungslevel-erhoehen",
+      "effect": "Fahndungslevel um einen Stern erhöhen",
+      "effect_en": "Raise wanted level by one star",
+      "category": "wanted",
+      "pc": "FUGITIVE",
+      "phone": "1-999-3844-8483",
+      "playstation": "R1, R1, Kreis, R2, Links, Rechts, Links, Rechts, Links, Rechts",
+      "xbox": "RB, RB, B, RT, Links, Rechts, Links, Rechts, Links, Rechts"
+    },
+    {
+      "id": "buzzard",
+      "effect": "Buzzard-Kampfhubschrauber spawnen",
+      "effect_en": "Spawn Buzzard attack helicopter",
+      "category": "fahrzeuge",
+      "pc": "BUZZOFF",
+      "phone": "1-999-289-9633",
+      "playstation": "Kreis, Kreis, L1, Kreis, Kreis, Kreis, L1, L2, R1, Dreieck, Kreis, Dreieck",
+      "xbox": "B, B, LB, B, B, B, LB, LT, RB, Y, B, Y"
+    },
+    {
+      "id": "comet",
+      "effect": "Comet (Sportwagen) spawnen",
+      "effect_en": "Spawn Comet (sports car)",
+      "category": "fahrzeuge",
+      "pc": "COMET",
+      "phone": "1-999-266-38",
+      "playstation": "R1, Kreis, R2, Rechts, L1, L2, X, X, Quadrat, R1",
+      "xbox": "RB, B, RT, Rechts, LB, LT, A, A, X, RB"
+    },
+    {
+      "id": "rapid-gt",
+      "effect": "Rapid GT (Sportwagen) spawnen",
+      "effect_en": "Spawn Rapid GT (sports car)",
+      "category": "fahrzeuge",
+      "pc": "RAPIDGT",
+      "phone": "1-999-727-4348",
+      "playstation": "R2, L1, Kreis, Rechts, L1, R1, Rechts, Links, Kreis, R2",
+      "xbox": "RT, LB, B, Rechts, LB, RB, Rechts, Links, B, RT"
+    },
+    {
+      "id": "stretch-limousine",
+      "effect": "Stretch-Limousine spawnen",
+      "effect_en": "Spawn Stretch limo",
+      "category": "fahrzeuge",
+      "pc": "VINEWOOD",
+      "phone": "1-999-846-39663",
+      "playstation": "R2, Rechts, L2, Links, Links, R1, L1, Kreis, Rechts",
+      "xbox": "RT, Rechts, LT, Links, Links, RB, LB, B, Rechts"
+    },
+    {
+      "id": "trashmaster",
+      "effect": "Müllwagen (Trashmaster) spawnen",
+      "effect_en": "Spawn Trashmaster (garbage truck)",
+      "category": "fahrzeuge",
+      "pc": "TRASHED",
+      "phone": "1-999-872-433",
+      "playstation": "Kreis, R1, Kreis, R1, Links, Links, R1, L1, Kreis, Rechts",
+      "xbox": "B, RB, B, RB, Links, Links, RB, LB, B, Rechts"
+    },
+    {
+      "id": "caddy",
+      "effect": "Caddy (Golfwagen) spawnen",
+      "effect_en": "Spawn Caddy (golf cart)",
+      "category": "fahrzeuge",
+      "pc": "HOLEIN1",
+      "phone": "1-999-4653-461",
+      "playstation": "Kreis, L1, Links, R1, L2, X, R1, L1, Kreis, X",
+      "xbox": "B, LB, Links, RB, LT, A, RB, LB, B, A"
+    },
+    {
+      "id": "pcj-600",
+      "effect": "PCJ-600 (Motorrad) spawnen",
+      "effect_en": "Spawn PCJ-600 (motorcycle)",
+      "category": "fahrzeuge",
+      "pc": "ROCKET",
+      "phone": "1-999-762-538",
+      "playstation": "R1, Rechts, Links, Rechts, R2, Links, Rechts, Quadrat, Rechts, L2, L1, L1",
+      "xbox": "RB, Rechts, Links, Rechts, RT, Links, Rechts, X, Rechts, LT, LB, LB"
+    },
+    {
+      "id": "sanchez",
+      "effect": "Sanchez (Crossmaschine) spawnen",
+      "effect_en": "Spawn Sanchez (dirt bike)",
+      "category": "fahrzeuge",
+      "pc": "OFFROAD",
+      "phone": "1-999-633-7623",
+      "playstation": "Kreis, X, L1, Kreis, Kreis, L1, Kreis, R1, R2, L2, L1, L1",
+      "xbox": "B, A, LB, B, B, LB, B, RB, RT, LT, LB, LB"
+    },
+    {
+      "id": "bmx",
+      "effect": "BMX spawnen",
+      "effect_en": "Spawn BMX",
+      "category": "fahrzeuge",
+      "pc": "BANDIT",
+      "phone": "1-999-226-348",
+      "playstation": "Links, Links, Rechts, Rechts, Links, Rechts, Quadrat, Kreis, Dreieck, R1, R2",
+      "xbox": "Links, Links, Rechts, Rechts, Links, Rechts, X, B, Y, RB, RT"
+    },
+    {
+      "id": "stuntflugzeug",
+      "effect": "Stuntflugzeug spawnen",
+      "effect_en": "Spawn stunt plane",
+      "category": "fahrzeuge",
+      "pc": "BARNSTORM",
+      "phone": "1-999-2276-78676",
+      "playstation": "Kreis, Rechts, L1, L2, Links, R1, L1, L1, Links, Links, X, Dreieck",
+      "xbox": "B, Rechts, LB, LT, Links, RB, LB, LB, Links, Links, A, Y"
+    },
+    {
+      "id": "duster",
+      "effect": "Duster (Sprühflugzeug) spawnen",
+      "effect_en": "Spawn Duster (crop duster)",
+      "category": "fahrzeuge",
+      "pc": "FLYSPRAY",
+      "phone": "1-999-359-77729",
+      "playstation": "Rechts, Links, R1, R1, R1, Links, Dreieck, Dreieck, X, Kreis, L1, L1",
+      "xbox": "Rechts, Links, RB, RB, RB, Links, Y, Y, A, B, LB, LB"
+    },
+    {
+      "id": "kraken",
+      "effect": "Kraken-U-Boot spawnen",
+      "effect_en": "Spawn Kraken submarine",
+      "category": "fahrzeuge",
+      "pc": "BUBBLES",
+      "phone": "1-999-282-2537",
+      "note": "Nur PC-Konsole und Handy, nicht auf PS3/Xbox 360. Vorher freischalten: Wildlife-Photography-Challenge abschließen (alle 20 Tierarten mit Snapmatic fotografieren).",
+      "note_en": "PC console and phone only, not on PS3/Xbox 360. Unlock it first: complete the Wildlife Photography Challenge (photograph all 20 animal species with Snapmatic)."
+    },
+    {
+      "id": "dodo",
+      "effect": "Dodo-Wasserflugzeug spawnen",
+      "effect_en": "Spawn Dodo seaplane",
+      "category": "fahrzeuge",
+      "pc": "EXTINCT",
+      "phone": "1-999-398-4628",
+      "note": "Nur PC-Konsole und Handy, nicht auf PS3/Xbox 360. Vorher freischalten: Zufallsereignis \"Sea Plane\" abschließen.",
+      "note_en": "PC console and phone only, not on PS3/Xbox 360. Unlock it first: complete the \"Sea Plane\" random event."
+    },
+    {
+      "id": "duke-o-death",
+      "effect": "Duke O'Death spawnen",
+      "effect_en": "Spawn Duke O'Death",
+      "category": "fahrzeuge",
+      "pc": "DEATHCAR",
+      "phone": "1-999-3328-4227",
+      "note": "Nur PC-Konsole und Handy, nicht auf PS3/Xbox 360. Vorher freischalten: Zufallsereignis \"Duel\" abschließen.",
+      "note_en": "PC console and phone only, not on PS3/Xbox 360. Unlock it first: complete the \"Duel\" random event."
+    },
+    {
+      "id": "wetter-wechseln",
+      "effect": "Wetter wechseln",
+      "effect_en": "Change weather",
+      "category": "welt",
+      "pc": "MAKEITRAIN",
+      "phone": "1-999-625-348-7246",
+      "playstation": "R2, X, L1, L1, L2, L2, L2, Quadrat",
+      "xbox": "RT, A, LB, LB, LT, LT, LT, X",
+      "note": "Mehrfach eingeben, um durch die Wetterlagen zu schalten.",
+      "note_en": "Enter it repeatedly to cycle through the weather types."
+    },
+    {
+      "id": "zeitlupe",
+      "effect": "Zeitlupe",
+      "effect_en": "Slow motion",
+      "category": "welt",
+      "pc": "SLOWMO",
+      "phone": "1-999-756-966",
+      "playstation": "Dreieck, Links, Rechts, Rechts, Quadrat, R2, R1",
+      "xbox": "Y, Links, Rechts, Rechts, X, RT, RB",
+      "note": "Mehrfach eingeben für stärkere Stufen, die vierte Eingabe schaltet die Zeitlupe wieder ab.",
+      "note_en": "Enter it repeatedly for stronger levels, the fourth entry turns slow motion off again."
+    },
+    {
+      "id": "mondgravitation",
+      "effect": "Mondgravitation",
+      "effect_en": "Moon gravity",
+      "category": "welt",
+      "pc": "FLOATER",
+      "phone": "1-999-356-2837",
+      "playstation": "Links, Links, L1, R1, L1, Rechts, Links, L1, Links",
+      "xbox": "Links, Links, LB, RB, LB, Rechts, Links, LB, Links"
+    },
+    {
+      "id": "rutschige-autos",
+      "effect": "Rutschige Autos",
+      "effect_en": "Slippery cars",
+      "category": "welt",
+      "pc": "SNOWDAY",
+      "phone": "1-999-766-9329",
+      "playstation": "Dreieck, R1, R1, Links, R1, L1, R2, L1",
+      "xbox": "Y, RB, RB, Links, RB, LB, RT, LB"
+    },
+    {
+      "id": "betrunken",
+      "effect": "Betrunken-Modus",
+      "effect_en": "Drunk mode",
+      "category": "spass",
+      "pc": "LIQUOR",
+      "phone": "1-999-547-867",
+      "playstation": "Dreieck, Rechts, Rechts, Links, Rechts, Quadrat, Kreis, Links",
+      "xbox": "Y, Rechts, Rechts, Links, Rechts, X, B, Links"
+    },
+    {
+      "id": "skyfall",
+      "effect": "Skyfall: Freier Fall aus großer Höhe",
+      "effect_en": "Skyfall: free fall from high altitude",
+      "category": "spass",
+      "pc": "SKYFALL",
+      "phone": "1-999-759-3255",
+      "playstation": "L1, L2, R1, R2, Links, Rechts, Links, Rechts, L1, L2, R1, R2, Links, Rechts, Links, Rechts",
+      "xbox": "LB, LT, RB, RT, Links, Rechts, Links, Rechts, LB, LT, RB, RT, Links, Rechts, Links, Rechts"
+    },
+    {
+      "id": "director-mode",
+      "effect": "Director Mode starten",
+      "effect_en": "Launch Director Mode",
+      "category": "spass",
+      "phone": "1-999-578-25368",
+      "note": "Nur per Handy, nicht auf PS3/Xbox 360.",
+      "note_en": "Phone only, not on PS3/Xbox 360."
+    }
+  ]
+}

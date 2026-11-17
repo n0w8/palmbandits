@@ -1,0 +1,38 @@
+---
+// Zeigt das Foto eines Beitrags: eigenes Bild aus dem Frontmatter (z. B. Screenshot) oder passendes Pool-Foto.
+import { Image } from 'astro:assets';
+import { photoFor } from '../data/photos';
+import { langFromUrl } from '../i18n';
+
+interface Props {
+  seed: string;
+  tags: string[];
+  override?: { src: string; alt: string; credit?: string };
+  sizes?: string;
+  eager?: boolean;
+  class?: string;
+  widths?: number[];
+}
+const { seed, tags, override, sizes = '(max-width: 860px) 100vw, 33vw', eager = false, class: cls, widths = [480, 800, 1200] } = Astro.props;
+const photo = override ? null : photoFor(seed, tags);
+const alt = photo ? (langFromUrl(Astro.url) === 'en' ? photo.en : photo.alt) : '';
+---
+{override ? (
+  <img class:list={['photo', cls]} src={override.src} alt={override.alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+) : (
+  <Image
+    class:list={['photo', cls]}
+    src={photo!.src}
+    alt={alt}
+    widths={widths}
+    sizes={sizes}
+    format="webp"
+    quality={78}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+  />
+)}
+
+<style>
+  .photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>

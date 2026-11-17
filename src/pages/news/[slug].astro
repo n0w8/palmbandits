@@ -1,0 +1,25 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { getNews, getGuides } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const news = await getNews();
+  const guides = await getGuides();
+  return news.map((entry) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      related: [
+        ...news.filter((n) => n.id !== entry.id && n.data.game === entry.data.game).slice(0, 2),
+        ...guides.filter((g) => g.data.game === entry.data.game).slice(0, 1),
+      ].slice(0, 3),
+    },
+  }));
+}
+const { entry, related } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+<Article kind="news" entry={entry} headings={headings} related={related}>
+  <Content />
+</Article>

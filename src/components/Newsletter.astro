@@ -1,0 +1,61 @@
+---
+import Icon from './Icon.astro';
+import { NEWSLETTER_ACTION, DISCORD_LIVE, discordFor } from '../config';
+import { langFromUrl, useT } from '../i18n';
+interface Props { title?: string; text?: string; cta?: string }
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const { title = t.newsletter.title, text = t.newsletter.text, cta = t.newsletter.cta } = Astro.props;
+const rss = lang === 'en' ? '/en/rss.xml' : '/rss.xml';
+---
+<section class="wrap nl" aria-labelledby="nl-h">
+  <div class="nl__box" data-reveal>
+    <div>
+      <p class="cond nl__kicker"><Icon name="mail" size={16} /> {t.newsletter.kicker}</p>
+      <h2 id="nl-h" class="display nl__title">{title}</h2>
+      <p class="muted nl__text">{text}</p>
+    </div>
+    {NEWSLETTER_ACTION ? (
+      <form class="nl__form" method="post" action={NEWSLETTER_ACTION}>
+        <label class="field">
+          <Icon name="mail" />
+          <span class="sr-only">{t.newsletter.email}</span>
+          <input type="email" name="EMAIL" required placeholder="deine@mail.de" autocomplete="email" />
+        </label>
+        <button class="btn btn--sun" type="submit">{cta} <Icon name="arrow" /></button>
+        <p class="nl__small">{t.newsletter.small} <a href="/datenschutz/">{t.radio.privacy}</a></p>
+      </form>
+    ) : (
+      <div class="nl__form">
+        <p class="nl__soon">{t.newsletter.soon(DISCORD_LIVE)}</p>
+        <a class="btn btn--sun" href={rss}><Icon name="rss" /> {t.newsletter.rss}</a>
+        {DISCORD_LIVE && <a class="btn btn--discord" {...discordFor(lang)}><Icon name="discord" /> {t.nav.joinDiscord}</a>}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .nl { margin-top: clamp(20px, 4vw, 40px); }
+  .nl__box {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(20px, 4vw, 60px);
+    align-items: center;
+    padding: clamp(26px, 5vw, 56px);
+    border: 1px solid var(--line2);
+    background:
+      linear-gradient(120deg, rgba(255, 210, 63, 0.1), rgba(255, 45, 135, 0.12) 50%, rgba(139, 61, 255, 0.14)),
+      var(--panel);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
+  }
+  .nl__kicker { display: flex; align-items: center; gap: 8px; color: var(--yellow); margin: 0 0 10px; }
+  .nl__title { font-size: clamp(2.2rem, 5vw, 4rem); }
+  .nl__text { margin: 14px 0 0; max-width: 520px; }
+  .nl__form { display: grid; gap: 10px; }
+  .nl__form .btn { justify-content: center; }
+  .nl__small { margin: 0; font-size: 0.83rem; color: var(--dim); }
+  .nl__small a { text-decoration: underline; }
+  .nl__soon { margin: 0 0 4px; color: #ddd6e8; }
+  @media (max-width: 860px) { .nl__box { grid-template-columns: 1fr; } }
+</style>

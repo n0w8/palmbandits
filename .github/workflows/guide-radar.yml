@@ -1,0 +1,99 @@
+# Palm Bandits Guide-Radar: alle 2 Stunden Fachmedien, Reddit und YouTube nach neuen Entdeckungen
+# (Geld, Fundorte, Glitches, Easter Eggs, Tipps) durchsuchen und daraus Guide-Entwuerfe schreiben.
+# JEDER Radar-Guide wird ein Pull Request zur Freigabe. Nichts geht automatisch online.
+name: Guide-Radar
+
+on:
+  schedule:
+    - cron: '23 */2 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Nur Probelauf (keine KI, nichts schreiben)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: guide-radar
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      DISCORD_WEBHOOK_STAFF: ${{ secrets.DISCORD_WEBHOOK_STAFF }}
+      SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL || 'https://palmbandits.com' }}
+      MAX_GUIDES: ${{ vars.MAX_GUIDES || '2' }}
+      GUIDE_DAILY_CAP: ${{ vars.GUIDE_DAILY_CAP || '6' }}
+      GUIDE_WRITER_EFFORT: ${{ vars.GUIDE_WRITER_EFFORT || 'medium' }}
+      RADAR_MAX_AGE_HOURS: ${{ vars.RADAR_MAX_AGE_HOURS || '72' }}
+      GH_TOKEN: ${{ github.token }}
+      BASE_BRANCH: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Abhaengigkeiten installieren
+        working-directory: automation
+        run: npm ci --no-audit --no-fund
+
+      - name: Guide-Radar ausfuehren
+        id: radar
+        working-directory: automation
+        run: node guide-radar/run.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Radar-Gedaechtnis committen
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "guide-radar"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f automation/data/radar-seen.json ]; then
+            echo "Kein Gedaechtnis geschrieben."
+            exit 0
+          fi
+          git add automation/data/radar-seen.json
+          # Zuordnung deutscher Guide -> englischer Guide (die Dateien selbst kommen per Pull Request)
+          if [ -f src/data/en-slugs.json ]; then git add src/data/en-slugs.json; fi
+          if git diff --cached --quiet; then
+            echo "Nichts zu committen."
+            exit 0
+          fi
+          git commit -m "guide-radar: ${{ steps.radar.outputs.drafts || 0 }} Entwurf/Entwuerfe (DE + EN), Gedaechtnis aktualisiert"
+          for i in 1 2 3; do
+            if git push origin "HEAD:${BASE_BRANCH}"; then exit 0; fi
+            echo "Push abgelehnt, hole neuen Stand (Versuch $i)"
+            git pull --rebase origin "${BASE_BRANCH}" || { git rebase --abort; exit 1; }
+          done
+          exit 1
+
+      - name: Guide-Entwuerfe als Pull Requests anlegen
+        if: ${{ !inputs.dry_run && steps.radar.outputs.drafts != '' && steps.radar.outputs.drafts != '0' }}
+        working-directory: automation
+        run: |
+          git config user.name "guide-radar"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --depth=1 origin "+refs/heads/${BASE_BRANCH}:refs/remotes/origin/${BASE_BRANCH}"
+          node guide-radar/open-prs.mjs
+
+      # Falls beim Anlegen der Pull Requests etwas schiefgeht, sind die Entwuerfe hier noch 7 Tage abrufbar
+      - name: Entwuerfe sichern (nur bei Fehler)
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide-radar-entwuerfe
+          path: automation/drafts/guides/
+          if-no-files-found: ignore
+          retention-days: 7

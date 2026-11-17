@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import RadioBand from '../components/RadioBand.astro';
+import Icon from '../components/Icon.astro';
+import { RADIO, SITE, discordFor } from '../config';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const L = lang === 'en'
+  ? { title: `${RADIO.station}: the community station`, desc: `${RADIO.station} is the radio of the ${SITE.name} community. Listen to ${RADIO.artist} while you read GTA news and guides. The track keeps playing while you browse.`,
+      lead: 'Every GTA has its stations. This one is ours. Hit play and keep browsing, the music stays on.', by: 'by', wish: 'Request a track on Discord',
+      soon: 'Coming on air', charts: 'Community charts', chartsText: 'You send in your GTA tracks and playlists, the community votes. The top 10 play here on the station and as a playlist.' }
+  : { title: `${RADIO.station}: der Community-Sender`, desc: `${RADIO.station} ist das Radio der ${SITE.name} Community. Hör ${RADIO.artist}, während du GTA-News und Guides liest. Der Track läuft beim Surfen weiter.`,
+      lead: 'Jedes GTA hat seine Sender. Das hier ist unserer. Drück Play und surf weiter, die Musik bleibt an.', by: 'von', wish: 'Track im Discord wünschen',
+      soon: 'Bald on Air', charts: 'Community-Charts', chartsText: 'Ihr schickt eure GTA-Tracks und Playlists ein, die Community votet. Die Top 10 laufen hier im Sender und als Playlist.' };
+---
+<Base title={L.title} description={L.desc}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">FM</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span><span>Radio</span></nav>
+    <h1 class="page-hero__title display">{RADIO.station.split(' ')[0]} <span class="grad-text">FM</span></h1>
+    <p class="page-hero__lead">{L.lead}</p>
+  </section>
+  <RadioBand full />
+  <section class="wrap rinfo">
+    <div class="card rinfo__card" data-reveal>
+      <p class="cond">Track</p>
+      <h2 class="display">{RADIO.title}</h2>
+      <p class="muted">{L.by} {RADIO.artist}</p>
+      <div class="rinfo__links">
+        {RADIO.links.spotify && <a class="btn btn--ghost" href={RADIO.links.spotify} target="_blank" rel="noopener"><Icon name="play" /> Spotify</a>}
+        {RADIO.links.youtube && <a class="btn btn--ghost" href={RADIO.links.youtube} target="_blank" rel="noopener"><Icon name="play" /> YouTube</a>}
+        <a class="btn btn--discord" {...discordFor(lang)}><Icon name="discord" /> {L.wish}</a>
+      </div>
+    </div>
+    <div class="card rinfo__card" data-reveal style="--d:.08s">
+      <p class="cond">{L.soon}</p>
+      <h2 class="display">{L.charts}</h2>
+      <p class="muted">{L.chartsText}</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .rinfo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .rinfo__card { padding: 28px; }
+  .rinfo__card p.cond { color: var(--pink); margin: 0 0 6px; font-size: 0.85rem; }
+  .rinfo__card h2 { font-size: 2.6rem; }
+  .rinfo__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  @media (max-width: 860px) { .rinfo { grid-template-columns: 1fr; } }
+</style>

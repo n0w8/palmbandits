@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Newsletter from '../components/Newsletter.astro';
+import { SITE, discordFor, DISCORD_LIVE } from '../config';
+import { discordStats, fmtNum, SHOW_COUNT_FROM, OG_LIMIT } from '../lib/discord';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const en = lang === 'en';
+const dc = await discordStats();
+const ogLeft = dc ? Math.max(0, OG_LIMIT - dc.members) : OG_LIMIT;
+const BADGES_EN = [
+  { n: '⭐ OG', d: `Only for the first ${fmtNum(OG_LIMIT)} members. Never available again after that.`, c: '#ffd23f' },
+  { n: '🌴 Day One', d: 'For everyone who is here for the GTA VI launch.', c: '#ff8a1f' },
+  { n: '★ to ★★★★★★', d: 'Wanted level: the more active you are, the more stars you get. From pickpocket to legend.', c: '#ff2d87' },
+  { n: '🧭 Guide Helper', d: 'Your tip lands on the website, you get the credit and the badge.', c: '#2bd96b' },
+  { n: '🎬 Creator', d: 'For streamers and YouTubers. Sharing your own clips is welcome.', c: '#8b3dff' },
+];
+const PHASES_EN = [
+  { n: '01', t: 'Discord', s: 'Now', d: 'Crews, heists, clips, help. The bot posts every news story to #news instantly. AutoMod and roles keep the server clean.' },
+  { n: '02', t: 'Comments & votes', s: 'From about 1,000 members', d: 'Under every guide: does this still work? Thumbs up or down. That keeps guides current.' },
+  { n: '03', t: 'Forum', s: 'From about 5,000 active users', d: 'Our own forum with Discord login. Every thread is its own page on Google and brings in new visitors.' },
+  { n: '04', t: 'RP servers & store', s: 'After that', d: 'Roleplay scripts, server partners, a creator program. The community becomes a marketplace.' },
+];
+const RULES_EN = ['No hate, no racism, no harassment', 'No cheats, mod menus or account trading for GTA Online', 'No leaks based on illegally obtained material', 'Spoilers only in spoiler channels', 'Advertising only by arrangement'];
+const L = en
+  ? { title: 'GTA Community: Discord, Crews & Forum', desc: 'The GTA community: find crews for GTA Online, explore GTA 6 together, share clips and get help. Discord first, then our own forum.',
+      h1: 'The', lead: 'We are building the community step by step. First where people already are, then on our own platform.', join: 'Join Discord',
+      soon: 'The Discord server opens shortly. The link will appear right here.', members: 'members', online: 'online right now', inDc: 'On Discord',
+      collect: 'Collect your', stars: 'stars', ogLeft: (a: string, b: string) => `⭐ ${a} of ${b} OG spots left`, rules: 'Rules', short: 'Short & clear', five: 'Five', fiveRules: 'stars, five rules',
+      nlTitle: 'Be there from day one', nlText: 'Early members get their own role on Discord and access to the forum beta. Sign up.', nlCta: 'Count me in' }
+  : { title: 'GTA Community: Discord, Crews & Forum', desc: 'Die deutsche GTA Community: Crews für GTA Online finden, GTA 6 gemeinsam entdecken, Clips teilen und Hilfe bekommen. Erst Discord, dann Forum.',
+      h1: 'Die', lead: 'Wir bauen die Community Schritt für Schritt. Erst da, wo die Leute schon sind, dann auf unserer eigenen Plattform.', join: 'Discord beitreten',
+      soon: 'Der Discord-Server öffnet in Kürze. Der Link erscheint dann genau hier.', members: 'Mitglieder', online: 'gerade online', inDc: 'Im Discord',
+      collect: 'Sammel deine', stars: 'Sterne', ogLeft: (a: string, b: string) => `⭐ Noch ${a} von ${b} OG-Plätzen frei`, rules: 'Regeln', short: 'Kurz & klar', five: 'Fünf', fiveRules: 'Sterne, fünf Regeln',
+      nlTitle: 'Sei von Anfang an dabei', nlText: 'Early Members bekommen eine eigene Rolle im Discord und Zugang zur Forum-Beta. Trag dich ein.', nlCta: 'Dabei sein' };
+const BADGES_DE = [
+  { n: '⭐ OG', d: `Nur für die ersten ${fmtNum(OG_LIMIT)} Mitglieder. Gibt es danach nie wieder.`, c: '#ffd23f' },
+  { n: '🌴 Day One', d: 'Für alle, die zum GTA-VI-Launch dabei sind.', c: '#ff8a1f' },
+  { n: '★ bis ★★★★★★', d: 'Fahndungslevel: Je aktiver du bist, desto mehr Sterne. Von Taschendieb bis Legende.', c: '#ff2d87' },
+  { n: '🧭 Guide-Helfer', d: 'Dein Tipp landet auf der Website, du bekommst Credit und das Badge.', c: '#2bd96b' },
+  { n: '🎬 Creator', d: 'Für Streamer und YouTuber. Eigene Clips teilen ist erwünscht.', c: '#8b3dff' },
+];
+
+const PHASES_DE = [
+  { n: '01', t: 'Discord', s: 'Jetzt', d: 'Crews, Heists, Clips, Hilfe. Der Bot postet jede News sofort in #news. AutoMod und Rollen halten den Server sauber.' },
+  { n: '02', t: 'Kommentare & Votes', s: 'Ab ca. 1.000 Mitgliedern', d: 'Unter jedem Guide: Funktioniert das noch? Daumen hoch oder runter. So bleiben Guides aktuell.' },
+  { n: '03', t: 'Forum', s: 'Ab ca. 5.000 aktiven Nutzern', d: 'Eigenes Forum mit Login über Discord. Jeder Thread ist eine eigene Seite bei Google und bringt neue Besucher.' },
+  { n: '04', t: 'RP-Server & Shop', s: 'Danach', d: 'Roleplay-Scripts, Server-Partner, Creator-Programm. Die Community wird zum Marktplatz.' },
+];
+const RULES_DE = ['Kein Hate, kein Rassismus, keine Belästigung', 'Keine Cheats, Mod-Menüs oder Account-Handel für GTA Online', 'Keine Leaks mit illegal beschafftem Material', 'Spoiler nur in Spoiler-Kanälen', 'Werbung nur nach Absprache'];
+const BADGES = en ? BADGES_EN : BADGES_DE;
+const PHASES = en ? PHASES_EN : PHASES_DE;
+const RULES = en ? RULES_EN : RULES_DE;
+---
+<Base title={L.title} description={L.desc}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">CREW</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span><span>Community</span></nav>
+    <h1 class="page-hero__title display">{L.h1} <span class="grad-text">Crew</span></h1>
+    <p class="page-hero__lead">{L.lead}</p>
+    <div class="cta">
+      {DISCORD_LIVE ? (
+        <a class="btn btn--discord" {...discordFor(lang)}><Icon name="discord" /> {L.join}</a>
+      ) : (
+        <span class="chip chip--bot">{L.soon}</span>
+      )}
+    </div>
+  </section>
+
+  {dc && dc.members >= SHOW_COUNT_FROM && (
+    <section class="wrap"><p class="dc-live cond"><span class="dot-live"></span> {fmtNum(dc.members)} {L.members} · {fmtNum(dc.online)} {L.online}</p></section>
+  )}
+
+  <section class="section--tight wrap" aria-labelledby="badges-h">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>Badges</b> / {L.inDc}</p>
+        <h2 id="badges-h" class="sec-head__title display">{L.collect} <span class="grad-text">{L.stars}</span></h2>
+      </div>
+      {ogLeft > 0 && <span class="chip chip--rumor og-left">{L.ogLeft(fmtNum(ogLeft), fmtNum(OG_LIMIT))}</span>}
+    </div>
+    <div class="badges">
+      {BADGES.map((b, i) => (
+        <div class="card badge" data-reveal style={`--d:${i * 0.05}s;--bc:${b.c}`}>
+          <b class="display">{b.n}</b>
+          <p class="muted">{b.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section--tight wrap">
+    <ol class="phases">
+      {PHASES.map((p, i) => (
+        <li class="card" data-reveal style={`--d:${i * 0.06}s`}>
+          <span class="display phases__n">{p.n}</span>
+          <span class="chip">{p.s}</span>
+          <h2 class="display">{p.t}</h2>
+          <p class="muted">{p.d}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section wrap rules">
+    <div>
+      <p class="sec-head__kicker cond"><b>{L.rules}</b> / {L.short}</p>
+      <h2 class="sec-head__title display">{L.five} <span class="grad-text">{L.fiveRules.split(',')[0]}</span>,{L.fiveRules.split(',')[1]}</h2>
+    </div>
+    <ul>
+      {RULES.map((r, i) => <li data-reveal style={`--d:${i * 0.05}s`}><Icon name="star" size={18} /> {r}</li>)}
+    </ul>
+  </section>
+
+  <Newsletter title={L.nlTitle} text={L.nlText} cta={L.nlCta} />
+</Base>
+
+<style>
+  .cta { margin-top: 22px; }
+  .dc-live { display: inline-flex; align-items: center; gap: 8px; color: var(--green); }
+  .dc-live .dot-live { background: var(--green); }
+  .og-left { font-size: 0.9rem; }
+  .badges { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .badge { padding: 20px; border-top: 3px solid var(--bc); }
+  .badge b { font-weight: 400; font-size: 1.6rem; color: var(--bc); display: block; margin-bottom: 6px; }
+  .badge p { margin: 0; font-size: 0.93rem; }
+  @media (max-width: 1100px) { .badges { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .badges { grid-template-columns: 1fr; } }
+  .phases { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .phases li { padding: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .phases__n { font-size: 3.6rem; line-height: 0.9; color: transparent; -webkit-text-stroke: 1.5px var(--pink); }
+  .phases h2 { font-size: 2rem; }
+  .phases p { margin: 0; font-size: 0.95rem; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .rules ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .rules li { display: flex; gap: 12px; align-items: center; padding: 16px 18px; border: 1px solid var(--line); background: var(--panel); font-weight: 600; }
+  .rules li :global(svg) { color: var(--yellow); flex: none; }
+  @media (max-width: 1000px) { .phases { grid-template-columns: 1fr 1fr; } .rules { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .phases { grid-template-columns: 1fr; } }
+</style>

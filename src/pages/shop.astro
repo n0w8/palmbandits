@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { CONTACT_EMAIL, MERCH } from '../config';
+import SpreadShop from '../components/SpreadShop.astro';
+import { langFromUrl, useT, href } from '../i18n';
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const en = lang === 'en';
+const body = (en ? ['Hi, I would like to join the waitlist.', '', 'Framework (ESX, QBCore, Qbox ...):', 'Script I want:'] : ['Hallo, ich möchte auf die Warteliste.', '', 'Framework (ESX, QBCore, Qbox ...):', 'Wunsch-Script:']).join('\n');
+const mail = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(en ? 'RP scripts waitlist' : 'RP-Scripts Warteliste')}&body=${encodeURIComponent(body)}`;
+const FEATURES_EN = [
+  { i: 'shield', t: 'Tested & safe', d: 'Every script is tested before release. No malicious code, no backdoors.' },
+  { i: 'code', t: 'Clean documentation', d: 'Installed in minutes, clear instructions, configuration without coding skills.' },
+  { i: 'bolt', t: 'Performance first', d: 'Optimised for low resmon values so your server stays smooth even with lots of players.' },
+  { i: 'users', t: 'Support on Discord', d: 'Dedicated support channel, updates included. Feature requests go into new versions.' },
+];
+const IDEAS_EN = ['Job system (mechanic, taxi, towing)', 'Housing & real estate agent', 'Phone UI with a modern look', 'Garages & vehicle dealership', 'Police and EMS tools', 'Heist and robbery missions'];
+const items = en ? ['T-shirts', 'hoodies', 'water-repellent windbreakers'] : MERCH.items;
+const L = en
+  ? { title: 'Store: Palm Bandits Merch & GTA RP Scripts', desc: 'Palm Bandits merch on black: T-shirts, hoodies and rain jackets. Plus RP scripts for your GTA RP server, coming soon.',
+      h1: 'The', h1b: 'Store', lead: 'Merch for the crew and, soon, RP scripts for your roleplay server, built by people who play themselves.',
+      alt: 'Palm Bandits logo on black fabric', merchK: 'For real bandits', wear: 'Wear the', merchText: `The logo in a sunset gradient on black: ${items.join(', ')}. Printed and shipped by Spreadshirt, ordered in two minutes.`,
+      shopNow: 'Shop now', merchSoon: 'Merch store opens shortly', scriptsH: 'RP', scriptsH2: 'Scripts',
+      waitK: 'Waitlist', waitK2: 'Launch discount', what: 'What should come', first: 'first', waitText: 'Cast your vote. We build the scripts with the most votes first. Everyone on the list gets a discount at launch.',
+      how: 'How to get on the list', howText: 'Send us a short email with your framework (ESX, QBCore, Qbox) and the script you want. We only get in touch for the launch, promise.',
+      join: 'Join the waitlist', privacy: 'We only use your email for the store announcement. More in our', privacyLink: 'privacy policy (German)' }
+  : { title: 'Shop: Palm Bandits Merch & GTA RP Scripts', desc: 'Palm Bandits Merch auf Schwarz: T-Shirts, Hoodies und Regenjacken. Dazu bald RP-Scripts für deinen GTA RP Server mit deutschem Support.',
+      h1: 'Der', h1b: 'Shop', lead: 'Merch für die Crew und bald RP-Scripts für deinen Roleplay-Server, gebaut von Leuten, die selbst spielen.',
+      alt: 'Palm Bandits Logo auf schwarzem Stoff', merchK: 'Für echte Bandits', wear: 'Trag die', merchText: `Das Logo im Sunset-Verlauf auf Schwarz: ${items.join(', ')}. Gedruckt und verschickt von Spreadshirt, bestellt in zwei Minuten.`,
+      shopNow: 'Jetzt shoppen', merchSoon: 'Merch-Shop öffnet in Kürze', scriptsH: 'RP-', scriptsH2: 'Scripts',
+      waitK: 'Warteliste', waitK2: 'Launch-Rabatt', what: 'Was soll', first: 'zuerst', waitText: 'Stimm mit ab. Die Scripts mit den meisten Stimmen bauen wir zuerst. Alle auf der Liste bekommen zum Start einen Rabatt.',
+      how: 'So kommst du auf die Liste', howText: 'Schick uns eine kurze Mail mit deinem Framework (ESX, QBCore, Qbox) und deinem Wunsch-Script. Wir melden uns nur zum Launch, versprochen.',
+      join: 'Auf die Warteliste', privacy: 'Deine Mail nutzen wir nur für die Shop-Ankündigung. Mehr im', privacyLink: 'Datenschutz' };
+
+const FEATURES_DE = [
+  { i: 'shield', t: 'Geprüft & sicher', d: 'Jedes Script wird vor dem Verkauf getestet. Kein Schadcode, keine Hintertüren.' },
+  { i: 'code', t: 'Sauber dokumentiert', d: 'Installation in Minuten, deutsche Anleitung, Konfiguration ohne Programmierkenntnisse.' },
+  { i: 'bolt', t: 'Performance first', d: 'Optimiert auf niedrige Resmon-Werte, damit dein Server auch mit vielen Spielern flüssig läuft.' },
+  { i: 'users', t: 'Support im Discord', d: 'Eigener Support-Kanal, Updates inklusive. Feature-Wünsche fließen in neue Versionen.' },
+];
+const IDEAS_DE = ['Job-System (Mechaniker, Taxi, Abschleppdienst)', 'Housing & Immobilienmakler', 'Handy-UI im modernen Look', 'Garagen & Fahrzeughandel', 'Polizei- und Sanitäter-Tools', 'Heist- und Raub-Missionen'];
+const FEATURES = en ? FEATURES_EN : FEATURES_DE;
+const IDEAS = en ? IDEAS_EN : IDEAS_DE;
+---
+<Base title={L.title} description={L.desc}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">SHOP</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}><a href={href(lang, '/')}>{t.article.home}</a><span aria-hidden="true">/</span><span>Shop</span></nav>
+    <h1 class="page-hero__title display">{L.h1} <span class="grad-text">{L.h1b}</span></h1>
+    <p class="page-hero__lead">{L.lead}</p>
+  </section>
+
+  <section class="wrap merch" aria-labelledby="merch-h">
+    <div class="merch__art" data-reveal>
+      <img src="/merch-logo.png" alt={L.alt} width="1000" height="262" loading="lazy" />
+    </div>
+    <div class="merch__text" data-reveal style="--d:.08s">
+      <p class="sec-head__kicker cond"><b>Merch</b> / {L.merchK}</p>
+      <h2 id="merch-h" class="sec-head__title display">{L.wear} <span class="grad-text">Crew</span></h2>
+      <p class="muted">{L.merchText}</p>
+      {MERCH.url ? (
+        <a class="btn btn--sun" href="#merch"><Icon name="cart" /> {L.shopNow}</a>
+      ) : (
+        <span class="chip chip--bot">{L.merchSoon}</span>
+      )}
+    </div>
+  </section>
+
+  <div class="wrap merch-embed"><SpreadShop lang={lang} /></div>
+
+  <section class="wrap">
+    <p class="sec-head__kicker cond"><b>RP-Scripts</b> / Coming soon</p>
+    <h2 class="sec-head__title display scripts-h">{L.scriptsH}<span class="grad-text">{en ? ' ' : ''}{L.scriptsH2}</span></h2>
+  </section>
+
+  <section class="wrap feats">
+    {FEATURES.map((f, i) => (
+      <div class="card feat" data-reveal style={`--d:${i * 0.05}s`}>
+        <span class="feat__i"><Icon name={f.i} size={24} /></span>
+        <h2 class="cond">{f.t}</h2>
+        <p class="muted">{f.d}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="section wrap wait">
+    <div>
+      <p class="sec-head__kicker cond"><b>{L.waitK}</b> / {L.waitK2}</p>
+      <h2 class="sec-head__title display">{L.what} <span class="grad-text">{L.first}</span>{en ? '?' : ' kommen?'}</h2>
+      <p class="muted">{L.waitText}</p>
+      <ul class="ideas">{IDEAS.map((x) => <li><Icon name="check" size={16} /> {x}</li>)}</ul>
+    </div>
+    <div class="card wait__form">
+      <p class="cond wait__k">{L.how}</p>
+      <p class="muted">{L.howText}</p>
+      <a class="btn btn--sun" href={mail}><Icon name="mail" /> {L.join}</a>
+      <p class="small">{L.privacy} <a href="/datenschutz/">{L.privacyLink}</a>.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .merch { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(24px, 4vw, 60px); align-items: center; margin-bottom: clamp(40px, 6vw, 80px); }
+  .merch__art { background: #0e0e0e; border: 1px solid var(--line2); padding: clamp(28px, 5vw, 64px); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%); }
+  .merch__art img { width: 100%; height: auto; }
+  .merch__text .muted { margin: 16px 0 22px; }
+  @media (max-width: 860px) { .merch { grid-template-columns: 1fr; } }
+  .scripts-h { margin-bottom: 24px; }
+  .merch-embed { margin-bottom: clamp(50px, 7vw, 90px); }
+  .feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .feat { padding: 24px; }
+  .feat__i { width: 48px; height: 48px; display: grid; place-items: center; background: var(--sunset); color: #120812; margin-bottom: 14px; }
+  .feat h2 { font-size: 1.3rem; margin-bottom: 6px; }
+  .feat p { margin: 0; font-size: 0.95rem; }
+  .wait { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+  .ideas { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 8px; }
+  .ideas li { display: flex; gap: 10px; align-items: center; color: #ddd6e8; }
+  .ideas :global(svg) { color: var(--teal); }
+  .wait__form { padding: 24px; display: grid; gap: 10px; }
+  .wait__form .btn { justify-content: center; }
+  .small { margin: 0; font-size: 0.83rem; color: var(--dim); }
+  .small a { text-decoration: underline; }
+  .wait__k { color: var(--pink); margin: 0; font-size: 0.85rem; }
+  .wait__form p { margin: 0; }
+  @media (max-width: 1000px) { .feats { grid-template-columns: 1fr 1fr; } .wait { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .feats { grid-template-columns: 1fr; } }
+</style>

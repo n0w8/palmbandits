@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+automation/node_modules/
+automation/pinterest/out/
+# Interne Notizen bleiben lokal (nicht ins oeffentliche Repo)
+KONZEPT.md
+STAND.md
+KURZSTAND.md
+SETUP.md
+.claude/
+gn.xml
+sm.xml
+
+# Discord-Webhook-URLs (geheim, kommen per push-secrets.mjs als GitHub-Secrets)
+automation/discord/.secrets.json

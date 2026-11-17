@@ -1,0 +1,64 @@
+---
+// Daten aus "Impressum + Datenschutz/FIRMENDATEN.md" (Stand Nachtrag 24.10.2026). Bei Aenderungen dort UND hier anpassen.
+import Base from '../layouts/Base.astro';
+import { SITE, CONTACT_EMAIL } from '../config';
+---
+<Base title="Impressum" description={`Impressum und Offenlegung von ${SITE.name}`} noindex>
+  <section class="page-hero wrap">
+    <h1 class="page-hero__title display">Impressum</h1>
+    <p class="page-hero__lead">Offenlegung gemäß § 5 ECG, § 14 UGB, § 63 GewO und § 25 Mediengesetz.</p>
+  </section>
+  <section class="wrap prose legal">
+    <h2>Medieninhaber und Diensteanbieter</h2>
+    <p>
+      Fuchs Media GmbH<br />
+      An der Teichwiese 223c<br />
+      2393 Sittendorf<br />
+      Österreich
+    </p>
+    <p>E-Mail: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+
+    <h2>Unternehmensdaten</h2>
+    <p>
+      Rechtsform: Gesellschaft mit beschränkter Haftung (GmbH)<br />
+      Sitz: politische Gemeinde Wienerwald<br />
+      Firmenbuchnummer: FN 665604 f<br />
+      Firmenbuchgericht: Landesgericht Wiener Neustadt<br />
+      UID-Nummer: ATU82966248<br />
+      Unternehmensgegenstand: Medien / Content-Produktion<br />
+      Vertretungsbefugter Geschäftsführer: Michael Fuchs
+    </p>
+
+    <h2>Kammer und Berufsrecht</h2>
+    <p>
+      Mitglied der Wirtschaftskammer Niederösterreich (<a href="https://www.wko.at" target="_blank" rel="noopener">www.wko.at</a>).
+      Anwendbare Rechtsvorschrift: Gewerbeordnung (GewO), abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>.
+      Gewerbebehörde: Bezirkshauptmannschaft Mödling. Verleihungsstaat: Österreich.
+    </p>
+
+    <h2>Blattlinie</h2>
+    <p>
+      {SITE.name} ist ein unabhängiges Informations- und Community-Angebot rund um die Spielereihe Grand Theft Auto:
+      Nachrichten, Anleitungen, Cheats und Hintergründe für Spielerinnen und Spieler im deutschsprachigen Raum.
+      Ein Teil der Nachrichten wird automatisiert mit KI aus öffentlich zugänglichen Quellen zusammengefasst und ist als solcher gekennzeichnet.
+    </p>
+
+    <h2>Hinweis zu Marken</h2>
+    <p>
+      Inoffizielles Fan-Projekt, nicht verbunden mit Rockstar Games oder Take-Two Interactive. Grand Theft Auto, GTA und alle
+      zugehörigen Namen und Logos sind Marken ihrer jeweiligen Inhaber.
+    </p>
+
+    <h2>Haftung für Inhalte und Links</h2>
+    <p>
+      Die Inhalte wurden mit größtmöglicher Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität kann keine Gewähr
+      übernommen werden. Für Inhalte verlinkter externer Seiten ist stets deren Anbieter verantwortlich.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Die von uns erstellten Inhalte unterliegen dem österreichischen Urheberrecht. Beiträge Dritter und Quellen sind als solche gekennzeichnet.
+    </p>
+  </section>
+</Base>
+<style>.legal { max-width: 760px; }</style>

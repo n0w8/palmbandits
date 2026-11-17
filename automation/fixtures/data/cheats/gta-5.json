@@ -1,0 +1,15 @@
+{
+  "game": "gta-5",
+  "updated": "2026-11-15",
+  "howTo": {
+    "pc": "Konsole mit der ^-Taste öffnen und Code eingeben.",
+    "phone": "Im Spiel das Handy öffnen und die Nummer wählen.",
+    "playstation": "Die Tastenfolge im Spiel zügig drücken.",
+    "xbox": "Die Tastenfolge im Spiel zügig drücken."
+  },
+  "cheats": [
+    { "id": "turtle", "effect": "Volle Gesundheit und Rüstung", "category": "spieler", "pc": "TURTLE", "phone": "1-999-887-853", "playstation": "Kreis, L1, Dreieck, R2, X, Quadrat, Kreis, Rechts, Quadrat, L1, L1, L1", "xbox": "B, LB, Y, RT, A, X, B, Rechts, X, LB, LB, LB", "note": "Fixture-Daten zum Testen" },
+    { "id": "lawyerup", "effect": "Fahndungslevel senken", "category": "wanted", "pc": "LAWYERUP", "phone": "1-999-529-93787", "playstation": "R1, R1, Kreis, R2, Rechts, Links, Rechts, Links, Rechts, Links" },
+    { "id": "buzzoff", "effect": "Buzzard-Kampfhubschrauber spawnen", "category": "fahrzeuge", "pc": "BUZZOFF", "phone": "1-999-289-9633", "playstation": "Kreis, Kreis, L1, Kreis, Kreis, Kreis, L1, L2, R1, Dreieck, Kreis, Dreieck" }
+  ]
+}

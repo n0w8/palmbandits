@@ -1,0 +1,148 @@
+---
+import Base from '../../layouts/Base.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import Icon from '../../components/Icon.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import Photo from '../../components/Photo.astro';
+import { GAMES, gameL, type Game } from '../../data/games';
+import { CATEGORIES, catL } from '../../data/categories';
+import { langFromUrl, useT, href } from '../../i18n';
+import { getNews, getGuides, getCheatFile } from '../../lib/utils';
+import { GTA6_RELEASE, SITE } from '../../config';
+
+export async function getStaticPaths() {
+  return GAMES.map((g) => ({ params: { game: g.slug }, props: { g } }));
+}
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const h = (p: string) => href(lang, p);
+const g = gameL((Astro.props as { g: Game }).g, lang);
+const news = (await getNews(lang)).filter((n) => n.data.game === g.slug);
+const guides = (await getGuides(lang)).filter((x) => x.data.game === g.slug);
+const cheats = getCheatFile(g.slug);
+const cats = CATEGORIES.filter((c) => guides.some((x) => x.data.category === c.slug)).map((c) => catL(c.slug, lang));
+const L = {
+  de: { games: 'Spiele', setting: 'Schauplatz', heroes: 'Hauptfiguren', platforms: 'Plattformen', release: 'Release', release6: '19. November 2026', date6: '19.11.2026',
+    titleSix: 'GTA 6: Release, Map, Story & alle News', title: (n: string) => `${n}: Cheats, Guides, Geheimnisse & News`, left: 'Noch', units: ['Tage', 'Std', 'Min', 'Sek'], out: 'Jetzt erhältlich',
+    allNews: 'Alle News', soon: 'Guides kommen', soonText: (n: string) => `Wir schreiben gerade die ersten ${n} Guides. Wünsche? Schreib uns im Discord.`, nlSix: 'GTA VI Alarm', nl: 'Kein Update verpassen' },
+  en: { games: 'Games', setting: 'Setting', heroes: 'Protagonists', platforms: 'Platforms', release: 'Release', release6: 'November 19, 2026', date6: 'Nov 19, 2026',
+    titleSix: 'GTA 6: Release, Map, Story & All the News', title: (n: string) => `${n}: Cheats, Guides, Secrets & News`, left: '', units: ['Days', 'Hrs', 'Min', 'Sec'], out: 'Out now',
+    allNews: 'All news', soon: 'Guides coming', soonText: (n: string) => `We are writing the first ${n} guides right now. Requests? Tell us on Discord.`, nlSix: 'GTA VI alert', nl: 'Never miss an update' },
+}[lang];
+const isSix = g.slug === 'gta-6';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: g.full,
+    alternateName: g.name,
+    datePublished: isSix ? '2026-11-19' : String(g.year),
+    publisher: { '@type': 'Organization', name: 'Rockstar Games' },
+    gamePlatform: g.platforms.split(',').map((p) => p.trim()),
+    genre: ['Action-Adventure', 'Open World'],
+    url: `${SITE.url}${h(`/spiele/${g.slug}/`)}`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.article.home, item: `${SITE.url}${h('/')}` },
+      { '@type': 'ListItem', position: 2, name: L.games, item: `${SITE.url}${h('/spiele/')}` },
+      { '@type': 'ListItem', position: 3, name: g.name, item: `${SITE.url}${h(`/spiele/${g.slug}/`)}` },
+    ],
+  },
+];
+const title = isSix ? L.titleSix : L.title(g.name);
+---
+<Base title={title} description={g.intro} jsonLd={jsonLd}>
+  <section class="hub" style={`--g-from:${g.from};--g-to:${g.to}`}>
+    <div class="hub__photo" aria-hidden="true"><Photo seed={`hub-${g.slug}`} tags={[g.slug]} eager sizes="100vw" widths={[800, 1280, 1920]} /></div>
+    <span class="hub__num display" aria-hidden="true">{g.numeral}</span>
+    <div class="wrap hub__in">
+      <nav class="crumbs" aria-label={t.nav.crumbs}><a href={h('/')}>{t.article.home}</a><span aria-hidden="true">/</span><a href={h('/spiele/')}>{L.games}</a><span aria-hidden="true">/</span><span>{g.name}</span></nav>
+      <p class="cond hub__year">{g.full} · {isSix ? L.date6 : g.year}</p>
+      <h1 class="display hub__title">{g.name}</h1>
+      <p class="hub__tag">{g.tagline}</p>
+      <p class="hub__intro">{g.intro}</p>
+      <dl class="facts">
+        <div><dt class="cond">{L.setting}</dt><dd>{g.setting}</dd></div>
+        <div><dt class="cond">{L.heroes}</dt><dd>{g.heroes}</dd></div>
+        <div><dt class="cond">{L.platforms}</dt><dd>{g.platforms}</dd></div>
+        <div><dt class="cond">{L.release}</dt><dd>{isSix ? L.release6 : g.year}</dd></div>
+      </dl>
+      <div class="hub__links">
+        {cheats && <a class="btn btn--sun" href={h(`/cheats/${g.slug}/`)}><Icon name="code" /> {cheats.cheats.length} Cheats</a>}
+        {isSix && <a class="btn btn--sun" href={h('/cheats/gta-6/')}><Icon name="code" /> GTA 6 Cheats</a>}
+        {cats.map((c) => <a class="btn btn--ghost" href={h(`/guides/kategorie/${c.slug}/`)}><Icon name={c.icon} /> {c.label}</a>)}
+      </div>
+      {isSix && (
+        <div class="cd6" data-countdown={GTA6_RELEASE}>
+          {L.left && <span class="cond">{L.left}</span>}
+          <b data-cd="d">--</b><span class="cond">{L.units[0]}</span>
+          <b data-cd="h">--</b><span class="cond">{L.units[1]}</span>
+          <b data-cd="m">--</b><span class="cond">{L.units[2]}</span>
+          <b data-cd="s">--</b><span class="cond">{L.units[3]}</span>
+          <em class="display">{L.out}</em>
+        </div>
+      )}
+    </div>
+  </section>
+
+  {news.length > 0 && (
+    <section class="section section--tight wrap" aria-labelledby="hub-news">
+      <div class="sec-head"><h2 id="hub-news" class="sec-head__title display">{g.name} <span class="grad-text">News</span></h2><a class="sec-head__link" href={h('/news/')}>{L.allNews} <Icon name="arrow" /></a></div>
+      <div class="list">{news.slice(0, 6).map((n, i) => <NewsCard item={n} delay={(i % 3) * 0.05} />)}</div>
+    </section>
+  )}
+
+  <section class="section section--tight wrap" aria-labelledby="hub-guides">
+    <div class="sec-head"><h2 id="hub-guides" class="sec-head__title display">{g.name} <span class="grad-text">Guides</span></h2></div>
+    {guides.length ? (
+      <div class="list">{guides.map((x, i) => <GuideCard item={x} delay={(i % 3) * 0.05} />)}</div>
+    ) : (
+      <div class="card soon"><p class="display">{L.soon}</p><p class="muted">{L.soonText(g.name)}</p></div>
+    )}
+  </section>
+
+  <Newsletter title={isSix ? L.nlSix : L.nl} />
+</Base>
+
+<style>
+  .hub { position: relative; overflow: hidden; padding: clamp(36px, 6vw, 80px) 0 clamp(36px, 5vw, 60px); isolation: isolate; }
+  .hub__photo { position: absolute; inset: 0; z-index: -3; }
+  .hub__photo :global(.photo) { opacity: 0.45; }
+  .hub__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7, 6, 11, 0.95) 0%, rgba(7, 6, 11, 0.7) 45%, rgba(7, 6, 11, 0.35) 100%), linear-gradient(0deg, var(--bg) 0%, transparent 40%); }
+  .hub::before {
+    content: ''; position: absolute; inset: 0; z-index: -2;
+    background:
+      radial-gradient(70% 90% at 85% 20%, color-mix(in srgb, var(--g-from) 40%, transparent), transparent 65%),
+      radial-gradient(60% 80% at 100% 100%, color-mix(in srgb, var(--g-to) 35%, transparent), transparent 60%);
+  }
+  .hub__num {
+    position: absolute; right: -0.05em; top: 50%; transform: translateY(-50%); z-index: -1;
+    font-size: clamp(14rem, 40vw, 36rem); line-height: 0.8;
+    color: transparent; -webkit-text-stroke: 2px rgba(255, 255, 255, 0.12);
+  }
+  .hub__year { color: var(--g-from); margin: 0 0 8px; }
+  .hub__title { font-size: clamp(4rem, 13vw, 10rem); background: linear-gradient(100deg, #fff 30%, var(--g-from) 70%, var(--g-to)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hub__tag { font-family: var(--f-cond); font-size: clamp(1.3rem, 2.4vw, 1.8rem); text-transform: uppercase; letter-spacing: 0.03em; margin: 10px 0 0; }
+  .hub__intro { max-width: 640px; color: var(--muted); font-size: 1.1rem; }
+  .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 28px 0; max-width: 1000px; }
+  .facts div { background: rgba(10, 8, 14, 0.85); padding: 14px 16px; }
+  .facts dt { color: var(--dim); font-size: 0.75rem; }
+  .facts dd { margin: 4px 0 0; font-weight: 600; line-height: 1.35; }
+  .hub__links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cd6 { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 26px; padding: 14px 18px; border: 1px solid var(--line2); background: rgba(0, 0, 0, 0.4); flex-wrap: wrap; }
+  .cd6 b { font-family: var(--f-display); font-weight: 400; font-size: 2.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .cd6 span { color: var(--muted); font-size: 0.8rem; }
+  .cd6 em { display: none; font-style: normal; font-size: 2rem; }
+  .cd6:global(.is-live) b, .cd6:global(.is-live) span { display: none; }
+  .cd6:global(.is-live) em { display: block; }
+  .list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .soon { padding: 30px; }
+  .soon .display { font-size: 1.8rem; margin: 0 0 6px; }
+  @media (max-width: 1000px) { .list { grid-template-columns: 1fr 1fr; } .facts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .list { grid-template-columns: 1fr; } }
+</style>

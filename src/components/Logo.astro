@@ -1,0 +1,49 @@
+---
+import { SITE } from '../config';
+interface Props { size?: 'md' | 'lg' }
+const { size = 'md' } = Astro.props;
+---
+<a href={Astro.url.pathname.startsWith('/en/') || Astro.url.pathname === '/en' ? '/en/' : '/'} class:list={['logo', `logo--${size}`]} aria-label={`${SITE.name} Home`}>
+  <span class="logo__word">{SITE.name}</span>
+  <span class="logo__stars" aria-hidden="true">
+    {[0, 1, 2, 3, 4].map((i) => (
+      <svg viewBox="0 0 24 24" style={`--i:${i}`}><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" /></svg>
+    ))}
+  </span>
+</a>
+
+<style>
+  .logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    line-height: 1;
+  }
+  .logo__word {
+    font-family: var(--f-display);
+    font-size: 1.75rem;
+    letter-spacing: 0.02em;
+    background: var(--sunset);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: skewX(-6deg);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .logo__stars { display: flex; gap: 2px; padding-left: 2px; }
+  .logo__stars svg {
+    width: 11px;
+    height: 11px;
+    fill: rgba(255, 255, 255, 0.18);
+    transition: fill 0.2s, transform 0.3s var(--ease);
+    transition-delay: calc(var(--i) * 60ms);
+  }
+  .logo:hover .logo__stars svg { fill: #fff; transform: scale(1.15) rotate(15deg); }
+  .logo__stars svg:nth-child(-n + 3) { fill: #fff; }
+  .logo:not(:hover) .logo__stars svg:nth-child(-n + 3) { animation: flash 2.4s infinite; animation-delay: calc(var(--i) * 0.15s); }
+  @keyframes flash { 0%, 70%, 100% { opacity: 1; } 80% { opacity: 0.25; } }
+  .logo--lg .logo__word { font-size: 3rem; }
+  .logo--lg .logo__stars svg { width: 18px; height: 18px; }
+</style>

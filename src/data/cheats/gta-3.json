@@ -1,0 +1,183 @@
+{
+  "game": "gta-3",
+  "updated": "2026-11-17",
+  "howTo": {
+    "pc": "Code einfach während des Spiels eintippen, ein Eingabefeld gibt es nicht. Eine Meldung bestätigt den Cheat. In der Definitive Edition sperren Cheats Erfolge für den Spielstand, also vorher separat speichern.",
+    "playstation": "Die Tastenkombinationen für PlayStation folgen in Kürze.",
+    "xbox": "Die Tastenkombinationen für Xbox folgen in Kürze."
+  },
+  "howTo_en": {
+    "pc": "Simply type the code during gameplay, there is no input box. A message confirms the cheat. In the Definitive Edition, cheats disable achievements for that save, so make a separate save first.",
+    "playstation": "PlayStation button combinations are coming soon.",
+    "xbox": "Xbox button combinations are coming soon."
+  },
+  "cheats": [
+    {
+      "id": "gesundheit",
+      "effect": "Volle Gesundheit",
+      "effect_en": "Full health",
+      "category": "spieler",
+      "pc": "GESUNDHEIT"
+    },
+    {
+      "id": "schutzweste",
+      "effect": "Volle Schutzweste",
+      "effect_en": "Full armor",
+      "category": "spieler",
+      "pc": "TURTOISE",
+      "note": "Original-Schreibweise mit U.",
+      "note_en": "Spelled with a U, exactly as in the original game."
+    },
+    {
+      "id": "geld",
+      "effect": "250.000 $ Bargeld",
+      "effect_en": "$250,000 cash",
+      "category": "spieler",
+      "pc": "IFIWEREARICHMAN"
+    },
+    {
+      "id": "alle-waffen",
+      "effect": "Alle Waffen",
+      "effect_en": "All weapons",
+      "category": "waffen",
+      "pc": "GUNSGUNSGUNS"
+    },
+    {
+      "id": "fahndung-erhoehen",
+      "effect": "Fahndungslevel erhöhen",
+      "effect_en": "Raise wanted level",
+      "category": "wanted",
+      "pc": "MOREPOLICEPLEASE"
+    },
+    {
+      "id": "fahndung-loeschen",
+      "effect": "Fahndungslevel löschen",
+      "effect_en": "Clear wanted level",
+      "category": "wanted",
+      "pc": "NOPOLICEPLEASE"
+    },
+    {
+      "id": "rhino",
+      "effect": "Rhino (Panzer) spawnen",
+      "effect_en": "Spawn Rhino tank",
+      "category": "fahrzeuge",
+      "pc": "GIVEUSATANK"
+    },
+    {
+      "id": "alle-fahrzeuge-explodieren",
+      "effect": "Alle Fahrzeuge in der Nähe explodieren",
+      "effect_en": "Blow up all nearby vehicles",
+      "category": "fahrzeuge",
+      "pc": "BANGBANGBANG"
+    },
+    {
+      "id": "bessere-handhabung",
+      "effect": "Bessere Fahrzeug-Handhabung",
+      "effect_en": "Better vehicle handling",
+      "category": "fahrzeuge",
+      "pc": "CORNERSLIKEMAD"
+    },
+    {
+      "id": "fliegende-autos",
+      "effect": "Fliegende Autos",
+      "effect_en": "Flying cars",
+      "category": "fahrzeuge",
+      "pc": "CHITTYCHITTYBB"
+    },
+    {
+      "id": "unsichtbare-autos",
+      "effect": "Unsichtbare Autos (nur Räder sichtbar)",
+      "effect_en": "Invisible cars (only the wheels are visible)",
+      "category": "fahrzeuge",
+      "pc": "ANICESETOFWHEELS",
+      "note": "Funktioniert nicht in der Definitive Edition.",
+      "note_en": "Does not work in the Definitive Edition."
+    },
+    {
+      "id": "sonnig",
+      "effect": "Sonniges Wetter",
+      "effect_en": "Sunny weather",
+      "category": "welt",
+      "pc": "SKINCANCERFORME"
+    },
+    {
+      "id": "bewoelkt",
+      "effect": "Bewölktes Wetter",
+      "effect_en": "Cloudy weather",
+      "category": "welt",
+      "pc": "ILIKESCOTLAND"
+    },
+    {
+      "id": "regen",
+      "effect": "Regen",
+      "effect_en": "Rain",
+      "category": "welt",
+      "pc": "ILOVESCOTLAND"
+    },
+    {
+      "id": "nebel",
+      "effect": "Nebel",
+      "effect_en": "Fog",
+      "category": "welt",
+      "pc": "PEASOUP"
+    },
+    {
+      "id": "uhr-schneller",
+      "effect": "Uhr läuft schneller",
+      "effect_en": "Faster clock",
+      "category": "welt",
+      "pc": "MADWEATHER"
+    },
+    {
+      "id": "spiel-schneller",
+      "effect": "Schnelleres Spieltempo",
+      "effect_en": "Faster gameplay",
+      "category": "welt",
+      "pc": "TIMEFLIESWHENYOU"
+    },
+    {
+      "id": "zeitlupe",
+      "effect": "Zeitlupe",
+      "effect_en": "Slow motion",
+      "category": "welt",
+      "pc": "BOOOOORING",
+      "note": "Mit fünf O.",
+      "note_en": "With five O's."
+    },
+    {
+      "id": "passanten-randale",
+      "effect": "Passanten randalieren",
+      "effect_en": "Pedestrians riot",
+      "category": "spass",
+      "pc": "ITSALLGOINGMAAAD"
+    },
+    {
+      "id": "passanten-greifen-an",
+      "effect": "Passanten greifen dich an",
+      "effect_en": "Pedestrians attack you",
+      "category": "spass",
+      "pc": "NOBODYLIKESME"
+    },
+    {
+      "id": "passanten-bewaffnet",
+      "effect": "Passanten sind bewaffnet",
+      "effect_en": "Pedestrians carry weapons",
+      "category": "spass",
+      "pc": "WEAPONSFORALL"
+    },
+    {
+      "id": "mehr-gore",
+      "effect": "Mehr Gore-Effekte",
+      "effect_en": "More gore",
+      "category": "spass",
+      "pc": "NASTYLIMBSCHEAT"
+    },
+    {
+      "id": "zufaelliges-outfit",
+      "effect": "Zufälliger Charakter-Skin",
+      "effect_en": "Random character skin",
+      "category": "spass",
+      "pc": "ILIKEDRESSINGUP"
+    }
+  ]
+}
