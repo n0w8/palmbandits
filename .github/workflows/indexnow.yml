@@ -1,25 +1,25 @@
-# Meldet neue oder geaenderte News und Guides (deutsch und englisch) per IndexNow, wenn ein Mensch etwas mergt oder selbst committet.
-# (Pushes des News-Bots loesen diesen Workflow nicht aus; der Bot pingt selbst.)
+# Meldet neue oder geaenderte News und Guides (deutsch und englisch) per IndexNow, sobald der Workflow "Deploy"
+# sie auf easyname hochgeladen hat (egal ob vom News-Bot, Guide-Radar oder von Hand). Erfasst alle Inhalts-Commits
+# der letzten 45 Minuten; Deploy laeuft mindestens nach jedem Bot-Lauf, doppelte Meldungen schaden nicht.
 name: IndexNow
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'src/content/news/**'
-      - 'src/content/guides/**'
-      - 'src/content/en/news/**'
-      - 'src/content/en/guides/**'
+  workflow_run:
+    workflows: ['Deploy']
+    types: [completed]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   ping:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
     env:
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      FTP_PASSWORD_SET: ${{ secrets.FTP_PASSWORD != '' }}
       SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL || 'https://palmbandits.com' }}
     steps:
       - uses: actions/checkout@v5
@@ -31,12 +31,13 @@ jobs:
           node-version: 24
 
       - name: Geaenderte Seiten ermitteln und melden
-        if: ${{ env.INDEXNOW_KEY != '' }}
+        # Ohne FTP-Zugang hat Deploy nichts hochgeladen, dann gibt es auch nichts zu melden
+        if: ${{ env.INDEXNOW_KEY != '' && env.FTP_PASSWORD_SET == 'true' }}
         run: |
-          BEFORE="${{ github.event.before }}"
-          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE="HEAD~1"; fi
+          git fetch -q origin main && git checkout -q origin/main
           URLS=""
-          for f in $(git diff --name-only --diff-filter=AM "$BEFORE" "${{ github.sha }}" -- src/content/news src/content/guides src/content/en/news src/content/en/guides); do
+          for f in $(git log --since="45 minutes ago" --diff-filter=AM --name-only --pretty=format: -- src/content/news src/content/guides src/content/en/news src/content/en/guides | sort -u); do
+            [ -f "$f" ] || continue
             case "$f" in
               src/content/en/news/*.md) URLS="$URLS ${SITE_URL%/}/en/news/$(basename "$f" .md)/" ;;
               src/content/en/guides/*.md) URLS="$URLS ${SITE_URL%/}/en/guides/$(basename "$f" .md)/" ;;
@@ -46,5 +47,4 @@ jobs:
           done
           if [ -z "$URLS" ]; then echo "Keine neuen Seiten."; exit 0; fi
           echo "Melde:$URLS"
-          sleep 150
           INDEXNOW_URLS="$URLS" node automation/news-bot/indexnow.mjs
