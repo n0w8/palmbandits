@@ -62,6 +62,11 @@ const released = Date.now() >= releaseDate.getTime();
         <filter id="h-glow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
           <feDropShadow dx="0" dy="0" stdDeviation="30" flood-color="#ff7850" flood-opacity="0.6" />
         </filter>
+        <linearGradient id="h-beam" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fffbe0" stop-opacity=".42" />
+          <stop offset=".6" stop-color="#fffbe0" stop-opacity=".12" />
+          <stop offset="1" stop-color="#fffbe0" stop-opacity=".05" />
+        </linearGradient>
         <mask id="h-sunmask">
           <rect width="1600" height="900" fill="#fff" />
           <g class="sun-stripes">
@@ -90,12 +95,26 @@ const released = Date.now() >= releaseDate.getTime();
 
       <g data-depth="0.15" filter="url(#h-glow)"><circle class="sun" cx="800" cy="500" r="265" fill="url(#h-sun)" mask="url(#h-sunmask)" /></g>
 
+      <!-- Polizeihubschrauber (leichter Einturbinen-Typ, Nase nach links): fliegt vor der Sonne, Suchscheinwerfer bis zum Boden -->
       <g class="heli" data-depth="0.5">
         <g class="heli__fly">
-          <path d="M0,10 C10,0 40,0 52,8 L88,8 L92,4 L96,4 L94,12 L52,14 C40,22 8,22 0,10Z" fill="#0d0716" />
-          <path d="M-14,0 L66,-2" stroke="#0d0716" stroke-width="2" class="heli__rotor" />
-          <circle cx="8" cy="12" r="2.2" class="heli__light" />
-          <path d="M6,16 L-60,200 L60,200 Z" class="heli__beam" />
+          <path d="M-72,362 L14,34 L100,362 Z" fill="url(#h-beam)" class="heli__beam" />
+          <g fill="#0d0716">
+            <path d="M76,13 L142,17 L142,22 L78,27 Z" />
+            <path d="M134,18 L145,2 L150,2 L144,22 Z" />
+            <path d="M124,22 L137,21 L135,25 L124,25 Z" />
+            <rect x="44" y="0" width="5" height="8" rx="1" />
+            <path d="M4,26 C4,12 18,5 34,5 L62,5 C72,5 79,11 81,20 L82,30 C70,34 30,36 14,34 C8,33 4,30 4,26 Z" />
+            <path d="M18,35 L21,41 M60,35 L57,41" stroke="#0d0716" stroke-width="3" />
+            <path d="M8,42 L74,42 C78,42 80,40 80,37" stroke="#0d0716" stroke-width="3" fill="none" stroke-linecap="round" />
+          </g>
+          <path d="M8,25 C9,15 19,10 31,10 L31,23 Z" fill="rgba(120, 225, 255, 0.45)" />
+          <rect x="36" y="11" width="15" height="9" rx="2" fill="rgba(120, 225, 255, 0.3)" />
+          <path d="M-26,0 L120,0" stroke="#1a1026" stroke-width="3" stroke-linecap="round" class="heli__rotor" />
+          <path d="M147,-6 L147,12" stroke="#1a1026" stroke-width="2.5" stroke-linecap="round" class="heli__tail" />
+          <circle cx="50" cy="35" r="2.6" class="heli__light" />
+          <circle cx="142" cy="20" r="1.6" fill="#fff" class="heli__nav" />
+          <circle cx="14" cy="34" r="2.4" fill="#fffbe0" />
         </g>
       </g>
 
@@ -189,16 +208,22 @@ const released = Date.now() >= releaseDate.getTime();
   .palm--c { animation-duration: 8s; animation-delay: -4s; }
   @keyframes sway { from { rotate: -1.6deg; } to { rotate: 1.8deg; } }
   .heli__fly { animation: heli 34s linear infinite; }
+  /* tiefer als frueher (y 90-140 lag auf breiten Bildschirmen ausserhalb des Ausschnitts): fliegt jetzt auf Hoehe der Sonnenoberkante */
   @keyframes heli {
-    0% { transform: translate(1750px, 140px) scale(1.1); }
-    100% { transform: translate(-200px, 90px) scale(1.1); }
+    0% { transform: translate(1760px, 268px) scale(1.25); }
+    100% { transform: translate(-220px, 236px) scale(1.25); }
   }
-  .heli__rotor { animation: rotor 0.12s linear infinite; transform-origin: 26px 0; transform-box: view-box; }
-  @keyframes rotor { 50% { transform: scaleX(0.2); } }
+  .heli__rotor { animation: rotor 0.1s linear infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes rotor { 50% { transform: scaleX(0.15); } }
+  .heli__tail { animation: tail 0.08s linear infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes tail { 50% { transform: scaleY(0.2); } }
   .heli__light { fill: #ff3b3b; animation: siren 0.8s steps(1) infinite; }
   @keyframes siren { 50% { fill: #3b7bff; } }
-  .heli__beam { fill: rgba(255, 255, 230, 0.07); transform-origin: 6px 16px; transform-box: view-box; animation: beam 4s ease-in-out infinite alternate; }
-  @keyframes beam { from { rotate: -14deg; } to { rotate: 16deg; } }
+  .heli__nav { animation: nav 1.2s steps(1) infinite; }
+  @keyframes nav { 50% { opacity: 0.15; } }
+  /* Scheinwerfer schwenkt um die Lampe unter der Nase, der Kegel endet hinter der Skyline am Boden */
+  .heli__beam { transform-box: fill-box; transform-origin: 50% 0; animation: beam 5s ease-in-out infinite alternate; }
+  @keyframes beam { from { rotate: -12deg; } to { rotate: 12deg; } }
 
   .hero__content { position: relative; padding-top: 60px; padding-bottom: clamp(40px, 7vw, 90px); }
   .hero__kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--yellow); font-size: 0.95rem; margin: 0 0 16px; }
