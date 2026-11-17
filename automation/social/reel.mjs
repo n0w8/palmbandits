@@ -10,7 +10,7 @@ import { Resvg } from '@resvg/resvg-js';
 import { BRAND, ROOT_DIR, noLongDashes, siteUrl, truncate } from '../lib/util.mjs';
 import { pickCheat } from '../lib/cheat-of-day.mjs';
 import { GAME_NAMES, GAME_TAGS } from '../pinterest/content.mjs';
-import { C, SUNSET, SUNSET_V, buttonIcon, chip, div, fitText, fonts, gradientBar, label, parseSequence, stars } from '../pinterest/render.mjs';
+import { C, SUNSET, SUNSET_V, buttonIcon, chip, div, fitText, fonts, gradientBar, parseSequence, stars } from '../pinterest/render.mjs';
 
 export const RW = 1080;
 export const RH = 1920;
@@ -25,11 +25,15 @@ const INNER = RW - PADX * 2;
 export const SLIDES = { hook: [0, 3.1], body: [2.9, 9.7], cta: [9.5, DURATION] };
 
 const PHOTOS = {
-  cheat: ['17-crt-retro', '20-controller', '08-cash', '12-garage', '14-retro-80s', '19-glitch-city'],
+  cheat: ['17-crt-retro', '20-controller', '19-glitch-city', '08-cash'],
+  vehicle: ['12-garage', '14-retro-80s', '13-desert-highway', '15-90s-street'],
   news: ['23-launch-night', '01-neon-avenue', '00-sunset-skyline', '06-heli-searchlight', '05-police-chase', '07-marina'],
   guide: ['21-map-pins', '13-desert-highway', '02-overseas-bridge', '03-swamp-gator', '04-beach-sunset', '15-90s-street'],
 };
-const BASE_TAGS = ['gta', 'gta6', 'gaming', 'gamer', 'palmbandits'];
+const BASE_TAGS = ['gta', 'gaming', 'gamer', 'palmbandits'];
+const VEHICLE = /spawn|fahrzeug|auto|wagen|panzer|jet|heli|flugzeug|motorrad|bike|boot|car|comet|limo/i;
+// Kurze, vollstaendige Anleitung statt abgeschnittener Langtexte
+const HOW = { pc: 'Im Spiel einfach eintippen, ohne Enter.', phone: 'Handy raus, Nummer wählen, anrufen.' };
 const KIND_TAGS = { cheat: ['gtacheats', 'cheats'], news: ['gtanews', 'gamingnews'], guide: ['gtatipps', 'gtaguide'] };
 
 const dayNo = (date) => Math.floor(date.getTime() / 86_400_000);
@@ -38,7 +42,9 @@ const gameName = (g) => GAME_NAMES[g] ?? 'GTA';
 const domain = () => siteUrl().replace(/^https?:\/\//, '');
 
 export function hashtags(kind, game) {
-  const tags = [...new Set([...BASE_TAGS, ...(GAME_TAGS[game] ?? []).slice(0, 2), ...KIND_TAGS[kind]])];
+  // #gta6 nur bei GTA 6, Online und allgemeinen Themen, sonst die Tags des jeweiligen Teils
+  const six = ['gta-6', 'gta-online', 'allgemein', undefined].includes(game) ? ['gta6'] : [];
+  const tags = [...new Set([...BASE_TAGS.slice(0, 1), ...six, ...(GAME_TAGS[game] ?? []).slice(0, 2), ...KIND_TAGS[kind], ...BASE_TAGS.slice(1)])];
   return tags.slice(0, 10).map((t) => `#${t}`).join(' ');
 }
 
@@ -67,16 +73,16 @@ function cheatPlan(c, date) {
     c.note ? `\nAchtung: ${c.note}` : null,
     '',
     `Alle ${game} Cheats mit Kopier-Button: Link in Bio 👉 ${domain()}`,
-    'Cheats funktionieren nie in GTA Online. Spielstand vorher sichern.',
+    'Cheats nur im Story-Modus. Spielstand vorher sichern.',
     '',
     hashtags('cheat', c.game),
   ].filter((x) => x !== null).join('\n');
   return {
     id: `${isoDay(date)}-cheat-${c.game}-${c.id}`,
     kind: 'cheat',
-    photo: photoFor('cheat', dayNo(date)),
+    photo: photoFor(VEHICLE.test(c.effect) ? 'vehicle' : 'cheat', dayNo(date)),
     hook: { label: `Cheat des Tages · ${game}`, title: c.effect, kicker: 'Kanntest du den schon?' },
-    body: { code: c.pc ?? null, phone: c.phone ?? null, playstation: c.playstation, xbox: c.xbox, note: c.note, howTo: c.pc ? c.howTo?.pc : c.phone ? c.howTo?.phone : null },
+    body: { code: c.pc ?? null, phone: c.phone ?? null, playstation: c.playstation, xbox: c.xbox, note: c.note, howTo: c.pc ? HOW.pc : c.phone ? HOW.phone : null },
     cta: { line: `Alle ${game} Cheats mit Kopier-Button` },
     url: `${siteUrl()}/cheats/${c.game}/#${c.id}`,
     caption: noLongDashes(caption),
@@ -155,6 +161,7 @@ export function planReels(content, date = new Date()) {
 const frame = (...children) => div({ width: RW, height: RH, flexDirection: 'column', justifyContent: 'center', padding: `${TOP}px ${PADX}px ${BOTTOM}px`, color: C.text, fontFamily: 'Barlow' }, ...children);
 const panel = (style, ...children) => div({ flexDirection: 'column', width: INNER, padding: '40px 44px', borderRadius: 36, background: 'rgba(7,6,11,0.78)', border: '2px solid rgba(244,241,250,0.16)', ...style }, ...children);
 const PANEL_W = INNER - 88;
+const label = (text) => div({ fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 36, letterSpacing: 4, color: C.muted }, text);
 
 async function bigTitle(text, { maxLines = 4, max = 150, min = 64, gradient = true } = {}) {
   const { size, lines } = await fitText(text.toUpperCase(), { maxLines, max, min, maxWidth: PANEL_W });
@@ -175,7 +182,7 @@ function keys(seq, platform) {
 
 async function hookSlide(p) {
   return frame(panel({ gap: 0 },
-    div({ flexWrap: 'wrap', gap: 12 }, chip(p.hook.label, { size: 30 })),
+    div({ flexWrap: 'wrap', gap: 12 }, chip(p.hook.label, { size: 36 })),
     div({ marginTop: 30 }, await bigTitle(p.hook.title, { maxLines: 4, max: 160 })),
     div({ marginTop: 30, alignItems: 'center', justifyContent: 'space-between', width: PANEL_W },
       div({ fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 40, letterSpacing: 2, color: C.yellow }, p.hook.kicker.toUpperCase()),
@@ -198,16 +205,16 @@ async function cheatBody(p) {
   if (b.playstation) parts.push(div({ flexDirection: 'column', gap: 10 }, label('PLAYSTATION'), keys(b.playstation, 'playstation')));
   if (b.xbox && parts.length < 3) parts.push(div({ flexDirection: 'column', gap: 10 }, label('XBOX'), keys(b.xbox, 'xbox')));
   if (b.phone && b.code && parts.length < 3) parts.push(div({ alignItems: 'center', gap: 18 }, label('HANDY'), div({ fontFamily: 'Barlow Condensed', fontWeight: 800, fontSize: 50, color: C.teal }, b.phone)));
-  if (b.note) parts.push(div({ fontFamily: 'Barlow', fontWeight: 700, fontSize: 30, lineHeight: 1.3, color: C.yellow }, truncate(`Achtung: ${b.note}`, 90)));
+  if (b.note) parts.push(div({ fontFamily: 'Barlow', fontWeight: 700, fontSize: 36, lineHeight: 1.3, color: C.yellow }, truncate(`Achtung: ${b.note}`, 80)));
   parts.unshift(div({ fontFamily: 'Anton', fontSize: 64, lineHeight: 1.1, color: C.text }, truncate(p.hook.title.toUpperCase(), 34)));
-  if (b.howTo) parts.push(div({ fontFamily: 'Barlow', fontWeight: 500, fontSize: 32, lineHeight: 1.3, color: 'rgba(244,241,250,0.85)' }, truncate(`So geht's: ${b.howTo}`, 110)));
+  if (b.howTo) parts.push(div({ fontFamily: 'Barlow', fontWeight: 600, fontSize: 38, lineHeight: 1.3, color: 'rgba(244,241,250,0.9)' }, `So geht's: ${b.howTo}`));
   return frame(panel({ gap: 30 }, ...parts));
 }
 
 async function newsBody(p) {
   return frame(panel({ gap: 0 },
     div({ gap: 12, alignItems: 'center' },
-      p.body.rumor ? chip('Gerücht', { color: C.orange, bg: 'rgba(255,138,31,0.10)', size: 30 }) : chip('Bestätigt', { size: 30 }),
+      p.body.rumor ? chip('Gerücht', { color: C.orange, bg: 'rgba(255,138,31,0.10)', size: 36 }) : chip('Bestätigt', { size: 36 }),
       div({ marginLeft: 10, alignItems: 'center', gap: 14 }, label('HYPE'), stars(p.body.hype, 38, 6))),
     div({ marginTop: 28 }, gradientBar(260)),
     div({ marginTop: 30, fontFamily: 'Barlow', fontWeight: 500, fontSize: 46, lineHeight: 1.35, color: 'rgba(244,241,250,0.92)', width: PANEL_W }, truncate(p.body.text, 190))));

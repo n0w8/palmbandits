@@ -44,7 +44,7 @@ async function postCheat() {
       url,
       color: 0x19e3c8,
       fields,
-      footer: { text: 'Cheats funktionieren nie in GTA Online · Spielstand vorher sichern' },
+      footer: { text: 'Cheats nur im Story-Modus · Spielstand vorher sichern' },
     }],
   };
   const hook = env('DISCORD_WEBHOOK_CHEATS') || localHooks.cheats;
