@@ -73,6 +73,7 @@ Honestly, Series S has a tough time here. If there is also a PS5 or Series X in 
 
 ## Read on
 
+- Which settings to pick on your console: [GTA 6 graphics and FPS on PS5, PS5 Pro and Xbox](/en/guides/gta-6-graphics-fps-ps5-pro-xbox/)
 - What Rockstar confirmed about the tech beforehand: [GTA 6 on PS5 Pro and Xbox: 30 FPS, ray tracing and cloud gaming](/en/news/2026-11-10-gta-6-ps5-pro-30-fps-xbox-cloud-gaming-details/)
 - What the reviews say overall: [GTA 6 reviews: Metascore 99](/en/news/2026-11-18-gta-6-reviews-metascore-99-record/)
 - The right settings before your first session: [GTA 6 launch checklist](/en/guides/gta-6-launch-checklist/)
