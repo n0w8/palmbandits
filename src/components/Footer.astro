@@ -49,7 +49,7 @@ const rss = lang === 'en' ? '/en/rss.xml' : '/rss.xml';
         {MERCH.url && <li><a href={`${h('/shop/')}#merch`}>{t.footer.merch}</a></li>}
         <li><a href={h('/shop/')}>{t.footer.scripts}</a></li>
         <li><a href={rss}>{t.footer.rss}</a></li>
-        <li><a href={lang === 'en' ? '/' : '/en/'} hreflang={lang === 'en' ? 'de' : 'en'} data-astro-reload>{lang === 'en' ? 'Deutsche Version' : 'English version'}</a></li>
+        <li><a href={lang === 'en' ? '/' : '/en/'} hreflang={lang === 'en' ? 'de' : 'en'} data-astro-reload data-lang-pick={lang === 'en' ? 'de' : 'en'}>{lang === 'en' ? 'Deutsche Version' : 'English version'}</a></li>
       </ul>
     </div>
   </div>

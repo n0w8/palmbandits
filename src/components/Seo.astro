@@ -66,5 +66,46 @@ const legal = /^\/(impressum|datenschutz)\//.test(path) || path === '/404.html' 
 {!legal && dePath && <link rel="alternate" hreflang="de" href={new URL(dePath, site).toString()} />}
 {!legal && enPath && <link rel="alternate" hreflang="en" href={new URL(enPath, site).toString()} />}
 {!legal && dePath && <link rel="alternate" hreflang="x-default" href={new URL(dePath, site).toString()} />}
+{/* Sprachweiche (clientseitig, weil der Varnish-Cache keine Accept-Language-Varianten trennt):
+    Browser-Primaersprache "de*" -> deutsche Fassung, sonst englische. Ziel = hreflang-Link oben,
+    Seiten ohne Gegenstueck (legal, 404, Artikel ohne Uebersetzung) bleiben stehen.
+    Keine Umleitung bei eigener Wahl (localStorage "pb-lang", gesetzt per Klick auf [data-lang-pick]
+    im Header/Footer oder per ?lang=de|en), bei Bots/Crawlern und wenn man gerade von der
+    Zielseite kommt (Schleifenschutz). Steht vor allen CSS-/JS-Dateien im <head>: kein Flackern.
+    Bei Seitenwechseln ueber den ClientRouter laeuft es nicht erneut (gleicher Skripttext). */}
+<script is:inline>
+(function () {
+  var d = document, n = navigator, K = 'pb-lang';
+  function setLang(v) { try { localStorage.setItem(K, v); } catch (e) {} }
+  /* Klick auf einen Sprachumschalter merkt die Wahl */
+  d.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('[data-lang-pick]') : null;
+    if (a) setLang(a.getAttribute('data-lang-pick'));
+  }, true);
+  try {
+    var q = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    if (q === 'de' || q === 'en') return setLang(q);
+    var own = null;
+    try { own = localStorage.getItem(K); } catch (e) {}
+    if (own === 'de' || own === 'en') return;
+    if (n.webdriver || /bot|crawl|spider|slurp|lighthouse|pagespeed|headless|phantom|puppeteer|playwright|selenium|mediapartners|google-|facebookexternalhit|meta-external|bytespider|gtmetrix|ia_archiver/i.test(n.userAgent || '')) return;
+    var pl = String((n.languages && n.languages[0]) || n.language || '').toLowerCase();
+    if (!pl) return;
+    var want = pl.indexOf('de') === 0 ? 'de' : 'en';
+    if (want === (d.documentElement.lang === 'en' ? 'en' : 'de')) return;
+    var l = d.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+    if (!l) return;
+    var p = new URL(l.href).pathname;
+    if (p === location.pathname) return;
+    if (d.referrer) {
+      var r = new URL(d.referrer);
+      if (r.host === location.host && r.pathname === p) return;
+    }
+    d.documentElement.style.visibility = 'hidden';
+    setTimeout(function () { d.documentElement.style.visibility = ''; }, 3000);
+    location.replace(p + location.search + location.hash);
+  } catch (e) { d.documentElement.style.visibility = ''; }
+})();
+</script>
 <link rel="alternate" type="application/rss+xml" title={`${SITE.name} News`} href={lang === 'en' ? '/en/rss.xml' : '/rss.xml'} />
 {jsonLd.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}

@@ -56,7 +56,7 @@ const switchTo = altProp ? altProp : altProp === null ? (lang === 'de' ? '/en/' 
       ))}
     </nav>
     <div class="hdr__actions">
-      <a class="hdr__lang cond" href={switchTo} hreflang={lang === 'de' ? 'en' : 'de'} title={t.nav.langSwitch} data-astro-reload>{t.nav.langShort}</a>
+      <a class="hdr__lang cond" href={switchTo} hreflang={lang === 'de' ? 'en' : 'de'} title={t.nav.langSwitch} data-astro-reload data-lang-pick={lang === 'de' ? 'en' : 'de'}>{t.nav.langShort}</a>
       <button class="hdr__search" data-search-open aria-label={t.nav.openSearch}>
         <Icon name="search" />
         <span>{t.nav.search}</span>
@@ -92,7 +92,7 @@ const switchTo = altProp ? altProp : altProp === null ? (lang === 'de' ? '/en/' 
   </div>
   <div class="wrap mmenu__cta">
     <a class="btn btn--discord" {...discordFor(lang)}><Icon name="discord" /> {t.nav.joinDiscord}</a>
-    <a class="btn btn--ghost" href={switchTo} data-astro-reload>{t.nav.langSwitch}</a>
+    <a class="btn btn--ghost" href={switchTo} data-astro-reload data-lang-pick={lang === 'de' ? 'en' : 'de'}>{t.nav.langSwitch}</a>
   </div>
 </div>
 
