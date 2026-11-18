@@ -1,0 +1,73 @@
+---
+// Video-Block der Startseite. Erscheint nur, wenn VIDEO.youtubeId in src/config.ts gesetzt ist.
+// Vor dem Klick: nur eigenes Vorschaubild ohne Verbindung zu Google. Nach Klick: youtube-nocookie mit Autoplay.
+import { VIDEO } from '../config';
+import { langFromUrl } from '../i18n';
+import Icon from './Icon.astro';
+
+const lang = langFromUrl(Astro.url);
+const id = VIDEO.youtubeId.trim();
+const L = {
+  de: { kicker: 'Video', play: 'Video abspielen', note: 'Mit dem Klick lädt YouTube (Google). Dabei wird deine IP-Adresse übertragen.', more: 'Datenschutz', open: 'Auf YouTube ansehen' },
+  en: { kicker: 'Video', play: 'Play video', note: 'Clicking loads YouTube (Google), which receives your IP address.', more: 'Privacy', open: 'Watch on YouTube' },
+}[lang];
+---
+{id && (
+  <section class="section wrap vf" aria-labelledby="sec-video">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>{L.kicker}</b> / Palm Bandits</p>
+        <h2 id="sec-video" class="sec-head__title display">{VIDEO.title[lang]}</h2>
+      </div>
+      <a href={`https://www.youtube.com/watch?v=${id}`} class="sec-head__link" target="_blank" rel="noopener">{L.open} <Icon name="arrow" /></a>
+    </div>
+    <p class="vf__text muted">{VIDEO.text[lang]}</p>
+    <div class="vf__frame card" data-video={id}>
+      <button type="button" class="vf__play" data-video-play aria-label={L.play}>
+        <span class="vf__btn"><Icon name="play" size={34} /></span>
+        <span class="vf__label display">{L.play}</span>
+      </button>
+    </div>
+    <p class="vf__note">{L.note} <a href="/datenschutz/">{L.more}</a></p>
+  </section>
+)}
+
+<style>
+  .vf__text { max-width: 60ch; margin: -0.5rem 0 1.25rem; }
+  .vf__frame {
+    position: relative; aspect-ratio: 16 / 9; overflow: hidden; padding: 0;
+    background:
+      radial-gradient(120% 90% at 20% 10%, rgba(255, 42, 140, 0.35), transparent 60%),
+      radial-gradient(120% 90% at 85% 90%, rgba(0, 200, 255, 0.28), transparent 60%),
+      #0b0b10;
+  }
+  .vf__frame :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .vf__play {
+    position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 0.9rem;
+    width: 100%; border: 0; background: transparent; color: #fff; cursor: pointer;
+  }
+  .vf__btn {
+    display: grid; place-items: center; width: 92px; height: 92px; border-radius: 50%;
+    background: linear-gradient(135deg, #ff2a8c, #8b3dff); box-shadow: 0 10px 40px rgba(255, 42, 140, 0.45);
+    transition: transform 0.2s ease;
+  }
+  .vf__play:hover .vf__btn, .vf__play:focus-visible .vf__btn { transform: scale(1.08); }
+  .vf__label { font-size: clamp(1.1rem, 2.4vw, 1.6rem); letter-spacing: 0.02em; }
+  .vf__note { margin-top: 0.6rem; font-size: 0.8rem; opacity: 0.65; }
+  .vf__note a { text-decoration: underline; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-video]').forEach((box) => {
+    const btn = box.querySelector('[data-video-play]');
+    btn?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(box.dataset.video ?? '')}?autoplay=1&rel=0&playsinline=1`;
+      f.title = 'YouTube';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.replaceChildren(f);
+    });
+  });
+</script>

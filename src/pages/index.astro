@@ -8,6 +8,7 @@ import GameCard from '../components/GameCard.astro';
 import RadioBand from '../components/RadioBand.astro';
 import Newsletter from '../components/Newsletter.astro';
 import MerchGrid from '../components/MerchGrid.astro';
+import VideoFeature from '../components/VideoFeature.astro';
 import { GAMES } from '../data/games';
 import { CATEGORIES, catL } from '../data/categories';
 import { getNews, getGuides } from '../lib/utils';
@@ -56,6 +57,9 @@ const jsonLd = [
       ))}
     </div>
   </div>
+
+  <!-- VIDEO: nur sichtbar, wenn VIDEO.youtubeId in config.ts gesetzt ist -->
+  <VideoFeature />
 
   <!-- NEWS -->
   <section class="section wrap" aria-labelledby="sec-news">

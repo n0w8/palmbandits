@@ -29,8 +29,9 @@ const NW_HOODIE = { de: 'Nordwald Collection · Hoodie · Schwarz', en: 'Nordwal
 const NW_TEE = { de: 'Nordwald Collection · Shirt · Schwarz', en: 'Nordwald Collection · Tee · Black' };
 
 // PALM BANDITS Hase (seit 18.11.2026, Mike: "mach mal nur ein hasenkopf als design", Entwurf A): nur vorne, nur Schwarz.
-// Druck v1 hat am Unterkinn einen halbtransparenten Schleier; die korrigierte v2 (merch/nordwald/druck-hasenkopf-v2.png)
-// kommt hoch, sobald das Spreadshirt-Tageslimit für Uploads wieder frei ist. Dann path/sellable/img hier tauschen.
+// Live ist Druck v1 (QA: Freigabe mit kleinen Mängeln, halbtransparenter Schleier am Unterkinn). v2 (merch/nordwald/druck-hasenkopf-v2.png)
+// hat die QA am 18.11. NICHT freigegeben (aufgehelltes Kinn zeigt Löcher/Sprenkel), braucht noch eine Runde. Upload erst wieder möglich,
+// wenn das Spreadshirt-Tageslimit frei ist. Danach path/sellable/img hier tauschen.
 const HASE = '/palm+bandits+hase-A6afd3061855804508a86a421';
 
 export const MERCH_ITEMS: MerchItem[] = [
