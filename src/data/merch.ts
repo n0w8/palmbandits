@@ -28,7 +28,24 @@ const ELDRUNA = '/eldruna+nordwald-A6afce57c855804508a521a1d';
 const NW_HOODIE = { de: 'Nordwald Collection · Hoodie · Schwarz', en: 'Nordwald Collection · Hoodie · Black' };
 const NW_TEE = { de: 'Nordwald Collection · Shirt · Schwarz', en: 'Nordwald Collection · Tee · Black' };
 
+// PALM BANDITS Hase (seit 18.11.2026, Mike: "mach mal nur ein hasenkopf als design", Entwurf A): nur vorne, nur Schwarz.
+// Druck v1 hat am Unterkinn einen halbtransparenten Schleier; die korrigierte v2 (merch/nordwald/druck-hasenkopf-v2.png)
+// kommt hoch, sobald das Spreadshirt-Tageslimit für Uploads wieder frei ist. Dann path/sellable/img hier tauschen.
+const HASE = '/palm+bandits+hase-A6afd3061855804508a86a421';
+
 export const MERCH_ITEMS: MerchItem[] = [
+  {
+    id: 'hase-hoodie', name: { de: 'Hasen Hoodie', en: 'Bunny Hoodie' },
+    type: { de: 'Oversized Heavyweight Hoodie · Schwarz', en: 'Oversized heavyweight hoodie · Black' },
+    path: HASE, sellable: '0kdjDJvVaeS040704j5p-2963-22', appearance: 1257, price: 39.99, isNew: true,
+    img: 'T2963A1257PA9736PT17X98Y3D360822839W18399H26344',
+  },
+  {
+    id: 'hase-tee', name: { de: 'Hasen Shirt', en: 'Bunny Tee' },
+    type: { de: 'Oversized Heavyweight T-Shirt · Schwarz', en: 'Oversized heavyweight tee · Black' },
+    path: HASE, sellable: '0kdjDJvVaeS040704j5p-3502-7', appearance: 2, price: 26.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y34D360822839W27999H40090',
+  },
   {
     id: 'domsgard-hoodie', name: { de: 'Domsgard Hoodie', en: 'Domsgard Hoodie' }, type: NW_HOODIE,
     path: '/domsgard+nordwald-A6afd107e83173c19cab0830e', sellable: 'nA0EDz3YXbSk01LXqg9o-2963-22', appearance: 1257, price: 45.99, isNew: true,
