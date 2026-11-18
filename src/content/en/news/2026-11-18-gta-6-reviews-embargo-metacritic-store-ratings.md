@@ -2,6 +2,7 @@
 title: "GTA 6 Reviews: Embargo Today, Early Ratings, Metacritic Trouble"
 description: "The first GTA 6 reviews are expected today, November 18. What we know about the embargo, what early store ratings are worth and what happened on Metacritic."
 pubDate: 2026-11-18T05:45:00+01:00
+updatedDate: 2026-11-18T16:45:00+01:00
 game: gta-6
 tags: ["GTA 6", "Reviews", "Metacritic", "Ratings", "Review Embargo"]
 sources:
@@ -26,6 +27,8 @@ translationOf: "2026-11-18-gta-6-tests-embargo-metacritic-store-wertungen"
 ---
 
 The first GTA 6 reviews are expected today, Wednesday, November 18, one day before release. Rockstar has never officially confirmed the date, but several reports agree on it. Until then, early user ratings on the PlayStation Store and a brief blip on Metacritic have fans talking.
+
+> **Update 15:45 GMT:** The reviews are in. GTA 6 sits at 99 on Metacritic, tying the all-time record. Every score, the praise and the criticism: [GTA 6 reviews: Metascore 99](/en/news/2026-11-18-gta-6-reviews-metascore-99-record/)
 
 **As of November 18, 2026, 6 AM CET (5 AM GMT).** At that point, no reviews from major outlets had been published.
 

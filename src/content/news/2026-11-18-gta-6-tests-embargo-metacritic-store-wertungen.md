@@ -2,6 +2,7 @@
 title: "GTA 6 Tests: Embargo heute, frühe Wertungen, Metacritic-Ärger"
 description: "Die ersten GTA 6 Tests werden heute, am 18. November, erwartet. Was über das Embargo bekannt ist, was frühe Store-Sterne taugen und was bei Metacritic los war."
 pubDate: 2026-11-18T05:45:00+01:00
+updatedDate: 2026-11-18T16:45:00+01:00
 game: gta-6
 tags: ["GTA 6", "Tests", "Metacritic", "Wertungen", "Review-Embargo"]
 sources:
@@ -25,6 +26,8 @@ hype: 5
 ---
 
 Die ersten Tests zu GTA 6 werden heute erwartet, am Mittwoch, 18. November, also einen Tag vor dem Release. Rockstar hat das Datum nie offiziell bestätigt, mehrere Berichte nennen es aber übereinstimmend. Bis dahin sorgen frühe Nutzerwertungen im PlayStation Store und ein kurzer Ausreißer bei Metacritic für Diskussionen.
+
+> **Update 16:45 Uhr:** Die Tests sind da. GTA 6 steht bei Metacritic bei 99, gleichauf mit dem Allzeitrekord. Alle Wertungen, Lob und Kritik: [GTA 6 Tests: Metascore 99](/news/2026-11-18-gta-6-tests-metascore-99-rekord/)
 
 **Stand: 18. November 2026, 6 Uhr.** Zu diesem Zeitpunkt waren noch keine Tests großer Magazine veröffentlicht.
 

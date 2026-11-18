@@ -43,7 +43,7 @@ export interface Source {
 }
 
 /** Letzte Aktualisierung der gesamten Seite (Europe/Berlin). */
-export const UPDATED = '2026-11-18T06:10:00+01:00';
+export const UPDATED = '2026-11-18T16:45:00+01:00';
 /** Erste Veröffentlichung der Seite. */
 export const PUBLISHED = '2026-11-18T06:10:00+01:00';
 export const GTA5_RELEASE = '2013-09-17';
@@ -85,6 +85,9 @@ export const SOURCES = {
   pcghPrices: { name: 'PC Games Hardware: GTA 6 vorbestellen, 79,99 und 99,99 Euro sind offiziell', short: 'PCGH', url: 'https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/GTA-6-vorbestellen-Standard-Ultimate-Edition-Europreise-1546282/', date: '2026-06-25' },
   techradarUK: { name: 'TechRadar: GTA 6 UK-Vorbestellungen und Preise', short: 'TechRadar', url: 'https://techradar.com/gaming/ps5/gta-6-uk-pre-orders-are-live-and-we-finally-have-a-price-heres-where-you-can-order-it-and-what-it-costs', date: '2026-06-25' },
   ocPreorder: { name: 'OpenCritic: Rockstar bestätigt Vorbestellungen ab 25. Juni', short: 'Rockstar via OpenCritic', url: 'https://opencritic.com/news/33245/rockstar-games-confirms-grand-theft-auto-vi-pre-orders-begin-june-25', date: '2026-06-18' },
+  xdMc: { name: 'XboxDynasty: Metacritic-Score explodiert auf 99 Punkte (Wertungsliste)', short: 'XboxDynasty', url: 'https://www.xboxdynasty.de/news/grand-theft-auto-vi/metacritic-score-explodiert-auf-99-punkte/', date: '2026-11-18' },
+  nbcMc99: { name: 'Notebookcheck: GTA 6 reviews award 99 Metacritic score', short: 'Notebookcheck', url: 'https://www.notebookcheck.net/GTA-6-reviews-award-99-Metacritic-score-topping-GTA-4-to-become-Rockstar-s-top-rated.1453363.0.html', date: '2026-11-18' },
+  pcghTests: { name: 'PC Games Hardware: Reviews zu GTA 6, makelloses Ergebnis', short: 'PCGH', url: 'https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/Test-Review-Metascore-Bewertungen-1560408/', date: '2026-11-18' },
   insiderEmbargo: { name: 'Insider Gaming: Wann das Test-Embargo für GTA 6 fällt', short: 'Insider Gaming', url: 'https://insider-gaming.com/grand-theft-auto-6-review-embargo/', date: '2026-11-17' },
   mcVI: { name: 'Metacritic: Grand Theft Auto VI (abgerufen)', short: 'Metacritic', url: 'https://www.metacritic.com/game/grand-theft-auto-vi/', date: '2026-11-18' },
   mcV: { name: 'Metacritic: Grand Theft Auto V (abgerufen)', short: 'Metacritic', url: 'https://www.metacritic.com/game/grand-theft-auto-v/', date: '2026-11-18' },
@@ -180,10 +183,10 @@ export const KPIS: Kpi[] = [
     status: 'reported', asOf: '2026-10-14', src: ['vgtimesBloomberg'],
   },
   {
-    big: { de: 'folgt', en: 'TBA' },
+    big: { de: '99', en: '99' },
     label: { de: 'Metascore', en: 'Metascore' },
-    note: { de: 'Test-Embargo laut Berichten am 18.11. gegen 12 Uhr MEZ. GTA V hat 97.', en: 'Review embargo reportedly Nov 18, around 11:00 GMT. GTA V scored 97.' },
-    status: 'pending', asOf: '2026-11-18', src: ['mcVI', 'insiderEmbargo'],
+    note: { de: 'Gleichauf mit dem Allzeitrekord (Zelda: Ocarina of Time). Keine einzige gemischte oder negative Kritik.', en: 'Ties the all-time record (Zelda: Ocarina of Time). Not a single mixed or negative review.' },
+    status: 'confirmed', asOf: '2026-11-18', src: ['mcVI', 'xdMc'],
   },
 ];
 
@@ -332,7 +335,7 @@ export const COMPARE: CompareRow[] = [
   {
     label: { de: 'Metascore', en: 'Metascore' },
     v: { value: { de: '97', en: '97' }, status: 'confirmed', src: ['mcV'] },
-    vi: pend(['mcVI']),
+    vi: { value: { de: '99', en: '99' }, status: 'confirmed', src: ['mcVI'] },
   },
   {
     label: { de: 'Launch-Trailer auf YouTube', en: 'Launch trailer on YouTube' },
@@ -601,14 +604,30 @@ export const WORLD: Stat[] = [
 export const REVIEWS: Stat[] = [
   {
     label: { de: 'GTA VI Metascore', en: 'GTA VI Metascore' },
-    value: { de: 'folgt (Metacritic zeigt am 18.11. um 6 Uhr noch „tbd“)', en: 'TBA (Metacritic still showed "tbd" on 18 Nov, 05:00 GMT)' },
-    status: 'pending', asOf: '2026-11-18', src: ['mcVI'],
+    value: { de: '99 (PS5), um 12:16 Uhr aus 109 Kritiken, keine gemischt oder negativ', en: '99 (PS5), from 109 critic reviews at 11:16 GMT, none mixed or negative' },
+    note: { de: 'Höchster Wert, den Metacritic je vergeben hat, gleichauf mit Zelda: Ocarina of Time. Die Zahl der Kritiken steigt laufend.', en: 'The highest score Metacritic has ever shown, tied with Zelda: Ocarina of Time. The review count keeps rising.' },
+    status: 'confirmed', asOf: '2026-11-18', src: ['mcVI', 'xdMc', 'nbcMc99'],
+  },
+  {
+    label: { de: '100 Punkte vergaben unter anderem', en: 'Perfect scores from, among others' },
+    value: { de: 'IGN, GameSpot, Game Informer, Edge, Eurogamer, Washington Post, IGN Deutschland, PC Games', en: 'IGN, GameSpot, Game Informer, Edge, Eurogamer, Washington Post, IGN Germany, PC Games' },
+    note: { de: 'Rund 90 der ersten 109 Kritiken auf Metacritic lagen bei 100', en: 'About 90 of the first 109 reviews on Metacritic were 100s' },
+    status: 'reported', asOf: '2026-11-18', src: ['xdMc', 'pcghTests'],
+  },
+  {
+    label: { de: 'Deutsche Magazine', en: 'German outlets' },
+    value: { de: 'GamePro 98, GIGA 96, 4Players 95', en: 'GamePro 98, GIGA 96, 4Players 95' },
+    status: 'reported', asOf: '2026-11-18', src: ['xdMc'],
+  },
+  {
+    label: { de: 'Niedrigste Wertung', en: 'Lowest score' },
+    value: { de: '90, unter anderem The New York Times und IGN Japan', en: '90, including The New York Times and IGN Japan' },
+    status: 'reported', asOf: '2026-11-18', src: ['xdMc'],
   },
   {
     label: { de: 'Test-Embargo', en: 'Review embargo' },
-    value: { de: '18.11.2026, laut Insider Gaming gegen 12:00 Uhr MEZ', en: '18 Nov 2026, around 11:00 GMT per Insider Gaming' },
-    note: { de: 'Von Rockstar nicht offiziell bestätigt', en: 'Not officially confirmed by Rockstar' },
-    status: 'reported', asOf: '2026-11-17', src: ['insiderEmbargo'],
+    value: { de: '18.11.2026, 12:00 Uhr MEZ (Mitternacht in Neuseeland)', en: '18 Nov 2026, 11:00 GMT (midnight in New Zealand)' },
+    status: 'reported', asOf: '2026-11-18', src: ['nbcMc99', 'insiderEmbargo'],
   },
   {
     label: { de: 'GTA IV (Rekord der Reihe)', en: 'GTA IV (series record)' },
@@ -692,12 +711,13 @@ export const FAQ: { q: L2; a: L2 }[] = [
 // ÄNDERUNGEN (neueste oben)
 // ---------------------------------------------------------------------
 export const CHANGELOG: { at: string; text: L2 }[] = [
+  { at: '2026-11-18T16:45:00+01:00', text: { de: 'Test-Embargo gefallen: Metascore 99 eingetragen, dazu Einzelwertungen und niedrigste Wertung.', en: 'Review embargo lifted: Metascore 99 added, plus individual and lowest scores.' } },
   { at: '2026-11-18T06:10:00+01:00', text: { de: 'Seite gestartet mit allen Zahlen bis zum Vortag des Release. YouTube-Aufrufe am 18.11. um 6:06 Uhr abgelesen.', en: 'Page launched with every figure up to the day before release. YouTube views read on 18 Nov at 05:06 GMT.' } },
 ];
 
 /** Was als Nächstes eingetragen wird. */
 export const NEXT_UP: L2[] = [
-  { de: 'Metascore und erste Wertungen (Test-Embargo laut Berichten 18.11. gegen 12 Uhr MEZ)', en: 'Metascore and first reviews (embargo reportedly 18 Nov, around 11:00 GMT)' },
+  { de: 'Nutzerwertung bei Metacritic (öffnet laut Notebookcheck 36 Stunden nach dem Release)', en: 'Metacritic user score (opens 36 hours after release, per Notebookcheck)' },
   { de: 'Erste offizielle Verkaufszahlen von Take-Two oder Rockstar nach dem Launch', en: 'First official sales figures from Take-Two or Rockstar after launch' },
   { de: 'Größe des Day-One-Patches', en: 'Day-one patch size' },
   { de: 'Spielerzahlen und Rekorde am Launch-Wochenende', en: 'Player counts and records on launch weekend' },
