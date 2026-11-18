@@ -14,12 +14,12 @@ const L = {
   de: {
     play: 'Musikvideo abspielen', watch: 'Auf YouTube ansehen', sub: 'Kanal abonnieren', shop: 'Merch der Crew',
     cast: 'Die Crew im Video', note: 'Mit dem Klick lädt YouTube (Google), dabei wird deine IP-Adresse übertragen.', more: 'Datenschutz',
-    now: 'Jetzt neu',
+    now: 'Jetzt neu', site: 'Website öffnen (neuer Tab)',
   },
   en: {
     play: 'Play the music video', watch: 'Watch on YouTube', sub: 'Subscribe to the channel', shop: 'Crew merch',
     cast: 'The crew in the video', note: 'Clicking loads YouTube (Google), which receives your IP address.', more: 'Privacy',
-    now: 'Out now',
+    now: 'Out now', site: 'open website (new tab)',
   },
 }[lang];
 const jsonLd = id ? {
@@ -57,7 +57,11 @@ const jsonLd = id ? {
         </h2>
         <p class="vf__text">{VIDEO.text[lang]}</p>
         <p class="vf__castk cond">{L.cast}</p>
-        <ul class="vf__cast">{VIDEO.cast.map((c) => <li class="cond">{c}</li>)}</ul>
+        <ul class="vf__cast">{VIDEO.cast.map((c) => (
+          <li class="cond">{c.url
+            ? <a href={c.url} target="_blank" rel="noopener" aria-label={`${c.name}: ${L.site}`}>{c.name}<Icon name="arrow" size={12} /></a>
+            : <span>{c.name}</span>}</li>
+        ))}</ul>
         <div class="vf__btns">
           <button type="button" class="btn btn--sun" data-video-start><Icon name="play" /> {L.play}</button>
           <a class="btn btn--ghost" href={watch} target="_blank" rel="noopener">{L.watch} <Icon name="arrow" /></a>
@@ -102,7 +106,12 @@ const jsonLd = id ? {
   .vf__text { margin: 0 0 18px; color: var(--text); opacity: 0.85; max-width: 52ch; }
   .vf__castk { margin: 0 0 8px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
   .vf__cast { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 22px; padding: 0; }
-  .vf__cast li { padding: 4px 10px; border: 1px solid var(--line2); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.04em; }
+  .vf__cast li { font-size: 0.85rem; letter-spacing: 0.04em; }
+  .vf__cast li > span, .vf__cast li > a { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid var(--line2); border-radius: 999px; }
+  .vf__cast li > a { color: var(--text); transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease; }
+  .vf__cast li > a :global(svg) { opacity: 0.55; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .vf__cast li > a:hover, .vf__cast li > a:focus-visible { border-color: var(--pink); color: var(--pink); background: rgba(255, 42, 140, 0.08); }
+  .vf__cast li > a:hover :global(svg), .vf__cast li > a:focus-visible :global(svg) { opacity: 1; transform: translateX(2px); }
   .vf__btns { display: flex; flex-wrap: wrap; gap: 10px; }
   .vf__links { margin: 14px 0 0; font-size: 0.9rem; display: flex; gap: 8px; flex-wrap: wrap; }
   .vf__links a { text-decoration: underline; text-underline-offset: 3px; }

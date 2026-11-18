@@ -55,7 +55,17 @@ export const VIDEO = {
     de: 'Eine Crew, fünf Sterne, kein sicherer Ort mehr. Ein Raubzug im GTA-Stil quer durch Vice City und Leonida, kurz bevor GTA VI erscheint. Präsentiert von PALM BANDITS.',
     en: 'One crew, five stars, no safe place left to go. A GTA-style heist through Vice City and Leonida, right before GTA VI drops. Presented by PALM BANDITS.',
   },
-  cast: ['Eldruna', 'Domsgard', 'Skulgard', 'Ravhena', 'Runvyr', 'Skaedra', 'Ravnir', 'PRONX', 'Emma'],
+  // Mike 18.11.2026: "ravnir ist emma" (Emma raus), Eldruna, Domsgard, Skaedra, Runvyr und Ravnir verlinken auf ihre Websites
+  cast: [
+    { name: 'Eldruna', url: 'https://eldruna.com/' },
+    { name: 'Domsgard', url: 'https://domsgard.com/' },
+    { name: 'Skulgard' },
+    { name: 'Ravhena' },
+    { name: 'Runvyr', url: 'https://runvyrmusic.com/' },
+    { name: 'Skaedra', url: 'https://skaedra.com/' },
+    { name: 'Ravnir', url: 'https://ravnirmusic.com/' },
+    { name: 'PRONX' },
+  ] as { name: string; url?: string }[],
   duration: '4:31',
   durationIso: 'PT4M31S',
   uploadDate: '2026-11-18T17:33:03+01:00',
