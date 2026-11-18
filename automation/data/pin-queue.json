@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-17T02:04:16.701Z",
+  "updated": "2026-11-18T02:52:14.196Z",
   "pins": [
     {
       "id": "news-2026-11-17-gta-6-release-uhrzeit-preload-alle-infos",
       "type": "news",
       "board": "news",
       "title": "GTA 6 Release: Uhrzeit, Preload, 212 GB und alles zum Start",
-      "description": "GTA 6 erscheint am 19. November für PS5 und Xbox Series X|S. Uhrzeit, Preload, Speicherbedarf, Editionen und Vorbesteller-Bonus im schnellen Überblick. Alle bestätigten Fakten und was das für dich heißt, liest du auf WANTED. #gta6 #gtanews #gaming",
-      "link": "https://wanted-hq.de/news/2026-11-17-gta-6-release-uhrzeit-preload-alle-infos/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-17-gta-6-release-uhrzeit-preload-alle-infos",
+      "description": "GTA 6 erscheint am 19. November für PS5 und Xbox Series X|S. Uhrzeit, Preload, Speicherbedarf, Editionen und Vorbesteller-Bonus im schnellen Überblick. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-17-gta-6-release-uhrzeit-preload-alle-infos/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-17-gta-6-release-uhrzeit-preload-alle-infos",
       "altText": "News-Grafik zu GTA 6: \"GTA 6 Release: Uhrzeit, Preload, 212 GB und alles zum Start\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
       "design": {
         "type": "news",
@@ -18,7 +18,7 @@
         "rumor": false,
         "date": "17.11.2026",
         "cta": "Alle Infos lesen »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/news-2026-11-17-gta-6-release-uhrzeit-preload-alle-infos.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
@@ -28,8 +28,8 @@
       "type": "news",
       "board": "news",
       "title": "GTA 6 bricht Vorbestell-Rekorde bei PlayStation und Xbox",
-      "description": "Sony und Microsoft bestätigen: GTA 6 ist das meistvorbestellte Spiel in der Geschichte ihrer Stores. Was offiziell ist und welche Zahlen nur Schätzungen sind. Alle bestätigten Fakten und was das für dich heißt, liest du auf WANTED. #gta6 #gtanews #gaming",
-      "link": "https://wanted-hq.de/news/2026-11-16-gta-6-vorbestell-rekord-playstation-xbox/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-16-gta-6-vorbestell-rekord-playstation-xbox",
+      "description": "Sony und Microsoft bestätigen: GTA 6 ist das meistvorbestellte Spiel in der Geschichte ihrer Stores. Was offiziell ist und welche Zahlen nur Schätzungen sind. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-16-gta-6-vorbestell-rekord-playstation-xbox/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-16-gta-6-vorbestell-rekord-playstation-xbox",
       "altText": "News-Grafik zu GTA 6: \"GTA 6 bricht Vorbestell-Rekorde bei PlayStation und Xbox\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
       "design": {
         "type": "news",
@@ -40,7 +40,7 @@
         "rumor": false,
         "date": "16.11.2026",
         "cta": "Alle Infos lesen »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/news-2026-11-16-gta-6-vorbestell-rekord-playstation-xbox.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
@@ -50,8 +50,8 @@
       "type": "guide",
       "board": "guides",
       "title": "GTA Online Geld verdienen: Die besten Methoden 2026",
-      "description": "GTA Online Geld verdienen im November 2026: Heists, Verträge, Geschäfte und Wochen-Boni im Vergleich. So holst du nach den Kürzungen das meiste raus. Den kompletten Guide mit allen Schritten findest du auf WANTED, der deutschen GTA-Community. #gtaonline #gtaguide #gtageld",
-      "link": "https://wanted-hq.de/guides/gta-online-geld-verdienen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-geld-verdienen",
+      "description": "GTA Online Geld verdienen im November 2026: Heists, Verträge, Geschäfte und Wochen-Boni im Vergleich. So holst du nach den Kürzungen das meiste raus. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtaonline #gtaguide #gtageld",
+      "link": "https://palmbandits.com/guides/gta-online-geld-verdienen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-geld-verdienen",
       "altText": "Pin-Grafik zum GTA Online Guide \"GTA Online Geld verdienen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
@@ -67,19 +67,39 @@
         "gameName": "GTA Online",
         "difficulty": "Mittel",
         "cta": "Ganzen Guide lesen »",
-        "domain": "wanted-hq.de",
+        "domain": "palmbandits.com",
         "stars": 5
       },
       "imagePath": "automation/pinterest/out/guide-gta-online-geld-verdienen.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
+      "id": "fact-ctw-metacritic",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Das bestbewertete DS-Spiel",
+      "description": "Die DS-Version von Chinatown Wars erreichte auf Metacritic 93 Punkte, laut Wikipedia der Höchstwert für ein DS-Spiel. Eurogamer vergab sogar 10 von 10. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-metacritic",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Das bestbewertete DS-Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das bestbewertete DS-Spiel",
+        "text": "Die DS-Version von Chinatown Wars erreichte auf Metacritic 93 Punkte, laut Wikipedia der Höchstwert für ein DS-Spiel. Eurogamer vergab sogar 10 von 10.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-metacritic.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "tips-gta-online-geld-verdienen",
       "type": "tips",
       "board": "tipps",
       "title": "GTA Online Geld verdienen: 7 Geld-Tipps auf einen Blick",
-      "description": "7 Geld-Tipps für GTA Online kompakt zusammengefasst: Die besten Methoden im Vergleich, Ohne Startkapital: die ersten Millionen, Die besten Investitionen und mehr. Alle Details stehen im Guide auf WANTED. #gtaonline #gtatipps #gaming",
-      "link": "https://wanted-hq.de/guides/gta-online-geld-verdienen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-geld-verdienen",
+      "description": "7 Geld-Tipps für GTA Online kompakt zusammengefasst: Die besten Methoden im Vergleich, Ohne Startkapital: die ersten Millionen, Die besten Investitionen und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtaonline #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-online-geld-verdienen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-geld-verdienen",
       "altText": "Liste mit 7 Geld-Tipps für GTA Online: Die besten Methoden im Vergleich, Ohne Startkapital: die ersten Millionen, Die besten Investitionen, Passives Einkommen: Geld im Hintergrund, GTA+: lohnt sich das?, Unsere Reihenfolge für Einsteiger, Finger weg von Glitches.",
       "design": {
         "type": "tips",
@@ -97,34 +117,74 @@
         "word": "GELD-TIPPS",
         "gameName": "GTA Online",
         "cta": "Alle Details im Guide »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-online-geld-verdienen.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta3-11-september",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Darum erschien GTA III später",
+      "description": "Nach den Anschlägen vom 11. September 2001 verschob Rockstar GTA III um drei Wochen. Die blau-weißen Polizeiautos, die ans NYPD erinnerten, wurden schwarz-weiß. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-11-september",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Darum erschien GTA III später\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Darum erschien GTA III später",
+        "text": "Nach den Anschlägen vom 11. September 2001 verschob Rockstar GTA III um drei Wochen. Die blau-weißen Polizeiautos, die ans NYPD erinnerten, wurden schwarz-weiß.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-11-september.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-1",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Sunset Pink\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-1",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-1",
       "altText": "Abstraktes Hochformat-Wallpaper \"Sunset Pink\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und leuchtendes Gitter in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 1,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-1.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta4-episodes-microsoft",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: 50 Millionen Dollar für zwei Episoden",
+      "description": "Microsoft zahlte laut Take-Two 50 Millionen US-Dollar für die GTA-IV-Episoden The Lost and Damned und The Ballad of Gay Tony, die zuerst nur auf Xbox 360 erschienen. Quelle: Wikipedia (en): Grand Theft Auto: The Lost and Damned. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-episodes-microsoft",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"50 Millionen Dollar für zwei Episoden\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "50 Millionen Dollar für zwei Episoden",
+        "text": "Microsoft zahlte laut Take-Two 50 Millionen US-Dollar für die GTA-IV-Episoden The Lost and Damned und The Ballad of Gay Tony, die zuerst nur auf Xbox 360 erschienen.",
+        "source": "Wikipedia (en): Grand Theft Auto: The Lost and Damned",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-episodes-microsoft.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "guide-gta-6-alles-was-wir-wissen",
       "type": "guide",
       "board": "guides",
       "title": "GTA 6: Alles, was wir wissen (Release, Story, Map)",
-      "description": "GTA 6 alle Infos: Release am 19. November 2026, Leonida und Vice City, die sechs Regionen, Lucia und Jason, Plattformen, Preise. Fakten getrennt von Gerüchten. Den kompletten Guide mit allen Schritten findest du auf WANTED, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://wanted-hq.de/guides/gta-6-alles-was-wir-wissen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-alles-was-wir-wissen",
+      "description": "GTA 6 alle Infos: Release am 19. November 2026, Leonida und Vice City, die sechs Regionen, Lucia und Jason, Plattformen, Preise. Fakten getrennt von Gerüchten. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-alles-was-wir-wissen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-alles-was-wir-wissen",
       "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6: Alles, was wir wissen (Release, Story, Map)\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
@@ -140,19 +200,39 @@
         "gameName": "GTA 6",
         "difficulty": null,
         "cta": "Ganzen Guide lesen »",
-        "domain": "wanted-hq.de",
+        "domain": "palmbandits.com",
         "stars": 5
       },
       "imagePath": "automation/pinterest/out/guide-gta-6-alles-was-wir-wissen.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
+      "id": "fact-gta5-235-millionen",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Rund 235 Millionen verkaufte Exemplare",
+      "description": "GTA V hat sich laut Take-Two rund 235 Millionen Mal verkauft (Stand 30. September 2026). Es ist damit eines der meistverkauften Spiele aller Zeiten. Quelle: Insider Gaming: GTA 5 sales reach 235 million copies since launch. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-235-millionen",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Rund 235 Millionen verkaufte Exemplare\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Rund 235 Millionen verkaufte Exemplare",
+        "text": "GTA V hat sich laut Take-Two rund 235 Millionen Mal verkauft (Stand 30. September 2026). Es ist damit eines der meistverkauften Spiele aller Zeiten.",
+        "source": "Insider Gaming: GTA 5 sales reach 235 million copies since launch",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-235-millionen.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "tips-gta-6-alles-was-wir-wissen",
       "type": "tips",
       "board": "tipps",
       "title": "GTA 6: Alles, was wir wissen (Release, Story, Map): 6 Fakten auf einen Blick",
-      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: GTA 6 Steckbrief, Der lange Weg zum Release, Leonida: der Schauplatz und mehr. Alle Details stehen im Guide auf WANTED. #gta6 #gtatipps #gaming",
-      "link": "https://wanted-hq.de/guides/gta-6-alles-was-wir-wissen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-alles-was-wir-wissen",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: GTA 6 Steckbrief, Der lange Weg zum Release, Leonida: der Schauplatz und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-alles-was-wir-wissen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-alles-was-wir-wissen",
       "altText": "Liste mit 6 Fakten für GTA 6: GTA 6 Steckbrief, Der lange Weg zum Release, Leonida: der Schauplatz, Die Hauptfiguren, Editionen und Bonus, Technik.",
       "design": {
         "type": "tips",
@@ -169,18 +249,38 @@
         "word": "FAKTEN",
         "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-alles-was-wir-wissen.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta6-jason-lucia",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: Jason und Lucia: das neue Duo",
+      "description": "GTA VI hat zwei Hauptfiguren: Lucia Caminos, die im Leonida Penitentiary saß, und Jason Duval, der nach der Army für Drogenschmuggler in den Leonida Keys arbeitete. Quelle: Wikipedia (en): Grand Theft Auto VI. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-jason-lucia",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"Jason und Lucia: das neue Duo\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Jason und Lucia: das neue Duo",
+        "text": "GTA VI hat zwei Hauptfiguren: Lucia Caminos, die im Leonida Penitentiary saß, und Jason Duval, der nach der Army für Drogenschmuggler in den Leonida Keys arbeitete.",
+        "source": "Wikipedia (en): Grand Theft Auto VI",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-jason-lucia.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "guide-gta-6-launch-checkliste",
       "type": "guide",
       "board": "tipps",
       "title": "GTA 6 Launch-Checkliste: So bist du bereit für den Release",
-      "description": "Die GTA 6 Launch-Checkliste: Speicher, Preload, Box-Code, Updates, Einstellungen und Spoilerschutz. Damit du am 19. November ohne Stress loslegen kannst. Den kompletten Guide mit allen Schritten findest du auf WANTED, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://wanted-hq.de/guides/gta-6-launch-checkliste/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-launch-checkliste",
+      "description": "Die GTA 6 Launch-Checkliste: Speicher, Preload, Box-Code, Updates, Einstellungen und Spoilerschutz. Damit du am 19. November ohne Stress loslegen kannst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-launch-checkliste/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-launch-checkliste",
       "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Launch-Checkliste\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
@@ -196,19 +296,39 @@
         "gameName": "GTA 6",
         "difficulty": "Leicht",
         "cta": "Ganzen Guide lesen »",
-        "domain": "wanted-hq.de",
+        "domain": "palmbandits.com",
         "stars": 5
       },
       "imagePath": "automation/pinterest/out/guide-gta-6-launch-checkliste.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
+      "id": "fact-online-500k-geschenk",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: 500.000 GTA$ als Entschuldigung",
+      "description": "Nach dem holprigen Start von GTA Online schenkte Rockstar allen Spielern, die seit dem Launch dabei waren, 500.000 GTA$ Spielgeld. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-500k-geschenk",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"500.000 GTA$ als Entschuldigung\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "500.000 GTA$ als Entschuldigung",
+        "text": "Nach dem holprigen Start von GTA Online schenkte Rockstar allen Spielern, die seit dem Launch dabei waren, 500.000 GTA$ Spielgeld.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-500k-geschenk.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "tips-gta-6-launch-checkliste",
       "type": "tips",
       "board": "tipps",
       "title": "GTA 6 Launch-Checkliste: 6 Tipps auf einen Blick",
-      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die Kurzfassung, 1. Speicherplatz schaffen, 2. Preload prüfen und mehr. Alle Details stehen im Guide auf WANTED. #gta6 #gtatipps #gaming",
-      "link": "https://wanted-hq.de/guides/gta-6-launch-checkliste/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-launch-checkliste",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die Kurzfassung, 1. Speicherplatz schaffen, 2. Preload prüfen und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-launch-checkliste/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-launch-checkliste",
       "altText": "Liste mit 6 Tipps für GTA 6: Die Kurzfassung, 1. Speicherplatz schaffen, 2. Preload prüfen, 3. Box-Version: Code einlösen, 4. Updates und Ruhemodus, 5. Die Release-Nacht.",
       "design": {
         "type": "tips",
@@ -225,34 +345,74 @@
         "word": "TIPPS",
         "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-launch-checkliste.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-sa-bestseller",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Der König der PlayStation 2",
+      "description": "San Andreas gilt als meistverkauftes Spiel der PlayStation 2. Über alle Plattformen kam es bis September 2011 auf 27,5 Millionen verkaufte Exemplare. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-bestseller",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Der König der PlayStation 2\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der König der PlayStation 2",
+        "text": "San Andreas gilt als meistverkauftes Spiel der PlayStation 2. Über alle Plattformen kam es bis September 2011 auf 27,5 Millionen verkaufte Exemplare.",
+        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-bestseller.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-2",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Teal Dusk\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-2",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-2",
       "altText": "Abstraktes Hochformat-Wallpaper \"Teal Dusk\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 2,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-2.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-vc-missionspaket",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: Vice City war nur als Add-on geplant",
+      "description": "Vice City begann als Idee für ein Missionspaket zu GTA III. Daraus wurde ein eigenes Spiel, entwickelt von einem Kernteam aus rund 50 Leuten in nur 18 Monaten. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-missionspaket",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Vice City war nur als Add-on geplant\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Vice City war nur als Add-on geplant",
+        "text": "Vice City begann als Idee für ein Missionspaket zu GTA III. Daraus wurde ein eigenes Spiel, entwickelt von einem Kernteam aus rund 50 Leuten in nur 18 Monaten.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-missionspaket.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "guide-gta-san-andreas-mythen-easter-eggs",
       "type": "guide",
       "board": "guides",
       "title": "GTA San Andreas Mythen und Easter Eggs: Bigfoot, Geisterautos & mehr",
-      "description": "Die bekanntesten GTA San Andreas Mythen im Faktencheck, von Bigfoot bis zu Geisterautos, plus echte Easter Eggs mit Fundort, die du heute noch finden kannst. Den kompletten Guide mit allen Schritten findest du auf WANTED, der deutschen GTA-Community. #gtasanandreas #gtaguide #gtatipps",
-      "link": "https://wanted-hq.de/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-san-andreas-mythen-easter-eggs",
+      "description": "Die bekanntesten GTA San Andreas Mythen im Faktencheck, von Bigfoot bis zu Geisterautos, plus echte Easter Eggs mit Fundort, die du heute noch finden kannst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtasanandreas #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-san-andreas-mythen-easter-eggs",
       "altText": "Pin-Grafik zum GTA San Andreas Guide \"GTA San Andreas Mythen und Easter Eggs\" mit 4 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
@@ -267,19 +427,39 @@
         "gameName": "GTA San Andreas",
         "difficulty": "Leicht",
         "cta": "Ganzen Guide lesen »",
-        "domain": "wanted-hq.de",
+        "domain": "palmbandits.com",
         "stars": 4
       },
       "imagePath": "automation/pinterest/out/guide-gta-san-andreas-mythen-easter-eggs.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
+      "id": "fact-ctw-nintendo-ds",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: GTA auf dem Nintendo DS",
+      "description": "Chinatown Wars erschien im März 2009 zuerst für den Nintendo DS. Held Huang Lee will das gestohlene Familienschwert Yu Jian zurückholen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-nintendo-ds",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA auf dem Nintendo DS\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA auf dem Nintendo DS",
+        "text": "Chinatown Wars erschien im März 2009 zuerst für den Nintendo DS. Held Huang Lee will das gestohlene Familienschwert Yu Jian zurückholen.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-nintendo-ds.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "tips-gta-san-andreas-mythen-easter-eggs",
       "type": "tips",
       "board": "tipps",
       "title": "GTA San Andreas Mythen und Easter Eggs: 4 Easter Eggs auf einen Blick",
-      "description": "4 Easter Eggs für GTA San Andreas kompakt zusammengefasst: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst und mehr. Alle Details stehen im Guide auf WANTED. #gtasanandreas #gtatipps #gaming",
-      "link": "https://wanted-hq.de/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-san-andreas-mythen-easter-eggs",
+      "description": "4 Easter Eggs für GTA San Andreas kompakt zusammengefasst: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtasanandreas #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-san-andreas-mythen-easter-eggs",
       "altText": "Liste mit 4 Easter Eggs für GTA San Andreas: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst, Selbst auf Spurensuche gehen.",
       "design": {
         "type": "tips",
@@ -294,18 +474,38 @@
         "word": "EASTER EGGS",
         "gameName": "GTA San Andreas",
         "cta": "Alle Details im Guide »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-san-andreas-mythen-easter-eggs.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta3-callahan-bridge",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Diese Brücke ist eine Dirty-Harry-Hommage",
+      "description": "Die Callahan Bridge in Liberty City hieß während der Entwicklung noch West Port Bridge. Ihren finalen Namen bekam sie nach Clint Eastwoods Figur aus den Dirty-Harry-Filmen. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-callahan-bridge",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Diese Brücke ist eine Dirty-Harry-Hommage\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Diese Brücke ist eine Dirty-Harry-Hommage",
+        "text": "Die Callahan Bridge in Liberty City hieß während der Entwicklung noch West Port Bridge. Ihren finalen Namen bekam sie nach Clint Eastwoods Figur aus den Dirty-Harry-Filmen.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6)",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-callahan-bridge.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "guide-gta-online-glitches-ban-risiko",
       "type": "guide",
       "board": "guides",
       "title": "GTA Online Glitches: Warum Money-Glitches dich den Account kosten",
-      "description": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst. Den kompletten Guide mit allen Schritten findest du auf WANTED, der deutschen GTA-Community. #gtaonline #gtaguide #gtatipps",
-      "link": "https://wanted-hq.de/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-glitches-ban-risiko",
+      "description": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtaonline #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-glitches-ban-risiko",
       "altText": "Pin-Grafik zum GTA Online Guide \"GTA Online Glitches\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
@@ -321,19 +521,39 @@
         "gameName": "GTA Online",
         "difficulty": "Leicht",
         "cta": "Ganzen Guide lesen »",
-        "domain": "wanted-hq.de",
+        "domain": "palmbandits.com",
         "stars": 4
       },
       "imagePath": "automation/pinterest/out/guide-gta-online-glitches-ban-risiko.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
+      "id": "fact-gta4-fotos-new-york",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Über 100.000 Fotos von New York",
+      "description": "Für das Liberty City von GTA IV machte das Team laut Produzent Leslie Benzies über 100.000 Fotos in New York. Das Budget lag laut Benzies bei über 100 Millionen US-Dollar. Quelle: Wikipedia (en): Grand Theft Auto IV. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-fotos-new-york",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Über 100.000 Fotos von New York\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Über 100.000 Fotos von New York",
+        "text": "Für das Liberty City von GTA IV machte das Team laut Produzent Leslie Benzies über 100.000 Fotos in New York. Das Budget lag laut Benzies bei über 100 Millionen US-Dollar.",
+        "source": "Wikipedia (en): Grand Theft Auto IV",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-fotos-new-york.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "tips-gta-online-glitches-ban-risiko",
       "type": "tips",
       "board": "tipps",
       "title": "GTA Online Glitches: 7 Glitches auf einen Blick",
-      "description": "7 Glitches für GTA Online kompakt zusammengefasst: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit und mehr. Alle Details stehen im Guide auf WANTED. #gtaonline #gtatipps #gaming",
-      "link": "https://wanted-hq.de/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-glitches-ban-risiko",
+      "description": "7 Glitches für GTA Online kompakt zusammengefasst: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtaonline #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-glitches-ban-risiko",
       "altText": "Liste mit 7 Glitches für GTA Online: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit, Woran du einen riskanten Trick erkennst, Fake-Generatoren und Phishing, Mod-Menüs und \"Recovery\"-Angebote, Wenn du doch erwischt wurdest.",
       "design": {
         "type": "tips",
@@ -351,34 +571,74 @@
         "word": "GLITCHES",
         "gameName": "GTA Online",
         "cta": "Alle Details im Guide »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-online-glitches-ban-risiko.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta5-drei-helden",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Drei Helden, ein Spiel",
+      "description": "In GTA V wechselt man zwischen drei Hauptfiguren: Michael (Ned Luke), Franklin (Shawn Fonteno) und Trevor (Steven Ogg). Ihre Szenen entstanden größtenteils per Motion Capture. Quelle: Wikipedia (en): Grand Theft Auto V. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-drei-helden",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Drei Helden, ein Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Drei Helden, ein Spiel",
+        "text": "In GTA V wechselt man zwischen drei Hauptfiguren: Michael (Ned Luke), Franklin (Shawn Fonteno) und Trevor (Steven Ogg). Ihre Szenen entstanden größtenteils per Motion Capture.",
+        "source": "Wikipedia (en): Grand Theft Auto V",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-drei-helden.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-3",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Purple Haze\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-3",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-3",
       "altText": "Abstraktes Hochformat-Wallpaper \"Purple Haze\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und leuchtendes Gitter in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 3,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-3.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta6-leonida",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: Willkommen in Leonida",
+      "description": "GTA VI spielt im fiktiven Bundesstaat Leonida, angelehnt an Florida. Im Mittelpunkt steht Vice City, die fiktive Version von Miami. Quelle: Wikipedia (en): Grand Theft Auto VI. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-leonida",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"Willkommen in Leonida\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Willkommen in Leonida",
+        "text": "GTA VI spielt im fiktiven Bundesstaat Leonida, angelehnt an Florida. Im Mittelpunkt steht Vice City, die fiktive Version von Miami.",
+        "source": "Wikipedia (en): Grand Theft Auto VI",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-leonida.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "guide-gta-5-geheime-orte-easter-eggs",
       "type": "guide",
       "board": "guides",
       "title": "GTA 5 Easter Eggs: Geheime Orte, UFOs, Geist und Bigfoot",
-      "description": "Die besten GTA 5 Easter Eggs mit Fundort und Uhrzeit: UFO am Mount Chiliad, Geist am Mount Gordo, Bigfoot, versunkenes UFO und das Altruisten-Camp. Den kompletten Guide mit allen Schritten findest du auf WANTED, der deutschen GTA-Community. #gta5 #gtaguide #gtatipps",
-      "link": "https://wanted-hq.de/guides/gta-5-geheime-orte-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-5-geheime-orte-easter-eggs",
+      "description": "Die besten GTA 5 Easter Eggs mit Fundort und Uhrzeit: UFO am Mount Chiliad, Geist am Mount Gordo, Bigfoot, versunkenes UFO und das Altruisten-Camp. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta5 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-5-geheime-orte-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-5-geheime-orte-easter-eggs",
       "altText": "Pin-Grafik zum GTA 5 Guide \"GTA 5 Easter Eggs\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
@@ -394,19 +654,39 @@
         "gameName": "GTA 5",
         "difficulty": "Mittel",
         "cta": "Ganzen Guide lesen »",
-        "domain": "wanted-hq.de",
+        "domain": "palmbandits.com",
         "stars": 4
       },
       "imagePath": "automation/pinterest/out/guide-gta-5-geheime-orte-easter-eggs.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
+      "id": "fact-online-cayo-perico",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Das größte Online-Update seiner Zeit",
+      "description": "Der Cayo Perico Heist erschien am 15. Dezember 2020 und war laut Wikipedia das bis dahin größte Inhalts-Update für GTA Online. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-cayo-perico",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Das größte Online-Update seiner Zeit\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das größte Online-Update seiner Zeit",
+        "text": "Der Cayo Perico Heist erschien am 15. Dezember 2020 und war laut Wikipedia das bis dahin größte Inhalts-Update für GTA Online.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-cayo-perico.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "tips-gta-5-geheime-orte-easter-eggs",
       "type": "tips",
       "board": "tipps",
       "title": "GTA 5 Easter Eggs: 5 versteckte Orte auf einen Blick",
-      "description": "5 versteckte Orte für GTA 5 kompakt zusammengefasst: Das Mount-Chiliad-Rätsel, Der Geist am Mount Gordo, Bigfoot: The Last One und mehr. Alle Details stehen im Guide auf WANTED. #gta5 #gtatipps #gaming",
-      "link": "https://wanted-hq.de/guides/gta-5-geheime-orte-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-5-geheime-orte-easter-eggs",
+      "description": "5 versteckte Orte für GTA 5 kompakt zusammengefasst: Das Mount-Chiliad-Rätsel, Der Geist am Mount Gordo, Bigfoot: The Last One und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta5 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-5-geheime-orte-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-5-geheime-orte-easter-eggs",
       "altText": "Liste mit 5 versteckte Orte für GTA 5: Das Mount-Chiliad-Rätsel, Der Geist am Mount Gordo, Bigfoot: The Last One, Das versunkene UFO, Das Altruisten-Camp.",
       "design": {
         "type": "tips",
@@ -422,90 +702,1010 @@
         "word": "ORTE",
         "gameName": "GTA 5",
         "cta": "Alle Details im Guide »",
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-5-geheime-orte-easter-eggs.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-sa-cj-fitness",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Burger oder Hantelbank? CJ zeigt es",
+      "description": "In San Andreas verändert sich CJs Körper: Viel Fast Food macht ihn dick, das Fitnessstudio muskulös. Auch Fahren, Schwimmen und Schießen lassen sich trainieren. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-cj-fitness",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Burger oder Hantelbank? CJ zeigt es\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Burger oder Hantelbank? CJ zeigt es",
+        "text": "In San Andreas verändert sich CJs Körper: Viel Fast Food macht ihn dick, das Fitnessstudio muskulös. Auch Fahren, Schwimmen und Schießen lassen sich trainieren.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-cj-fitness.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vc-ray-liotta",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: Der erste GTA-Held mit eigener Stimme",
+      "description": "Tommy Vercetti aus Vice City (2002) war der erste sprechende Protagonist der Reihe. Seine Stimme lieh ihm Hollywood-Schauspieler Ray Liotta. Quelle: Wikipedia (en): Grand Theft Auto (series). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-ray-liotta",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Der erste GTA-Held mit eigener Stimme\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der erste GTA-Held mit eigener Stimme",
+        "text": "Tommy Vercetti aus Vice City (2002) war der erste sprechende Protagonist der Reihe. Seine Stimme lieh ihm Hollywood-Schauspieler Ray Liotta.",
+        "source": "Wikipedia (en): Grand Theft Auto (series)",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-ray-liotta.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-ctw-polizei-schrotten",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Fahndung weg? Polizeiautos schrotten!",
+      "description": "In Chinatown Wars wird man Fahndungssterne los, indem man Polizeiautos zerstört. Je höher die Fahndungsstufe, desto mehr Streifenwagen müssen dran glauben. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-polizei-schrotten",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Fahndung weg? Polizeiautos schrotten!\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Fahndung weg? Polizeiautos schrotten!",
+        "text": "In Chinatown Wars wird man Fahndungssterne los, indem man Polizeiautos zerstört. Je höher die Fahndungsstufe, desto mehr Streifenwagen müssen dran glauben.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-polizei-schrotten.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta3-claude-stumm",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Der Held, der kein einziges Wort sagt",
+      "description": "Claude, der Held von GTA III, spricht im ganzen Spiel kein Wort. Seinen Namen erfuhren Fans offiziell erst durch seinen Auftritt in San Andreas (2004). Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-claude-stumm",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Der Held, der kein einziges Wort sagt\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der Held, der kein einziges Wort sagt",
+        "text": "Claude, der Held von GTA III, spricht im ganzen Spiel kein Wort. Seinen Namen erfuhren Fans offiziell erst durch seinen Auftritt in San Andreas (2004).",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-claude-stumm.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta4-lagerfeld",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Karl Lagerfeld als GTA-Radio-DJ",
+      "description": "In GTA IV moderiert Modeschöpfer Karl Lagerfeld den Radiosender K109. Laut GameStar durfte er die Musik des Senders selbst auswählen. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 11). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-lagerfeld",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Karl Lagerfeld als GTA-Radio-DJ\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Karl Lagerfeld als GTA-Radio-DJ",
+        "text": "In GTA IV moderiert Modeschöpfer Karl Lagerfeld den Radiosender K109. Laut GameStar durfte er die Musik des Senders selbst auswählen.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 11)",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-lagerfeld.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-4",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Miami Night\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-4",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-4",
       "altText": "Abstraktes Hochformat-Wallpaper \"Miami Night\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 4,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-4.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta5-franklin-cj-sprecher",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Franklin und CJ: Die Sprecher sind Cousins",
+      "description": "Shawn Fonteno, Sprecher von Franklin in GTA V, ist der Cousin von Rapper Young Maylay. Der lieh CJ in San Andreas seine Stimme. Quelle: Wikipedia (en): Shawn Fonteno. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-franklin-cj-sprecher",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Franklin und CJ: Die Sprecher sind Cousins\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Franklin und CJ: Die Sprecher sind Cousins",
+        "text": "Shawn Fonteno, Sprecher von Franklin in GTA V, ist der Cousin von Rapper Young Maylay. Der lieh CJ in San Andreas seine Stimme.",
+        "source": "Wikipedia (en): Shawn Fonteno",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-franklin-cj-sprecher.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta6-orte",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: Diese Orte warten in Leonida",
+      "description": "Zur Karte von GTA VI gehören neben Vice City auch Grassrivers, die Leonida Keys, Ambrosia, der Mount Kalaga National Park und Port Gellhorn. Quelle: Wikipedia (en): Grand Theft Auto VI. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-orte",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"Diese Orte warten in Leonida\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Diese Orte warten in Leonida",
+        "text": "Zur Karte von GTA VI gehören neben Vice City auch Grassrivers, die Leonida Keys, Ambrosia, der Mount Kalaga National Park und Port Gellhorn.",
+        "source": "Wikipedia (en): Grand Theft Auto VI",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-orte.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-online-dr-dre",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Dr. Dre als Kunde in GTA Online",
+      "description": "Im GTA-Online-Update The Contract vom 15. Dezember 2021 ist Rapper Dr. Dre der erste große Kunde der neuen Agentur. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-dr-dre",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Dr. Dre als Kunde in GTA Online\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Dr. Dre als Kunde in GTA Online",
+        "text": "Im GTA-Online-Update The Contract vom 15. Dezember 2021 ist Rapper Dr. Dre der erste große Kunde der neuen Agentur.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-dr-dre.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-sa-dialogzeilen",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Über 60.000 Dialogzeilen",
+      "description": "Für San Andreas sprachen über 400 Schauspieler mehr als 60.000 Dialogzeilen ein. Im Radio laufen elf Sender mit zwanzig DJs. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-dialogzeilen",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Über 60.000 Dialogzeilen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Über 60.000 Dialogzeilen",
+        "text": "Für San Andreas sprachen über 400 Schauspieler mehr als 60.000 Dialogzeilen ein. Im Radio laufen elf Sender mit zwanzig DJs.",
+        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-dialogzeilen.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vc-rekordstart",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: 1,4 Millionen Kopien in zwei Tagen",
+      "description": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-rekordstart",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"1,4 Millionen Kopien in zwei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "1,4 Millionen Kopien in zwei Tagen",
+        "text": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-rekordstart.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-ctw-taxi-pfeifen",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Ins Mikro pfeifen, Taxi kommt",
+      "description": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-taxi-pfeifen",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Ins Mikro pfeifen, Taxi kommt\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ins Mikro pfeifen, Taxi kommt",
+        "text": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-taxi-pfeifen.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta3-verkaeufe",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Der Bestseller des Jahres 2001",
+      "description": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-verkaeufe",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Der Bestseller des Jahres 2001\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der Bestseller des Jahres 2001",
+        "text": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-verkaeufe.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta4-rekordstart",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: 310 Millionen Dollar an einem Tag",
+      "description": "GTA IV verkaufte sich ab dem Start am 29. April 2008 in 24 Stunden über 3,6 Millionen Mal und spielte rund 310 Millionen US-Dollar ein. Das brachte Guinness-Weltrekorde. Quelle: Wikipedia (en): Grand Theft Auto IV. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rekordstart",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"310 Millionen Dollar an einem Tag\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "310 Millionen Dollar an einem Tag",
+        "text": "GTA IV verkaufte sich ab dem Start am 29. April 2008 in 24 Stunden über 3,6 Millionen Mal und spielte rund 310 Millionen US-Dollar ein. Das brachte Guinness-Weltrekorde.",
+        "source": "Wikipedia (en): Grand Theft Auto IV",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-rekordstart.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta5-milliarde",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Eine Milliarde Dollar in drei Tagen",
+      "description": "GTA V verkaufte laut Guinness in den ersten 24 Stunden 11,21 Millionen Exemplare und spielte 815,7 Millionen US-Dollar ein. Am 20. September 2013 war die Milliarde geknackt. Quelle: Guinness World Records: Confirmed: Grand Theft Auto 5 breaks 6 sales world records. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-milliarde",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Eine Milliarde Dollar in drei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Eine Milliarde Dollar in drei Tagen",
+        "text": "GTA V verkaufte laut Guinness in den ersten 24 Stunden 11,21 Millionen Exemplare und spielte 815,7 Millionen US-Dollar ein. Am 20. September 2013 war die Milliarde geknackt.",
+        "source": "Guinness World Records: Confirmed: Grand Theft Auto 5 breaks 6 sales world records",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-milliarde.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-5",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Sunset Pink\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-5",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-5",
       "altText": "Abstraktes Hochformat-Wallpaper \"Sunset Pink\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und leuchtendes Gitter in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 5,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-5.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta6-release-termin",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: GTA VI: der offizielle Release-Termin",
+      "description": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S. Quelle: Rockstar Games: Grand Theft Auto VI (offizielle Seite). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-release-termin",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"GTA VI: der offizielle Release-Termin\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA VI: der offizielle Release-Termin",
+        "text": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S.",
+        "source": "Rockstar Games: Grand Theft Auto VI (offizielle Seite)",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-release-termin.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-online-ladezeiten",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Ein Fan machte GTA Online schneller",
+      "description": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-ladezeiten",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Ein Fan machte GTA Online schneller\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ein Fan machte GTA Online schneller",
+        "text": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-ladezeiten.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-sa-drei-staedte",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Drei Städte in einem Spiel",
+      "description": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-drei-staedte",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Drei Städte in einem Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Drei Städte in einem Spiel",
+        "text": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas.",
+        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-drei-staedte.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vc-soundtrack-box",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: Ein Soundtrack auf sieben Alben",
+      "description": "Vice City bietet über 113 Songs und Werbespots mit rund neun Stunden Musik. Epic Records veröffentlichte den Soundtrack im Oktober 2002 als Box mit sieben Alben. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-soundtrack-box",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Ein Soundtrack auf sieben Alben\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ein Soundtrack auf sieben Alben",
+        "text": "Vice City bietet über 113 Songs und Werbespots mit rund neun Stunden Musik. Epic Records veröffentlichte den Soundtrack im Oktober 2002 als Box mit sieben Alben.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-soundtrack-box.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-ctw-verkaufsflop",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Top-Wertungen, schwache Verkäufe",
+      "description": "Trotz Bestnoten verkaufte sich Chinatown Wars auf dem DS in den USA in den ersten zwei Wochen nach dem Start im März 2009 nur knapp 90.000 Mal. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-verkaufsflop",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Top-Wertungen, schwache Verkäufe\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Top-Wertungen, schwache Verkäufe",
+        "text": "Trotz Bestnoten verkaufte sich Chinatown Wars auf dem DS in den USA in den ersten zwei Wochen nach dem Start im März 2009 nur knapp 90.000 Mal.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-verkaufsflop.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta3-xbox-absage",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Microsoft wollte GTA III nicht",
+      "description": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-xbox-absage",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Microsoft wollte GTA III nicht\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Microsoft wollte GTA III nicht",
+        "text": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-xbox-absage.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta4-rickroll",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Der Rickroll begann mit GTA IV",
+      "description": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers. Quelle: Wikipedia (en): Rickrolling. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rickroll",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Der Rickroll begann mit GTA IV\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der Rickroll begann mit GTA IV",
+        "text": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers.",
+        "source": "Wikipedia (en): Rickrolling",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-rickroll.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta5-pc-petition",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: 728.144 Unterschriften für GTA V am PC",
+      "description": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition! Quelle: Guinness World Records: Most signatures for a videogame petition. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-pc-petition",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"728.144 Unterschriften für GTA V am PC\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "728.144 Unterschriften für GTA V am PC",
+        "text": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition!",
+        "source": "Guinness World Records: Most signatures for a videogame petition",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-pc-petition.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta6-trailer-rekord",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: 90 Millionen Views in 24 Stunden",
+      "description": "Der erste GTA-VI-Trailer vom Dezember 2023 wurde in 24 Stunden 90.421.491 Mal auf YouTube angesehen. Laut Guinness ist das Rekord für einen Videospiel-Trailer. Quelle: Guinness World Records: Grand Theft Auto VI first look becomes most viewed videogame trailer in 24 hours. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-trailer-rekord",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"90 Millionen Views in 24 Stunden\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "90 Millionen Views in 24 Stunden",
+        "text": "Der erste GTA-VI-Trailer vom Dezember 2023 wurde in 24 Stunden 90.421.491 Mal auf YouTube angesehen. Laut Guinness ist das Rekord für einen Videospiel-Trailer.",
+        "source": "Guinness World Records: Grand Theft Auto VI first look becomes most viewed videogame trailer in 24 hours",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-trailer-rekord.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-6",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Teal Dusk\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-6",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-6",
       "altText": "Abstraktes Hochformat-Wallpaper \"Teal Dusk\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 6,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-6.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-online-start",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Bis zu 30 Spieler in einer Sitzung",
+      "description": "GTA Online startete am 1. Oktober 2013, zwei Wochen nach GTA V. Auf PS4, Xbox One und PC teilen sich bis zu 30 Spieler eine Sitzung. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-start",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Bis zu 30 Spieler in einer Sitzung\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Bis zu 30 Spieler in einer Sitzung",
+        "text": "GTA Online startete am 1. Oktober 2013, zwei Wochen nach GTA V. Auf PS4, Xbox One und PC teilen sich bis zu 30 Spieler eine Sitzung.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-start.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-sa-mond",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Schieß auf den Mond. Wirklich!",
+      "description": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-mond",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Schieß auf den Mond. Wirklich!\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Schieß auf den Mond. Wirklich!",
+        "text": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-mond.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vc-vorbilder",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: Diese Filme und Serien stecken in Vice City",
+      "description": "Vice City spielt 1986 in einer Miami-Parodie. Als Vorbilder gelten Filme wie Scarface und Carlito's Way, vor allem aber die TV-Serie Miami Vice. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-vorbilder",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Diese Filme und Serien stecken in Vice City\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Diese Filme und Serien stecken in Vice City",
+        "text": "Vice City spielt 1986 in einer Miami-Parodie. Als Vorbilder gelten Filme wie Scarface und Carlito's Way, vor allem aber die TV-Serie Miami Vice.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-vorbilder.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-dma-design-dundee",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: GTA kommt aus Schottland",
+      "description": "Das Studio hinter GTA gründete David Jones 1988 als DMA Design in Dundee. Vor GTA landete es mit Lemmings einen Welthit. Seit 2002 heißt es Rockstar North. Quelle: Wikipedia (en): Rockstar North. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-dma-design-dundee",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA kommt aus Schottland\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA kommt aus Schottland",
+        "text": "Das Studio hinter GTA gründete David Jones 1988 als DMA Design in Dundee. Vor GTA landete es mit Lemmings einen Welthit. Seit 2002 heißt es Rockstar North.",
+        "source": "Wikipedia (en): Rockstar North",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-dma-design-dundee.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta4-statue-of-happiness",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Das Herz von Liberty City",
+      "description": "Die Freiheitsstatue heißt in GTA IV Statue of Happiness und hält einen Kaffeebecher statt einer Fackel. In ihrem Inneren versteckt sich das „Herz“ von Liberty City. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 12). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-statue-of-happiness",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Das Herz von Liberty City\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das Herz von Liberty City",
+        "text": "Die Freiheitsstatue heißt in GTA IV Statue of Happiness und hält einen Kaffeebecher statt einer Fackel. In ihrem Inneren versteckt sich das „Herz“ von Liberty City.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 12)",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-statue-of-happiness.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta5-radio",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Über 240 Songs im Radio von Los Santos",
+      "description": "Für GTA V lizenzierte Rockstar mehr als 241 Songs für 15 Musiksender plus zwei Talk-Radios. FlyLo FM moderiert Produzent Flying Lotus, der dafür eigene Tracks schrieb. Quelle: Wikipedia (en): Grand Theft Auto V. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-radio",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Über 240 Songs im Radio von Los Santos\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Über 240 Songs im Radio von Los Santos",
+        "text": "Für GTA V lizenzierte Rockstar mehr als 241 Songs für 15 Musiksender plus zwei Talk-Radios. FlyLo FM moderiert Produzent Flying Lotus, der dafür eigene Tracks schrieb.",
+        "source": "Wikipedia (en): Grand Theft Auto V",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-radio.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-sa-samuel-l-jackson",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Samuel L. Jackson als korrupter Cop",
+      "description": "Den korrupten Polizisten Frank Tenpenny in San Andreas spricht Hollywood-Star Samuel L. Jackson. Auch James Woods, Peter Fonda und Ice-T sind mit dabei. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-samuel-l-jackson",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Samuel L. Jackson als korrupter Cop\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Samuel L. Jackson als korrupter Cop",
+        "text": "Den korrupten Polizisten Frank Tenpenny in San Andreas spricht Hollywood-Star Samuel L. Jackson. Auch James Woods, Peter Fonda und Ice-T sind mit dabei.",
+        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-samuel-l-jackson.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-dma-ein-pfund",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Das GTA-Studio für 1 Pfund gekauft",
+      "description": "Take-Two kaufte DMA Design im September 1999 für symbolische 1 Pfund von Infogrames, übernahm dabei aber 12,3 Millionen US-Dollar Schulden. Quelle: Wikipedia (en): Rockstar North. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-dma-ein-pfund",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Das GTA-Studio für 1 Pfund gekauft\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das GTA-Studio für 1 Pfund gekauft",
+        "text": "Take-Two kaufte DMA Design im September 1999 für symbolische 1 Pfund von Infogrames, übernahm dabei aber 12,3 Millionen US-Dollar Schulden.",
+        "source": "Wikipedia (en): Rockstar North",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-dma-ein-pfund.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta-london-1969",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Als GTA nach London zog",
+      "description": "GTA London 1969 erschien am 30. April 1999 als Erweiterung zum ersten GTA. Sogar der Slang ist britisch: Bei einer Festnahme heißt es „Nicked“ statt „Busted“. Quelle: Wikipedia (en): Grand Theft Auto: London 1969. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta-london-1969",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Als GTA nach London zog\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Als GTA nach London zog",
+        "text": "GTA London 1969 erschien am 30. April 1999 als Erweiterung zum ersten GTA. Sogar der Slang ist britisch: Bei einer Festnahme heißt es „Nicked“ statt „Busted“.",
+        "source": "Wikipedia (en): Grand Theft Auto: London 1969",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta-london-1969.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-7",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Purple Haze\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-7",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-7",
       "altText": "Abstraktes Hochformat-Wallpaper \"Purple Haze\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und leuchtendes Gitter in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 7,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-7.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta-pisswasser",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Das deutsche Bier aus der GTA-Welt",
+      "description": "In der GTA-Welt gibt es das deutsche Bier Pisswasser. Sein Slogan „You're in, for a good time!“ ist doppeldeutig: Mit Komma klingt er nach einer langen Haftstrafe. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta-pisswasser",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Das deutsche Bier aus der GTA-Welt\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das deutsche Bier aus der GTA-Welt",
+        "text": "In der GTA-Welt gibt es das deutsche Bier Pisswasser. Sein Slogan „You're in, for a good time!“ ist doppeldeutig: Mit Komma klingt er nach einer langen Haftstrafe.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6)",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta-pisswasser.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta-serie-480-millionen",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Fast 480 Millionen verkaufte GTA-Spiele",
+      "description": "Die gesamte GTA-Reihe kommt laut Take-Two auf fast 480 Millionen verkaufte Einheiten (Stand 30. September 2026). Quelle: GamingBolt: Red Dead Redemption 2 Crosses 89 Million Sales, GTA 5 Nearly at 235 Million Units Sold. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta-serie-480-millionen",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Fast 480 Millionen verkaufte GTA-Spiele\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Fast 480 Millionen verkaufte GTA-Spiele",
+        "text": "Die gesamte GTA-Reihe kommt laut Take-Two auf fast 480 Millionen verkaufte Einheiten (Stand 30. September 2026).",
+        "source": "GamingBolt: Red Dead Redemption 2 Crosses 89 Million Sales, GTA 5 Nearly at 235 Million Units Sold",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta-serie-480-millionen.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta-umstrittenste-reihe",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Offiziell die umstrittenste Spielereihe",
+      "description": "Guinness führt GTA als umstrittenste Videospielreihe. Bis Juli 2008 erschienen über 4.000 Berichte über Kontroversen, dazu kamen mehr als 20 Klagen in den USA. Quelle: Guinness World Records: Most controversial videogame series. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta-umstrittenste-reihe",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Offiziell die umstrittenste Spielereihe\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Offiziell die umstrittenste Spielereihe",
+        "text": "Guinness führt GTA als umstrittenste Videospielreihe. Bis Juli 2008 erschienen über 4.000 Berichte über Kontroversen, dazu kamen mehr als 20 Klagen in den USA.",
+        "source": "Guinness World Records: Most controversial videogame series",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta-umstrittenste-reihe.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta1-gouranga",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Gouranga! Das steckt hinter dem Bonus",
+      "description": "In GTA 1 laufen orange gekleidete Fußgänger im Gänsemarsch, angelehnt an Hare-Krishna-Anhänger. Wer die ganze Gruppe erwischt, sieht den Schriftzug „Gouranga“, ein Name für Krishna. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 2). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta1-gouranga",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Gouranga! Das steckt hinter dem Bonus\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Gouranga! Das steckt hinter dem Bonus",
+        "text": "In GTA 1 laufen orange gekleidete Fußgänger im Gänsemarsch, angelehnt an Hare-Krishna-Anhänger. Wer die ganze Gruppe erwischt, sieht den Schriftzug „Gouranga“, ein Name für Krishna.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 2)",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta1-gouranga.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta1-polizei-bug",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Dieser Bug machte die GTA-Polizei legendär",
+      "description": "Die Polizei sollte Raser in GTA 1 eigentlich nur sanft abdrängen. Ein KI-Fehler ließ sie stattdessen rammen. Die Tester fanden das so lustig, dass der Bug im Spiel blieb. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta1-polizei-bug",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Dieser Bug machte die GTA-Polizei legendär\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Dieser Bug machte die GTA-Polizei legendär",
+        "text": "Die Polizei sollte Raser in GTA 1 eigentlich nur sanft abdrängen. Ein KI-Fehler ließ sie stattdessen rammen. Die Tester fanden das so lustig, dass der Bug im Spiel blieb.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta1-polizei-bug.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta1-race-n-chase",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: GTA hieß am Anfang ganz anders",
+      "description": "Die Entwicklung des ersten GTA begann 1995 bei DMA Design in Dundee unter dem Titel Race'n'Chase. Die Idee, einen Polizisten zu spielen, galt schnell als zu langweilig. Quelle: Wikipedia (en): Grand Theft Auto (video game). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta1-race-n-chase",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA hieß am Anfang ganz anders\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA hieß am Anfang ganz anders",
+        "text": "Die Entwicklung des ersten GTA begann 1995 bei DMA Design in Dundee unter dem Titel Race'n'Chase. Die Idee, einen Polizisten zu spielen, galt schnell als zu langweilig.",
+        "source": "Wikipedia (en): Grand Theft Auto (video game)",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta1-race-n-chase.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta2-elvis",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Elvis has left the Building!",
+      "description": "In GTA 2 ziehen Elvis-Imitatoren im Gänsemarsch durch die Stadt. Laut Handbuch ist es dieselbe Truppe wie in GTA 1, nur wurde sie vom ständigen Überfahren verrückt. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 4). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta2-elvis",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Elvis has left the Building!\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Elvis has left the Building!",
+        "text": "In GTA 2 ziehen Elvis-Imitatoren im Gänsemarsch durch die Stadt. Laut Handbuch ist es dieselbe Truppe wie in GTA 1, nur wurde sie vom ständigen Überfahren verrückt.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 4)",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta2-elvis.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-gta2-kurzfilm",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: GTA 2 bekam einen echten Kurzfilm",
+      "description": "Als Intro zu GTA 2 (1999) entstand in New York ein achtminütiger Realfilm über Gangster Claude Speed. Das Drehbuch schrieb Dan Houser. Quelle: Wikipedia (en): Grand Theft Auto 2. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta2-kurzfilm",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA 2 bekam einen echten Kurzfilm\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA 2 bekam einen echten Kurzfilm",
+        "text": "Als Intro zu GTA 2 (1999) entstand in New York ein achtminütiger Realfilm über Gangster Claude Speed. Das Drehbuch schrieb Dan Houser.",
+        "source": "Wikipedia (en): Grand Theft Auto 2",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta2-kurzfilm.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-lazlow-talkradio",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Die Stimme hinter dem GTA-Talkradio",
+      "description": "Lazlow Jones prägte fast 20 Jahre das GTA-Radio: Er moderierte Chatterbox FM in GTA III und war bis GTA V als Autor und Sprecher dabei. 2020 verließ er Rockstar. Quelle: Wikipedia (en): Lazlow Jones. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-lazlow-talkradio",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Die Stimme hinter dem GTA-Talkradio\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Die Stimme hinter dem GTA-Talkradio",
+        "text": "Lazlow Jones prägte fast 20 Jahre das GTA-Radio: Er moderierte Chatterbox FM in GTA III und war bis GTA V als Autor und Sprecher dabei. 2020 verließ er Rockstar.",
+        "source": "Wikipedia (en): Lazlow Jones",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-lazlow-talkradio.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "wallpaper-8",
       "type": "wallpaper",
       "board": "wallpaper",
       "title": "Handy-Wallpaper \"Miami Night\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf WANTED. #wallpaper #synthwave #gta6",
-      "link": "https://wanted-hq.de/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-8",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-8",
       "altText": "Abstraktes Hochformat-Wallpaper \"Miami Night\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
       "design": {
         "type": "wallpaper",
         "seed": 8,
-        "domain": "wanted-hq.de"
+        "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/wallpaper-8.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-lcs-faehre",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Liberty City ohne Brücke",
+      "description": "Liberty City Stories spielt 1998, drei Jahre vor GTA III. Die Callahan Bridge ist noch nicht fertig, darum verbindet eine Fähre Portland und Staunton Island. Quelle: Wikipedia (en): Grand Theft Auto: Liberty City Stories. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-lcs-faehre",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Liberty City ohne Brücke\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Liberty City ohne Brücke",
+        "text": "Liberty City Stories spielt 1998, drei Jahre vor GTA III. Die Callahan Bridge ist noch nicht fertig, darum verbindet eine Fähre Portland und Staunton Island.",
+        "source": "Wikipedia (en): Grand Theft Auto: Liberty City Stories",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-lcs-faehre.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-lcs-handheld",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Das erste 3D-GTA für unterwegs",
+      "description": "Liberty City Stories erschien im Oktober 2005 für die PSP und war das erste 3D-GTA für Handhelds. Die PSP-Version verkaufte sich laut Take-Two bis März 2008 über 8 Millionen Mal. Quelle: Wikipedia (en): Grand Theft Auto: Liberty City Stories. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-lcs-handheld",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Das erste 3D-GTA für unterwegs\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das erste 3D-GTA für unterwegs",
+        "text": "Liberty City Stories erschien im Oktober 2005 für die PSP und war das erste 3D-GTA für Handhelds. Die PSP-Version verkaufte sich laut Take-Two bis März 2008 über 8 Millionen Mal.",
+        "source": "Wikipedia (en): Grand Theft Auto: Liberty City Stories",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-lcs-handheld.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vcs-99-luftballons",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: 99 Luftballons in Vice City",
+      "description": "In Vice City Stories sind 99 rote Ballons versteckt. Eine Anspielung auf Nenas Hit „99 Luftballons“ von 1984, der schon im Soundtrack von Vice City lief. Quelle: Wikipedia (en): Grand Theft Auto: Vice City Stories. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vcs-99-luftballons",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"99 Luftballons in Vice City\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "99 Luftballons in Vice City",
+        "text": "In Vice City Stories sind 99 rote Ballons versteckt. Eine Anspielung auf Nenas Hit „99 Luftballons“ von 1984, der schon im Soundtrack von Vice City lief.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City Stories",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vcs-99-luftballons.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vcs-phil-collins",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Phil Collins spielt in GTA mit",
+      "description": "In Vice City Stories tritt Phil Collins als er selbst auf. Held Vic Vance muss ihn vor Auftragskillern beschützen, auch während seines Konzerts in Vice City. Quelle: Wikipedia (en): Grand Theft Auto: Vice City Stories. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vcs-phil-collins",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Phil Collins spielt in GTA mit\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Phil Collins spielt in GTA mit",
+        "text": "In Vice City Stories tritt Phil Collins als er selbst auf. Held Vic Vance muss ihn vor Auftragskillern beschützen, auch während seines Konzerts in Vice City.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City Stories",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vcs-phil-collins.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "fact-vcs-vic-vance",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Victor Vance: der Bruder von Lance",
+      "description": "Vice City Stories spielt 1984, zwei Jahre vor Vice City. Held Victor Vance ist der Bruder von Lance Vance, den Fans aus Vice City kennen. Quelle: Wikipedia (en): Grand Theft Auto: Vice City Stories. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vcs-vic-vance",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Victor Vance: der Bruder von Lance\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Victor Vance: der Bruder von Lance",
+        "text": "Vice City Stories spielt 1984, zwei Jahre vor Vice City. Held Victor Vance ist der Bruder von Lance Vance, den Fans aus Vice City kennen.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City Stories",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vcs-vic-vance.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
     }
   ]
 }
