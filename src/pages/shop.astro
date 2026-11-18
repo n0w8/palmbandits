@@ -61,14 +61,14 @@ const IDEAS = en ? IDEAS_EN : IDEAS_DE;
       <h2 id="merch-h" class="sec-head__title display">{L.wear} <span class="grad-text">Crew</span></h2>
       <p class="muted">{L.merchText}</p>
       {MERCH.url ? (
-        <a class="btn btn--sun" href="#merch"><Icon name="cart" /> {L.shopNow}</a>
+        <a class="btn btn--sun" href="#produkte"><Icon name="cart" /> {L.shopNow}</a>
       ) : (
         <span class="chip chip--bot">{L.merchSoon}</span>
       )}
     </div>
   </section>
 
-  <div class="wrap merch-grid"><MerchGrid onShopPage /></div>
+  <div class="wrap merch-grid" id="produkte"><MerchGrid onShopPage /></div>
 
   <div class="wrap merch-embed"><SpreadShop lang={lang} /></div>
 
@@ -110,8 +110,9 @@ const IDEAS = en ? IDEAS_EN : IDEAS_DE;
   .merch__text .muted { margin: 16px 0 22px; }
   @media (max-width: 860px) { .merch { grid-template-columns: 1fr; } }
   .scripts-h { margin-bottom: 24px; }
-  .merch-grid { margin-bottom: clamp(30px, 4vw, 50px); }
-  .merch-embed { margin-bottom: clamp(50px, 7vw, 90px); }
+  .merch-grid { margin-bottom: clamp(30px, 4vw, 50px); scroll-margin-top: calc(var(--header-h) + var(--ticker-h) + 20px); }
+  .merch-embed { margin-bottom: 0; }
+  .merch-embed:has(.sshop.is-open) { margin-bottom: clamp(50px, 7vw, 90px); }
   .feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .feat { padding: 24px; }
   .feat__i { width: 48px; height: 48px; display: grid; place-items: center; background: var(--sunset); color: #120812; margin-bottom: 14px; }

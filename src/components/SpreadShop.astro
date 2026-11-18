@@ -1,128 +1,140 @@
 ---
-// Merch-Shop direkt auf der Seite (offizielles Spreadshop-Modul).
-// Laedt erst nach Klick (Spreadshirt setzt eigene Cookies), Entscheidung wird nur im Browser gemerkt.
-import Icon from './Icon.astro';
+// Kasse über das offizielle Spreadshop-Modul (iframe von Spreadshirt).
+// 18.11.2026 umgebaut (Mike: "das schaut maximal komisch aus"): Die eigene Produktübersicht (MerchGrid) ist das Schaufenster.
+// Der weiße Spreadshop erscheint NUR, wenn ein Produkt, der Warenkorb oder die Kasse offen ist (Route #!/...).
+// Geht der Besucher im Shop auf "Home" zurück (#!/), klappt das Modul wieder zu.
+// Alte Produktlinks auf entfernte oder noch geprüfte Designs (merchDeadIds) zeigen sonst "Page not found":
+// die werden abgefangen und auf die Übersicht umgeleitet, mit kurzem Hinweis.
+// Datenschutz: Das Modul lädt erst, wenn jemand bei einem Produkt auf "Kaufen" klickt (dann gelten Spreadshirts Cookies).
 import { MERCH } from '../config';
+import { merchDeadIds } from '../data/merch';
 interface Props { lang?: 'de' | 'en' }
 const { lang = 'de' } = Astro.props;
 const shopName = MERCH.url.match(/\/\/([^.]+)\.myspreadshop/)?.[1] ?? '';
 const base = MERCH.url.replace(/\/$/, '');
 const T = {
   de: {
-    title: 'Merch-Shop',
-    gate: 'Der Shop wird von Spreadshirt (sprd.net AG) bereitgestellt: Spreadshirt druckt, verschickt und kümmert sich um Bezahlung und Rückgabe. Beim Anzeigen werden Daten an Spreadshirt übertragen, dort gelten deren Cookies.',
-    btn: 'Shop hier anzeigen',
-    alt: 'Im Spreadshop öffnen',
-    privacy: 'Datenschutz',
-    items: [
-      { n: 'Oversized T-Shirt', p: '26,99 €' },
-      { n: 'Oversized Hoodie', p: '39,99 €' },
-      { n: 'Windbreaker, wasserabweisend', p: '60,99 €' },
-    ],
-    note: 'Preise inkl. MwSt., zzgl. Versand. Zur Eröffnung 25 % Rabatt (begrenzt).',
+    gone: 'Dieses Produkt gibt es so nicht mehr im Shop. Hier sind alle aktuellen Teile.',
+    back: 'Zur Übersicht',
+    privacy: 'Größen, Warenkorb und Kasse kommen von Spreadshirt (sprd.net AG), dort gelten deren Cookies.',
+    privacyLink: 'Datenschutz',
   },
   en: {
-    title: 'Merch store',
-    gate: 'The store is provided by Spreadshirt (sprd.net AG): they print, ship and handle payment and returns. Showing it sends data to Spreadshirt and their cookies apply.',
-    btn: 'Show the store here',
-    alt: 'Open on Spreadshop',
-    privacy: 'Privacy policy',
-    items: [
-      { n: 'Oversized T-shirt', p: '€26.99' },
-      { n: 'Oversized hoodie', p: '€39.99' },
-      { n: 'Windbreaker, water-repellent', p: '€60.99' },
-    ],
-    note: 'Prices incl. VAT, plus shipping. 25% launch discount for a limited time.',
+    gone: 'This product is no longer in the store. Here is everything that is available right now.',
+    back: 'Back to all products',
+    privacy: 'Sizes, cart and checkout are provided by Spreadshirt (sprd.net AG); their cookies apply.',
+    privacyLink: 'Privacy policy',
   },
 }[lang];
 ---
 {shopName && (
-  <section class="sshop" id="merch" data-sshop data-shop={shopName} data-base={base} data-locale={lang === 'en' ? 'en_GB' : 'de_AT'}>
-    <div class="sshop__teaser">
-      {T.items.map((it) => (
-        <div class="sshop__item">
-          <div class="sshop__art"><img src="/merch-logo.png" alt="" width="1000" height="262" loading="lazy" /></div>
-          <b>{it.n}</b>
-          <span class="cond">{it.p}</span>
-        </div>
-      ))}
-    </div>
-    <div class="sshop__gate" data-sshop-gate>
-      <p>{T.gate} <a href={lang === 'en' ? '/datenschutz/' : '/datenschutz/'}>{T.privacy}</a></p>
-      <div class="sshop__btns">
-        <button class="btn btn--sun" data-sshop-load><Icon name="cart" /> {T.btn}</button>
-        <a class="btn btn--ghost" href={MERCH.url} target="_blank" rel="noopener">{T.alt} <Icon name="arrow" /></a>
+  <>
+    <p class="sshop-gone" data-sshop-gone hidden>{T.gone}</p>
+    <section class="sshop" id="merch" data-sshop data-shop={shopName} data-base={base}
+      data-locale={lang === 'en' ? 'en_GB' : 'de_AT'} data-dead={JSON.stringify(merchDeadIds())}>
+      <div class="sshop__bar">
+        <a class="sshop__back cond" href="#!/" data-sshop-close>← {T.back}</a>
+        <span class="sshop__privacy">{T.privacy} <a href="/datenschutz/">{T.privacyLink}</a></span>
       </div>
-      <p class="sshop__note">{T.note}</p>
-    </div>
-    <div id="myShop" class="sshop__embed" data-sshop-mount></div>
-  </section>
+      <div id="myShop" class="sshop__embed" data-sshop-mount></div>
+    </section>
+  </>
 )}
 
 <script>
   const KEY = 'sshop-consent';
+  const route = () => { try { return decodeURIComponent(location.hash); } catch { return location.hash; } };
+  const isShopRoute = () => location.hash.startsWith('#!/');
+  const isHome = () => /^#!\/?(\?.*)?$/.test(location.hash);
+  function isDead(root: HTMLElement) {
+    const r = route().toLowerCase();
+    if (!isShopRoute()) return false;
+    let dead: string[] = [];
+    try { dead = JSON.parse(root.dataset.dead || '[]'); } catch { /* ignore */ }
+    return r.includes('nordwald') || dead.some((id) => r.includes(id));
+  }
   function load(root: HTMLElement) {
     if (root.dataset.loaded) return;
     root.dataset.loaded = '1';
-    const gate = root.querySelector<HTMLElement>('[data-sshop-gate]');
-    if (gate) gate.hidden = true;
-    root.classList.add('is-open');
     (window as any).spread_shop_config = {
       shopName: root.dataset.shop,
       locale: root.dataset.locale,
       prefix: root.dataset.base, // wie auf eldruna.com: Prefix = Spreadshop-Adresse
-
       baseId: 'myShop',
+      updateMetadata: false, // Titel und Beschreibung der Seite nicht vom Shop überschreiben lassen
     };
     const s = document.createElement('script');
     s.src = `${root.dataset.base}/shopfiles/shopclient/shopclient.nocache.js`;
     s.async = true;
     document.body.appendChild(s);
   }
-  // "Kaufen" bei einem Produkt (Link mit #!/produkt...) zaehlt als Klick auf "Shop hier anzeigen"
-  const wantsProduct = () => location.hash.startsWith('#!/');
-  function openFor(root: HTMLElement) {
+  const grid = () => document.getElementById('produkte');
+  function close(root: HTMLElement) {
+    root.classList.remove('is-open');
+  }
+  function open(root: HTMLElement) {
     try { localStorage.setItem(KEY, '1'); } catch { /* ignore */ }
+    const gone = document.querySelector<HTMLElement>('[data-sshop-gone]');
+    if (gone) gone.hidden = true;
     load(root);
-    setTimeout(() => root.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+    const wasOpen = root.classList.contains('is-open');
+    root.classList.add('is-open');
+    if (!wasOpen) setTimeout(() => root.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
+  function showGone(root: HTMLElement) {
+    history.replaceState(null, '', location.pathname + location.search);
+    close(root);
+    const gone = document.querySelector<HTMLElement>('[data-sshop-gone]');
+    const g = grid();
+    if (gone) {
+      if (g && gone.nextElementSibling !== g.firstElementChild) g.prepend(gone); // Hinweis direkt über die Produkte
+      gone.hidden = false;
+    }
+    setTimeout(() => (g ?? gone)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
+  function sync(root: HTMLElement) {
+    if (!isShopRoute()) { close(root); return; }
+    if (isDead(root)) { showGone(root); return; }
+    if (isHome()) {
+      if (root.classList.contains('is-open')) {
+        close(root);
+        setTimeout(() => grid()?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+      }
+      return;
+    }
+    open(root);
   }
   function init() {
     const root = document.querySelector<HTMLElement>('[data-sshop]');
     if (!root) return;
-    let ok = false;
-    try { ok = localStorage.getItem(KEY) === '1'; } catch { /* ignore */ }
-    if (wantsProduct()) openFor(root);
-    else if (ok) load(root);
+    sync(root);
+    // Die Adresse ändert sich auf drei Wegen: hashchange, Astros Seiten-Router (pushState ohne hashchange)
+    // und der Spreadshop selbst. Deshalb zusätzlich alle 400 ms vergleichen.
     if (!(window as any).__sshopHash) {
       (window as any).__sshopHash = true;
-      window.addEventListener('hashchange', () => {
+      let last = location.href;
+      const check = () => {
+        if (location.href === last) return;
+        last = location.href;
         const r = document.querySelector<HTMLElement>('[data-sshop]');
-        if (r && wantsProduct()) openFor(r);
-      });
+        if (r) sync(r);
+      };
+      window.addEventListener('hashchange', check);
+      window.addEventListener('popstate', check);
+      setInterval(check, 400);
     }
-    root.querySelector('[data-sshop-load]')?.addEventListener('click', () => {
-      try { localStorage.setItem(KEY, '1'); } catch { /* ignore */ }
-      load(root);
-    });
   }
   document.addEventListener('astro:page-load', init);
 </script>
 
 <style>
-  .sshop { scroll-margin-top: calc(var(--header-h) + var(--ticker-h) + 20px); }
-  .sshop__teaser { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
-  .sshop__item { display: flex; flex-direction: column; gap: 6px; padding: 16px; background: var(--panel); border: 1px solid var(--line); }
-  .sshop__art { aspect-ratio: 4 / 3; display: grid; place-items: center; background: #0e0e0e; padding: 18px; margin-bottom: 6px; }
-  .sshop__art img { width: 100%; height: auto; }
-  .sshop__item b { font-weight: 600; }
-  .sshop__item span { color: var(--pink); font-size: 1.05rem; }
-  .sshop__gate { padding: 20px; border: 1px dashed var(--line2); background: rgba(255, 255, 255, 0.02); }
-  .sshop__gate p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
-  .sshop__gate a:not(.btn) { text-decoration: underline; }
-  .sshop__btns { display: flex; gap: 10px; flex-wrap: wrap; }
-  .sshop__note { margin: 12px 0 0 !important; font-size: 0.82rem !important; color: var(--dim) !important; }
-  .sshop__embed { min-height: 0; background: #fff; border-radius: 2px; }
-  .sshop.is-open .sshop__embed { min-height: 600px; }
-  .sshop.is-open .sshop__teaser { display: none; }
-  @media (max-width: 760px) { .sshop__teaser { grid-template-columns: 1fr; } .sshop__art { aspect-ratio: 16 / 7; } }
+  .sshop { display: none; scroll-margin-top: calc(var(--header-h) + var(--ticker-h) + 20px); }
+  .sshop.is-open { display: block; }
+  .sshop__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 18px; padding: 12px 0; }
+  .sshop__back { font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .sshop__back:hover { color: var(--pink); }
+  .sshop__privacy { font-size: 0.8rem; color: var(--dim); }
+  .sshop__privacy a { text-decoration: underline; }
+  .sshop__embed { min-height: 600px; background: #fff; border-radius: 4px; overflow: hidden; }
+  .sshop-gone { margin: 0 0 18px; padding: 12px 16px; border: 1px solid var(--line2); border-left: 3px solid var(--pink); background: rgba(255, 42, 140, 0.06); }
 </style>

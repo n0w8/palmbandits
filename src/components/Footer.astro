@@ -47,7 +47,7 @@ const rss = lang === 'en' ? '/en/rss.xml' : '/rss.xml';
         <li><a href={h('/community/')}>{t.footer.discordForum}</a></li>
         <li><a href={h('/partner/')}>{t.footer.partner}</a></li>
         <li><a href={h('/radio/')}>{RADIO.station}</a></li>
-        {MERCH.url && <li><a href={`${h('/shop/')}#merch`}>{t.footer.merch}</a></li>}
+        {MERCH.url && <li><a href={`${h('/shop/')}#produkte`}>{t.footer.merch}</a></li>}
         <li><a href={h('/shop/')}>{t.footer.scripts}</a></li>
         <li><a href={rss}>{t.footer.rss}</a></li>
         <li><a href={lang === 'en' ? '/' : '/en/'} hreflang={lang === 'en' ? 'de' : 'en'} data-astro-reload data-lang-pick={lang === 'en' ? 'de' : 'en'}>{lang === 'en' ? 'Deutsche Version' : 'English version'}</a></li>

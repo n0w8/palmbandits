@@ -29,6 +29,20 @@ export interface MerchItem {
 
 const LOGO = '/palm+bandits+logo-A6afbe0a6855804508a0fa2b9';
 
+// Design-IDs, die nicht mehr im Spreadshop sind (18.11.2026 aus dem Verkauf genommen). Alte Links darauf
+// (z. B. aus geteilten Seiten oder dem Browser-Verlauf) zeigen im eingebetteten Shop sonst "Page not found";
+// SpreadShop.astro leitet sie deshalb auf die Produktübersicht um. Alles mit "nordwald" im Pfad zählt ebenfalls.
+const REMOVED_DESIGNS = [
+  '6afd107e83173c19cab0830e', // Domsgard Nordwald
+  '6afd10b1855804508a063046', // Skulgard Nordwald
+  '6afd109e855804508a05e736', // Ravhena Nordwald
+  '6afd109213bea62fcab420d0', // PRONX Nordwald
+  '6afd105e13bea62fcab35dbd', // Skaedra Nordwald
+  '6afd107283173c19cab04cb9', // Runvyr Nordwald
+  '6afd10bc83173c19cab184f6', // Ravnir Nordwald
+  '6afce57c855804508a521a1d', // Eldruna Nordwald (alte Version)
+];
+
 // PALM BANDITS Hase (seit 18.11.2026, Mike: "mach mal nur ein hasenkopf als design", Entwurf A): nur Schwarz.
 // Mike danach: "den haasen am short kleiner und am rücken oben beim kragen immer die 5 sterne" -> Shirt-Motiv von 28 auf 20 cm
 // (Hoodie bleibt 18,4 cm). Die Sterne hinten brauchen ein neues Design (Upload-Limit 18.11. erreicht) -> am 19.11. als
@@ -71,6 +85,12 @@ export const MERCH_ITEMS: MerchItem[] = [
     path: LOGO, sellable: '5wdQqnbok8S0z0m1yZ4Z-5117-29', appearance: 2,
     img: 'T5117A2PA11068PT32X0Y25D360811485W9900H2593', price: 60.99,
   },
+];
+
+// Nicht (mehr) kaufbare Designs: entfernte + noch in Prüfung (soon)
+export const merchDeadIds = () => [
+  ...REMOVED_DESIGNS,
+  ...MERCH_ITEMS.filter((m) => m.soon).map((m) => m.path.match(/-A([0-9a-f]{24})/)?.[1] ?? '').filter(Boolean),
 ];
 
 export const merchImage = (m: MerchItem, size = 600) =>
