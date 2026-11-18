@@ -79,3 +79,31 @@ test('Vorfilter (Haiku) liefert Gruppen und Relevanz', async () => {
   assert.deepEqual(res.groups, [['s1', 's2']]);
   assert.equal(res.map.get('s1').relevant, true);
 });
+
+test('Vorfilter: bekannte offene Storys gehen als Kontext mit (nur zum Zusammenfassen)', async () => {
+  const { client, calls } = fakeClient((b) => message(b.model, { groups: [['s1', 'k1']], results: [{ id: 's1', relevant: true, duplicate_of: '', reason: 'News' }] }));
+  setClientForTests(client);
+  const known = [{ id: 'k1', items: [{ title: 'GTA 6 gets second patch before launch', outlet: 'IGN' }] }];
+  const res = await prefilter([story], ['Alte News'], known);
+  const content = calls[0].body.messages[0].content;
+  assert.match(content, /Bekannte offene Storys[^\n]*\n\[\{"id":"k1"/);
+  assert.match(content, /Neue Storys:\n\[\{"id":"s1"/);
+  assert.match(calls[0].body.system, /Bekannte offene Storys/);
+  assert.deepEqual(res.groups, [['s1', 'k1']]);
+});
+
+test('Artikel-Anfrage: nachgeladener Artikeltext geht als artikeltext mit, starke Quellen zuerst', async () => {
+  const empty = { title: '', slug: '', description: '', tags: [], body: '' };
+  const { client, calls } = fakeClient((b) => message(b.model, { skip: true, skip_reason: 'test', game: 'gta-6', rumor: false, hype: 1, breaking: false, de: empty, en: empty }));
+  setClientForTests(client);
+  const s = { id: 's9', items: [
+    { title: 'B-Meldung', outlet: 'Dexerto', tier: 'B', lang: 'en', snippet: '', link: 'https://dexerto.com/x', published: '2026-11-18T08:00:00Z' },
+    ...Array.from({ length: 10 }, (_, i) => ({ title: `A-Meldung ${i}`, outlet: `A${i}`, tier: 'A', lang: 'en', snippet: '', link: `https://a${i}.com/x`, published: '2026-11-18T08:00:00Z' })),
+  ] };
+  s.items[10].text = 'Volltext aus dem Originalartikel mit allen Fakten.';
+  await writeArticle(s, { color: 'green', reason: 'test' }, [], new Date('2026-11-18T09:00:00Z'));
+  const content = calls[0].body.messages[0].content;
+  assert.match(content, /"artikeltext": "Volltext aus dem Originalartikel/);
+  assert.ok(!content.includes('B-Meldung')); // nur die 10 staerksten Quellen
+  assert.match(calls[0].body.system[0].text, /artikeltext/);
+});

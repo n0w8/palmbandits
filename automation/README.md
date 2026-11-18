@@ -334,3 +334,60 @@ Claude Sonnet 5.5: 2 USD Eingabe, 10 USD Ausgabe, 0,10 USD für Eingabe aus dem 
 **Pro Monat:** News bei 15 Artikeln pro Tag ca. 18 USD (vorher 13,50), bei 25 pro Tag ca. 30 USD (vorher 22,50). Guides höchstens ca. 16 USD (vorher 13). Englisch kostet also rund ein Drittel mehr, deutlich weniger als ein zweiter Aufruf (der würde die Quellen ein zweites Mal als Eingabe bezahlen). Das Limit in der Anthropic-Konsole gilt weiter für alles.
 
 Technik: Der News-Bot wartet jetzt bis zu 4 Minuten auf eine Antwort (vorher 2), der Radar bis zu 5 Minuten, `max_tokens` für Guides ist von 16.000 auf 20.000 gestiegen.
+
+---
+
+## Dauerbetrieb (Nachtrag 18.11.2026)
+
+Die Werte weiter oben (alle 20 Minuten, 3 Artikel pro Lauf, 25 pro Tag, 29 Quellen) gelten nicht mehr. Neu:
+
+### Was sich geändert hat
+
+* **Alle 15 Minuten** statt alle 20 (Minute 4, 19, 34 und 49 jeder Stunde, absichtlich nicht zur vollen Stunde, weil GitHub dann am häufigsten Läufe verschiebt oder streicht).
+* **Mehr Volumen, gleiche Regeln:** bis zu **5 Artikel pro Lauf** (vorher 3) und **40 pro Tag** (vorher 25). Gelbe Entwürfe bleiben bei höchstens 2 pro Lauf und 12 pro Tag. Die Ampel ist nicht lockerer geworden: Grün heißt weiter offizielle Quelle oder 2 unabhängige große Medien.
+* **38 Quellen** statt 29: neu GameSpot, Polygon, The Verge, GamePro, IGN Deutschland (große Medien), GamingBolt, Pure Xbox, PC Games Hardware. Die Google-News-Suchen sind aufgeteilt (eine Suche liefert höchstens 100 Treffer, zur Release-Woche fehlten sonst frische Meldungen) und finden jetzt auch "Grand Theft Auto". Große Nachrichtenmedien wie BBC, Guardian, AP, ESPN, Tagesschau, Spiegel oder FAZ zählen als großes Medium.
+* **Gemeinsame Redaktionen zählen einmal:** GameStar und GamePro (bzw. PC Games und PC Games Hardware) teilen sich oft Artikel. Für die Ampel sind sie jetzt **ein** Medium (`newsrooms` in `news-bot/sources.json`). Das macht Grün etwas strenger, nicht lockerer.
+* **Mehr Grün durch bessere Zuordnung:** Der Vorfilter (Claude Haiku) sieht neue Meldungen jetzt zusammen mit den noch offenen Storys der letzten Stunden. Eine deutsche Meldung findet so zur englischen Story von vorhin, und zwei große Medien in zwei Sprachen machen die Story grün.
+* **Echte Fakten statt nur Schlagzeilen:** Vor dem Schreiben lädt der Bot den Text von bis zu 2 Originalartikeln (offizielle Quellen und große Medien zuerst, nie Reddit oder Google-Links). Claude nutzt ihn nur als Faktenquelle, der Kopierschutz prüft ihn mit. Reine Namens- und Plattform-Folgen ("for PlayStation 5 and Xbox Series X|S") gelten dabei nicht als Kopie.
+* **Weniger Doppelte:** Der Bot kennt jetzt die letzten 40 eigenen Titel (vorher 15) und zusätzlich alle **von Hand geschriebenen News** der letzten 3 Tage aus `src/content/news/`.
+* **Alte Meldungen:** Google News datiert manchmal alte Rockstar-Seiten neu (Beispiel am 18.11.: "Los Santos Tuners erscheint am 20. Juli" von 2021). Vorfilter und Schreiber sortieren solche Beiträge aus.
+* **Release-Datum im Prompt:** Claude leitet aus dem aktuellen Datum ab, ob GTA 6 schon erschienen ist (vorher stand fest "erscheint am 19. November").
+* **Deploy nur bei Neuem:** Nach einem Bot-Lauf baut und lädt der Workflow "Deploy" die Seite nur hoch, wenn in den letzten 40 Minuten etwas an der Seite committet wurde. Sonst wären es fast 100 Builds am Tag ohne Änderung. Auch nach einem Bot-Lauf mit Fehler wird deployt, falls grüne News schon im Repo sind.
+* **Reddit aus:** Reddit sperrt RSS-Abrufe von GitHub-Servern (HTTP 404/429). Gerüchte-Quellen werden ohnehin nie geschrieben. GameStar sperrt GitHub ebenfalls (HTTP 403), seine Meldungen kommen aber über Google News trotzdem an.
+
+### Einstellungen (GitHub → Settings → Secrets and variables → Actions → Reiter Variables)
+
+| Variable | Standard | Bedeutung |
+|---|---|---|
+| `WRITER_MODEL` | `claude-sonnet-5-5` | Modell für Artikel und Guides. Beste Qualität für mehr Geld: `claude-opus-5-5` (ca. doppelte Kosten) |
+| `FILTER_MODEL` | `claude-haiku-5-5` | Modell für den Vorfilter |
+| `WRITER_EFFORT` | `medium` | Wie gründlich Claude nachdenkt. `high` = gründlicher, ca. 1 bis 2 Cent mehr pro Artikel |
+| `MAX_ARTICLES` | 5 | Artikel pro Lauf |
+| `DAILY_CAP` | 40 | Artikel pro Tag (grün und gelb zusammen) |
+| `DAILY_DRAFT_CAP` | 12 | Gelbe Entwürfe pro Tag |
+| `ARTICLE_TEXT_PAGES` | 2 | Originalartikel pro Story nachladen (0 = aus) |
+
+### Kosten (Preise laut Anthropic, Stand November 2026)
+
+Claude Sonnet 5.5: 2 USD Eingabe, 10 USD Ausgabe pro 1 Million Tokens. Claude Haiku 5.5: 0,10 / 0,50 USD.
+
+* **Pro Artikel (DE + EN):** Eingabe ca. 5.500 Tokens (Anleitung, Quellen, 2 Artikeltexte) = ca. 0,01 USD, Ausgabe ca. 2.300 bis 3.800 Tokens (zwei Texte, Felder, Nachdenken) = 0,023 bis 0,038 USD. Zusammen **ca. 0,035 bis 0,05 USD**. Übersprungene Storys kosten ca. 0,02 USD.
+* **Vorfilter:** ca. 0,001 bis 0,003 USD pro Lauf mit neuen Meldungen, höchstens ca. 0,15 USD am Tag.
+* **Pro Tag:** ruhiger Tag (ca. 10 grüne, 8 gelbe) **ca. 1 USD**. Volle Grenze (40 Artikel, z. B. Release-Tag) **ca. 2,20 USD**. Dazu Guide-Radar höchstens 0,55 USD.
+* **Pro Monat:** realistisch **30 bis 40 USD**, Obergrenze bei voller Auslastung jeden Tag ca. 80 USD. In der Anthropic-Konsole ein Monatslimit setzen (Vorschlag: 60 USD), dann kann nichts ausufern.
+* GitHub Actions bleibt kostenlos (öffentliches Repo).
+
+### Wenn GitHub Läufe auslässt
+
+Geplante Läufe sind bei GitHub "best effort". Am 17./18.11. hat GitHub in den ersten 9 Stunden nach dem Anlegen des Repos nur 4 geplante Läufe gestartet (alle Bots zusammen). Prüfen: GitHub → Actions → News-Bot. Laufen dort über Stunden keine Läufe mit "schedule", hilft:
+1. Workflow-Datei einmal neu committen (registriert den Zeitplan neu).
+2. Externer Wecker: kostenloser Dienst wie cron-job.org ruft alle 15 Minuten `POST https://api.github.com/repos/n0w8/palmbandits/actions/workflows/news-bot.yml/dispatches` mit `{"ref":"main"}` auf. Braucht ein Fine-grained Token nur für dieses Repo mit dem Recht **Actions: Read and write**.
+3. Erst wenn das alles nicht reicht: kleiner VPS (siehe unten).
+
+### Braucht es einen VPS?
+
+Nein, solange GitHub Actions die Läufe zuverlässig startet. Ein VPS (oder ein Raspberry Pi zu Hause) lohnt sich erst, wenn
+* GitHub dauerhaft viele geplante Läufe auslässt und der externe Wecker nicht reicht,
+* News im Minutentakt statt alle 15 Minuten kommen sollen,
+* Quellen GitHub-Server sperren, die man unbedingt braucht (heute: Reddit, GameStar),
+* oder das Repo privat werden soll (dann wären die Actions-Minuten zu knapp, siehe Abschnitt 3).

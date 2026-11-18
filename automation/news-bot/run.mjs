@@ -7,10 +7,11 @@ import {
 import { fetchAll } from './fetch.mjs';
 import { ampel, clusterIntoStories, isFresh, isRelevant, mergeStories, priority, tokenize } from './analyze.mjs';
 import {
-  countToday, isSeen, loadLog, loadState, markSeen, normTitleKey, pruneState, recentTitles, saveLog, saveState, slimItem,
+  countToday, isSeen, knownTitles, loadLog, loadState, markSeen, normTitleKey, pruneState, saveLog, saveState, siteNewsTitles, slimItem,
 } from './state.mjs';
 import { describeError, isRetryable, prefilter, writeArticle, WRITER_MODEL, FILTER_MODEL } from './writer.mjs';
-import { copiedPassagesPair, normalizeArticlePair, writeArticleFiles } from './output.mjs';
+import { NEWS_DIR, copiedPassagesPair, normalizeArticlePair, writeArticleFiles } from './output.mjs';
+import { addArticleTexts } from './article-text.mjs';
 import { discord } from './notify.mjs';
 
 loadDotEnv();
@@ -18,18 +19,22 @@ loadDotEnv();
 const HAS_KEY = Boolean(env('ANTHROPIC_API_KEY') || env('ANTHROPIC_AUTH_TOKEN'));
 const DRY = hasFlag('dry-run') || !HAS_KEY;
 const VERBOSE = hasFlag('verbose');
-const MAX_ARTICLES = envInt('MAX_ARTICLES', 3); // pro Lauf, gruen + gelb
-const DAILY_CAP = envInt('DAILY_CAP', 25); // pro Tag, gruen + gelb
+const MAX_ARTICLES = envInt('MAX_ARTICLES', 5); // pro Lauf, gruen + gelb
+const DAILY_CAP = envInt('DAILY_CAP', 40); // pro Tag, gruen + gelb
 const MAX_DRAFTS_PER_RUN = envInt('MAX_DRAFTS_PER_RUN', 2); // gelbe Entwuerfe pro Lauf
 const DAILY_DRAFT_CAP = envInt('DAILY_DRAFT_CAP', 12); // gelbe Entwuerfe pro Tag (jeder muss geprueft werden)
 const MAX_AGE_HOURS = envInt('MAX_AGE_HOURS', 48); // Meldungen fuer die Story-Bildung
 const FRESH_HOURS = envInt('FRESH_HOURS', 12); // nur Storys mit Meldung juenger als das werden geschrieben
 const YELLOW_HOLD_MIN = envInt('YELLOW_HOLD_MINUTES', 40); // gelb wartet so lange auf eine zweite Quelle
 const USE_PREFILTER = env('USE_PREFILTER', 'true') !== 'false';
+const ARTICLE_TEXT_PAGES = envInt('ARTICLE_TEXT_PAGES', 2); // Originalartikel pro Story nachladen (0 = aus)
+const RECENT_TITLES = envInt('RECENT_TITLES', 40); // so viele zuletzt geschriebene Titel kennt der Bot (gegen Doppelte)
 
 // Preise laut Anthropic (USD pro 1 Mio. Tokens), nur fuer die Kostenanzeige im Log
 const PRICES = {
+  'claude-opus-5-5': { in: 4, out: 20, cacheRead: 0.2, cacheWrite: 5 },
   'claude-sonnet-5-5': { in: 2, out: 10, cacheRead: 0.1, cacheWrite: 2.5 },
+  'claude-sonnet-5': { in: 2, out: 10, cacheRead: 0.2, cacheWrite: 2.5 },
   'claude-haiku-5-5': { in: 0.1, out: 0.5, cacheRead: 0.01, cacheWrite: 0.125 },
 };
 let costUsd = 0;
@@ -51,6 +56,7 @@ async function main() {
   const nowIso = new Date(now).toISOString();
   console.log(`${BRAND} News-Bot ${DRY ? '(PROBELAUF, schreibt nichts)' : ''} ${berlinDate(new Date(now))}`);
   if (!HAS_KEY && !hasFlag('dry-run')) console.log('Kein ANTHROPIC_API_KEY gesetzt: automatischer Probelauf.');
+  console.log(`Einstellungen: Schreiber ${WRITER_MODEL}, Vorfilter ${FILTER_MODEL}, max. ${MAX_ARTICLES} Artikel pro Lauf, ${DAILY_CAP} pro Tag (davon max. ${DAILY_DRAFT_CAP} Entwuerfe), Artikeltext von ${ARTICLE_TEXT_PAGES} Quellen`);
 
   // 1. Feeds holen
   const config = readJson(path.join(AUTOMATION_DIR, 'news-bot', 'sources.json'));
@@ -96,16 +102,20 @@ async function main() {
   console.log(`Neu: ${newItems.length} Meldungen -> ${created.length} neue Storys, ${attached.length} Folgemeldungen zu bekannten Storys`);
 
   const log = loadLog();
-  const recent = recentTitles(log);
+  // Bekannte Titel gegen Doppelte: Bot-Protokoll plus von Hand geschriebene News der letzten 3 Tage
+  const recent = knownTitles(log, siteNewsTitles(NEWS_DIR, new Date(now), 3), RECENT_TITLES);
   const isOpen = (s) => s.status === 'pending' && now - newestMs(s) <= FRESH_HOURS * 3_600_000;
 
   // 4. Vorfilter mit Haiku (nur Echtbetrieb): gleiche Storys zusammenlegen, Nicht-News raus
   if (!DRY && USE_PREFILTER) {
-    // Nur noch nicht gepruefte Storys schicken (spart Kosten); Folgemeldungen haengt schon das Clustering an
+    // Nur noch nicht gepruefte Storys bewerten lassen (spart Kosten). Schon gepruefte offene Storys gehen als
+    // Kontext mit, damit Haiku z. B. eine deutsche Meldung der englischen Story von vorhin zuordnet (mehr Gruen).
     const open = state.stories.filter((s) => isOpen(s) && !s.checked).sort((a, b) => newestMs(b) - newestMs(a)).slice(0, 80);
+    const known = state.stories.filter((s) => isOpen(s) && s.checked).sort((a, b) => newestMs(b) - newestMs(a)).slice(0, 60);
+    const openIds = new Set(open.map((s) => s.id));
     if (open.length) {
       try {
-        const pf = await prefilter(open, recent);
+        const pf = await prefilter(open, recent, known);
         if (pf) {
           addCost(FILTER_MODEL, pf.usage);
           const before = state.stories.length;
@@ -113,7 +123,7 @@ async function main() {
           for (const s of open) s.checked = true;
           let out = 0;
           for (const s of state.stories) {
-            const r = pf.map.get(s.id);
+            const r = openIds.has(s.id) ? pf.map.get(s.id) : undefined; // nur neue Storys bewerten
             if (!r || s.status !== 'pending') continue;
             if (!r.relevant || r.duplicate_of) {
               s.status = 'skipped';
@@ -122,7 +132,7 @@ async function main() {
               if (VERBOSE) console.log(`  Vorfilter raus: ${headTitle(s)} (${s.reason})`);
             }
           }
-          console.log(`Vorfilter (Haiku): ${open.length} Storys geprueft, ${before - state.stories.length} zusammengelegt, ${out} aussortiert`);
+          console.log(`Vorfilter (Haiku): ${open.length} neue Storys geprueft (${known.length} bekannte als Kontext), ${before - state.stories.length} zusammengelegt, ${out} aussortiert`);
         }
       } catch (err) {
         console.warn(`Vorfilter uebersprungen: ${describeError(err)}`);
@@ -131,12 +141,13 @@ async function main() {
   }
 
   // 5. Ampel
+  const newsrooms = config.newsrooms; // Seiten mit gemeinsamer Redaktion zaehlen als ein Medium
   const candidates = [];
   const table = [];
   const createdIds = new Set(created.map((s) => s.id));
   const attachedIds = new Set(attached.map((a) => a.story.id));
   for (const story of state.stories) {
-    const verdict = ampel(story);
+    const verdict = ampel(story, newsrooms);
     story.verdict = verdict.color;
     if (story.status === 'pending') story.reason = verdict.reason;
     const ageMin = (now - new Date(story.firstSeen).getTime()) / 60000;
@@ -192,7 +203,14 @@ async function main() {
   console.log(`\nHeute schon ${todayAll}/${DAILY_CAP} Artikel (davon ${todayDrafts}/${DAILY_DRAFT_CAP} Entwuerfe). Dieser Lauf: ${picked.length} von max. ${capacity}`);
 
   if (DRY) {
-    for (const c of picked) console.log(`  wuerde schreiben: [${COLOR_DE[c.verdict.color]}] ${headTitle(c.story)}`);
+    for (const c of picked) {
+      console.log(`  wuerde schreiben: [${COLOR_DE[c.verdict.color]}] ${headTitle(c.story)}`);
+      // --texts: zusaetzlich pruefen, ob der Originaltext der Quellen geladen werden kann (ohne KI)
+      if (hasFlag('texts')) {
+        await addArticleTexts(c.story, { maxPages: ARTICLE_TEXT_PAGES }).catch(() => 0);
+        for (const i of c.story.items.filter((x) => x.text)) console.log(`      Artikeltext: ${i.outlet}, ${i.text.length} Zeichen`);
+      }
+    }
     summary(`### News-Bot Probelauf\n\n${table.length} Storys, gruen ${counts.green}, gelb ${counts.yellow}, rot ${counts.red}. Nichts geschrieben.`);
     setOutput('published', 0);
     setOutput('drafts', 0);
@@ -206,6 +224,9 @@ async function main() {
   let fatal = null;
   for (const { story, verdict } of picked) {
     try {
+      // Originaltext von bis zu 2 starken Quellen nachladen (mehr Fakten, weniger Raten); Fehler sind egal
+      const texts = await addArticleTexts(story, { maxPages: ARTICLE_TEXT_PAGES }).catch(() => 0);
+      if (VERBOSE) console.log(`  Artikeltext nachgeladen: ${texts} Quelle(n) fuer "${headTitle(story)}"`);
       const res = await writeArticle(story, verdict, recent, new Date(now));
       addCost(res.model ?? WRITER_MODEL, res.usage);
       if (!res.ok) {

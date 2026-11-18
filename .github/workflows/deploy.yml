@@ -1,6 +1,9 @@
 # Website bauen und per FTPS auf den easyname-Webspace laden (Ordner /palmbandits/, Domain palmbandits.com).
 # Laeuft bei Aenderungen an der Seite, nach jedem Lauf von News-Bot und Guide-Radar (deren Commits loesen
 # keinen push-Trigger aus) und einmal taeglich (News-Sitemap, Countdown). Laedt nur geaenderte Dateien hoch.
+# Nach Bot-Laeufen wird nur gebaut, wenn in den letzten 40 Minuten jemand etwas an der Seite committet hat
+# (der News-Bot laeuft alle 15 Minuten, meist ohne neue News). Das Zeitfenster faengt auch einen Deploy auf,
+# den GitHub wegen der Warteschlange (concurrency) verworfen hat.
 # Braucht: Secret FTP_PASSWORD, Variablen FTP_SERVER und FTP_USERNAME (optional FTP_DIR, FTP_PROTOCOL).
 name: Deploy
 
@@ -26,7 +29,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    # Auch nach einem fehlgeschlagenen Bot-Lauf: gruene News koennen schon committet sein (z. B. wenn nur der
+    # Pull-Request-Schritt scheitert). Ob es wirklich etwas Neues gibt, prueft der Schritt "Neues fuer die Seite?".
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - name: Zugang vorhanden?
         id: check
@@ -43,20 +48,35 @@ jobs:
         if: steps.check.outputs.ok == 'true'
         with:
           ref: main
-          fetch-depth: 1
-      - uses: actions/setup-node@v5
+          fetch-depth: 40
+      - name: Neues fuer die Seite?
+        id: changes
         if: steps.check.outputs.ok == 'true'
+        run: |
+          if [ "${{ github.event_name }}" != "workflow_run" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          RECENT=$(git log -1 --since="40 minutes ago" --format=%h -- src public astro.config.mjs package.json package-lock.json)
+          if [ -n "$RECENT" ]; then
+            echo "Neue Inhalte (Commit $RECENT), Seite wird gebaut und hochgeladen."
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Der Bot-Lauf hat nichts an der Seite geaendert, kein Deploy noetig."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v5
+        if: steps.changes.outputs.go == 'true'
         with:
           node-version: 24
           cache: npm
       - name: Seite bauen
-        if: steps.check.outputs.ok == 'true'
+        if: steps.changes.outputs.go == 'true'
         run: |
           npm ci --no-audit --no-fund
           npm run build
           test -f dist/index.html && test -f dist/.htaccess
       - name: Per FTPS hochladen (nur Aenderungen)
-        if: steps.check.outputs.ok == 'true'
+        if: steps.changes.outputs.go == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ vars.FTP_SERVER }}

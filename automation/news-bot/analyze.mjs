@@ -211,11 +211,21 @@ export function outletKey(domain) {
   return (domain || '').split('.')[0];
 }
 
-export function ampel(story) {
+// Seiten mit gemeinsamer Redaktion (teilen oft dieselben Artikel) zaehlen fuer die Ampel als EIN Medium.
+// Ueberschreibbar ueber "newsrooms" in sources.json.
+export const DEFAULT_NEWSROOMS = { gamepro: 'gamestar', pcgameshardware: 'pcgames' };
+
+export function newsroomKey(domain, newsrooms = DEFAULT_NEWSROOMS) {
+  const key = outletKey(domain);
+  const group = newsrooms?.[key];
+  return typeof group === 'string' && key !== '_hinweis' ? group : key;
+}
+
+export function ampel(story, newsrooms = DEFAULT_NEWSROOMS) {
   const items = story.items;
   const official = items.filter((i) => i.tier === 'official');
   const nonRumor = items.filter((i) => i.tier !== 'rumor');
-  const aOutlets = new Set(items.filter((i) => i.tier === 'A').map((i) => outletKey(i.domain)));
+  const aOutlets = new Set(items.filter((i) => i.tier === 'A').map((i) => newsroomKey(i.domain, newsrooms)));
   const bOutlets = new Set(items.filter((i) => i.tier === 'B').map((i) => outletKey(i.domain)));
   const rumorShare = items.filter((i) => RUMOR_WORDS.test(i.title)).length / items.length;
   const rumorSignal = rumorShare >= 0.5;

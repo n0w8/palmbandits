@@ -141,11 +141,12 @@ async function fetchOne(source, outletTiers) {
     try {
       xml = await fetchText(source.url);
     } catch (err) {
-      // Google News und Reddit drosseln manchmal (429): einmal kurz warten und neu versuchen
-      if (err.status === 429) {
-        await sleep(3000);
-        xml = await fetchText(source.url);
-      } else throw err;
+      // Google News und Reddit drosseln manchmal (429), Server haben kurze Aussetzer (5xx, Netzwerkfehler):
+      // einmal kurz warten und neu versuchen. 4xx ausser 429 (z. B. 404) nicht wiederholen.
+      const transient = err.status === 429 || err.status >= 500 || (!err.status && err.name !== 'TimeoutError');
+      if (!transient) throw err;
+      await sleep(3000);
+      xml = await fetchText(source.url);
     }
     const items = parseFeed(xml, source, outletTiers);
     return { source, ok: true, items, ms: Date.now() - started };

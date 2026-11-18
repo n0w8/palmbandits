@@ -2,8 +2,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { berlinIso, noLongDashes, slugify, toFrontmatter } from '../lib/util.mjs';
-import { ampel, buildIdf, clusterIntoStories, isRelevant, similarity, tokenize } from '../news-bot/analyze.mjs';
+import { mkdtempSync, writeFileSync } from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { ampel, buildIdf, clusterIntoStories, isRelevant, newsroomKey, similarity, tokenize } from '../news-bot/analyze.mjs';
 import { buildMarkdown, copiedPassages, normalizeArticle } from '../news-bot/output.mjs';
+import { knownTitles, siteNewsTitles } from '../news-bot/state.mjs';
+import { addArticleTexts, pickForText } from '../news-bot/article-text.mjs';
 import { selectPins, validatePin, buildPins, orderPins } from '../pinterest/pins.mjs';
 import { loadContent } from '../pinterest/content.mjs';
 import { parseSequence } from '../pinterest/render.mjs';
@@ -98,4 +103,58 @@ test('Konsolen-Tasten werden erkannt', () => {
   const t = parseSequence('R1, R2, L1, X, Links, Unten, Kreis', 'playstation');
   assert.deepEqual(t.map((x) => x.icon ?? x.text), ['R1', 'R2', 'L1', 'kreuz', 'links', 'unten', 'kreis']);
   assert.equal(parseSequence('X, A', 'xbox')[0].text, 'X');
+});
+
+// ---------- Nachtrag 18.11.2026: Dauerbetrieb (Redaktionen, Kopierschutz, bekannte Titel, Artikeltext) ----------
+
+test('Ampel: Seiten mit gemeinsamer Redaktion zaehlen als ein Medium', () => {
+  const s = (domains) => ({ items: domains.map((d, i) => ({ tier: 'A', domain: d, outlet: `S${i}`, title: 'GTA 6 news' })) });
+  assert.equal(newsroomKey('gamepro.de'), 'gamestar');
+  assert.equal(ampel(s(['gamestar.de', 'gamepro.de'])).color, 'yellow');
+  assert.equal(ampel(s(['gamestar.de', 'ign.com'])).color, 'green');
+  assert.equal(ampel(s(['pcgames.de', 'pcgameshardware.de']), { pcgameshardware: 'pcgames' }).color, 'yellow');
+  assert.equal(ampel(s(['gamestar.de', 'gamepro.de']), {}).color, 'green'); // ohne Zuordnung: zwei Medien
+});
+
+test('Kopierschutz: Namen und Plattformen allein sind keine Kopie, Artikeltext wird mitgeprueft', () => {
+  const story = { items: [{ title: 'x', snippet: 'Grand Theft Auto VI launches on November 19 for PlayStation 5 and Xbox Series X|S worldwide' }] };
+  assert.equal(copiedPassages('GTA 6 erscheint. Grand Theft Auto VI launches on November 19 for PlayStation 5 and Xbox Series X|S.', story).length, 0);
+  const withText = { items: [{ title: 'x', snippet: '', text: 'The studio said the patch fixes crashes in the opening mission and improves streaming of textures.' }] };
+  assert.ok(copiedPassages('Laut IGN: the patch fixes crashes in the opening mission and improves streaming.', withText).length > 0);
+});
+
+test('Bekannte Titel: von Hand geschriebene News der letzten Tage plus Protokoll, ohne Doppelte', () => {
+  const dir = mkdtempSync(path.join(os.tmpdir(), 'pb-news-'));
+  writeFileSync(path.join(dir, '2026-11-17-hand.md'), '---\ntitle: "GTA 6 Release: Uhrzeit und Preload"\npubDate: 2026-11-17T02:30:00+01:00\n---\nText');
+  writeFileSync(path.join(dir, '2026-11-17-bot.md'), '---\ntitle: "Bot-News"\nbot: true\n---\nText');
+  writeFileSync(path.join(dir, '2026-11-01-alt.md'), '---\ntitle: "Alte News"\n---\nText');
+  const site = siteNewsTitles(dir, new Date('2026-11-18T10:00:00Z'), 3);
+  assert.deepEqual(site, ['GTA 6 Release: Uhrzeit und Preload']);
+  const log = { entries: Array.from({ length: 50 }, (_, i) => ({ title: `Titel ${i}` })).concat([{ title: 'gta 6 release: uhrzeit und preload' }]) };
+  const known = knownTitles(log, site, 40);
+  assert.equal(known[0], 'GTA 6 Release: Uhrzeit und Preload');
+  assert.equal(known.length, 40); // 1 Hand-Titel + 39 aus dem Protokoll (der doppelte faellt weg)
+  assert.ok(!known.includes('Titel 0'));
+});
+
+test('Artikeltext: nur starke Quellen mit Direktlink, je Medium einer, Fehler werden ignoriert', async () => {
+  const items = [
+    { tier: 'rumor', domain: 'reddit.com', link: 'https://www.reddit.com/r/GTA6/x', title: 'r' },
+    { tier: 'B', domain: 'dexerto.com', link: 'https://www.dexerto.com/a', title: 'b', published: '2026-11-18T01:00:00Z' },
+    { tier: 'A', domain: 'ign.com', link: 'https://www.ign.com/a', title: 'a1', published: '2026-11-18T01:00:00Z' },
+    { tier: 'A', domain: 'ign.com', link: 'https://www.ign.com/b', title: 'a2', published: '2026-11-18T02:00:00Z' },
+    { tier: 'official', domain: 'rockstargames.com', link: 'https://news.google.com/rss/articles/x', title: 'o', aggregator: true },
+    { tier: 'A', domain: 'eurogamer.net', link: 'https://www.eurogamer.net/a', title: 'e', published: '2026-11-18T00:00:00Z' },
+  ];
+  assert.deepEqual(pickForText(items, 2).map((i) => i.link), ['https://www.ign.com/b', 'https://www.eurogamer.net/a']);
+  const para = 'Rockstar hat heute den zweiten Patch fuer GTA 6 veroeffentlicht. '.repeat(8);
+  const html = `<html><body><nav>Menue</nav><article><p>${para}</p><p>Der Patch behebt Abstuerze in der ersten Mission und verbessert das Laden.</p></article></body></html>`;
+  const fakeFetch = async (url) => (url.includes('eurogamer') ? new Response('nope', { status: 500 }) : new Response(html, { status: 200 }));
+  const story = { items };
+  const n = await addArticleTexts(story, { maxPages: 2, fetchImpl: fakeFetch });
+  assert.equal(n, 1);
+  assert.match(items[3].text, /zweiten Patch/);
+  assert.ok(!/Menue/.test(items[3].text));
+  assert.equal(items[5].text, undefined);
+  assert.equal(await addArticleTexts(story, { maxPages: 0, fetchImpl: fakeFetch }), 0);
 });

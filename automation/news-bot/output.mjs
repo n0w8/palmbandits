@@ -39,14 +39,29 @@ function fixBody(body) {
     .trim() + '\n';
 }
 
+// Woerter, die in jeder GTA-Meldung vorkommen (Spielnamen, Plattformen, Termin, Fuellwoerter).
+// Eine Wortfolge nur aus solchen Woertern ("for PlayStation 5 and Xbox Series X|S") ist keine Kopie.
+const COMMON_WORDS = new Set(`
+a an the and or of to in on at for from by with as is are be will its it this that
+der die das den dem des ein eine und oder von vom zu zum zur im in am an auf aus bei fuer mit ist sind wird werden
+grand theft auto gta vi 6 v 5 iv 4 online rockstar games game take two interactive
+playstation ps5 ps4 pro xbox series x s one pc steam
+november 19 2026 2027 vice city leonida lucia jason caminos duval
+`.split(/\s+/).filter(Boolean));
+
 // Prueft, ob 8 oder mehr Woerter am Stueck aus einer Quelle stammen (Kopierschutz).
+// Geprueft werden Titel, Auszug und (falls nachgeladen) der Artikeltext jeder Quelle.
 export function copiedPassages(body, story, n = 8) {
   const norm = (s) => deUmlaut(s).toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean);
   const grams = new Set();
   for (const i of story.items) {
-    for (const src of [i.title, i.snippet]) {
+    for (const src of [i.title, i.snippet, i.text]) {
       const w = norm(src ?? '');
-      for (let k = 0; k + n <= w.length; k++) grams.add(w.slice(k, k + n).join(' '));
+      for (let k = 0; k + n <= w.length; k++) {
+        const gram = w.slice(k, k + n);
+        if (gram.filter((t) => !COMMON_WORDS.has(t)).length < 3) continue; // nur Namen/Plattformen/Fuellwoerter
+        grams.add(gram.join(' '));
+      }
     }
   }
   const b = norm(body);

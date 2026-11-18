@@ -1,4 +1,5 @@
 // Gedaechtnis des News-Bots: welche Meldungen schon gesehen wurden, welche Storys offen sind, was veroeffentlicht wurde.
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { DATA_DIR, berlinDate, readJson, sha1, writeJson } from '../lib/util.mjs';
 import { tokenize } from './analyze.mjs';
@@ -68,6 +69,38 @@ export function countToday(log, now = new Date()) {
 
 export function recentTitles(log, limit = 15) {
   return log.entries.slice(-limit).map((e) => e.title);
+}
+
+// Titel der von Hand geschriebenen News der letzten Tage (ohne "bot: true"), damit der Bot sie nicht noch
+// einmal schreibt. Bot-Artikel kennt er schon aus seinem Protokoll. Dateinamen beginnen mit dem Datum.
+export function siteNewsTitles(dir, now = new Date(), days = 3) {
+  if (!existsSync(dir)) return [];
+  const cutoff = berlinDate(new Date(now.getTime() - days * DAY));
+  const out = [];
+  for (const f of readdirSync(dir).filter((x) => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(x)).sort()) {
+    if (f.slice(0, 10) < cutoff) continue;
+    try {
+      const head = readFileSync(path.join(dir, f), 'utf8').slice(0, 3000);
+      const fm = head.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+      if (/^bot:\s*true\s*$/m.test(fm)) continue;
+      const m = fm.match(/^title:\s*(.+)$/m);
+      if (m) out.push(m[1].trim().replace(/^["'](.*)["']$/, '$1').replace(/\\"/g, '"'));
+    } catch { /* Datei nicht lesbar: ueberspringen */ }
+  }
+  return out;
+}
+
+// Bekannte Titel fuer Vorfilter und Schreiber: Hand-News der Seite + die letzten `limit` Bot-Titel, ohne Doppelte
+export function knownTitles(log, siteTitles = [], limit = 40) {
+  const seen = new Set();
+  const out = [];
+  for (const t of [...siteTitles, ...log.entries.slice(-limit).map((e) => e.title)]) {
+    const key = String(t ?? '').toLowerCase().trim();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(t);
+  }
+  return out;
 }
 
 // Story-Felder, die gespeichert werden (kompakt halten)

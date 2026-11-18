@@ -1,10 +1,12 @@
-# Palm Bandits News-Bot: alle 20 Minuten Feeds pruefen, gruene News direkt veroeffentlichen,
+# Palm Bandits News-Bot: alle 15 Minuten Feeds pruefen, gruene News direkt veroeffentlichen,
 # gelbe News als Pull Request zur Freigabe in der GitHub-App anlegen.
+# Zeitplan bewusst nicht auf :00/:15/:30/:45: GitHub verschiebt oder streicht geplante Laeufe zur vollen
+# Stunde am haeufigsten (hohe Last). Fallen trotzdem Laeufe aus, siehe automation/README.md (Nachtrag 18.11.2026).
 name: News-Bot
 
 on:
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '4,19,34,49 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -23,7 +25,7 @@ permissions:
 jobs:
   news:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -35,12 +37,16 @@ jobs:
       DISCORD_ROLE_WEEKLY: ${{ vars.DISCORD_ROLE_WEEKLY }}
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
       SITE_URL: ${{ vars.SITE_URL || secrets.SITE_URL || 'https://palmbandits.com' }}
-      MAX_ARTICLES: ${{ vars.MAX_ARTICLES || '3' }}
-      DAILY_CAP: ${{ vars.DAILY_CAP || '25' }}
+      # Modelle: Standard Claude Sonnet 5.5 (schreibt) und Claude Haiku 5.5 (sortiert vor). Aendern ueber Variablen.
+      WRITER_MODEL: ${{ vars.WRITER_MODEL || 'claude-sonnet-5-5' }}
+      FILTER_MODEL: ${{ vars.FILTER_MODEL || 'claude-haiku-5-5' }}
+      MAX_ARTICLES: ${{ vars.MAX_ARTICLES || '5' }}
+      DAILY_CAP: ${{ vars.DAILY_CAP || '40' }}
       DAILY_DRAFT_CAP: ${{ vars.DAILY_DRAFT_CAP || '12' }}
       FRESH_HOURS: ${{ vars.FRESH_HOURS || '12' }}
       YELLOW_HOLD_MINUTES: ${{ vars.YELLOW_HOLD_MINUTES || '40' }}
       WRITER_EFFORT: ${{ vars.WRITER_EFFORT || 'medium' }}
+      ARTICLE_TEXT_PAGES: ${{ vars.ARTICLE_TEXT_PAGES || '2' }}
       GH_TOKEN: ${{ github.token }}
       BASE_BRANCH: ${{ github.ref_name }}
     steps:

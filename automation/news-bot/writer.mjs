@@ -36,16 +36,20 @@ const FilterSchema = z.object({
 
 const FILTER_SYSTEM = `Du sortierst Nachrichten fuer eine deutsche GTA-Fanseite vor. Jede Story besteht aus Schlagzeilen verschiedener Medien (deutsch und englisch gemischt).
 
-1. groups: Fasse Storys zusammen, die dasselbe konkrete Ereignis behandeln (z. B. derselbe Patch, dieselbe Ankuendigung, dasselbe Gerichtsurteil), auch wenn die Sprache verschieden ist. Nicht zusammenfassen, wenn es nur um dasselbe Spiel oder dasselbe Thema allgemein geht.
-2. results: Fuer jede Story: relevant = true, wenn es eine echte Neuigkeit zu GTA 6, GTA Online, GTA 5 oder anderen GTA-Teilen, Rockstar Games oder Take-Two mit GTA-Bezug ist. Nicht relevant: Kaufberatung, Deals, "alles was du wissen musst"-Sammelartikel ohne neue Info, Bestenlisten, Meinungsartikel, Kolumnen, Quiz, Memes, Lifestyle-Geschichten einzelner Fans, reine Fan-Theorien, Artikel in denen GTA nur am Rand vorkommt.
+Du bekommst zwei Listen: "Neue Storys" (zu pruefen) und "Bekannte offene Storys" (schon frueher geprueft, warten noch auf eine zweite Quelle).
+
+1. groups: Fasse Storys zusammen, die dasselbe konkrete Ereignis behandeln (z. B. derselbe Patch, dieselbe Ankuendigung, dasselbe Gerichtsurteil), auch wenn die Sprache verschieden ist. Das gilt auch zwischen einer neuen und einer bekannten Story (z. B. deutsche Meldung zu einer englischen Story von vorhin). Nicht zusammenfassen, wenn es nur um dasselbe Spiel oder dasselbe Thema allgemein geht.
+2. results: Nur fuer jede NEUE Story: relevant = true, wenn es eine echte Neuigkeit zu GTA 6, GTA Online, GTA 5 oder anderen GTA-Teilen, Rockstar Games oder Take-Two mit GTA-Bezug ist. Nicht relevant: Kaufberatung, Deals, "alles was du wissen musst"-Sammelartikel ohne neue Info, Bestenlisten, Meinungsartikel, Kolumnen, Quiz, Memes, Lifestyle-Geschichten einzelner Fans, reine Fan-Theorien, Artikel in denen GTA nur am Rand vorkommt, alte Beitraege, die Google News nur neu datiert hat (z. B. ein GTA-Online-Update, Termin oder Event aus einem frueheren Jahr).
 3. duplicate_of: nur fuellen, wenn eine der bereits veroeffentlichten ${BRAND}-News genau diese Neuigkeit schon behandelt.`;
 
-export async function prefilter(stories, recentTitles) {
-  const payload = stories.map((s) => ({
+// stories: neue, noch nicht gepruefte Storys. known: schon gepruefte, noch offene Storys (nur fuer groups),
+// damit z. B. eine deutsche Meldung mit der englischen Story von vorhin zusammenfindet.
+export async function prefilter(stories, recentTitles, known = []) {
+  const brief = (s) => ({
     id: s.id,
     titel: [...new Set(s.items.map((i) => i.title))].slice(0, 5),
     quellen: [...new Set(s.items.map((i) => i.outlet))].slice(0, 6),
-  }));
+  });
   const res = await getClient().messages.parse({
     model: FILTER_MODEL,
     max_tokens: 16000,
@@ -53,7 +57,11 @@ export async function prefilter(stories, recentTitles) {
     system: FILTER_SYSTEM,
     messages: [{
       role: 'user',
-      content: `Bereits veroeffentlicht (letzte Tage):\n${recentTitles.map((t) => `- ${t}`).join('\n') || '- (noch nichts)'}\n\nStorys:\n${JSON.stringify(payload)}`,
+      content: [
+        `Bereits veroeffentlicht (letzte Tage):\n${recentTitles.map((t) => `- ${t}`).join('\n') || '- (noch nichts)'}`,
+        `Bekannte offene Storys (nur zum Zusammenfassen, keine results):\n${known.length ? JSON.stringify(known.map(brief)) : '[]'}`,
+        `Neue Storys:\n${JSON.stringify(stories.map(brief))}`,
+      ].join('\n\n'),
     }],
   });
   if (res.stop_reason === 'refusal' || !res.parsed_output) return null;
@@ -90,11 +98,11 @@ export const ArticleSchema = z.object({
 
 const WRITER_SYSTEM = `Du bist der Newsdesk von ${BRAND}, einer deutsch-englischen Fan-Community-Seite rund um GTA (GTA 6, GTA Online, GTA 5 und die Klassiker). ${BRAND} ist eine inoffizielle Fanseite und gehoert nicht zu Rockstar Games oder Take-Two.
 
-Deine Aufgabe: Aus den gelieferten Quellen-Meldungen (Titel, kurze Auszuege, Medium, Link) schreibst du eine eigene, kurze News. Die Seite ist zweisprachig: Du lieferst dieselbe News in einem Durchgang auf Deutsch (Feld de) und auf Englisch (Feld en). Die Meldungen anderer Medien sind fuer dich nur ein Hinweis, worueber gerade berichtet wird. Offizielle Quellen (Rockstar, Take-Two, Sony, Microsoft) haben Vorrang.
+Deine Aufgabe: Aus den gelieferten Quellen-Meldungen (Titel, kurze Auszuege, Medium, Link, bei bis zu zwei Meldungen zusaetzlich ein Auszug aus dem Originalartikel im Feld artikeltext) schreibst du eine eigene, kurze News. Die Seite ist zweisprachig: Du lieferst dieselbe News in einem Durchgang auf Deutsch (Feld de) und auf Englisch (Feld en). Die Meldungen anderer Medien sind fuer dich nur ein Hinweis, worueber gerade berichtet wird. Offizielle Quellen (Rockstar, Take-Two, Sony, Microsoft) haben Vorrang.
 
 Harte Regeln:
 1. Nur Fakten, die in den gelieferten Meldungen stehen. Erfinde nichts dazu: keine Zahlen, Termine, Uhrzeiten, Preise, Dateigroessen, Zitate, Namen oder Details. Wenn die Meldungen etwas offen lassen, schreib, dass es offen ist.
-2. Keine fremden Saetze uebernehmen, auch nicht uebersetzt Satz fuer Satz. Formuliere alles neu in eigenen Worten. Woertliche Zitate hoechstens ein paar Woerter, in Anfuehrungszeichen und mit Quelle.
+2. Keine fremden Saetze uebernehmen, auch nicht uebersetzt Satz fuer Satz. Formuliere alles neu in eigenen Worten. Woertliche Zitate hoechstens ein paar Woerter, in Anfuehrungszeichen und mit Quelle. Das gilt besonders fuer artikeltext: Er ist nur deine Faktenquelle. Uebernimm weder seinen Aufbau noch seine Reihenfolge noch seine Formulierungen, und schreib nichts, was nur als Meinung oder Vermutung des Autors darin steht, als Tatsache.
 3. Trenne klar zwischen offiziell Bestaetigtem und dem, was nur Medien berichten oder vermuten. Nenne die Quelle im Text ("laut IGN", "wie Rockstar im Newswire schreibt").
 4. Leaks, Insider-Infos und Geruechte immer als solche kennzeichnen, nie als Tatsache. Ist der Kern der Meldung unbestaetigt, setze rumor auf true.
 5. Kein Clickbait: Der Titel sagt klar, was passiert ist. Keine Fragetitel ohne Antwort, keine Uebertreibungen ("krass", "unglaublich", "der Wahnsinn"), keine Woerter in Grossbuchstaben.
@@ -102,7 +110,7 @@ Harte Regeln:
 7. Sprich die Leser mit "du" an (englisch: "you"). Ton: locker, direkt, nah an der Community, aber sachlich. Keine Emojis.
 8. Keine H1-Ueberschrift im Text, der Titel wird separat angezeigt. Nutze ## und bei Bedarf ###.
 9. Keine Links im Text. Die Quellen werden automatisch unter dem Artikel verlinkt.
-10. Wenn die Meldungen zu duenn sind, nur Deals, Kaufberatung, ein Quiz, ein Meinungsstueck oder keine echte Neuigkeit enthalten, oder wenn die Neuigkeit schon in einer der zuletzt veroeffentlichten ${BRAND}-News steht: skip = true mit kurzem Grund. Die anderen Felder dann knapp fuellen.
+10. Wenn die Meldungen zu duenn sind, nur Deals, Kaufberatung, ein Quiz, ein Meinungsstueck oder keine echte Neuigkeit enthalten, wenn GTA nur am Rand vorkommt, wenn es erkennbar ein alter Beitrag ist (z. B. ein Update, Termin oder Event aus einem frueheren Jahr, das nur neu datiert wurde), oder wenn die Neuigkeit schon in einer der zuletzt veroeffentlichten ${BRAND}-News steht: skip = true mit kurzem Grund. Die anderen Felder dann knapp fuellen.
 
 Aufbau des Textes (body, je Sprache 220 bis 450 Woerter):
 - Einstieg ohne Ueberschrift: 2 bis 3 Saetze mit dem Wichtigsten (wer, was, wann).
@@ -125,22 +133,24 @@ Felder (gemeinsam):
 - rumor: siehe Regel 4.
 
 Felder je Sprache (de und en):
-- title: hoechstens 70 Zeichen, konkret, nennt das Spiel (z. B. "GTA 6").
+- title: hoechstens 70 Zeichen, konkret, nennt das Spiel (z. B. "GTA 6") und den wichtigsten Suchbegriff moeglichst weit vorne. Der Titel muss halten, was der Text liefert.
 - slug: nur a-z, 0-9, Bindestriche, 3 bis 8 Woerter, ohne Datum. Deutscher Slug aus dem deutschen Titel, englischer Slug aus dem englischen Titel.
 - description: 120 bis 160 Zeichen, ein ganzer Satz mit dem Kern der Meldung.
 - tags: 3 bis 6 kurze Schlagwoerter in der jeweiligen Sprache (z. B. "GTA 6", "Release", "PS5").
 - body: der Text nach dem Aufbau oben.
 
-Hintergrund (Stand der Redaktion): GTA 6 (Grand Theft Auto VI) erscheint am 19. November 2026 fuer PS5 und Xbox Series X|S. Schauplatz ist der Bundesstaat Leonida mit Vice City, die Hauptfiguren heissen Lucia Caminos und Jason Duval. Nutze dieses Wissen nur als Einordnung, nicht als Ersatz fuer Quellen.`;
+Hintergrund (Stand der Redaktion): Der Release-Termin von GTA 6 (Grand Theft Auto VI) ist der 19. November 2026, fuer PS5 und Xbox Series X|S. Ob das Spiel schon erschienen ist, ergibt sich aus dem aktuellen Datum in der Anfrage; schreib die Zeitform passend dazu. Schauplatz ist der Bundesstaat Leonida mit Vice City, die Hauptfiguren heissen Lucia Caminos und Jason Duval. Nutze dieses Wissen nur als Einordnung, nicht als Ersatz fuer Quellen.`;
 
 export async function writeArticle(story, verdict, recentTitles, now = new Date()) {
   const rank = { official: 0, A: 1, B: 2, rumor: 3 };
-  const sources = [...story.items].sort((a, b) => rank[a.tier] - rank[b.tier]).slice(0, 10).map((i) => ({
+  // Staerkste Quellen zuerst, innerhalb einer Stufe die mit nachgeladenem Artikeltext (damit sie nicht wegfallen)
+  const sources = [...story.items].sort((a, b) => rank[a.tier] - rank[b.tier] || Number(!!b.text) - Number(!!a.text)).slice(0, 10).map((i) => ({
     medium: i.outlet,
     stufe: i.tier === 'official' ? 'offiziell' : i.tier === 'rumor' ? 'Geruechte-Quelle' : `Medium (${i.tier})`,
     sprache: i.lang,
     titel: i.title,
     auszug: i.snippet || undefined,
+    artikeltext: i.text || undefined, // nur bei bis zu 2 nachgeladenen Artikeln (siehe article-text.mjs)
     veroeffentlicht: i.published,
     link: i.link,
   }));
