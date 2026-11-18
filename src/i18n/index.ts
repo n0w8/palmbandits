@@ -16,11 +16,21 @@ export const CAT_EN: Record<string, string> = {
 };
 export const CAT_DE = Object.fromEntries(Object.entries(CAT_EN).map(([k, v]) => [v, k]));
 
+// Einzelseiten mit eigenem Slug je Sprache: deutscher Pfad -> englischer Pfad (ohne /en).
+// Neue Seite mit anderem englischen Slug? Paar hier eintragen, dann passen Sprachumschalter und hreflang.
+export const PAGE_EN: Record<string, string> = {
+  '/gta-6-zahlen/': '/gta-6-stats/',
+};
+export const PAGE_DE: Record<string, string> = Object.fromEntries(Object.entries(PAGE_EN).map(([k, v]) => [v, k]));
+/** Ersetzt den Pfadteil (vor # oder ?) laut Tabelle, auch ohne abschliessenden Slash. */
+const mapPage = (table: Record<string, string>, p: string) =>
+  p.replace(/^\/[^#?]*/, (m) => table[m] ?? (table[`${m}/`] ? table[`${m}/`].replace(/\/$/, '') : m));
+
 /** Wandelt einen deutschen Pfad in den Pfad der Zielsprache um (ohne Artikel-Slugs). */
 export function href(lang: Lang, dePath: string): string {
   if (lang === 'de') return dePath;
   if (dePath.startsWith('http') || dePath.startsWith('#') || dePath.startsWith('mailto:')) return dePath;
-  let p = dePath;
+  let p = mapPage(PAGE_EN, dePath);
   p = p.replace(/^\/spiele\//, '/games/');
   p = p.replace(/^\/guides\/kategorie\/([^/]+)\//, (_, c) => `/guides/category/${CAT_EN[c] ?? c}/`);
   if (p === '/impressum/' || p === '/datenschutz/') return p; // Rechtstexte gibt es nur auf Deutsch
@@ -30,6 +40,7 @@ export function href(lang: Lang, dePath: string): string {
 /** Englischer Pfad zurueck auf Deutsch (fuer den Sprachumschalter). */
 export function deFromEn(enPath: string): string {
   let p = enPath.replace(/^\/en(?=\/|$)/, '') || '/';
+  p = mapPage(PAGE_DE, p);
   p = p.replace(/^\/games\//, '/spiele/');
   p = p.replace(/^\/guides\/category\/([^/]+)\//, (_, c) => `/guides/kategorie/${CAT_DE[c] ?? c}/`);
   return p;

@@ -15,6 +15,7 @@ const is = (p: string) => (p === h('/') ? path === p : path.startsWith(p));
 const NAV = [
   { href: h('/news/'), label: t.nav.news },
   { href: h('/guides/'), label: t.nav.guides },
+  { href: h('/gta-6-zahlen/'), label: lang === 'en' ? 'Stats' : 'Zahlen' },
   { href: h('/spiele/'), label: t.nav.games, mega: true },
   { href: h('/radio/'), label: t.nav.radio },
   { href: h('/community/'), label: t.nav.community },

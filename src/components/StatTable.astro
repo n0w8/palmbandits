@@ -1,0 +1,80 @@
+---
+// Tabelle für den Zahlen-Hub (src/pages/gta-6-zahlen.astro): Kennzahl, Wert, Status, Stand, Quelle.
+// Auf schmalen Bildschirmen wird jede Zeile zur Karte.
+import { SOURCES, STATUS_LABEL, fmtDay, type Stat } from '../data/gta6-stats';
+import { langFromUrl } from '../i18n';
+
+interface Props { rows: Stat[]; caption: string }
+const { rows, caption } = Astro.props;
+const lang = langFromUrl(Astro.url);
+const H = lang === 'en'
+  ? { k: 'Metric', v: 'Value', s: 'Status', d: 'As of', q: 'Source' }
+  : { k: 'Kennzahl', v: 'Wert', s: 'Status', d: 'Stand', q: 'Quelle' };
+---
+<div class="stt-wrap">
+  <table class="stt">
+    <caption class="sr-only">{caption}</caption>
+    <thead>
+      <tr><th scope="col">{H.k}</th><th scope="col">{H.v}</th><th scope="col">{H.s}</th><th scope="col">{H.d}</th><th scope="col">{H.q}</th></tr>
+    </thead>
+    <tbody>
+      {rows.map((r) => (
+        <tr class={`is-${r.status}`}>
+          <th scope="row">{r.label[lang]}</th>
+          <td class="stt__v">
+            <span>{r.value[lang]}</span>
+            {r.note && <small>{r.note[lang]}</small>}
+          </td>
+          <td class="stt__s"><span class={`stchip stchip--${r.status}`} title={STATUS_LABEL[r.status].hint[lang]}>{STATUS_LABEL[r.status][lang]}</span></td>
+          <td class="stt__d" data-l={H.d}><time datetime={r.asOf}>{fmtDay(lang, r.asOf)}</time></td>
+          <td class="stt__q" data-l={H.q}>
+            {r.src.length === 0 ? '·' : r.src.map((id, i) => (
+              <>{i > 0 && ', '}<a href={SOURCES[id].url} target="_blank" rel="noopener">{SOURCES[id].short}</a></>
+            ))}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .stt-wrap { border: 1px solid var(--line); background: var(--panel); }
+  .stt { width: 100%; border-collapse: collapse; font-size: 0.97rem; }
+  .stt thead th {
+    font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; font-weight: 700;
+    color: var(--muted); text-align: left; padding: 14px 16px; border-bottom: 2px solid var(--line2); white-space: nowrap;
+  }
+  .stt tbody th, .stt td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+  .stt tbody tr:last-child > * { border-bottom: 0; }
+  .stt tbody tr { transition: background 0.2s; }
+  .stt tbody tr:hover { background: rgba(255, 255, 255, 0.025); }
+  .stt tbody th { font-family: var(--f-cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1rem; color: var(--text); width: 24%; }
+  .stt__v { color: #e7e2ef; font-weight: 500; }
+  .stt__v small { display: block; margin-top: 4px; color: var(--muted); font-size: 0.84rem; font-weight: 400; line-height: 1.45; }
+  .is-estimate .stt__v > span { color: #fff1c4; }
+  .is-pending .stt__v > span { color: var(--muted); font-style: italic; }
+  .stt__s, .stt__d { white-space: nowrap; }
+  .stt__d { color: var(--muted); font-size: 0.88rem; font-variant-numeric: tabular-nums; }
+  .stt__q { font-size: 0.86rem; color: var(--dim); max-width: 220px; }
+  .stt__q a { color: var(--teal); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .stt__q a:hover { color: #fff; }
+
+  @media (max-width: 760px) {
+    .stt-wrap { border: 0; background: none; }
+    .stt, .stt tbody, .stt tr, .stt th, .stt td { display: block; width: auto; }
+    .stt thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .stt tbody { display: grid; gap: 10px; }
+    .stt tbody tr { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 14px 16px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--line2); }
+    .stt tbody tr.is-confirmed { border-left-color: var(--teal); }
+    .stt tbody tr.is-estimate { border-left-color: var(--yellow); }
+    .stt tbody tr.is-reported { border-left-color: var(--muted); }
+    .stt tbody tr.is-own { border-left-color: var(--pink); }
+    .stt tbody th, .stt td { padding: 0; border: 0; }
+    .stt tbody th { width: 100%; font-size: 0.82rem; color: var(--muted); letter-spacing: 0.08em; }
+    .stt__v { width: 100%; font-size: 1.02rem; margin-bottom: 4px; }
+    .stt__d, .stt__q { font-size: 0.8rem; max-width: none; }
+    .stt__d::before, .stt__q::before { content: attr(data-l) ': '; color: var(--dim); }
+    .stt__q { white-space: normal; }
+  }
+</style>

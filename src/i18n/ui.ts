@@ -78,6 +78,12 @@ const de = {
     catTitle: (l: string) => `GTA ${l}: alle Guides`, catDesc: (l: string, t: string) => `GTA ${l}: ${t} Alle Guides für GTA 6, GTA Online, GTA 5 und die Klassiker.`,
     catSoonTitle: 'Guides in Arbeit', catSoonText: 'Zu diesem Thema schreiben wir gerade. Trag dich in den Newsletter ein oder schau in den Discord.',
   },
+  // Zahlen-Hub /gta-6-zahlen/ (Texte für Links und Teaser auf anderen Seiten; Seitentexte stehen im L-Block der Seite)
+  stats: {
+    nav: 'GTA 6 in Zahlen', kicker: 'Statistik',
+    teaser: 'Verkäufe, Vorbestell-Rekorde, Trailer-Aufrufe, Preise und Release-Uhrzeit: alle Zahlen zu GTA 6 mit Quelle und Stand.',
+    cta: 'Alle Zahlen ansehen',
+  },
 };
 
 type Dict = typeof de;
@@ -158,6 +164,11 @@ const en: Dict = {
     guidesLead: 'Tested, clear, to the point. Every guide is dated so you know what still works.', noGuides: 'No guides for this filter.',
     catTitle: (l: string) => `GTA ${l}: all guides`, catDesc: (l: string, t: string) => `GTA ${l}: ${t} Every guide for GTA 6, GTA Online, GTA 5 and the classics.`,
     catSoonTitle: 'Guides in the works', catSoonText: 'We are writing about this topic right now. Sign up for the newsletter or drop by our Discord.',
+  },
+  stats: {
+    nav: 'GTA 6 by the numbers', kicker: 'Stats',
+    teaser: 'Sales, pre-order records, trailer views, prices and launch times: every GTA 6 number with source and date.',
+    cta: 'See all the numbers',
   },
 };
 

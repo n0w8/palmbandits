@@ -1,0 +1,706 @@
+---
+// Zahlen-Hub "GTA 6 in Zahlen". Deutsch: /gta-6-zahlen/, Englisch: /en/gta-6-stats/ (importiert diese Datei).
+// Alle Zahlen, Quellen und Stand-Daten stehen in src/data/gta6-stats.ts. Hier nur Aufbau und Seitentexte.
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import StatTable from '../components/StatTable.astro';
+import { getImage } from 'astro:assets';
+import ogPhoto from '../assets/pool/23-launch-night.jpg';
+import { SITE, GTA6_RELEASE, discordFor } from '../config';
+import { langFromUrl, useT, href, LOCALE } from '../i18n';
+import {
+  SOURCES, STATUS_LABEL, KPIS, SALES, FORECASTS, COMPARE, SERIES, RELEASE, TRAILERS, VIEWS_AS_OF, DEV, WORLD,
+  REVIEWS, TIMELINE, FAQ, CHANGELOG, NEXT_UP, UPDATED, PUBLISHED, GTA5_RELEASE, GTA6_RELEASE_DAY, fmtDay,
+  type Status, type SrcId, type Stat,
+} from '../data/gta6-stats';
+
+const lang = langFromUrl(Astro.url);
+const t = useT(lang);
+const h = (p: string) => href(lang, p);
+const en = lang === 'en';
+const loc = LOCALE[lang];
+
+// Datum mit Uhrzeit (deutsche Zeit)
+const fmtTime = (iso: string) => {
+  const s = new Intl.DateTimeFormat(loc, { day: en ? 'numeric' : '2-digit', month: en ? 'short' : '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }).format(new Date(iso));
+  return en ? `${s} CET` : `${s} Uhr`;
+};
+const fmtN = (n: number) => new Intl.NumberFormat(loc).format(n);
+const fmtM = (n: number) => `${new Intl.NumberFormat(loc, { maximumFractionDigits: 1 }).format(n / 1e6)} ${en ? 'M' : 'Mio.'}`;
+
+// Abstand GTA V bis GTA VI (berechnet)
+const waitDays = Math.round((Date.parse(GTA6_RELEASE_DAY) - Date.parse(GTA5_RELEASE)) / 864e5);
+const waitRow: Stat = {
+  label: { de: 'Abstand zu GTA V', en: 'Gap since GTA V' },
+  value: { de: `13 Jahre und 2 Monate (${fmtN(waitDays)} Tage)`, en: `13 years and 2 months (${fmtN(waitDays)} days)` },
+  note: { de: 'Von uns berechnet: 17.09.2013 bis 19.11.2026', en: 'Calculated by us: 17 Sep 2013 to 19 Nov 2026' },
+  status: 'own', asOf: '2026-11-18', src: ['gamespot1b', 'tt8k'],
+};
+const devRows = [...DEV, waitRow];
+
+// Trailer-Aufrufe heute (YouTube, eigener Abruf)
+const trailersByViews = [...TRAILERS].sort((a, b) => b.views - a.views);
+const maxViews = trailersByViews[0].views;
+const totalViews = TRAILERS.reduce((s, x) => s + x.views, 0);
+
+// Zeitstrahl: was nach dem Build liegt, ist "demnächst"
+const buildDay = new Date().toISOString().slice(0, 10);
+
+// Quellen: neueste zuerst
+const sourceList = (Object.entries(SOURCES) as [SrcId, (typeof SOURCES)[SrcId]][])
+  .sort((a, b) => b[1].date.localeCompare(a[1].date));
+
+const STATUSES: Status[] = ['confirmed', 'reported', 'estimate', 'pending', 'own'];
+
+const L = en
+  ? {
+      title: 'GTA 6 Stats: Sales, Pre-Orders, Records & Key Numbers',
+      desc: 'GTA 6 by the numbers, with sources: pre-order records, GTA 5 at nearly 235M sold, 475M trailer views, 212 GB, prices and launch times. Updated continuously.',
+      crumb: 'By the numbers', h1a: 'GTA 6 by the', h1b: 'numbers',
+      lead: 'Sales, pre-orders, trailer records, prices, launch times and everything else you can count. Every number with source and date, estimates clearly labeled.',
+      live: 'Live', updating: 'Updated continuously', asOf: 'As of', cdLabel: 'Countdown to midnight CET', units: ['Days', 'Hrs', 'Min', 'Sec'], cdOut: 'GTA VI is out',
+      legend: 'What the labels mean', jump: 'Jump to',
+      nav: ['Key numbers', 'Sales', 'Forecasts', 'GTA V vs. VI', 'Release & tech', 'Trailers', 'Development', 'World', 'Reviews', 'Timeline', 'FAQ', 'Sources'],
+      kpiK: 'At a glance', kpiH: ['The big', 'numbers'],
+      salesK: 'Sales & pre-orders', salesH: ['How many', 'sold?'],
+      salesLead: 'Short answer: there are no official GTA VI sales figures yet. What is confirmed are the pre-order records on PlayStation and Xbox. Everything with an exact unit count comes from market research and is an estimate.',
+      foreK: 'Forecasts', foreH: ['What analysts', 'expect'],
+      foreLead: 'Forecasts for launch day, week one and the first months. None of these numbers is official, they show the range of expectations.',
+      cmpK: 'Comparison', cmpH: ['GTA V vs.', 'GTA VI'], cmpLead: 'GTA V set records in 2013 that still stand today. This is how the numbers compare so far.',
+      cmpMetric: 'Metric', gap: 'days between GTA V and GTA VI', seriesH: 'Rockstar series to date',
+      relK: 'Release, prices & tech', relH: ['Times, prices', 'and gigabytes'],
+      relLead: 'When it unlocks, what it costs, how much space you need.',
+      trK: 'Trailers & reach', trH: ['Record', 'trailers'],
+      trLead: 'GTA VI broke viewing records long before release. First the records from the first days, then today\'s YouTube count.',
+      trDate: 'Released', trToday: 'YouTube today', barsH: 'YouTube views today', barsTotal: 'Total for these four videos',
+      barsNote: (d: string) => `Own count: views on the Rockstar Games YouTube channel, read on ${d}. Netflix views and re-uploads are not included.`,
+      devK: 'Development, team & budget', devH: ['How long it', 'took'], devLead: 'The budget has never been officially disclosed. Every budget figure is an estimate.',
+      worldK: 'The world', worldH: ['Leonida in', 'numbers'], worldLead: 'Only what Rockstar has said officially. Map sizes in square kilometres you see elsewhere come from leaks or fan measurements.',
+      revK: 'Reviews', revH: ['Metascore', 'watch'], revLead: 'We add the Metascore as soon as Metacritic shows one. For comparison: the best-rated Rockstar games.',
+      tlK: 'Timeline', tlH: ['From reveal to', 'release'], soon: 'Coming', today: 'Today',
+      updK: 'Updated continuously', updH: ['What changed', 'last'], updAsOf: 'Last update', updNext: 'Coming next', updLog: 'Change log',
+      updText: 'We update this page as soon as new official numbers arrive. Found a mistake or a better source? Tell us on Discord.',
+      discord: 'Report on Discord', news: 'All GTA 6 news',
+      faqK: 'FAQ', faqH: ['Quick', 'answers'],
+      srcK: 'Sources', srcH: ['All', 'sources'], srcLead: (n: number) => `${n} sources, newest first. The date is the publication date or, for YouTube and Metacritic, the date we checked.`,
+      disclaimer: 'Unofficial fan project, not affiliated with Rockstar Games or Take-Two Interactive. Estimates from analysts and market research are not official sales figures.',
+      gameLabel: 'GTA 6',
+    }
+  : {
+      title: 'GTA 6 in Zahlen: Verkäufe, Vorbestellungen, Rekorde & Fakten',
+      desc: 'GTA 6 Statistik mit Quellen: Vorbestell-Rekord, GTA 5 mit fast 235 Mio. Verkäufen, 475 Mio. Trailer-Aufrufe, 212 GB, Preise und Release-Uhrzeit. Laufend aktualisiert.',
+      crumb: 'In Zahlen', h1a: 'GTA 6 in', h1b: 'Zahlen',
+      lead: 'Verkäufe, Vorbestellungen, Trailer-Rekorde, Preise, Uhrzeiten und alles, was sich zählen lässt. Jede Zahl mit Quelle und Stand, Schätzungen klar markiert.',
+      live: 'Live', updating: 'Wird laufend aktualisiert', asOf: 'Stand', cdLabel: 'Release in Deutschland in', units: ['Tage', 'Std', 'Min', 'Sek'], cdOut: 'GTA VI ist da',
+      legend: 'Was die Marken bedeuten', jump: 'Springe zu',
+      nav: ['Auf einen Blick', 'Verkäufe', 'Prognosen', 'GTA V vs. VI', 'Release & Technik', 'Trailer', 'Entwicklung', 'Spielwelt', 'Wertungen', 'Zeitstrahl', 'FAQ', 'Quellen'],
+      kpiK: 'Auf einen Blick', kpiH: ['Die großen', 'Zahlen'],
+      salesK: 'Verkäufe & Vorbestellungen', salesH: ['Wie oft', 'verkauft?'],
+      salesLead: 'Kurz gesagt: Offizielle Verkaufszahlen zu GTA VI gibt es noch nicht. Bestätigt sind die Vorbestell-Rekorde bei PlayStation und Xbox. Alles mit genauer Stückzahl stammt von Marktforschern und ist eine Schätzung.',
+      foreK: 'Prognosen', foreH: ['Was Analysten', 'erwarten'],
+      foreLead: 'Vorhersagen für Launch-Tag, erste Woche und die ersten Monate. Keine dieser Zahlen ist offiziell, sie zeigen die Spanne der Erwartungen.',
+      cmpK: 'Vergleich', cmpH: ['GTA V gegen', 'GTA VI'], cmpLead: 'GTA V hat 2013 Rekorde aufgestellt, die bis heute stehen. So sehen die Zahlen im Vergleich bisher aus.',
+      cmpMetric: 'Kennzahl', gap: 'Tage zwischen GTA V und GTA VI', seriesH: 'Rockstar-Reihen bisher',
+      relK: 'Release, Preise & Technik', relH: ['Uhrzeit, Preise', 'und Gigabyte'],
+      relLead: 'Wann es losgeht, was es kostet, wie viel Platz du brauchst.',
+      trK: 'Trailer & Reichweite', trH: ['Rekord-', 'Trailer'],
+      trLead: 'GTA VI hat lange vor dem Release Aufruf-Rekorde gebrochen. Erst die Rekorde aus den ersten Tagen, dann der Stand auf YouTube heute.',
+      trDate: 'Erschienen', trToday: 'YouTube heute', barsH: 'YouTube-Aufrufe heute', barsTotal: 'Zusammen für diese vier Videos',
+      barsNote: (d: string) => `Eigene Messung: Aufrufe auf dem YouTube-Kanal von Rockstar Games, abgelesen am ${d}. Netflix-Aufrufe und Re-Uploads sind nicht enthalten.`,
+      devK: 'Entwicklung, Team & Budget', devH: ['So lange hat', 'es gedauert'], devLead: 'Das Budget ist nie offiziell genannt worden. Jede Budget-Zahl ist eine Schätzung.',
+      worldK: 'Spielwelt', worldH: ['Leonida in', 'Zahlen'], worldLead: 'Nur was Rockstar offiziell gesagt hat. Kartengrößen in Quadratkilometern, die du anderswo liest, stammen aus Leaks oder Fan-Messungen.',
+      revK: 'Wertungen', revH: ['Metascore-', 'Check'], revLead: 'Den Metascore tragen wir ein, sobald Metacritic einen zeigt. Zum Vergleich: die bestbewerteten Rockstar-Spiele.',
+      tlK: 'Zeitstrahl', tlH: ['Von der Ankündigung', 'bis zum Release'], soon: 'Demnächst', today: 'Heute',
+      updK: 'Wird laufend aktualisiert', updH: ['Was zuletzt', 'dazukam'], updAsOf: 'Letztes Update', updNext: 'Als Nächstes', updLog: 'Änderungen',
+      updText: 'Wir aktualisieren diese Seite, sobald neue offizielle Zahlen kommen. Fehler entdeckt oder bessere Quelle? Sag es uns im Discord.',
+      discord: 'Im Discord melden', news: 'Alle GTA 6 News',
+      faqK: 'Häufige Fragen', faqH: ['Kurz', 'beantwortet'],
+      srcK: 'Quellen', srcH: ['Alle', 'Quellen'], srcLead: (n: number) => `${n} Quellen, neueste zuerst. Das Datum ist die Veröffentlichung oder bei YouTube und Metacritic der Tag unseres Abrufs.`,
+      disclaimer: 'Inoffizielles Fan-Projekt, nicht verbunden mit Rockstar Games oder Take-Two Interactive. Schätzungen von Analysten und Marktforschern sind keine offiziellen Verkaufszahlen.',
+      gameLabel: 'GTA 6',
+    };
+
+const IDS = ['blick', 'verkaeufe', 'prognosen', 'vergleich', 'release', 'trailer', 'entwicklung', 'spielwelt', 'wertungen', 'zeitstrahl', 'faq', 'quellen'];
+
+// Vorschaubild 1200x675 (eigenes KI-Foto aus dem Pool, kein Rockstar-Artwork)
+const og = await getImage({ src: ogPhoto, width: 1200, height: 675, format: 'jpg', quality: 82, fit: 'cover' });
+const url = new URL(Astro.url.pathname, Astro.site ?? SITE.url).toString();
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: L.title,
+    description: L.desc,
+    datePublished: new Date(PUBLISHED).toISOString(),
+    dateModified: new Date(UPDATED).toISOString(),
+    inLanguage: loc,
+    mainEntityOfPage: url,
+    image: [new URL(og.src, SITE.url).toString()],
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` } },
+    about: {
+      '@type': 'VideoGame', name: 'Grand Theft Auto VI', datePublished: GTA6_RELEASE_DAY,
+      gamePlatform: ['PlayStation 5', 'Xbox Series X', 'Xbox Series S'], publisher: { '@type': 'Organization', name: 'Rockstar Games' },
+    },
+    citation: Object.values(SOURCES).map((s) => s.url),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.article.home, item: `${SITE.url}${h('/')}` },
+      { '@type': 'ListItem', position: 2, name: L.gameLabel, item: `${SITE.url}${h('/spiele/gta-6/')}` },
+      { '@type': 'ListItem', position: 3, name: L.title, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({ '@type': 'Question', name: f.q[lang], acceptedAnswer: { '@type': 'Answer', text: f.a[lang] } })),
+  },
+];
+---
+<Base title={L.title} description={L.desc} image={og.src} type="article" published={new Date(PUBLISHED)} modified={new Date(UPDATED)} jsonLd={jsonLd}>
+  <section class="page-hero wrap">
+    <span class="page-hero__bg" aria-hidden="true">VI</span>
+    <nav class="crumbs" aria-label={t.nav.crumbs}>
+      <a href={h('/')}>{t.article.home}</a><span aria-hidden="true">/</span>
+      <a href={h('/spiele/gta-6/')}>{L.gameLabel}</a><span aria-hidden="true">/</span><span>{L.crumb}</span>
+    </nav>
+    <p class="hero-k cond intro">
+      <span class="chip chip--live"><span class="dot-live"></span>{L.live}</span>
+      <span>{L.updating}</span>
+      <span class="hero-k__asof">{L.asOf}: <time datetime={UPDATED}>{fmtTime(UPDATED)}</time></span>
+    </p>
+    <h1 class="page-hero__title display intro" style="--d:.06s">{L.h1a} <span class="grad-text">{L.h1b}</span></h1>
+    <p class="page-hero__lead intro" style="--d:.12s">{L.lead}</p>
+
+    <div class="hero-row intro" style="--d:.18s">
+      <a href={h('/spiele/gta-6/')} class="cdm" data-countdown={GTA6_RELEASE}>
+        <span class="cdm__label cond"><span class="dot-live"></span> {L.cdLabel}</span>
+        <span class="cdm__grid">
+          <span><b data-cd="d">--</b><small>{L.units[0]}</small></span>
+          <span><b data-cd="h">--</b><small>{L.units[1]}</small></span>
+          <span><b data-cd="m">--</b><small>{L.units[2]}</small></span>
+          <span><b data-cd="s">--</b><small>{L.units[3]}</small></span>
+        </span>
+        <span class="cdm__live display">{L.cdOut}</span>
+      </a>
+      <div class="legend">
+        <p class="legend__h cond">{L.legend}</p>
+        <ul>
+          {STATUSES.map((s) => (
+            <li><span class={`stchip stchip--${s}`}>{STATUS_LABEL[s][lang]}</span> <span>{STATUS_LABEL[s].hint[lang]}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <nav class="jump wrap" aria-label={L.jump}>
+    <div class="filter-row">
+      {L.nav.map((n, i) => <a class="filter-btn" href={`#${IDS[i]}`}>{n}</a>)}
+    </div>
+  </nav>
+
+  <!-- KACHELN -->
+  <section id="blick" class="section--tight wrap" aria-labelledby="h-blick">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>01</b> / {L.kpiK}</p>
+        <h2 id="h-blick" class="sec-head__title display">{L.kpiH[0]} <span class="grad-text">{L.kpiH[1]}</span></h2>
+      </div>
+    </div>
+    <div class="kpis">
+      {KPIS.map((k, i) => (
+        <article class={`card kpi kpi--${k.status} intro`} style={`--d:${0.04 * i}s`}>
+          <span class={`stchip stchip--${k.status}`} title={STATUS_LABEL[k.status].hint[lang]}>{STATUS_LABEL[k.status][lang]}</span>
+          <p class="kpi__num display"><span class="grad-text">{k.big[lang]}</span>{k.unit && k.unit[lang] && <small>{k.unit[lang]}</small>}</p>
+          <h3 class="kpi__label cond">{k.label[lang]}</h3>
+          {k.note && <p class="kpi__note">{k.note[lang]}</p>}
+          <p class="kpi__meta">
+            <span>{L.asOf} {fmtDay(lang, k.asOf)}</span>
+            <span>{k.src.map((id, j) => <>{j > 0 && ', '}<a href={SOURCES[id].url} target="_blank" rel="noopener">{SOURCES[id].short}</a></>)}</span>
+          </p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- VERKÄUFE -->
+  <section id="verkaeufe" class="section--tight wrap" aria-labelledby="h-verkaeufe">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>02</b> / {L.salesK}</p>
+        <h2 id="h-verkaeufe" class="sec-head__title display">{L.salesH[0]} <span class="grad-text">{L.salesH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="lead-box" data-reveal><Icon name="bolt" size={20} /> <span>{L.salesLead}</span></p>
+    <StatTable rows={SALES} caption={L.salesK} />
+  </section>
+
+  <!-- PROGNOSEN -->
+  <section id="prognosen" class="section--tight wrap" aria-labelledby="h-prognosen">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>03</b> / {L.foreK}</p>
+        <h2 id="h-prognosen" class="sec-head__title display">{L.foreH[0]} <span class="grad-text">{L.foreH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.foreLead}</p>
+    <StatTable rows={FORECASTS} caption={L.foreK} />
+  </section>
+
+  <!-- VERGLEICH -->
+  <section id="vergleich" class="section--tight wrap" aria-labelledby="h-vergleich">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>04</b> / {L.cmpK}</p>
+        <h2 id="h-vergleich" class="sec-head__title display">{L.cmpH[0]} <span class="grad-text">{L.cmpH[1]}</span></h2>
+      </div>
+      <p class="gap"><span class="gap__n display grad-text">{fmtN(waitDays)}</span><span class="gap__t cond">{L.gap}</span></p>
+    </div>
+    <p class="muted sec-lead">{L.cmpLead}</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption class="sr-only">{L.cmpH.join(' ')}</caption>
+        <thead><tr><th scope="col">{L.cmpMetric}</th><th scope="col">GTA V <small>2013</small></th><th scope="col">GTA VI <small>2026</small></th></tr></thead>
+        <tbody>
+          {COMPARE.map((r) => (
+            <tr>
+              <th scope="row">{r.label[lang]}</th>
+              {[r.v, r.vi].map((c, ci) => (
+                <td data-l={ci === 0 ? 'GTA V' : 'GTA VI'} class:list={[`is-${c.status}`, { 'is-vi': ci === 1 }]}>
+                  <span class="cmp__v">{c.value[lang]}</span>
+                  <span class="cmp__m">
+                    <span class={`stchip stchip--${c.status}`}>{STATUS_LABEL[c.status][lang]}</span>
+                    {c.src.map((id) => <a href={SOURCES[id].url} target="_blank" rel="noopener">{SOURCES[id].short}</a>)}
+                  </span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <h3 class="sub-h cond">{L.seriesH}</h3>
+    <div class="series">
+      {SERIES.map((s, i) => (
+        <div class="card series__i" data-reveal style={`--d:${i * 0.05}s`}>
+          <span class="series__v display">{s.value[lang]}</span>
+          <span class="series__l cond">{s.label[lang]}</span>
+          <span class="series__m">{L.asOf} {fmtDay(lang, s.asOf)} · {s.src.map((id) => <a href={SOURCES[id].url} target="_blank" rel="noopener">{SOURCES[id].short}</a>)}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- RELEASE & TECHNIK -->
+  <section id="release" class="section--tight wrap" aria-labelledby="h-release">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>05</b> / {L.relK}</p>
+        <h2 id="h-release" class="sec-head__title display">{L.relH[0]} <span class="grad-text">{L.relH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.relLead}</p>
+    <StatTable rows={RELEASE} caption={L.relK} />
+  </section>
+
+  <!-- TRAILER -->
+  <section id="trailer" class="section--tight wrap" aria-labelledby="h-trailer">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>06</b> / {L.trK}</p>
+        <h2 id="h-trailer" class="sec-head__title display">{L.trH[0]}<span class="grad-text">{L.trH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.trLead}</p>
+    <div class="trailers">
+      {TRAILERS.map((tr, i) => (
+        <article class="card trc" data-reveal style={`--d:${i * 0.05}s`}>
+          <p class="trc__date cond">{L.trDate} {fmtDay(lang, tr.date)}</p>
+          <h3 class="trc__name display">{tr.name[lang]}</h3>
+          <p class="trc__k cond">{tr.first.label[lang]}</p>
+          <p class="trc__v">{tr.first.value[lang]}</p>
+          {tr.first.note && <p class="trc__n">{tr.first.note[lang]}</p>}
+          <p class="trc__meta">
+            <span class={`stchip stchip--${tr.first.status}`}>{STATUS_LABEL[tr.first.status][lang]}</span>
+            {tr.first.src.map((id) => <a href={SOURCES[id].url} target="_blank" rel="noopener">{SOURCES[id].short}</a>)}
+          </p>
+          <a class="trc__yt" href={SOURCES[tr.yt].url} target="_blank" rel="noopener">
+            <Icon name="play" size={14} /> {L.trToday}: <b>{fmtM(tr.views)}</b>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <figure class="card bars" data-reveal>
+      <figcaption class="bars__h">
+        <span class="cond">{L.barsH}</span>
+        <span class={`stchip stchip--own`}>{STATUS_LABEL.own[lang]}</span>
+      </figcaption>
+      <ol class="bars__list">
+        {trailersByViews.map((tr) => (
+          <li title={`${tr.name[lang]}: ${fmtN(tr.views)}`}>
+            <span class="bars__name">{tr.name[lang]}</span>
+            <span class="bars__track" aria-hidden="true"><span class="bars__fill" style={`--w:${((tr.views / maxViews) * 100).toFixed(1)}%`}></span></span>
+            <span class="bars__val">{fmtN(tr.views)}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="bars__total"><span class="cond">{L.barsTotal}</span> <b class="display">{fmtM(totalViews)}</b></p>
+      <p class="bars__note">{L.barsNote(fmtTime(VIEWS_AS_OF))}</p>
+    </figure>
+  </section>
+
+  <!-- ENTWICKLUNG -->
+  <section id="entwicklung" class="section--tight wrap" aria-labelledby="h-entwicklung">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>07</b> / {L.devK}</p>
+        <h2 id="h-entwicklung" class="sec-head__title display">{L.devH[0]} <span class="grad-text">{L.devH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.devLead}</p>
+    <StatTable rows={devRows} caption={L.devK} />
+  </section>
+
+  <!-- SPIELWELT -->
+  <section id="spielwelt" class="section--tight wrap" aria-labelledby="h-spielwelt">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>08</b> / {L.worldK}</p>
+        <h2 id="h-spielwelt" class="sec-head__title display">{L.worldH[0]} <span class="grad-text">{L.worldH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.worldLead}</p>
+    <StatTable rows={WORLD} caption={L.worldK} />
+  </section>
+
+  <!-- WERTUNGEN -->
+  <section id="wertungen" class="section--tight wrap" aria-labelledby="h-wertungen">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>09</b> / {L.revK}</p>
+        <h2 id="h-wertungen" class="sec-head__title display">{L.revH[0]}<span class="grad-text">{L.revH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.revLead}</p>
+    <StatTable rows={REVIEWS} caption={L.revK} />
+  </section>
+
+  <!-- ZEITSTRAHL -->
+  <section id="zeitstrahl" class="section--tight wrap" aria-labelledby="h-zeitstrahl">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>10</b> / {L.tlK}</p>
+        <h2 id="h-zeitstrahl" class="sec-head__title display">{L.tlH[0]} <span class="grad-text">{L.tlH[1]}</span></h2>
+      </div>
+    </div>
+    <ol class="tl">
+      {TIMELINE.map((m, i) => {
+        const future = m.date > buildDay;
+        const isToday = m.date === buildDay;
+        return (
+          <li class:list={[`tl--${m.kind}`, { 'is-next': future, 'is-today': isToday }]} data-date={m.date} data-reveal style={`--d:${(i % 4) * 0.04}s`}>
+            <time class="tl__d cond" datetime={m.date}>{fmtDay(lang, m.date)}</time>
+            <span class="tl__dot" aria-hidden="true"></span>
+            <div class="tl__b">
+              <p class="tl__t">{m.title[lang]} <span class="chip chip--rumor tl__soon">{L.soon}</span><span class="chip chip--live tl__today">{L.today}</span></p>
+              <p class="tl__x">{m.text[lang]}</p>
+              <p class="tl__s">{m.src.map((id, j) => <>{j > 0 && ', '}<a href={SOURCES[id].url} target="_blank" rel="noopener">{SOURCES[id].short}</a></>)}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+
+  <!-- WIRD LAUFEND AKTUALISIERT -->
+  <section id="updates" class="section--tight wrap" aria-labelledby="h-updates">
+    <div class="upd card">
+      <div class="upd__main">
+        <p class="sec-head__kicker cond"><span class="chip chip--live"><span class="dot-live"></span>{L.live}</span> {L.updK}</p>
+        <h2 id="h-updates" class="upd__h display">{L.updH[0]} <span class="grad-text">{L.updH[1]}</span></h2>
+        <p class="upd__asof cond">{L.updAsOf}: <time datetime={UPDATED}>{fmtTime(UPDATED)}</time></p>
+        <p class="muted">{L.updText}</p>
+        <div class="upd__cta">
+          <a class="btn btn--discord" {...discordFor(lang)}><Icon name="discord" /> {L.discord}</a>
+          <a class="btn btn--ghost" href={h('/news/')}><Icon name="news" /> {L.news}</a>
+        </div>
+      </div>
+      <div class="upd__side">
+        <p class="upd__k cond">{L.updNext}</p>
+        <ul class="upd__next">{NEXT_UP.map((n) => <li><Icon name="clock" size={16} /> <span>{n[lang]}</span></li>)}</ul>
+        <p class="upd__k cond">{L.updLog}</p>
+        <ul class="upd__log">{CHANGELOG.map((c) => <li><time datetime={c.at}>{fmtTime(c.at)}</time> <span>{c.text[lang]}</span></li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section--tight wrap" aria-labelledby="h-faq">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>11</b> / {L.faqK}</p>
+        <h2 id="h-faq" class="sec-head__title display">{L.faqH[0]} <span class="grad-text">{L.faqH[1]}</span></h2>
+      </div>
+    </div>
+    <div class="faq">
+      {FAQ.map((f, i) => (
+        <details class="faq__i" open={i === 0}>
+          <summary class="cond">{f.q[lang]}<Icon name="chevron" size={18} /></summary>
+          <p>{f.a[lang]}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- QUELLEN -->
+  <section id="quellen" class="section--tight wrap" aria-labelledby="h-quellen">
+    <div class="sec-head">
+      <div>
+        <p class="sec-head__kicker cond"><b>12</b> / {L.srcK}</p>
+        <h2 id="h-quellen" class="sec-head__title display">{L.srcH[0]} <span class="grad-text">{L.srcH[1]}</span></h2>
+      </div>
+    </div>
+    <p class="muted sec-lead">{L.srcLead(sourceList.length)}</p>
+    <ol class="srcs">
+      {sourceList.map(([id, s]) => (
+        <li id={`q-${id}`}>
+          <a href={s.url} target="_blank" rel="noopener">{s.name}</a>
+          <span class="srcs__d">{fmtDay(lang, s.date)}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="disclaimer"><Icon name="shield" size={18} /> <span>{L.disclaimer}</span></p>
+  </section>
+</Base>
+
+<script>
+  // Zeitstrahl: "Heute" / "Demnächst" nach dem aktuellen Tag (deutsche Zeit) setzen, nicht nach dem Build-Tag
+  const markTimeline = () => {
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin' }).format(new Date());
+    document.querySelectorAll<HTMLElement>('.tl li[data-date]').forEach((li) => {
+      const d = li.dataset.date ?? '';
+      li.classList.toggle('is-today', d === today);
+      li.classList.toggle('is-next', d > today);
+    });
+  };
+  document.addEventListener('astro:page-load', markTimeline);
+</script>
+
+<style>
+  /* ---------- Status-Marken (auch in StatTable genutzt) ---------- */
+  :global(.stchip) {
+    display: inline-flex; align-items: center; gap: 0.35em; padding: 0.22em 0.6em 0.18em;
+    font-family: var(--f-cond); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.2;
+    border: 1px solid var(--line2); background: rgba(255, 255, 255, 0.05); color: var(--muted); white-space: nowrap;
+  }
+  :global(.stchip--confirmed) { color: var(--teal); border-color: rgba(25, 227, 200, 0.45); background: rgba(25, 227, 200, 0.08); }
+  :global(.stchip--estimate) { color: var(--yellow); border-color: rgba(255, 210, 63, 0.5); background: rgba(255, 210, 63, 0.08); }
+  :global(.stchip--reported) { color: #d6d0e2; }
+  :global(.stchip--pending) { color: var(--dim); border-style: dashed; background: none; }
+  :global(.stchip--own) { color: var(--pink); border-color: rgba(255, 45, 135, 0.5); background: rgba(255, 45, 135, 0.08); }
+
+  /* ---------- Hero ---------- */
+  .hero-k { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 0.85rem; color: var(--muted); margin: 0 0 14px; }
+  .hero-k__asof { color: var(--text); }
+  .hero-row { margin-top: 26px; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+  .cdm {
+    display: grid; gap: 10px; padding: 16px; background: rgba(13, 10, 19, 0.85); border: 1px solid var(--line2);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+    transition: border-color 0.3s, transform 0.3s var(--ease);
+  }
+  .cdm:hover { border-color: var(--pink); transform: translateY(-2px); }
+  .cdm__label { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--pink); }
+  .cdm__label .dot-live { background: var(--pink); }
+  .cdm__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .cdm__grid span { display: flex; flex-direction: column; align-items: center; padding: 6px 2px; background: rgba(255, 255, 255, 0.05); }
+  .cdm__grid b { font-family: var(--f-display); font-weight: 400; font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .cdm__grid small { font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.66rem; color: var(--muted); }
+  .cdm__live { display: none; font-size: 2.2rem; }
+  .cdm:global(.is-live) .cdm__grid { display: none; }
+  .cdm:global(.is-live) .cdm__live { display: block; background: var(--sunset); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .legend { padding: 14px 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+  .legend__h { margin: 0 0 8px; font-size: 0.78rem; color: var(--muted); }
+  .legend ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; font-size: 0.84rem; color: var(--muted); }
+  .legend li { display: flex; gap: 8px; align-items: baseline; }
+
+  /* ---------- Sprungleiste ---------- */
+  .jump { position: sticky; top: calc(var(--header-h) + var(--ticker-h) - 1px); z-index: 5; padding-block: 10px; background: linear-gradient(var(--bg) 70%, transparent); }
+  .jump .filter-btn { font-size: 0.82rem; }
+  .jump .filter-btn:hover { background: var(--text); color: var(--bg); }
+  section[id] { scroll-margin-top: calc(var(--header-h) + var(--ticker-h) + 70px); }
+
+  .sec-lead { margin: -8px 0 22px; max-width: 760px; }
+  .lead-box { display: flex; gap: 12px; align-items: flex-start; margin: -8px 0 22px; padding: 16px 18px; max-width: 900px; border-left: 4px solid var(--pink); background: rgba(255, 45, 135, 0.07); color: #fff; font-weight: 500; }
+  .lead-box :global(svg) { color: var(--yellow); flex: none; margin-top: 3px; }
+
+  /* ---------- KPI-Kacheln ---------- */
+  .kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+  .kpi { padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; min-height: 230px; }
+  .kpi::after { content: ''; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--sunset); opacity: 0.85; }
+  .kpi--estimate::after { background: var(--yellow); }
+  .kpi--pending::after { background: repeating-linear-gradient(90deg, var(--dim) 0 8px, transparent 8px 14px); }
+  .kpi .stchip { align-self: flex-start; }
+  .kpi__num { margin: 6px 0 0; font-size: clamp(2.3rem, 3.6vw, 3.3rem); line-height: 0.95; display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+  .kpi__num small { font-family: var(--f-cond); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; color: var(--text); }
+  .kpi--pending .kpi__num .grad-text { background: none; color: var(--dim); -webkit-text-fill-color: currentColor; }
+  .kpi__label { margin: 0; font-size: 1.02rem; letter-spacing: 0.04em; color: var(--text); line-height: 1.15; }
+  .kpi__note { margin: 0; font-size: 0.84rem; color: var(--muted); line-height: 1.45; flex: 1; }
+  .kpi__meta { margin: 4px 0 0; display: flex; flex-direction: column; gap: 2px; font-size: 0.76rem; color: var(--dim); }
+  .kpi__meta a, .series__m a, .trc__meta a, .cmp__m a, .tl__s a { color: var(--teal); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .kpi__meta a:hover, .series__m a:hover, .trc__meta a:hover, .cmp__m a:hover, .tl__s a:hover { color: #fff; }
+
+  /* ---------- Vergleich ---------- */
+  .gap { margin: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+  .gap__n { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 0.9; }
+  .gap__t { font-size: 0.8rem; color: var(--muted); max-width: 200px; }
+  .cmp-wrap { border: 1px solid var(--line); background: var(--panel); }
+  .cmp { width: 100%; border-collapse: collapse; }
+  .cmp thead th { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: 1.5rem; text-align: left; padding: 16px; border-bottom: 2px solid var(--line2); }
+  .cmp thead th:first-child { font-family: var(--f-cond); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; color: var(--muted); }
+  .cmp thead th small { font-family: var(--f-cond); font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; margin-left: 4px; }
+  .cmp thead th:last-child { background: linear-gradient(100deg, rgba(255, 45, 135, 0.14), transparent); }
+  .cmp tbody th, .cmp td { padding: 14px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .cmp tbody tr:last-child > * { border-bottom: 0; }
+  .cmp tbody th { font-family: var(--f-cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; width: 26%; }
+  .cmp td { width: 37%; }
+  .cmp td.is-vi { background: rgba(255, 45, 135, 0.04); }
+  .cmp__v { display: block; font-weight: 600; font-size: 1.05rem; }
+  .cmp td.is-pending .cmp__v { color: var(--muted); font-style: italic; font-weight: 500; }
+  .cmp__m { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 6px; font-size: 0.8rem; }
+  .sub-h { margin: 34px 0 14px; font-size: 1.1rem; color: var(--muted); }
+  .series { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .series__i { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+  .series__v { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .series__l { font-size: 0.95rem; }
+  .series__m { font-size: 0.76rem; color: var(--dim); }
+
+  /* ---------- Trailer ---------- */
+  .trailers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .trc { padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .trc__date { margin: 0; font-size: 0.76rem; color: var(--pink); }
+  .trc__name { margin: 0 0 6px; font-size: 1.9rem; }
+  .trc__k { margin: 0; font-size: 0.74rem; color: var(--muted); }
+  .trc__v { margin: 0; font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
+  .trc__n { margin: 0; font-size: 0.84rem; color: var(--muted); line-height: 1.45; flex: 1; }
+  .trc__meta { margin: 4px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 0.78rem; }
+  .trc__yt { margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.84rem; color: var(--muted); }
+  .trc__yt b { color: var(--text); font-size: 1rem; }
+  .trc__yt :global(svg) { color: var(--red); }
+  .trc__yt:hover { color: var(--text); }
+
+  .bars { margin: 18px 0 0; padding: 22px; }
+  .bars__h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 16px; font-size: 1rem; }
+  .bars__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .bars__list li { display: grid; grid-template-columns: 220px minmax(0, 1fr) 120px; align-items: center; gap: 14px; }
+  .bars__name { font-family: var(--f-cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.95rem; }
+  .bars__track { height: 14px; background: rgba(255, 255, 255, 0.05); }
+  .bars__fill { display: block; height: 100%; width: var(--w); background: var(--pink); border-radius: 0 4px 4px 0; transform-origin: left; transition: transform 1s var(--ease); }
+  :global(.js) [data-reveal]:not(:global(.is-in)) .bars__fill { transform: scaleX(0); }
+  .bars__val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); font-size: 0.95rem; }
+  .bars__total { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; color: var(--muted); }
+  .bars__total b { font-size: 2rem; font-weight: 400; color: var(--text); }
+  .bars__note { margin: 8px 0 0; font-size: 0.8rem; color: var(--dim); }
+
+  /* ---------- Zeitstrahl ---------- */
+  .tl { list-style: none; margin: 0; padding: 0; position: relative; }
+  .tl::before { content: ''; position: absolute; left: 141px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--yellow), var(--pink), var(--violet)); opacity: 0.5; }
+  .tl li { display: grid; grid-template-columns: 120px 44px minmax(0, 1fr); align-items: start; padding: 10px 0; }
+  .tl__d { text-align: right; font-size: 0.95rem; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .tl__dot { width: 14px; height: 14px; margin: 6px 0 0 15px; background: var(--bg); border: 2px solid var(--line2); transform: rotate(45deg); position: relative; z-index: 1; }
+  .tl--trailer .tl__dot { border-color: var(--pink); }
+  .tl--delay .tl__dot { border-color: var(--orange); }
+  .tl--business .tl__dot { border-color: var(--teal); }
+  .tl--release .tl__dot { background: var(--pink); border-color: var(--pink); box-shadow: 0 0 16px var(--pink); }
+  .tl--release .tl__d { color: var(--text); }
+  .is-next .tl__dot { border-style: dashed; }
+  .tl__soon, .tl__today { display: none; }
+  .is-next .tl__soon, .is-today .tl__today { display: inline-flex; }
+  .is-today .tl__dot { background: var(--yellow); border-color: var(--yellow); box-shadow: 0 0 14px var(--yellow); }
+  .tl__b p { margin: 0; }
+  .tl__t { font-family: var(--f-cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 1.2rem; line-height: 1.2; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .tl__x { color: #ddd7e6; font-size: 0.97rem; margin-top: 2px !important; }
+  .tl__s { font-size: 0.78rem; color: var(--dim); margin-top: 2px !important; }
+
+  /* ---------- Laufend aktualisiert ---------- */
+  .upd { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; padding: clamp(22px, 3vw, 34px); background: linear-gradient(150deg, rgba(255, 45, 135, 0.14), var(--panel) 60%); }
+  .upd__h { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 10px; }
+  .upd__asof { margin: 0 0 10px; font-size: 0.9rem; color: var(--text); }
+  .upd__cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .upd__k { margin: 0 0 8px; font-size: 0.8rem; color: var(--muted); }
+  .upd__next, .upd__log { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 8px; font-size: 0.92rem; }
+  .upd__next li { display: flex; gap: 8px; align-items: flex-start; }
+  .upd__next :global(svg) { color: var(--yellow); flex: none; margin-top: 4px; }
+  .upd__log li { display: grid; gap: 2px; padding: 10px 12px; border: 1px solid var(--line); background: rgba(0, 0, 0, 0.2); }
+  .upd__log time { font-family: var(--f-cond); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; color: var(--pink); }
+
+  /* ---------- FAQ ---------- */
+  .faq { display: grid; gap: 10px; max-width: 900px; }
+  .faq__i { border: 1px solid var(--line); background: var(--panel); }
+  .faq__i summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px; font-size: 1.1rem; letter-spacing: 0.04em; }
+  .faq__i summary::-webkit-details-marker { display: none; }
+  .faq__i summary :global(svg) { flex: none; color: var(--pink); transition: transform 0.25s; }
+  .faq__i[open] summary :global(svg) { transform: rotate(90deg); }
+  .faq__i p { margin: 0; padding: 0 18px 18px; color: #ddd7e6; }
+
+  /* ---------- Quellen ---------- */
+  .srcs { margin: 0; padding-left: 1.6em; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 36px; font-size: 0.9rem; }
+  .srcs li { color: var(--muted); }
+  .srcs li::marker { color: var(--pink); font-family: var(--f-cond); font-weight: 700; }
+  .srcs a { color: #e7e2ef; text-decoration: underline; text-decoration-color: rgba(25, 227, 200, 0.6); text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .srcs a:hover { color: var(--teal); }
+  .srcs__d { display: inline-block; margin-left: 6px; font-size: 0.78rem; color: var(--dim); white-space: nowrap; }
+  .disclaimer { display: flex; gap: 10px; align-items: flex-start; margin: 28px 0 0; padding: 14px 16px; border: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); max-width: 900px; }
+  .disclaimer :global(svg) { flex: none; color: var(--teal); margin-top: 2px; }
+
+  /* ---------- Responsiv ---------- */
+  @media (max-width: 1200px) {
+    .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .trailers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 1000px) {
+    .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .series { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .upd { grid-template-columns: 1fr; }
+    .srcs { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .hero-row { grid-template-columns: 1fr; }
+    .legend ul { grid-template-columns: 1fr; }
+    .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .kpi { padding: 14px; min-height: 0; }
+    .kpi__num { font-size: 2.3rem; }
+    .kpi__label { font-size: 0.92rem; }
+    .kpi__note { font-size: 0.8rem; }
+    .gap { align-items: flex-start; text-align: left; }
+    .cmp-wrap { border: 0; background: none; }
+    .cmp, .cmp tbody { display: block; }
+    .cmp thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .cmp tbody { display: grid; gap: 10px; }
+    .cmp tbody tr { display: grid; grid-template-columns: 1fr 1fr; background: var(--panel); border: 1px solid var(--line); }
+    .cmp tbody th { grid-column: 1 / -1; width: auto; padding: 12px 14px 4px; border: 0; font-size: 0.82rem; color: var(--muted); letter-spacing: 0.08em; }
+    .cmp td { width: auto; padding: 6px 14px 14px; border: 0; }
+    .cmp td::before { content: attr(data-l); display: block; font-family: var(--f-display); text-transform: uppercase; font-size: 1rem; color: var(--dim); margin-bottom: 2px; }
+    .cmp td.is-vi::before { color: var(--pink); }
+    .cmp__v { font-size: 0.98rem; }
+    .trailers { grid-template-columns: 1fr; }
+    .bars { padding: 16px; }
+    .bars__list li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
+    .bars__track { grid-column: 1 / -1; grid-row: 2; }
+    .bars__val { font-size: 0.88rem; }
+    .tl::before { left: 89px; }
+    .tl li { grid-template-columns: 70px 40px minmax(0, 1fr); }
+    .tl__d { font-size: 0.78rem; }
+    .tl__dot { margin-left: 13px; }
+    .tl__t { font-size: 1.05rem; }
+    .tl__x { font-size: 0.92rem; }
+  }
+  @media (max-width: 420px) {
+    .series { grid-template-columns: 1fr; }
+    .kpi__num { font-size: 2rem; }
+  }
+</style>

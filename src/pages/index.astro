@@ -88,6 +88,18 @@ const jsonLd = [
     )}
   </section>
 
+  <!-- ZAHLEN: Teaser auf /gta-6-zahlen/ (EN /en/gta-6-stats/) -->
+  <section class="section section--tight wrap" aria-labelledby="sec-stats">
+    <a href={h('/gta-6-zahlen/')} class="card stats-teaser" data-reveal>
+      <div>
+        <p class="sec-head__kicker cond"><b>{t.stats.kicker}</b> / GTA VI</p>
+        <h2 id="sec-stats" class="stats-teaser__title display">{t.stats.nav}</h2>
+        <p class="muted">{t.stats.teaser}</p>
+      </div>
+      <span class="stats-teaser__cta cond">{t.stats.cta} <Icon name="arrow" /></span>
+    </a>
+  </section>
+
   <!-- SPIELE -->
   <section class="section section--tight wrap" aria-labelledby="sec-games">
     <div class="sec-head">
@@ -203,6 +215,12 @@ const jsonLd = [
   .news-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(14px, 2vw, 22px); }
   .news-side { display: grid; gap: 14px; align-content: start; }
   .empty { padding: 40px; }
+  .stats-teaser { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 28px;
+    background: radial-gradient(120% 140% at 0% 0%, rgba(255, 42, 140, 0.18), transparent 60%), radial-gradient(120% 140% at 100% 100%, rgba(0, 200, 255, 0.14), transparent 60%); }
+  .stats-teaser__title { font-size: clamp(1.6rem, 3.4vw, 2.4rem); margin: 4px 0 8px; }
+  .stats-teaser .muted { margin: 0; max-width: 62ch; }
+  .stats-teaser__cta { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-weight: 700; }
+  @media (max-width: 640px) { .stats-teaser { flex-direction: column; align-items: flex-start; padding: 20px; } }
   .empty p.display { font-size: 2rem; margin: 0 0 8px; }
 
   .games-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 20px); }
