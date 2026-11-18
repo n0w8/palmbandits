@@ -1,5 +1,5 @@
-// Merch aus dem Spreadshop "palmbandits" (https://palmbandits.myspreadshop.at), Stand 18.11.2026.
-// Reihenfolge = Reihenfolge auf der Seite. Die Startseite zeigt die ersten 6 (je Figur ein Teil + Logo-Hoodie und -Shirt).
+// Merch aus dem Spreadshop "palmbandits" (https://palmbandits.myspreadshop.at), Stand 18.11.2026 (Umbau: vorne Figur, hinten 5 Sterne + NORDWALD-Logo).
+// Reihenfolge = Reihenfolge auf der Seite. Die Startseite zeigt die ersten 6.
 // Werte aus der Produktliste des Spreadshops (/all):
 // - path       = Produktpfad im Spreadshop (/<slug>-A<designId>)
 // - sellable   = Token aus dem Produkt-Link (?sellable=...)
@@ -21,34 +21,81 @@ export interface MerchItem {
 }
 
 const LOGO = '/palm+bandits+logo-A6afbe0a6855804508a0fa2b9';
-const ELDRUNA = '/eldruna+nordwald-A6afce57c855804508a521a1d';
-const SKAEDRA = '/skaedra+nordwald-A6afce59613bea62fca067c9d';
-const RUNVYR = '/runvyr+nordwald-A6afce5b783173c19ca03cc7e';
-const DOMSGARD = '/domsgard+nordwald-A6afce5d1855804508a538748';
-
+// Nordwald Collection (seit 18.11.2026): vorne die Figur (Bild = Ansicht 1), hinten 5 Sterne + NORDWALD-Logo.
+// Eldruna fehlt: Spreadshirt hat das neue Eldruna-Design am 18.11.2026 abgelehnt ("Community Standards"), siehe STAND.md.
 const NW_HOODIE = { de: 'Nordwald Collection · Hoodie · Schwarz', en: 'Nordwald Collection · Hoodie · Black' };
 const NW_TEE = { de: 'Nordwald Collection · Shirt · Schwarz', en: 'Nordwald Collection · Tee · Black' };
 
 export const MERCH_ITEMS: MerchItem[] = [
   {
-    id: 'eldruna-hoodie', name: { de: 'Eldruna Hoodie', en: 'Eldruna Hoodie' }, type: NW_HOODIE,
-    path: ELDRUNA, sellable: 'zv0mb5eO7YHdZd1ydvYe-2963-22', appearance: 1257, view: 2, price: 45.99, isNew: true,
-    img: 'T2963A1257PA9737PT17X20Y31D360822225W33999H41763PA9736PT17X204Y25D360822278W11000H9166',
+    id: 'domsgard-hoodie', name: { de: 'Domsgard Hoodie', en: 'Domsgard Hoodie' }, type: NW_HOODIE,
+    path: '/domsgard+nordwald-A6afd107e83173c19cab0830e', sellable: 'nA0EDz3YXbSk01LXqg9o-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y11D360822668W25000H15642PA9736PT17X86Y3D360822669W20799H26400',
   },
   {
-    id: 'domsgard-tee', name: { de: 'Domsgard Shirt', en: 'Domsgard Tee' }, type: NW_TEE,
-    path: DOMSGARD, sellable: 'J12RY85eDBtmLmaxb0q0-3502-7', appearance: 2, view: 2, price: 32.99, isNew: true,
-    img: 'T3502A2PA8089PT17X204Y36D360822278W11000H9166PA8090PT17X21Y43D360822307W33999H39734',
+    id: 'skulgard-tee', name: { de: 'Skulgard Shirt', en: 'Skulgard Tee' }, type: NW_TEE,
+    path: '/skulgard+nordwald-A6afd10b1855804508a063046', sellable: 'x50kqpZYNjCApAOoOLbr-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y29D360822717W27999H38505PA8090PT17X66Y13D360822668W25000H15642',
+  },
+  {
+    id: 'ravhena-hoodie', name: { de: 'Ravhena Hoodie', en: 'Ravhena Hoodie' }, type: NW_HOODIE,
+    path: '/ravhena+nordwald-A6afd109e855804508a05e736', sellable: '40dnv4Nb92f0E0aBa0eZ-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y11D360822668W25000H15642PA9736PT17X93Y3D360822718W19299H26376',
+  },
+  {
+    id: 'pronx-tee', name: { de: 'PRONX Shirt', en: 'PRONX Tee' }, type: NW_TEE,
+    path: '/pronx+nordwald-A6afd109213bea62fcab420d0', sellable: 'x50kqEEdkzIeXweAnR9l-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y34D360822716W27999H36161PA8090PT17X66Y13D360822668W25000H15642',
   },
   {
     id: 'skaedra-hoodie', name: { de: 'Skaedra Hoodie', en: 'Skaedra Hoodie' }, type: NW_HOODIE,
-    path: SKAEDRA, sellable: 'Qwvqa7Myr3uXbeXOm3LN-2963-22', appearance: 1257, view: 2, price: 45.99, isNew: true,
-    img: 'T2963A1257PA9737PT17X20Y28D360822226W33999H42443PA9736PT17X221Y25D360822278W11000H9166',
+    path: '/skaedra+nordwald-A6afd105e13bea62fcab35dbd', sellable: 'zv0mpQkEOzclwGldvabe-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y11D360822668W25000H15642PA9736PT17X83Y3D360822714W21399H26361',
   },
   {
     id: 'runvyr-tee', name: { de: 'Runvyr Shirt', en: 'Runvyr Tee' }, type: NW_TEE,
-    path: RUNVYR, sellable: 'pNe7A3ZB88Tn5kbXqjmQ-3502-7', appearance: 2, view: 2, price: 32.99, isNew: true,
-    img: 'T3502A2PA8089PT17X222Y36D360822278W11000H9166PA8090PT17X21Y28D360822308W34000H42738',
+    path: '/runvyr+nordwald-A6afd107283173c19cab04cb9', sellable: '9OgJ7pzZVXT4N7ZlBJxX-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y37D360822670W27999H34761PA8090PT17X66Y13D360822668W25000H15642',
+  },
+  {
+    id: 'ravnir-hoodie', name: { de: 'Ravnir Hoodie', en: 'Ravnir Hoodie' }, type: NW_HOODIE,
+    path: '/ravnir+nordwald-A6afd10bc83173c19cab184f6', sellable: '0kdj90kmGafrE9DNBbwY-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y12D360822668W25000H15642PA9736PT17X96Y3D360822715W18799H26380',
+  },
+  {
+    id: 'domsgard-tee', name: { de: 'Domsgard Shirt', en: 'Domsgard Tee' }, type: NW_TEE,
+    path: '/domsgard+nordwald-A6afd107e83173c19cab0830e', sellable: 'nA0EDz3YXbSk01LXqg9o-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y26D360822669W27999H35539PA8090PT17X66Y13D360822668W25000H15642',
+  },
+  {
+    id: 'skulgard-hoodie', name: { de: 'Skulgard Hoodie', en: 'Skulgard Hoodie' }, type: NW_HOODIE,
+    path: '/skulgard+nordwald-A6afd10b1855804508a063046', sellable: 'x50kqpZYNjCApAOoOLbr-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y11D360822668W25000H15642PA9736PT17X94Y3D360822717W19199H26402',
+  },
+  {
+    id: 'ravhena-tee', name: { de: 'Ravhena Shirt', en: 'Ravhena Tee' }, type: NW_TEE,
+    path: '/ravhena+nordwald-A6afd109e855804508a05e736', sellable: '40dnv4Nb92f0E0aBa0eZ-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y29D360822718W27999H38266PA8090PT17X66Y13D360822668W25000H15642',
+  },
+  {
+    id: 'pronx-hoodie', name: { de: 'PRONX Hoodie', en: 'PRONX Hoodie' }, type: NW_HOODIE,
+    path: '/pronx+nordwald-A6afd109213bea62fcab420d0', sellable: 'x50kqEEdkzIeXweAnR9l-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y11D360822668W25000H15642PA9736PT17X88Y3D360822716W20399H26345',
+  },
+  {
+    id: 'skaedra-tee', name: { de: 'Skaedra Shirt', en: 'Skaedra Tee' }, type: NW_TEE,
+    path: '/skaedra+nordwald-A6afd105e13bea62fcab35dbd', sellable: 'zv0mpQkEOzclwGldvabe-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y37D360822714W27999H34491PA8090PT17X66Y13D360822668W25000H15642',
+  },
+  {
+    id: 'runvyr-hoodie', name: { de: 'Runvyr Hoodie', en: 'Runvyr Hoodie' }, type: NW_HOODIE,
+    path: '/runvyr+nordwald-A6afd107283173c19cab04cb9', sellable: '9OgJ7pzZVXT4N7ZlBJxX-2963-22', appearance: 1257, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X65Y11D360822668W25000H15642PA9736PT17X83Y3D360822670W21299H26443',
+  },
+  {
+    id: 'ravnir-tee', name: { de: 'Ravnir Shirt', en: 'Ravnir Tee' }, type: NW_TEE,
+    path: '/ravnir+nordwald-A6afd10bc83173c19cab184f6', sellable: '0kdj90kmGafrE9DNBbwY-3502-7', appearance: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X50Y33D360822715W27999H39289PA8090PT17X66Y14D360822668W25000H15642',
   },
   {
     id: 'logo-hoodie',
@@ -63,26 +110,6 @@ export const MERCH_ITEMS: MerchItem[] = [
     type: { de: 'Oversized Heavyweight T-Shirt · Schwarz', en: 'Oversized heavyweight tee · Black' },
     path: LOGO, sellable: '5wdQqnbok8S0z0m1yZ4Z-3502-7', appearance: 2,
     img: 'T3502A2PA8089PT17X65Y118D360811485W25000H6550', price: 26.99,
-  },
-  {
-    id: 'eldruna-tee', name: { de: 'Eldruna Shirt', en: 'Eldruna Tee' }, type: NW_TEE,
-    path: ELDRUNA, sellable: 'zv0mb5eO7YHdZd1ydvYe-3502-7', appearance: 2, view: 2, price: 32.99, isNew: true,
-    img: 'T3502A2PA8089PT17X222Y36D360822278W11000H9166PA8090PT17X21Y33D360822225W33999H41763',
-  },
-  {
-    id: 'domsgard-hoodie', name: { de: 'Domsgard Hoodie', en: 'Domsgard Hoodie' }, type: NW_HOODIE,
-    path: DOMSGARD, sellable: 'J12RY85eDBtmLmaxb0q0-2963-22', appearance: 1257, view: 2, price: 45.99, isNew: true,
-    img: 'T2963A1257PA9737PT17X20Y41D360822307W33999H39734PA9736PT17X221Y25D360822278W11000H9166',
-  },
-  {
-    id: 'skaedra-tee', name: { de: 'Skaedra Shirt', en: 'Skaedra Tee' }, type: NW_TEE,
-    path: SKAEDRA, sellable: 'Qwvqa7Myr3uXbeXOm3LN-3502-7', appearance: 2, view: 2, price: 32.99, isNew: true,
-    img: 'T3502A2PA8089PT17X222Y36D360822278W11000H9166PA8090PT17X21Y29D360822226W33999H42443',
-  },
-  {
-    id: 'runvyr-hoodie', name: { de: 'Runvyr Hoodie', en: 'Runvyr Hoodie' }, type: NW_HOODIE,
-    path: RUNVYR, sellable: 'pNe7A3ZB88Tn5kbXqjmQ-2963-22', appearance: 1257, view: 2, price: 45.99, isNew: true,
-    img: 'T2963A1257PA9737PT17X20Y26D360822308W34000H42738PA9736PT17X221Y25D360822278W11000H9166',
   },
   {
     id: 'logo-windbreaker',
