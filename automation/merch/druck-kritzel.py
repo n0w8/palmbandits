@@ -38,6 +38,14 @@ img = Image.fromarray(out, 'RGBA')
 if img.width > breite:
     img = img.resize((breite, round(img.height * breite / img.width)), Image.LANCZOS)
     arr = np.asarray(img).copy(); arr[..., :3] = 255; img = Image.fromarray(arr, 'RGBA')
+# Nach QA 18.11.2026: Skalier-Halo und Staub (Alpha < 10) weg, deckende Mini-Inseln < 30 px weg (Pinsel-Sprenkel)
+arr = np.asarray(img).copy()
+arr[arr[..., 3] < 10, 3] = 0
+v = (arr[..., 3] > 0).astype(np.uint8)
+n2, lab2, st2, _ = cv2.connectedComponentsWithStats(v, 8)
+k2 = np.zeros(n2, bool); k2[1:] = st2[1:, 4] < 30
+arr[k2[lab2], 3] = 0
+img = Image.fromarray(arr, 'RGBA')
 img.save(dst, optimize=True)
 A = np.asarray(img)[..., 3]
 print(f'{dst}: {img.width} x {img.height}, entfernte Inseln {removed}, deckend {100 * (A > 229).sum() / max((A > 0).sum(), 1):.1f} % der Linienpixel')
