@@ -45,12 +45,24 @@ export const GTA6_RELEASE = '2026-11-19T00:00:00+01:00';
 // youtubeId = die 11 Zeichen nach "watch?v=" bzw. nach "youtu.be/". Leer = Block ist ausgeblendet.
 // Datenschutz: YouTube (youtube-nocookie) lädt erst nach Klick, vorher kein Kontakt zu Google.
 export const VIDEO = {
-  youtubeId: '',
-  title: { de: 'Das Video zum Release', en: 'The release video' },
+  youtubeId: '_AlsuA8A37c',
+  // Eldruna - GRAND THEFT AUTO (Official Music Video) All-Star, hochgeladen 18.11.2026 (zum Einbauen noch "Privat").
+  artist: 'Eldruna',
+  song: 'GRAND THEFT AUTO',
+  title: { de: 'Eldruna: GRAND THEFT AUTO', en: 'Eldruna: GRAND THEFT AUTO' },
+  kicker: { de: 'Premiere · Offizielles Musikvideo', en: 'Premiere · Official music video' },
   text: {
-    de: 'GTA VI ist da. Unser Video zum Start, mit allem, was du jetzt wissen musst.',
-    en: 'GTA VI is here. Our launch video with everything you need to know right now.',
+    de: 'Eine Crew, fünf Sterne, kein sicherer Ort mehr. Ein Raubzug im GTA-Stil quer durch Vice City und Leonida, kurz bevor GTA VI erscheint. Präsentiert von PALM BANDITS.',
+    en: 'One crew, five stars, no safe place left to go. A GTA-style heist through Vice City and Leonida, right before GTA VI drops. Presented by PALM BANDITS.',
   },
+  cast: ['Eldruna', 'Domsgard', 'Skulgard', 'Ravhena', 'Runvyr', 'Skaedra', 'Ravnir', 'PRONX', 'Emma'],
+  duration: '4:31',
+  durationIso: 'PT4M31S',
+  uploadDate: '2026-11-18T17:33:03+01:00',
+  // Vorschaubild liegt auf dem eigenen Webspace (kein Kontakt zu Google vor dem Klick)
+  poster: '/video/grand-theft-auto-musikvideo.jpg',
+  posterSmall: '/video/grand-theft-auto-musikvideo-640.jpg',
+  channel: 'https://www.youtube.com/@Eldruna1337',
 };
 
 // Song im Radio "Bandits FM".

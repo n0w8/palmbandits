@@ -1,73 +1,139 @@
 ---
-// Video-Block der Startseite. Erscheint nur, wenn VIDEO.youtubeId in src/config.ts gesetzt ist.
-// Vor dem Klick: nur eigenes Vorschaubild ohne Verbindung zu Google. Nach Klick: youtube-nocookie mit Autoplay.
-import { VIDEO } from '../config';
-import { langFromUrl } from '../i18n';
+// Video-Block der Startseite (Mike 18.11.2026: "bau das video auf der hauptseite direkt ein und präsentiere es gut").
+// Erscheint nur, wenn VIDEO.youtubeId in src/config.ts gesetzt ist.
+// Vor dem Klick: nur das eigene Vorschaubild vom eigenen Webspace, kein Kontakt zu Google.
+// Nach dem Klick: youtube-nocookie mit Autoplay. Dazu VideoObject als JSON-LD (für die Google-Videosuche).
+import { VIDEO, SITE } from '../config';
+import { langFromUrl, href } from '../i18n';
 import Icon from './Icon.astro';
 
 const lang = langFromUrl(Astro.url);
 const id = VIDEO.youtubeId.trim();
+const watch = `https://www.youtube.com/watch?v=${id}`;
 const L = {
-  de: { kicker: 'Video', play: 'Video abspielen', note: 'Mit dem Klick lädt YouTube (Google). Dabei wird deine IP-Adresse übertragen.', more: 'Datenschutz', open: 'Auf YouTube ansehen' },
-  en: { kicker: 'Video', play: 'Play video', note: 'Clicking loads YouTube (Google), which receives your IP address.', more: 'Privacy', open: 'Watch on YouTube' },
+  de: {
+    play: 'Musikvideo abspielen', watch: 'Auf YouTube ansehen', sub: 'Kanal abonnieren', shop: 'Merch der Crew',
+    cast: 'Die Crew im Video', note: 'Mit dem Klick lädt YouTube (Google), dabei wird deine IP-Adresse übertragen.', more: 'Datenschutz',
+    now: 'Jetzt neu',
+  },
+  en: {
+    play: 'Play the music video', watch: 'Watch on YouTube', sub: 'Subscribe to the channel', shop: 'Crew merch',
+    cast: 'The crew in the video', note: 'Clicking loads YouTube (Google), which receives your IP address.', more: 'Privacy',
+    now: 'Out now',
+  },
 }[lang];
+const jsonLd = id ? {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: `${VIDEO.artist} - ${VIDEO.song} (Official Music Video)`,
+  description: VIDEO.text[lang],
+  thumbnailUrl: [`${SITE.url}${VIDEO.poster}`],
+  uploadDate: VIDEO.uploadDate,
+  duration: VIDEO.durationIso,
+  embedUrl: `https://www.youtube-nocookie.com/embed/${id}`,
+  contentUrl: watch,
+  inLanguage: lang,
+} : null;
 ---
 {id && (
   <section class="section wrap vf" aria-labelledby="sec-video">
-    <div class="sec-head">
-      <div>
-        <p class="sec-head__kicker cond"><b>{L.kicker}</b> / Palm Bandits</p>
-        <h2 id="sec-video" class="sec-head__title display">{VIDEO.title[lang]}</h2>
+    <div class="vf__grid">
+      <div class="vf__frame" data-video={id}>
+        <button type="button" class="vf__play" data-video-play aria-label={`${L.play}: ${VIDEO.title[lang]}`}>
+          <img class="vf__poster" src={VIDEO.poster} srcset={`${VIDEO.posterSmall} 640w, ${VIDEO.poster} 1280w`}
+            sizes="(max-width: 960px) 92vw, 760px" width="1280" height="720" alt={`${VIDEO.title[lang]}, ${lang === 'en' ? 'video thumbnail' : 'Vorschaubild'}`} loading="eager" decoding="async" />
+          <span class="vf__shade" aria-hidden="true"></span>
+          <span class="vf__btn" aria-hidden="true"><Icon name="play" size={38} /></span>
+          <span class="vf__dur cond" aria-hidden="true">{VIDEO.duration}</span>
+          <span class="vf__badge chip chip--live" aria-hidden="true">{L.now}</span>
+        </button>
       </div>
-      <a href={`https://www.youtube.com/watch?v=${id}`} class="sec-head__link" target="_blank" rel="noopener">{L.open} <Icon name="arrow" /></a>
+
+      <div class="vf__info">
+        <p class="sec-head__kicker cond"><b>Video</b> / {VIDEO.kicker[lang]}</p>
+        <h2 id="sec-video" class="vf__title display">
+          <span class="vf__artist">{VIDEO.artist}</span>
+          <span class="grad-text">{VIDEO.song}</span>
+        </h2>
+        <p class="vf__text">{VIDEO.text[lang]}</p>
+        <p class="vf__castk cond">{L.cast}</p>
+        <ul class="vf__cast">{VIDEO.cast.map((c) => <li class="cond">{c}</li>)}</ul>
+        <div class="vf__btns">
+          <button type="button" class="btn btn--sun" data-video-start><Icon name="play" /> {L.play}</button>
+          <a class="btn btn--ghost" href={watch} target="_blank" rel="noopener">{L.watch} <Icon name="arrow" /></a>
+        </div>
+        <p class="vf__links">
+          <a href={VIDEO.channel} target="_blank" rel="noopener">{L.sub}</a>
+          <span aria-hidden="true">·</span>
+          <a href={`${href(lang, '/shop/')}#produkte`}>{L.shop}</a>
+        </p>
+        <p class="vf__note">{L.note} <a href="/datenschutz/">{L.more}</a></p>
+      </div>
     </div>
-    <p class="vf__text muted">{VIDEO.text[lang]}</p>
-    <div class="vf__frame card" data-video={id}>
-      <button type="button" class="vf__play" data-video-play aria-label={L.play}>
-        <span class="vf__btn"><Icon name="play" size={34} /></span>
-        <span class="vf__label display">{L.play}</span>
-      </button>
-    </div>
-    <p class="vf__note">{L.note} <a href="/datenschutz/">{L.more}</a></p>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </section>
 )}
 
 <style>
-  .vf__text { max-width: 60ch; margin: -0.5rem 0 1.25rem; }
+  .vf__grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: center; }
   .vf__frame {
-    position: relative; aspect-ratio: 16 / 9; overflow: hidden; padding: 0;
-    background:
-      radial-gradient(120% 90% at 20% 10%, rgba(255, 42, 140, 0.35), transparent 60%),
-      radial-gradient(120% 90% at 85% 90%, rgba(0, 200, 255, 0.28), transparent 60%),
-      #0b0b10;
+    position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; background: #000;
+    box-shadow: 0 0 0 1px var(--line2), 0 30px 80px -20px rgba(255, 42, 140, 0.45), 0 20px 60px -30px rgba(0, 200, 255, 0.35);
   }
   .vf__frame :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .vf__play {
-    position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 0.9rem;
-    width: 100%; border: 0; background: transparent; color: #fff; cursor: pointer;
-  }
+  .vf__play { position: absolute; inset: 0; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; color: #fff; }
+  .vf__poster { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.3s ease; }
+  .vf__shade { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.45) 75%); }
   .vf__btn {
-    display: grid; place-items: center; width: 92px; height: 92px; border-radius: 50%;
-    background: linear-gradient(135deg, #ff2a8c, #8b3dff); box-shadow: 0 10px 40px rgba(255, 42, 140, 0.45);
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%;
+    background: linear-gradient(135deg, #ffb31f, #ff2a8c 55%, #8b3dff); box-shadow: 0 10px 40px rgba(255, 42, 140, 0.6);
     transition: transform 0.2s ease;
   }
-  .vf__play:hover .vf__btn, .vf__play:focus-visible .vf__btn { transform: scale(1.08); }
-  .vf__label { font-size: clamp(1.1rem, 2.4vw, 1.6rem); letter-spacing: 0.02em; }
-  .vf__note { margin-top: 0.6rem; font-size: 0.8rem; opacity: 0.65; }
+  .vf__btn::after { content: ''; position: absolute; inset: -10px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.55); animation: vf-pulse 2.2s ease-out infinite; }
+  @keyframes vf-pulse { from { transform: scale(0.9); opacity: 0.9; } to { transform: scale(1.35); opacity: 0; } }
+  .vf__play:hover .vf__poster, .vf__play:focus-visible .vf__poster { transform: scale(1.03); filter: saturate(1.15); }
+  .vf__play:hover .vf__btn, .vf__play:focus-visible .vf__btn { transform: translate(-50%, -50%) scale(1.08); }
+  .vf__dur { position: absolute; right: 12px; bottom: 12px; padding: 3px 9px; border-radius: 4px; background: rgba(0, 0, 0, 0.75); font-size: 0.85rem; letter-spacing: 0.04em; }
+  .vf__badge { position: absolute; left: 14px; top: 14px; }
+  .vf__title { margin: 6px 0 14px; line-height: 0.95; display: flex; flex-direction: column; gap: 4px; }
+  .vf__artist { font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: 0.08em; color: var(--muted); }
+  .vf__title .grad-text { font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
+  .vf__text { margin: 0 0 18px; color: var(--text); opacity: 0.85; max-width: 52ch; }
+  .vf__castk { margin: 0 0 8px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .vf__cast { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 22px; padding: 0; }
+  .vf__cast li { padding: 4px 10px; border: 1px solid var(--line2); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.04em; }
+  .vf__btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .vf__links { margin: 14px 0 0; font-size: 0.9rem; display: flex; gap: 8px; flex-wrap: wrap; }
+  .vf__links a { text-decoration: underline; text-underline-offset: 3px; }
+  .vf__links a:hover { color: var(--pink); }
+  .vf__note { margin: 12px 0 0; font-size: 0.78rem; opacity: 0.6; }
   .vf__note a { text-decoration: underline; }
+  @media (max-width: 960px) {
+    .vf__grid { grid-template-columns: 1fr; }
+    .vf__btn { width: 76px; height: 76px; }
+  }
 </style>
 
 <script>
-  document.querySelectorAll<HTMLElement>('[data-video]').forEach((box) => {
-    const btn = box.querySelector('[data-video-play]');
-    btn?.addEventListener('click', () => {
-      const f = document.createElement('iframe');
-      f.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(box.dataset.video ?? '')}?autoplay=1&rel=0&playsinline=1`;
-      f.title = 'YouTube';
-      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      f.allowFullscreen = true;
-      f.referrerPolicy = 'strict-origin-when-cross-origin';
-      box.replaceChildren(f);
+  function start(box: HTMLElement) {
+    if (box.querySelector('iframe')) return;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(box.dataset.video ?? '')}?autoplay=1&rel=0&playsinline=1`;
+    f.title = 'YouTube';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.allowFullscreen = true;
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    box.replaceChildren(f);
+  }
+  function init() {
+    const box = document.querySelector<HTMLElement>('[data-video]');
+    if (!box) return;
+    box.querySelector('[data-video-play]')?.addEventListener('click', () => start(box));
+    document.querySelector('[data-video-start]')?.addEventListener('click', () => {
+      start(box);
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
-  });
+  }
+  document.addEventListener('astro:page-load', init);
 </script>
