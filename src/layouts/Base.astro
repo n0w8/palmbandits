@@ -46,6 +46,32 @@ interface Props {
     <link rel="manifest" href="/manifest.webmanifest" />
     <Seo {...Astro.props} />
     <ClientRouter />
+    <!-- Besucherzähler fürs Agentic OS (Mike 18.11.2026): eigener Zähler auf nordwaldrecords.com/a/, keine Cookies,
+         keine gespeicherten IPs (siehe /datenschutz/). Zählt auch Seitenwechsel über den ClientRouter (astro:page-load),
+         denn ohne neu ladende Seite liefe das Skript sonst nur beim ersten Aufruf. Nur auf der echten Domain. -->
+    <script is:inline>
+    (function () {
+      if (window.__pbZaehler || !/(^|\.)palmbandits\.com$/.test(location.hostname)) return;
+      window.__pbZaehler = 1;
+      var u = 'https://www.nordwaldrecords.com/a/track.php';
+      var vorher = document.referrer || '', zuletzt = '', zeit = 0;
+      function senden() {
+        try {
+          var p = location.pathname + location.search, jetzt = Date.now();
+          if (p === zuletzt && jetzt - zeit < 1500) return;
+          zuletzt = p; zeit = jetzt;
+          var d = { s: 'palmbandits', p: p, r: vorher };
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon(u, new Blob([JSON.stringify(d)], { type: 'text/plain' }));
+          } else {
+            new Image().src = u + '?s=palmbandits&p=' + encodeURIComponent(d.p) + '&r=' + encodeURIComponent(d.r);
+          }
+          vorher = location.href;
+        } catch (e) {}
+      }
+      document.addEventListener('astro:page-load', senden);
+    })();
+    </script>
   </head>
   <body>
     <a class="skip cond" href="#main">{t.nav.skip}</a>

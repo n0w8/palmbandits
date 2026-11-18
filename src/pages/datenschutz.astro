@@ -37,7 +37,8 @@ const host = HOSTS[HOSTING];
 
     <h2>2. Kurz gesagt</h2>
     <ul>
-      <li>Keine Cookies, kein Tracking, keine Werbe- oder Analyse-Dienste.</li>
+      <li>Keine Cookies, keine Werbe- oder Analyse-Dienste von Dritten.</li>
+      <li>Wie viele Leute unsere Seiten lesen, zählen wir mit einem eigenen Zähler ohne Cookies, der keine IP-Adressen speichert (siehe Abschnitt 5).</li>
       <li>Musik und Videos von YouTube oder Spotify laden nur nach Ihrem Klick und Ihrer Zustimmung.</li>
       <li>Schriften, Bilder und Musik liegen auf unserem eigenen Webspace. Beim Aufruf wird keine Verbindung zu Google Fonts oder ähnlichen Diensten aufgebaut. Einzige Ausnahme: die Produktbilder unseres Merch-Shops kommen vom Bildserver von Spreadshirt (siehe Merch-Shop).</li>
       <li>Ein Cookie-Banner ist deshalb nicht nötig.</li>
@@ -61,7 +62,23 @@ const host = HOSTS[HOSTING];
         : 'Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO).'}
     </p>
 
-    <h2>5. Kontakt per E-Mail</h2>
+    <h2 id="reichweitenmessung">5. Reichweitenmessung ohne Cookies (selbst betrieben)</h2>
+    <p>
+      Damit wir sehen, welche Beiträge gelesen werden und woher unsere Leser kommen, zählen wir Seitenaufrufe mit einem eigenen Zähler.
+      Er läuft auf unserem eigenen Webspace unter nordwaldrecords.com, ebenfalls bei easyname in Österreich. Es ist kein Dienst eines Dritten.
+      Je Aufruf speichern wir: den Pfad der aufgerufenen Seite, die Domain der Seite, von der Sie kommen, Kampagnen-Angaben aus dem Link
+      (utm_source und utm_campaign), Datum und Uhrzeit, das Land als Kürzel und die Geräteart (Handy, Tablet oder Computer).
+    </p>
+    <p>
+      Ihre IP-Adresse wird nicht gespeichert. Das Land ermittelt unser Server aus der IP-Adresse über eine Tabelle, die auf dem Server selbst liegt,
+      die Adresse verlässt den Server dabei nicht. Damit wir jeden Besucher pro Tag nur einmal zählen, verrechnet der Server IP-Adresse und
+      Browserkennung mit einem täglich neuen Zufallswert zu einer verkürzten Kennung. Der Zufallswert wird am nächsten Tag gelöscht, danach lässt
+      sich die Kennung niemandem mehr zuordnen. Der Zähler setzt keine Cookies, speichert nichts in Ihrem Browser, bildet keine Profile und
+      gibt keine Daten weiter. Rechtsgrundlage ist unser berechtigtes Interesse an einer anonymen Reichweitenmessung (Art. 6 Abs. 1 lit. f DSGVO).
+      Sie können jederzeit widersprechen, zum Beispiel mit einem Werbe- oder Tracking-Blocker, der den Aufruf an nordwaldrecords.com unterbindet.
+    </p>
+
+    <h2>6. Kontakt per E-Mail</h2>
     <p>
       Wenn Sie uns per E-Mail schreiben, etwa für die Warteliste des RP-Script-Shops, speichern wir Ihre Angaben zur Bearbeitung
       und für die angefragte Information. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO. Wir löschen die Daten,
@@ -70,7 +87,7 @@ const host = HOSTS[HOSTING];
 
     {NEWSLETTER_ACTION && (
       <>
-        <h2>6. Newsletter</h2>
+        <h2>7. Newsletter</h2>
         <p>
           Für den Newsletter nutzen wir Brevo (Sendinblue GmbH, Köpenicker Straße 126, 10179 Berlin, Deutschland). Die Anmeldung erfolgt
           im Double-Opt-in-Verfahren. Wir speichern Ihre E-Mail-Adresse sowie den Zeitpunkt von Anmeldung und Bestätigung.
@@ -80,7 +97,7 @@ const host = HOSTS[HOSTING];
       </>
     )}
 
-    <h2>{NEWSLETTER_ACTION ? '7' : '6'}. Musik-Player und Videos (YouTube und Spotify)</h2>
+    <h2>{NEWSLETTER_ACTION ? '8' : '7'}. Musik-Player und Videos (YouTube und Spotify)</h2>
     <p>
       Videos auf unserer Startseite binden wir über YouTube im erweiterten Datenschutzmodus (youtube-nocookie.com) ein. Bis zu Ihrem Klick
       auf „Video abspielen“ zeigen wir nur ein eigenes Vorschaubild, es wird keine Verbindung zu YouTube aufgebaut. Für die Übertragung nach
@@ -94,7 +111,7 @@ const host = HOSTS[HOSTING];
       Ihrem Browser. Sie können sie widerrufen, indem Sie die Website-Daten in Ihrem Browser löschen.
     </p>
 
-    <h2>{NEWSLETTER_ACTION ? '8' : '7'}. Merch-Shop (Spreadshirt)</h2>
+    <h2>{NEWSLETTER_ACTION ? '9' : '8'}. Merch-Shop (Spreadshirt)</h2>
     <p>
       Unser Merch-Shop wird von der sprd.net AG (Spreadshirt), Gießerstraße 27, 04229 Leipzig, Deutschland, betrieben. Spreadshirt ist Verkäufer,
       druckt, versendet und wickelt Bezahlung und Rückgabe ab und ist für die Daten im Bestellprozess selbst verantwortlich. Der Shop wird auf
@@ -108,13 +125,13 @@ const host = HOSTS[HOSTING];
       nicht gesetzt. Rechtsgrundlage ist unser berechtigtes Interesse an der Darstellung unseres Angebots (Art. 6 Abs. 1 lit. f DSGVO).
     </p>
 
-    <h2>{NEWSLETTER_ACTION ? '9' : '8'}. Links zu anderen Diensten</h2>
+    <h2>{NEWSLETTER_ACTION ? '10' : '9'}. Links zu anderen Diensten</h2>
     <p>
       Wir verlinken auf Discord, Pinterest, WhatsApp, Reddit, X und die Quellen unserer Meldungen. Das sind einfache Links ohne
       eingebettete Inhalte. Daten werden erst übertragen, wenn Sie einen Link anklicken. Ab dann gilt die Datenschutzerklärung des jeweiligen Anbieters.
     </p>
 
-    <h2>{NEWSLETTER_ACTION ? '10' : '9'}. Speicherdauer</h2>
+    <h2>{NEWSLETTER_ACTION ? '11' : '10'}. Speicherdauer</h2>
     <p>
       Wir speichern personenbezogene Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder gesetzliche
       Aufbewahrungsfristen es vorschreiben.
