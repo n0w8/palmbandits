@@ -21,8 +21,10 @@ export interface MerchItem {
 }
 
 const LOGO = '/palm+bandits+logo-A6afbe0a6855804508a0fa2b9';
+const ELDRUNA = '/eldruna+nordwald-A6afce57c855804508a521a1d';
 // Nordwald Collection (seit 18.11.2026): vorne die Figur (Bild = Ansicht 1), hinten 5 Sterne + NORDWALD-Logo.
-// Eldruna fehlt: Spreadshirt hat das neue Eldruna-Design am 18.11.2026 abgelehnt ("Community Standards"), siehe STAND.md.
+// Eldruna: das neue Design hat Spreadshirt am 18.11.2026 abgelehnt ("Community Standards"), deshalb läuft die alte Version
+// weiter (vorne kleines Nordwald-Logo, hinten die Figur -> Bild = Ansicht 2). Mike: "Alte Version wieder an".
 const NW_HOODIE = { de: 'Nordwald Collection · Hoodie · Schwarz', en: 'Nordwald Collection · Hoodie · Black' };
 const NW_TEE = { de: 'Nordwald Collection · Shirt · Schwarz', en: 'Nordwald Collection · Tee · Black' };
 
@@ -63,6 +65,11 @@ export const MERCH_ITEMS: MerchItem[] = [
     img: 'T2963A1257PA9737PT17X65Y12D360822668W25000H15642PA9736PT17X96Y3D360822715W18799H26380',
   },
   {
+    id: 'eldruna-hoodie', name: { de: 'Eldruna Hoodie', en: 'Eldruna Hoodie' }, type: NW_HOODIE,
+    path: ELDRUNA, sellable: 'zv0mb5eO7YHdZd1ydvYe-2963-22', appearance: 1257, view: 2, price: 45.99, isNew: true,
+    img: 'T2963A1257PA9737PT17X20Y31D360822225W33999H41763PA9736PT17X204Y25D360822278W11000H9166',
+  },
+  {
     id: 'domsgard-tee', name: { de: 'Domsgard Shirt', en: 'Domsgard Tee' }, type: NW_TEE,
     path: '/domsgard+nordwald-A6afd107e83173c19cab0830e', sellable: 'nA0EDz3YXbSk01LXqg9o-3502-7', appearance: 2, price: 32.99, isNew: true,
     img: 'T3502A2PA8089PT17X50Y26D360822669W27999H35539PA8090PT17X66Y13D360822668W25000H15642',
@@ -96,6 +103,11 @@ export const MERCH_ITEMS: MerchItem[] = [
     id: 'ravnir-tee', name: { de: 'Ravnir Shirt', en: 'Ravnir Tee' }, type: NW_TEE,
     path: '/ravnir+nordwald-A6afd10bc83173c19cab184f6', sellable: '0kdj90kmGafrE9DNBbwY-3502-7', appearance: 2, price: 32.99, isNew: true,
     img: 'T3502A2PA8089PT17X50Y33D360822715W27999H39289PA8090PT17X66Y14D360822668W25000H15642',
+  },
+  {
+    id: 'eldruna-tee', name: { de: 'Eldruna Shirt', en: 'Eldruna Tee' }, type: NW_TEE,
+    path: ELDRUNA, sellable: 'zv0mb5eO7YHdZd1ydvYe-3502-7', appearance: 2, view: 2, price: 32.99, isNew: true,
+    img: 'T3502A2PA8089PT17X222Y36D360822278W11000H9166PA8090PT17X21Y33D360822225W33999H41763',
   },
   {
     id: 'logo-hoodie',
