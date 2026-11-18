@@ -85,6 +85,22 @@ export const MERCH_ITEMS: MerchItem[] = [
     path: LOGO, sellable: '5wdQqnbok8S0z0m1yZ4Z-5117-29', appearance: 2,
     img: 'T5117A2PA11068PT32X0Y25D360811485W9900H2593', price: 60.99,
   },
+  // 18.11.2026 (Mike: "nur shirt, hoodie und regenjacke, kappe und haube fürs erste. weiß schwarz"): Cap und Beanie neu.
+  // Farben im Spreadshop: Shirt und Hoodie Schwarz + Weiß, Cap Schwarz + Weiß/Schwarz, Regenjacke und Beanie nur Schwarz.
+  {
+    id: 'logo-cap', isNew: true,
+    name: { de: 'Palm Bandits Snapback Cap', en: 'Palm Bandits Snapback Cap' },
+    type: { de: 'Snapback Cap · Schwarz', en: 'Snapback cap · Black' },
+    path: LOGO, sellable: '5wdQqnbok8S0z0m1yZ4Z-905-34', appearance: 14,
+    img: 'T905A14PA1890PT32X0Y11D360811485W14197H3719', price: 18.49,
+  },
+  {
+    id: 'logo-beanie', isNew: true,
+    name: { de: 'Palm Bandits Beanie', en: 'Palm Bandits Beanie' },
+    type: { de: 'Recycelte Patch-Beanie · Schwarz', en: 'Recycled patch beanie · Black' },
+    path: LOGO, sellable: '5wdQqnbok8S0z0m1yZ4Z-3339-36', appearance: 2,
+    img: 'T3339A2PA8044PT32X0Y13D360811485W8998H2357', price: 17.99,
+  },
 ];
 
 // Nicht (mehr) kaufbare Designs: entfernte + noch in Prüfung (soon)

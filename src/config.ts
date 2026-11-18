@@ -35,7 +35,7 @@ export const HOSTING: 'easyname' | 'cloudflare' | 'github' = 'easyname';
 // Merch-Shop bei Spreadshirt (Spreadshop). Leer = "öffnet in Kürze".
 export const MERCH = {
   url: 'https://palmbandits.myspreadshop.at/',
-  items: ['T-Shirts', 'Hoodies', 'wasserabweisende Windbreaker'],
+  items: ['T-Shirts', 'Hoodies', 'wasserabweisende Windbreaker', 'Caps', 'Beanies'],
 };
 
 // GTA VI Release (Mitternacht Ortszeit laut Store-Angaben)
