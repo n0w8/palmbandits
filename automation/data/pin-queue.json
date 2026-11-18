@@ -1,6 +1,182 @@
 {
-  "updated": "2026-11-18T13:52:12.014Z",
+  "updated": "2026-11-18T21:51:34.150Z",
   "pins": [
+    {
+      "id": "news-2026-11-18-take-two-aktie-gta-6-tests-analysten",
+      "type": "news",
+      "board": "news",
+      "title": "Take-Two-Aktie steigt nach GTA-6-Tests: Was Analysten erwarten",
+      "description": "Nach dem Metascore 99 legt die Take-Two-Aktie zu. Analysten erwarten bis zu 45 Millionen verkaufte GTA 6 bis Ende Dezember, erste Zahlen ab dem 20. November. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-take-two-aktie-gta-6-tests-analysten/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-take-two-aktie-gta-6-tests-analysten",
+      "altText": "News-Grafik zu GTA 6: \"Take-Two-Aktie steigt nach GTA-6-Tests: Was Analysten erwarten\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "Take-Two-Aktie steigt nach GTA-6-Tests: Was Analysten erwarten",
+        "text": "Nach dem Metascore 99 legt die Take-Two-Aktie zu. Analysten erwarten bis zu 45 Millionen verkaufte GTA 6 bis Ende Dezember, erste Zahlen ab dem 20. November.",
+        "hype": 3,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-take-two-aktie-gta-6-tests-analysten.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-kritik-schwaechen-tests",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Kritik: Diese Schwächen nennen die Tests",
+      "description": "Metascore 99, aber nicht fehlerfrei: fummelige Deckung, verschachtelte Menüs, langsamer Einstieg und Ruckler. Die Kritikpunkte aus den GTA-6-Tests im Detail. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-kritik-schwaechen-tests/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-kritik-schwaechen-tests",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Kritik: Diese Schwächen nennen die Tests\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Kritik: Diese Schwächen nennen die Tests",
+        "text": "Metascore 99, aber nicht fehlerfrei: fummelige Deckung, verschachtelte Menüs, langsamer Einstieg und Ruckler. Die Kritikpunkte aus den GTA-6-Tests im Detail.",
+        "hype": 3,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-kritik-schwaechen-tests.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-story-welt-spoilerfrei-tests",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Story ohne Spoiler: Was die Tests verraten",
+      "description": "Fünf Kapitel, mehrere Enden und ein Vice City, das du dir erst erspielst: Was die Tests über Story und Welt von GTA 6 verraten, ganz ohne Spoiler zu Wendungen. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-story-welt-spoilerfrei-tests/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-story-welt-spoilerfrei-tests",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Story ohne Spoiler: Was die Tests verraten\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Story ohne Spoiler: Was die Tests verraten",
+        "text": "Fünf Kapitel, mehrere Enden und ein Vice City, das du dir erst erspielst: Was die Tests über Story und Welt von GTA 6 verraten, ganz ohne Spoiler zu Wendungen.",
+        "hype": 4,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-story-welt-spoilerfrei-tests.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-streaming-rekord-7-millionen-zuschauer",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Streaming-Rekord: 7,18 Millionen Zuschauer gleichzeitig",
+      "description": "GTA 6 bricht vor dem Start in Europa alle Streaming-Rekorde: 7,18 Millionen Zuschauer gleichzeitig, über 3 Millionen auf Twitch. Alle Zahlen und Rekorde. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-streaming-rekord-7-millionen-zuschauer/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-streaming-rekord-7-millionen-zuschauer",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Streaming-Rekord: 7,18 Millionen Zuschauer gleichzeitig\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Streaming-Rekord: 7,18 Millionen Zuschauer gleichzeitig",
+        "text": "GTA 6 bricht vor dem Start in Europa alle Streaming-Rekorde: 7,18 Millionen Zuschauer gleichzeitig, über 3 Millionen auf Twitch. Alle Zahlen und Rekorde.",
+        "hype": 5,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-streaming-rekord-7-millionen-zuschauer.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-spielzeit-laut-tests",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Spielzeit laut Tests: 50 bis 65 Stunden für die Story",
+      "description": "Wie lang ist GTA 6? Die Tests nennen 50 bis 65 Stunden für die Story und oft über 100 Stunden insgesamt. Alle Angaben mit Vergleich zu GTA 5 und RDR2. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-spielzeit-laut-tests/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-spielzeit-laut-tests",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Spielzeit laut Tests: 50 bis 65 Stunden für die Story\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Spielzeit laut Tests: 50 bis 65 Stunden für die Story",
+        "text": "Wie lang ist GTA 6? Die Tests nennen 50 bis 65 Stunden für die Story und oft über 100 Stunden insgesamt. Alle Angaben mit Vergleich zu GTA 5 und RDR2.",
+        "hype": 4,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-spielzeit-laut-tests.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-ps5-systemupdate-pflicht",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 PS5-Systemupdate: Pflicht vor dem Start um Mitternacht",
+      "description": "Sony verlangt für GTA 6 neue PS5-Systemsoftware, sonst startet das Spiel nicht. Welche Version nötig ist, wie du sie installierst und wie es um den Patch steht. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-ps5-systemupdate-pflicht/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-ps5-systemupdate-pflicht",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 PS5-Systemupdate: Pflicht vor dem Start um Mitternacht\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 PS5-Systemupdate: Pflicht vor dem Start um Mitternacht",
+        "text": "Sony verlangt für GTA 6 neue PS5-Systemsoftware, sonst startet das Spiel nicht. Welche Version nötig ist, wie du sie installierst und wie es um den Patch steht.",
+        "hype": 4,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-ps5-systemupdate-pflicht.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-digital-foundry-technik-test-ps5-xbox",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Technik-Test: Digital Foundry prüft PS5, Pro und Xbox",
+      "description": "Digital Foundry hat GTA 6 vermessen: 1440p auf PS5 und Series X, PSSR 2 auf der Pro, 720p auf der Series S. So stabil laufen die 30 FPS auf jeder Konsole. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-digital-foundry-technik-test-ps5-xbox/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-digital-foundry-technik-test-ps5-xbox",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Technik-Test: Digital Foundry prüft PS5, Pro und Xbox\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Technik-Test: Digital Foundry prüft PS5, Pro und Xbox",
+        "text": "Digital Foundry hat GTA 6 vermessen: 1440p auf PS5 und Series X, PSSR 2 auf der Pro, 720p auf der Series S. So stabil laufen die 30 FPS auf jeder Konsole.",
+        "hype": 4,
+        "breaking": false,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-digital-foundry-technik-test-ps5-xbox.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "news-2026-11-18-gta-6-tests-metascore-99-rekord",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Tests: Metascore 99, der Allzeitrekord ist eingestellt",
+      "description": "Die Tests zu GTA 6 sind da: Metascore 99, keine einzige gemischte Kritik, gleichauf mit Zelda: Ocarina of Time. Die Wertungen, das Lob und die Kritikpunkte. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-18-gta-6-tests-metascore-99-rekord/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-tests-metascore-99-rekord",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Tests: Metascore 99, der Allzeitrekord ist eingestellt\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Tests: Metascore 99, der Allzeitrekord ist eingestellt",
+        "text": "Die Tests zu GTA 6 sind da: Metascore 99, keine einzige gemischte Kritik, gleichauf mit Zelda: Ocarina of Time. Die Wertungen, das Lob und die Kritikpunkte.",
+        "hype": 5,
+        "breaking": true,
+        "rumor": false,
+        "date": "18.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-tests-metascore-99-rekord.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
     {
       "id": "news-2026-11-18-gta-6-launch-zeiten-weltweit",
       "type": "news",
@@ -561,23 +737,23 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "guide-gta-6-erste-stunden-tipps-spielsysteme",
+      "id": "guide-gta-6-fahrzeuge-autos-boote-flugzeuge",
       "type": "guide",
-      "board": "tipps",
-      "title": "GTA 6 Tipps für die ersten Stunden: Diese Spielsysteme solltest du kennen",
-      "description": "Sechs Fahndungssterne, Criminal Profile, Figurenwechsel, Autodiebstahl per App: Was Rockstar im Extended Look und in den Previews gezeigt hat und was das für deine ersten Stunden in GTA 6 bedeutet. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-erste-stunden-tipps-spielsysteme/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-erste-stunden-tipps-spielsysteme",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Tipps für die ersten Stunden\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "board": "guides",
+      "title": "GTA 6 Fahrzeuge: Autos, Boote, Flugzeuge und was du wissen musst",
+      "description": "Wie viele Fahrzeuge hat GTA 6? Autos, Motorräder, Boote, Flugzeuge und Hubschrauber laut Tests, dazu Tanken, Schaden, Tuning und die Bonus-Autos der Editionen. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-fahrzeuge-autos-boote-flugzeuge/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-fahrzeuge-autos-boote-flugzeuge",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Fahrzeuge\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
-        "headline": "GTA 6 Tipps für die ersten Stunden",
-        "text": "Sechs Fahndungssterne, Criminal Profile, Figurenwechsel, Autodiebstahl per App: Was Rockstar im Extended Look und in den Previews gezeigt hat und was das für deine ersten Stunden in GTA 6 bedeutet.",
+        "headline": "GTA 6 Fahrzeuge",
+        "text": "Wie viele Fahrzeuge hat GTA 6? Autos, Motorräder, Boote, Flugzeuge und Hubschrauber laut Tests, dazu Tanken, Schaden, Tuning und die Bonus-Autos der Editionen.",
         "bullets": [
-          "1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol",
-          "2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst",
-          "3. Autos klauen: Erst scannen, dann knacken",
-          "4. Fahrzeuge im Alltag und Fortbewegung",
-          "5. Jason und Lucia: Wechseln und zusammenhalten"
+          "Die kurze Antwort",
+          "Wie viele Fahrzeuge gibt es?",
+          "Was du fahren, fliegen und steuern kannst",
+          "In Trailern erspäht",
+          "Autos klauen: Werkzeug nach Sicherheitsstufe"
         ],
         "gameName": "GTA 6",
         "difficulty": "Leicht",
@@ -585,8 +761,8 @@
         "domain": "palmbandits.com",
         "stars": 4
       },
-      "imagePath": "automation/pinterest/out/guide-gta-6-erste-stunden-tipps-spielsysteme.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/guide-gta-6-fahrzeuge-autos-boote-flugzeuge.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-ctw-nintendo-ds",
@@ -609,32 +785,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "tips-gta-6-erste-stunden-tipps-spielsysteme",
+      "id": "tips-gta-6-fahrzeuge-autos-boote-flugzeuge",
       "type": "tips",
       "board": "tipps",
-      "title": "GTA 6 Tipps für die ersten Stunden: 6 Tipps auf einen Blick",
-      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: 1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol, 2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst, 3. Autos klauen: Erst scannen, dann knacken und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-erste-stunden-tipps-spielsysteme/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-erste-stunden-tipps-spielsysteme",
-      "altText": "Liste mit 6 Tipps für GTA 6: 1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol, 2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst, 3. Autos klauen: Erst scannen, dann knacken, 4. Fahrzeuge im Alltag und Fortbewegung, 5. Jason und Lucia: Wechseln und zusammenhalten, 6. Geld: Rauben, verkaufen, Tresore knacken.",
+      "title": "GTA 6 Fahrzeuge: 6 Fakten auf einen Blick",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Wie viele Fahrzeuge gibt es?, Was du fahren, fliegen und steuern kannst und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-fahrzeuge-autos-boote-flugzeuge/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-fahrzeuge-autos-boote-flugzeuge",
+      "altText": "Liste mit 6 Fakten für GTA 6: Die kurze Antwort, Wie viele Fahrzeuge gibt es?, Was du fahren, fliegen und steuern kannst, In Trailern erspäht, Autos klauen: Werkzeug nach Sicherheitsstufe, Fahrverhalten, Schaden und Tanken.",
       "design": {
         "type": "tips",
-        "headline": "GTA 6 Tipps für die ersten Stunden",
+        "headline": "GTA 6 Fahrzeuge",
         "bullets": [
-          "1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol",
-          "2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst",
-          "3. Autos klauen: Erst scannen, dann knacken",
-          "4. Fahrzeuge im Alltag und Fortbewegung",
-          "5. Jason und Lucia: Wechseln und zusammenhalten",
-          "6. Geld: Rauben, verkaufen, Tresore knacken"
+          "Die kurze Antwort",
+          "Wie viele Fahrzeuge gibt es?",
+          "Was du fahren, fliegen und steuern kannst",
+          "In Trailern erspäht",
+          "Autos klauen: Werkzeug nach Sicherheitsstufe",
+          "Fahrverhalten, Schaden und Tanken"
         ],
         "count": 6,
-        "word": "TIPPS",
+        "word": "FAKTEN",
         "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/tips-gta-6-erste-stunden-tipps-spielsysteme.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/tips-gta-6-fahrzeuge-autos-boote-flugzeuge.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-gta3-callahan-bridge",
@@ -657,23 +833,23 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "guide-gta-6-editionen-standard-ultimate-vergleich",
+      "id": "guide-gta-6-radiosender-musik-soundtrack",
       "type": "guide",
-      "board": "tipps",
-      "title": "GTA 6 Editionen: Standard oder Ultimate, was steckt drin?",
-      "description": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-editionen-standard-ultimate-vergleich",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Editionen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "board": "guides",
+      "title": "GTA 6 Radiosender: Alle bestätigten Sender, Moderatoren und Songs",
+      "description": "Alle offiziellen GTA 6 Radiosender mit Moderatoren und Songs, was die Tests zu Podcasts sagen und wie sich Radio, Album und Score von Justice unterscheiden. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-radiosender-musik-soundtrack/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-radiosender-musik-soundtrack",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Radiosender\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
-        "headline": "GTA 6 Editionen",
-        "text": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt.",
+        "headline": "GTA 6 Radiosender",
+        "text": "Alle offiziellen GTA 6 Radiosender mit Moderatoren und Songs, was die Tests zu Podcasts sagen und wie sich Radio, Album und Score von Justice unterscheiden.",
         "bullets": [
-          "Die Editionen im Vergleich",
-          "Alle 16 Inhalte der Ultimate Edition",
-          "Upgrade: jederzeit möglich",
-          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
-          "Box-Version: keine Disc"
+          "Die kurze Antwort",
+          "Die sechs offiziellen Sender",
+          "Flash FM: der Gruß an Vice City",
+          "Wie viele Sender gibt es insgesamt?",
+          "Podcasts: zum ersten Mal in GTA"
         ],
         "gameName": "GTA 6",
         "difficulty": "Leicht",
@@ -681,8 +857,8 @@
         "domain": "palmbandits.com",
         "stars": 4
       },
-      "imagePath": "automation/pinterest/out/guide-gta-6-editionen-standard-ultimate-vergleich.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/guide-gta-6-radiosender-musik-soundtrack.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-gta4-fotos-new-york",
@@ -705,32 +881,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "tips-gta-6-editionen-standard-ultimate-vergleich",
+      "id": "tips-gta-6-radiosender-musik-soundtrack",
       "type": "tips",
       "board": "tipps",
-      "title": "GTA 6 Editionen: 6 Tipps auf einen Blick",
-      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-editionen-standard-ultimate-vergleich",
-      "altText": "Liste mit 6 Tipps für GTA 6: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich, Vintage Vice City Pack: letzter Tag ist der Release-Tag, Box-Version: keine Disc, The Vice City Collection: Sammlerbox ohne Spiel.",
+      "title": "GTA 6 Radiosender: 6 Fakten auf einen Blick",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Die sechs offiziellen Sender, Flash FM: der Gruß an Vice City und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-radiosender-musik-soundtrack/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-radiosender-musik-soundtrack",
+      "altText": "Liste mit 6 Fakten für GTA 6: Die kurze Antwort, Die sechs offiziellen Sender, Flash FM: der Gruß an Vice City, Wie viele Sender gibt es insgesamt?, Podcasts: zum ersten Mal in GTA, Werbung und Talk.",
       "design": {
         "type": "tips",
-        "headline": "GTA 6 Editionen",
+        "headline": "GTA 6 Radiosender",
         "bullets": [
-          "Die Editionen im Vergleich",
-          "Alle 16 Inhalte der Ultimate Edition",
-          "Upgrade: jederzeit möglich",
-          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
-          "Box-Version: keine Disc",
-          "The Vice City Collection: Sammlerbox ohne Spiel"
+          "Die kurze Antwort",
+          "Die sechs offiziellen Sender",
+          "Flash FM: der Gruß an Vice City",
+          "Wie viele Sender gibt es insgesamt?",
+          "Podcasts: zum ersten Mal in GTA",
+          "Werbung und Talk"
         ],
         "count": 6,
-        "word": "TIPPS",
+        "word": "FAKTEN",
         "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/tips-gta-6-editionen-standard-ultimate-vergleich.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/tips-gta-6-radiosender-musik-soundtrack.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-gta5-drei-helden",
@@ -789,32 +965,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "guide-gta-6-jason-lucia-figuren-guide",
+      "id": "guide-gta-6-fahndungssystem-polizei-erklaert",
       "type": "guide",
-      "board": "guides",
-      "title": "Jason und Lucia: Wer die Hauptfiguren von GTA 6 sind",
-      "description": "Lucia Caminos und Jason Duval im Porträt: Herkunft, Vorgeschichte, ihre Beziehung im Spiel und die Nebenfiguren von Cal Hampton bis Raul Bautista. Nur, was Rockstar und Previews bestätigt haben. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-jason-lucia-figuren-guide/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-jason-lucia-figuren-guide",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"Jason und Lucia\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "board": "tipps",
+      "title": "GTA 6 Fahndungssystem erklärt: Sterne, Heat und Polizei abhängen",
+      "description": "Das Fahndungssystem von GTA 6 einfach erklärt: sechs Sterne, die Fahndungsstufen, Heat, Criminal Profile und die besten Wege, die Polizei laut Tests abzuhängen. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-fahndungssystem-polizei-erklaert/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-fahndungssystem-polizei-erklaert",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Fahndungssystem erklärt\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
-        "headline": "Jason und Lucia",
-        "text": "Lucia Caminos und Jason Duval im Porträt: Herkunft, Vorgeschichte, ihre Beziehung im Spiel und die Nebenfiguren von Cal Hampton bis Raul Bautista. Nur, was Rockstar und Previews bestätigt haben.",
+        "headline": "GTA 6 Fahndungssystem erklärt",
+        "text": "Das Fahndungssystem von GTA 6 einfach erklärt: sechs Sterne, die Fahndungsstufen, Heat, Criminal Profile und die besten Wege, die Polizei laut Tests abzuhängen.",
         "bullets": [
-          "Steckbrief",
-          "Lucia Caminos",
-          "Jason Duval",
-          "Das Duo im Spiel",
-          "Die Nebenfiguren"
+          "Kurz erklärt",
+          "So läuft eine Fahndung ab",
+          "Was die Polizei über dich weiß",
+          "Was bei welcher Sternzahl kommt",
+          "Polizei abhängen: die besten Methoden"
         ],
         "gameName": "GTA 6",
-        "difficulty": null,
+        "difficulty": "Mittel",
         "cta": "Ganzen Guide lesen »",
         "domain": "palmbandits.com",
         "stars": 4
       },
-      "imagePath": "automation/pinterest/out/guide-gta-6-jason-lucia-figuren-guide.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/guide-gta-6-fahndungssystem-polizei-erklaert.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-online-cayo-perico",
@@ -837,32 +1013,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "tips-gta-6-jason-lucia-figuren-guide",
+      "id": "tips-gta-6-fahndungssystem-polizei-erklaert",
       "type": "tips",
       "board": "tipps",
-      "title": "Jason und Lucia: 6 Fakten auf einen Blick",
-      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Steckbrief, Lucia Caminos, Jason Duval und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-jason-lucia-figuren-guide/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-jason-lucia-figuren-guide",
-      "altText": "Liste mit 6 Fakten für GTA 6: Steckbrief, Lucia Caminos, Jason Duval, Das Duo im Spiel, Die Nebenfiguren, Unsere Einordnung.",
+      "title": "GTA 6 Fahndungssystem erklärt: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Kurz erklärt, So läuft eine Fahndung ab, Was die Polizei über dich weiß und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-fahndungssystem-polizei-erklaert/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-fahndungssystem-polizei-erklaert",
+      "altText": "Liste mit 6 Tipps für GTA 6: Kurz erklärt, So läuft eine Fahndung ab, Was die Polizei über dich weiß, Was bei welcher Sternzahl kommt, Polizei abhängen: die besten Methoden, Criminal Profile: Was dein Verhalten auslöst.",
       "design": {
         "type": "tips",
-        "headline": "Jason und Lucia",
+        "headline": "GTA 6 Fahndungssystem erklärt",
         "bullets": [
-          "Steckbrief",
-          "Lucia Caminos",
-          "Jason Duval",
-          "Das Duo im Spiel",
-          "Die Nebenfiguren",
-          "Unsere Einordnung"
+          "Kurz erklärt",
+          "So läuft eine Fahndung ab",
+          "Was die Polizei über dich weiß",
+          "Was bei welcher Sternzahl kommt",
+          "Polizei abhängen: die besten Methoden",
+          "Criminal Profile: Was dein Verhalten auslöst"
         ],
         "count": 6,
-        "word": "FAKTEN",
+        "word": "TIPPS",
         "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/tips-gta-6-jason-lucia-figuren-guide.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/tips-gta-6-fahndungssystem-polizei-erklaert.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-sa-cj-fitness",
@@ -885,32 +1061,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "guide-gta-6-map-leonida-vice-city-regionen",
+      "id": "guide-gta-6-geld-verdienen-story-modus",
       "type": "guide",
       "board": "guides",
-      "title": "GTA 6 Map: Leonida und Vice City, alle Regionen im Überblick",
-      "description": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-map-leonida-vice-city-regionen",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Map\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "title": "GTA 6 Geld verdienen: Raubzüge, Hehler und Tipps für den Start",
+      "description": "So verdienst du in GTA 6 Geld im Story-Modus: fünf Raubzug-Stufen, Hehler, Bargeld und Bank, was die Tests zu Beträgen sagen und Tipps für den Start. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtageld",
+      "link": "https://palmbandits.com/guides/gta-6-geld-verdienen-story-modus/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-geld-verdienen-story-modus",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Geld verdienen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
-        "headline": "GTA 6 Map",
-        "text": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht.",
+        "headline": "GTA 6 Geld verdienen",
+        "text": "So verdienst du in GTA 6 Geld im Story-Modus: fünf Raubzug-Stufen, Hehler, Bargeld und Bank, was die Tests zu Beträgen sagen und Tipps für den Start.",
         "bullets": [
-          "Leonida auf einen Blick",
-          "Vice City",
-          "Leonida Keys",
-          "Grassrivers",
-          "Port Gellhorn"
+          "Die kurze Antwort",
+          "Warum Geld in GTA 6 wichtiger ist",
+          "Bargeld, Karte, Bankkonto",
+          "Die fünf Raubzug-Stufen",
+          "Hehler: Ohne sie ist Beute nichts wert"
         ],
         "gameName": "GTA 6",
-        "difficulty": null,
+        "difficulty": "Leicht",
         "cta": "Ganzen Guide lesen »",
         "domain": "palmbandits.com",
         "stars": 4
       },
-      "imagePath": "automation/pinterest/out/guide-gta-6-map-leonida-vice-city-regionen.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/guide-gta-6-geld-verdienen-story-modus.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-vc-ray-liotta",
@@ -933,32 +1109,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "tips-gta-6-map-leonida-vice-city-regionen",
+      "id": "tips-gta-6-geld-verdienen-story-modus",
       "type": "tips",
       "board": "tipps",
-      "title": "GTA 6 Map: 6 Fakten auf einen Blick",
-      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Leonida auf einen Blick, Vice City, Leonida Keys und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-map-leonida-vice-city-regionen",
-      "altText": "Liste mit 6 Fakten für GTA 6: Leonida auf einen Blick, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia.",
+      "title": "GTA 6 Geld verdienen: 6 Geld-Tipps auf einen Blick",
+      "description": "6 Geld-Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Warum Geld in GTA 6 wichtiger ist, Bargeld, Karte, Bankkonto und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-geld-verdienen-story-modus/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-geld-verdienen-story-modus",
+      "altText": "Liste mit 6 Geld-Tipps für GTA 6: Die kurze Antwort, Warum Geld in GTA 6 wichtiger ist, Bargeld, Karte, Bankkonto, Die fünf Raubzug-Stufen, Hehler: Ohne sie ist Beute nichts wert, Kleinvieh macht auch Mist.",
       "design": {
         "type": "tips",
-        "headline": "GTA 6 Map",
+        "headline": "GTA 6 Geld verdienen",
         "bullets": [
-          "Leonida auf einen Blick",
-          "Vice City",
-          "Leonida Keys",
-          "Grassrivers",
-          "Port Gellhorn",
-          "Ambrosia"
+          "Die kurze Antwort",
+          "Warum Geld in GTA 6 wichtiger ist",
+          "Bargeld, Karte, Bankkonto",
+          "Die fünf Raubzug-Stufen",
+          "Hehler: Ohne sie ist Beute nichts wert",
+          "Kleinvieh macht auch Mist"
         ],
         "count": 6,
-        "word": "FAKTEN",
+        "word": "GELD-TIPPS",
         "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/tips-gta-6-map-leonida-vice-city-regionen.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
+      "imagePath": "automation/pinterest/out/tips-gta-6-geld-verdienen-story-modus.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-ctw-polizei-schrotten",
@@ -1017,31 +1193,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "guide-gta-san-andreas-mythen-easter-eggs",
+      "id": "guide-gta-6-grafik-fps-ps5-pro-xbox",
       "type": "guide",
-      "board": "guides",
-      "title": "GTA San Andreas Mythen und Easter Eggs: Bigfoot, Geisterautos & mehr",
-      "description": "Die bekanntesten GTA San Andreas Mythen im Faktencheck, von Bigfoot bis zu Geisterautos, plus echte Easter Eggs mit Fundort, die du heute noch finden kannst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtasanandreas #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-san-andreas-mythen-easter-eggs",
-      "altText": "Pin-Grafik zum GTA San Andreas Guide \"GTA San Andreas Mythen und Easter Eggs\" mit 4 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "board": "tipps",
+      "title": "GTA 6 Grafik und FPS: PS5, PS5 Pro und Xbox im Technik-Check",
+      "description": "Gibt es in GTA 6 einen Performance-Modus? Auflösung, FPS und Raytracing auf PS5, PS5 Pro und Xbox Series X|S laut Digital Foundry, dazu die besten TV-Tipps. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-grafik-fps-ps5-pro-xbox/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-grafik-fps-ps5-pro-xbox",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Grafik und FPS\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
-        "headline": "GTA San Andreas Mythen und Easter Eggs",
-        "text": "Die bekanntesten GTA San Andreas Mythen im Faktencheck, von Bigfoot bis zu Geisterautos, plus echte Easter Eggs mit Fundort, die du heute noch finden kannst.",
+        "headline": "GTA 6 Grafik und FPS",
+        "text": "Gibt es in GTA 6 einen Performance-Modus? Auflösung, FPS und Raytracing auf PS5, PS5 Pro und Xbox Series X|S laut Digital Foundry, dazu die besten TV-Tipps.",
         "bullets": [
-          "Mythos oder echt? Die Übersicht",
-          "Die großen Mythen",
-          "Echte Easter Eggs, die du finden kannst",
-          "Selbst auf Spurensuche gehen"
+          "Die kurze Antwort",
+          "Gibt es einen Performance-Modus?",
+          "Alle Konsolen im Vergleich",
+          "PS5 Pro: Lohnt sich die Pro für GTA 6?",
+          "PS5 und Xbox Series X: knapp dahinter"
         ],
-        "gameName": "GTA San Andreas",
+        "gameName": "GTA 6",
         "difficulty": "Leicht",
         "cta": "Ganzen Guide lesen »",
         "domain": "palmbandits.com",
         "stars": 4
       },
-      "imagePath": "automation/pinterest/out/guide-gta-san-andreas-mythen-easter-eggs.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
+      "imagePath": "automation/pinterest/out/guide-gta-6-grafik-fps-ps5-pro-xbox.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-gta4-lagerfeld",
@@ -1064,30 +1241,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "tips-gta-san-andreas-mythen-easter-eggs",
+      "id": "tips-gta-6-grafik-fps-ps5-pro-xbox",
       "type": "tips",
       "board": "tipps",
-      "title": "GTA San Andreas Mythen und Easter Eggs: 4 Easter Eggs auf einen Blick",
-      "description": "4 Easter Eggs für GTA San Andreas kompakt zusammengefasst: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtasanandreas #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-san-andreas-mythen-easter-eggs",
-      "altText": "Liste mit 4 Easter Eggs für GTA San Andreas: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst, Selbst auf Spurensuche gehen.",
+      "title": "GTA 6 Grafik und FPS: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Gibt es einen Performance-Modus?, Alle Konsolen im Vergleich und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-grafik-fps-ps5-pro-xbox/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-grafik-fps-ps5-pro-xbox",
+      "altText": "Liste mit 6 Tipps für GTA 6: Die kurze Antwort, Gibt es einen Performance-Modus?, Alle Konsolen im Vergleich, PS5 Pro: Lohnt sich die Pro für GTA 6?, PS5 und Xbox Series X: knapp dahinter, Xbox Series S: das Sorgenkind.",
       "design": {
         "type": "tips",
-        "headline": "GTA San Andreas Mythen und Easter Eggs",
+        "headline": "GTA 6 Grafik und FPS",
         "bullets": [
-          "Mythos oder echt? Die Übersicht",
-          "Die großen Mythen",
-          "Echte Easter Eggs, die du finden kannst",
-          "Selbst auf Spurensuche gehen"
+          "Die kurze Antwort",
+          "Gibt es einen Performance-Modus?",
+          "Alle Konsolen im Vergleich",
+          "PS5 Pro: Lohnt sich die Pro für GTA 6?",
+          "PS5 und Xbox Series X: knapp dahinter",
+          "Xbox Series S: das Sorgenkind"
         ],
-        "count": 4,
-        "word": "EASTER EGGS",
-        "gameName": "GTA San Andreas",
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/tips-gta-san-andreas-mythen-easter-eggs.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
+      "imagePath": "automation/pinterest/out/tips-gta-6-grafik-fps-ps5-pro-xbox.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-gta5-franklin-cj-sprecher",
@@ -1110,32 +1289,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "guide-gta-online-glitches-ban-risiko",
+      "id": "guide-gta-6-speicherplatz-download-groesse",
       "type": "guide",
-      "board": "guides",
-      "title": "GTA Online Glitches: Warum Money-Glitches dich den Account kosten",
-      "description": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtaonline #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-glitches-ban-risiko",
-      "altText": "Pin-Grafik zum GTA Online Guide \"GTA Online Glitches\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "board": "tipps",
+      "title": "GTA 6 Speicherplatz: So viele GB brauchst du auf PS5 und Xbox",
+      "description": "GTA 6 braucht bis zu 212 GB. Wie viel Platz PS5, PS5 Pro und Xbox Series X|S wirklich haben, welche SSD passt und was die Updates noch obendrauf legen. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-speicherplatz-download-groesse/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-speicherplatz-download-groesse",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Speicherplatz\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
       "design": {
         "type": "guide",
-        "headline": "GTA Online Glitches",
-        "text": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst.",
+        "headline": "GTA 6 Speicherplatz",
+        "text": "GTA 6 braucht bis zu 212 GB. Wie viel Platz PS5, PS5 Pro und Xbox Series X|S wirklich haben, welche SSD passt und was die Updates noch obendrauf legen.",
         "bullets": [
-          "Was ist überhaupt ein Glitch?",
-          "Was Rockstar bei Exploits typischerweise macht",
-          "Echte Fälle aus der Vergangenheit",
-          "Woran du einen riskanten Trick erkennst",
-          "Fake-Generatoren und Phishing"
+          "Die kurze Antwort",
+          "Die Zahlen im Überblick",
+          "Passt GTA 6 auf deine Konsole?",
+          "So machst du auf der PS5 Platz",
+          "Mehr Platz für GTA 6: M.2-SSD in der PS5"
         ],
-        "gameName": "GTA Online",
+        "gameName": "GTA 6",
         "difficulty": "Leicht",
         "cta": "Ganzen Guide lesen »",
         "domain": "palmbandits.com",
         "stars": 4
       },
-      "imagePath": "automation/pinterest/out/guide-gta-online-glitches-ban-risiko.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
+      "imagePath": "automation/pinterest/out/guide-gta-6-speicherplatz-download-groesse.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-gta6-orte",
@@ -1158,33 +1337,32 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
-      "id": "tips-gta-online-glitches-ban-risiko",
+      "id": "tips-gta-6-speicherplatz-download-groesse",
       "type": "tips",
       "board": "tipps",
-      "title": "GTA Online Glitches: 7 Glitches auf einen Blick",
-      "description": "7 Glitches für GTA Online kompakt zusammengefasst: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtaonline #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-glitches-ban-risiko",
-      "altText": "Liste mit 7 Glitches für GTA Online: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit, Woran du einen riskanten Trick erkennst, Fake-Generatoren und Phishing, Mod-Menüs und \"Recovery\"-Angebote, Wenn du doch erwischt wurdest.",
+      "title": "GTA 6 Speicherplatz: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Die Zahlen im Überblick, Passt GTA 6 auf deine Konsole? und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-speicherplatz-download-groesse/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-speicherplatz-download-groesse",
+      "altText": "Liste mit 6 Tipps für GTA 6: Die kurze Antwort, Die Zahlen im Überblick, Passt GTA 6 auf deine Konsole?, So machst du auf der PS5 Platz, Mehr Platz für GTA 6: M.2-SSD in der PS5, Xbox Series X|S: Erweiterungskarte statt USB-Platte.",
       "design": {
         "type": "tips",
-        "headline": "GTA Online Glitches",
+        "headline": "GTA 6 Speicherplatz",
         "bullets": [
-          "Was ist überhaupt ein Glitch?",
-          "Was Rockstar bei Exploits typischerweise macht",
-          "Echte Fälle aus der Vergangenheit",
-          "Woran du einen riskanten Trick erkennst",
-          "Fake-Generatoren und Phishing",
-          "Mod-Menüs und \"Recovery\"-Angebote",
-          "Wenn du doch erwischt wurdest"
+          "Die kurze Antwort",
+          "Die Zahlen im Überblick",
+          "Passt GTA 6 auf deine Konsole?",
+          "So machst du auf der PS5 Platz",
+          "Mehr Platz für GTA 6: M.2-SSD in der PS5",
+          "Xbox Series X|S: Erweiterungskarte statt USB-Platte"
         ],
-        "count": 7,
-        "word": "GLITCHES",
-        "gameName": "GTA Online",
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
         "cta": "Alle Details im Guide »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/tips-gta-online-glitches-ban-risiko.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
+      "imagePath": "automation/pinterest/out/tips-gta-6-speicherplatz-download-groesse.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
       "id": "fact-online-dr-dre",
@@ -1243,6 +1421,688 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-erste-stunden-tipps-spielsysteme",
+      "type": "guide",
+      "board": "tipps",
+      "title": "GTA 6 Tipps für die ersten Stunden: Diese Spielsysteme solltest du kennen",
+      "description": "Sechs Fahndungssterne, Criminal Profile, Figurenwechsel, Autodiebstahl per App: Was Rockstar im Extended Look und in den Previews gezeigt hat und was das für deine ersten Stunden in GTA 6 bedeutet. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-erste-stunden-tipps-spielsysteme/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-erste-stunden-tipps-spielsysteme",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Tipps für die ersten Stunden\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Tipps für die ersten Stunden",
+        "text": "Sechs Fahndungssterne, Criminal Profile, Figurenwechsel, Autodiebstahl per App: Was Rockstar im Extended Look und in den Previews gezeigt hat und was das für deine ersten Stunden in GTA 6 bedeutet.",
+        "bullets": [
+          "1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol",
+          "2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst",
+          "3. Autos klauen: Erst scannen, dann knacken",
+          "4. Fahrzeuge im Alltag und Fortbewegung",
+          "5. Jason und Lucia: Wechseln und zusammenhalten"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-erste-stunden-tipps-spielsysteme.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-vc-rekordstart",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: 1,4 Millionen Kopien in zwei Tagen",
+      "description": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-rekordstart",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"1,4 Millionen Kopien in zwei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "1,4 Millionen Kopien in zwei Tagen",
+        "text": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-rekordstart.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-erste-stunden-tipps-spielsysteme",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Tipps für die ersten Stunden: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: 1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol, 2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst, 3. Autos klauen: Erst scannen, dann knacken und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-erste-stunden-tipps-spielsysteme/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-erste-stunden-tipps-spielsysteme",
+      "altText": "Liste mit 6 Tipps für GTA 6: 1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol, 2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst, 3. Autos klauen: Erst scannen, dann knacken, 4. Fahrzeuge im Alltag und Fortbewegung, 5. Jason und Lucia: Wechseln und zusammenhalten, 6. Geld: Rauben, verkaufen, Tresore knacken.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Tipps für die ersten Stunden",
+        "bullets": [
+          "1. Fahndung: Sechs Sterne und Polizei ohne Minimap-Symbol",
+          "2. Criminal Profile: Das Spiel merkt sich, wie du dich verhältst",
+          "3. Autos klauen: Erst scannen, dann knacken",
+          "4. Fahrzeuge im Alltag und Fortbewegung",
+          "5. Jason und Lucia: Wechseln und zusammenhalten",
+          "6. Geld: Rauben, verkaufen, Tresore knacken"
+        ],
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-erste-stunden-tipps-spielsysteme.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-ctw-taxi-pfeifen",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Ins Mikro pfeifen, Taxi kommt",
+      "description": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-taxi-pfeifen",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Ins Mikro pfeifen, Taxi kommt\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ins Mikro pfeifen, Taxi kommt",
+        "text": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-taxi-pfeifen.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "guide-gta-6-editionen-standard-ultimate-vergleich",
+      "type": "guide",
+      "board": "tipps",
+      "title": "GTA 6 Editionen: Standard oder Ultimate, was steckt drin?",
+      "description": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-editionen-standard-ultimate-vergleich",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Editionen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Editionen",
+        "text": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt.",
+        "bullets": [
+          "Die Editionen im Vergleich",
+          "Alle 16 Inhalte der Ultimate Edition",
+          "Upgrade: jederzeit möglich",
+          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
+          "Box-Version: keine Disc"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-editionen-standard-ultimate-vergleich.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-gta3-verkaeufe",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Der Bestseller des Jahres 2001",
+      "description": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-verkaeufe",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Der Bestseller des Jahres 2001\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der Bestseller des Jahres 2001",
+        "text": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-verkaeufe.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-editionen-standard-ultimate-vergleich",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Editionen: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-editionen-standard-ultimate-vergleich",
+      "altText": "Liste mit 6 Tipps für GTA 6: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich, Vintage Vice City Pack: letzter Tag ist der Release-Tag, Box-Version: keine Disc, The Vice City Collection: Sammlerbox ohne Spiel.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Editionen",
+        "bullets": [
+          "Die Editionen im Vergleich",
+          "Alle 16 Inhalte der Ultimate Edition",
+          "Upgrade: jederzeit möglich",
+          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
+          "Box-Version: keine Disc",
+          "The Vice City Collection: Sammlerbox ohne Spiel"
+        ],
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-editionen-standard-ultimate-vergleich.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-gta4-rekordstart",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: 310 Millionen Dollar an einem Tag",
+      "description": "GTA IV verkaufte sich ab dem Start am 29. April 2008 in 24 Stunden über 3,6 Millionen Mal und spielte rund 310 Millionen US-Dollar ein. Das brachte Guinness-Weltrekorde. Quelle: Wikipedia (en): Grand Theft Auto IV. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rekordstart",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"310 Millionen Dollar an einem Tag\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "310 Millionen Dollar an einem Tag",
+        "text": "GTA IV verkaufte sich ab dem Start am 29. April 2008 in 24 Stunden über 3,6 Millionen Mal und spielte rund 310 Millionen US-Dollar ein. Das brachte Guinness-Weltrekorde.",
+        "source": "Wikipedia (en): Grand Theft Auto IV",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-rekordstart.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "wallpaper-6",
+      "type": "wallpaper",
+      "board": "wallpaper",
+      "title": "Handy-Wallpaper \"Teal Dusk\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-6",
+      "altText": "Abstraktes Hochformat-Wallpaper \"Teal Dusk\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
+      "design": {
+        "type": "wallpaper",
+        "seed": 6,
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/wallpaper-6.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta5-milliarde",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Eine Milliarde Dollar in drei Tagen",
+      "description": "GTA V verkaufte laut Guinness in den ersten 24 Stunden 11,21 Millionen Exemplare und spielte 815,7 Millionen US-Dollar ein. Am 20. September 2013 war die Milliarde geknackt. Quelle: Guinness World Records: Confirmed: Grand Theft Auto 5 breaks 6 sales world records. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-milliarde",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Eine Milliarde Dollar in drei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Eine Milliarde Dollar in drei Tagen",
+        "text": "GTA V verkaufte laut Guinness in den ersten 24 Stunden 11,21 Millionen Exemplare und spielte 815,7 Millionen US-Dollar ein. Am 20. September 2013 war die Milliarde geknackt.",
+        "source": "Guinness World Records: Confirmed: Grand Theft Auto 5 breaks 6 sales world records",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-milliarde.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "guide-gta-6-jason-lucia-figuren-guide",
+      "type": "guide",
+      "board": "guides",
+      "title": "Jason und Lucia: Wer die Hauptfiguren von GTA 6 sind",
+      "description": "Lucia Caminos und Jason Duval im Porträt: Herkunft, Vorgeschichte, ihre Beziehung im Spiel und die Nebenfiguren von Cal Hampton bis Raul Bautista. Nur, was Rockstar und Previews bestätigt haben. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-jason-lucia-figuren-guide/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-jason-lucia-figuren-guide",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"Jason und Lucia\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "Jason und Lucia",
+        "text": "Lucia Caminos und Jason Duval im Porträt: Herkunft, Vorgeschichte, ihre Beziehung im Spiel und die Nebenfiguren von Cal Hampton bis Raul Bautista. Nur, was Rockstar und Previews bestätigt haben.",
+        "bullets": [
+          "Steckbrief",
+          "Lucia Caminos",
+          "Jason Duval",
+          "Das Duo im Spiel",
+          "Die Nebenfiguren"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": null,
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-jason-lucia-figuren-guide.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-gta6-release-termin",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: GTA VI: der offizielle Release-Termin",
+      "description": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S. Quelle: Rockstar Games: Grand Theft Auto VI (offizielle Seite). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-release-termin",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"GTA VI: der offizielle Release-Termin\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA VI: der offizielle Release-Termin",
+        "text": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S.",
+        "source": "Rockstar Games: Grand Theft Auto VI (offizielle Seite)",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-release-termin.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-jason-lucia-figuren-guide",
+      "type": "tips",
+      "board": "tipps",
+      "title": "Jason und Lucia: 6 Fakten auf einen Blick",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Steckbrief, Lucia Caminos, Jason Duval und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-jason-lucia-figuren-guide/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-jason-lucia-figuren-guide",
+      "altText": "Liste mit 6 Fakten für GTA 6: Steckbrief, Lucia Caminos, Jason Duval, Das Duo im Spiel, Die Nebenfiguren, Unsere Einordnung.",
+      "design": {
+        "type": "tips",
+        "headline": "Jason und Lucia",
+        "bullets": [
+          "Steckbrief",
+          "Lucia Caminos",
+          "Jason Duval",
+          "Das Duo im Spiel",
+          "Die Nebenfiguren",
+          "Unsere Einordnung"
+        ],
+        "count": 6,
+        "word": "FAKTEN",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-jason-lucia-figuren-guide.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-online-ladezeiten",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Ein Fan machte GTA Online schneller",
+      "description": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-ladezeiten",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Ein Fan machte GTA Online schneller\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ein Fan machte GTA Online schneller",
+        "text": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-ladezeiten.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "guide-gta-6-map-leonida-vice-city-regionen",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA 6 Map: Leonida und Vice City, alle Regionen im Überblick",
+      "description": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-map-leonida-vice-city-regionen",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Map\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Map",
+        "text": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht.",
+        "bullets": [
+          "Leonida auf einen Blick",
+          "Vice City",
+          "Leonida Keys",
+          "Grassrivers",
+          "Port Gellhorn"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": null,
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-map-leonida-vice-city-regionen.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-sa-drei-staedte",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Drei Städte in einem Spiel",
+      "description": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-drei-staedte",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Drei Städte in einem Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Drei Städte in einem Spiel",
+        "text": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas.",
+        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-drei-staedte.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-map-leonida-vice-city-regionen",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Map: 6 Fakten auf einen Blick",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Leonida auf einen Blick, Vice City, Leonida Keys und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-map-leonida-vice-city-regionen",
+      "altText": "Liste mit 6 Fakten für GTA 6: Leonida auf einen Blick, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Map",
+        "bullets": [
+          "Leonida auf einen Blick",
+          "Vice City",
+          "Leonida Keys",
+          "Grassrivers",
+          "Port Gellhorn",
+          "Ambrosia"
+        ],
+        "count": 6,
+        "word": "FAKTEN",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-map-leonida-vice-city-regionen.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-vc-soundtrack-box",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: Ein Soundtrack auf sieben Alben",
+      "description": "Vice City bietet über 113 Songs und Werbespots mit rund neun Stunden Musik. Epic Records veröffentlichte den Soundtrack im Oktober 2002 als Box mit sieben Alben. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-soundtrack-box",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Ein Soundtrack auf sieben Alben\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ein Soundtrack auf sieben Alben",
+        "text": "Vice City bietet über 113 Songs und Werbespots mit rund neun Stunden Musik. Epic Records veröffentlichte den Soundtrack im Oktober 2002 als Box mit sieben Alben.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-soundtrack-box.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "wallpaper-7",
+      "type": "wallpaper",
+      "board": "wallpaper",
+      "title": "Handy-Wallpaper \"Purple Haze\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-7",
+      "altText": "Abstraktes Hochformat-Wallpaper \"Purple Haze\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und leuchtendes Gitter in Pink, Orange und Lila.",
+      "design": {
+        "type": "wallpaper",
+        "seed": 7,
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/wallpaper-7.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-ctw-verkaufsflop",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Top-Wertungen, schwache Verkäufe",
+      "description": "Trotz Bestnoten verkaufte sich Chinatown Wars auf dem DS in den USA in den ersten zwei Wochen nach dem Start im März 2009 nur knapp 90.000 Mal. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-verkaufsflop",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Top-Wertungen, schwache Verkäufe\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Top-Wertungen, schwache Verkäufe",
+        "text": "Trotz Bestnoten verkaufte sich Chinatown Wars auf dem DS in den USA in den ersten zwei Wochen nach dem Start im März 2009 nur knapp 90.000 Mal.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-verkaufsflop.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "guide-gta-san-andreas-mythen-easter-eggs",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA San Andreas Mythen und Easter Eggs: Bigfoot, Geisterautos & mehr",
+      "description": "Die bekanntesten GTA San Andreas Mythen im Faktencheck, von Bigfoot bis zu Geisterautos, plus echte Easter Eggs mit Fundort, die du heute noch finden kannst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtasanandreas #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-san-andreas-mythen-easter-eggs",
+      "altText": "Pin-Grafik zum GTA San Andreas Guide \"GTA San Andreas Mythen und Easter Eggs\" mit 4 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA San Andreas Mythen und Easter Eggs",
+        "text": "Die bekanntesten GTA San Andreas Mythen im Faktencheck, von Bigfoot bis zu Geisterautos, plus echte Easter Eggs mit Fundort, die du heute noch finden kannst.",
+        "bullets": [
+          "Mythos oder echt? Die Übersicht",
+          "Die großen Mythen",
+          "Echte Easter Eggs, die du finden kannst",
+          "Selbst auf Spurensuche gehen"
+        ],
+        "gameName": "GTA San Andreas",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-san-andreas-mythen-easter-eggs.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta3-xbox-absage",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Microsoft wollte GTA III nicht",
+      "description": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-xbox-absage",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Microsoft wollte GTA III nicht\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Microsoft wollte GTA III nicht",
+        "text": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-xbox-absage.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-san-andreas-mythen-easter-eggs",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA San Andreas Mythen und Easter Eggs: 4 Easter Eggs auf einen Blick",
+      "description": "4 Easter Eggs für GTA San Andreas kompakt zusammengefasst: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtasanandreas #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-san-andreas-mythen-easter-eggs/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-san-andreas-mythen-easter-eggs",
+      "altText": "Liste mit 4 Easter Eggs für GTA San Andreas: Mythos oder echt? Die Übersicht, Die großen Mythen, Echte Easter Eggs, die du finden kannst, Selbst auf Spurensuche gehen.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA San Andreas Mythen und Easter Eggs",
+        "bullets": [
+          "Mythos oder echt? Die Übersicht",
+          "Die großen Mythen",
+          "Echte Easter Eggs, die du finden kannst",
+          "Selbst auf Spurensuche gehen"
+        ],
+        "count": 4,
+        "word": "EASTER EGGS",
+        "gameName": "GTA San Andreas",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-san-andreas-mythen-easter-eggs.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta4-rickroll",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Der Rickroll begann mit GTA IV",
+      "description": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers. Quelle: Wikipedia (en): Rickrolling. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rickroll",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Der Rickroll begann mit GTA IV\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der Rickroll begann mit GTA IV",
+        "text": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers.",
+        "source": "Wikipedia (en): Rickrolling",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-rickroll.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "guide-gta-online-glitches-ban-risiko",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA Online Glitches: Warum Money-Glitches dich den Account kosten",
+      "description": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtaonline #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-glitches-ban-risiko",
+      "altText": "Pin-Grafik zum GTA Online Guide \"GTA Online Glitches\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA Online Glitches",
+        "text": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst.",
+        "bullets": [
+          "Was ist überhaupt ein Glitch?",
+          "Was Rockstar bei Exploits typischerweise macht",
+          "Echte Fälle aus der Vergangenheit",
+          "Woran du einen riskanten Trick erkennst",
+          "Fake-Generatoren und Phishing"
+        ],
+        "gameName": "GTA Online",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-online-glitches-ban-risiko.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta5-pc-petition",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: 728.144 Unterschriften für GTA V am PC",
+      "description": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition! Quelle: Guinness World Records: Most signatures for a videogame petition. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-pc-petition",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"728.144 Unterschriften für GTA V am PC\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "728.144 Unterschriften für GTA V am PC",
+        "text": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition!",
+        "source": "Guinness World Records: Most signatures for a videogame petition",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-pc-petition.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-online-glitches-ban-risiko",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA Online Glitches: 7 Glitches auf einen Blick",
+      "description": "7 Glitches für GTA Online kompakt zusammengefasst: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtaonline #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-glitches-ban-risiko",
+      "altText": "Liste mit 7 Glitches für GTA Online: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit, Woran du einen riskanten Trick erkennst, Fake-Generatoren und Phishing, Mod-Menüs und \"Recovery\"-Angebote, Wenn du doch erwischt wurdest.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA Online Glitches",
+        "bullets": [
+          "Was ist überhaupt ein Glitch?",
+          "Was Rockstar bei Exploits typischerweise macht",
+          "Echte Fälle aus der Vergangenheit",
+          "Woran du einen riskanten Trick erkennst",
+          "Fake-Generatoren und Phishing",
+          "Mod-Menüs und \"Recovery\"-Angebote",
+          "Wenn du doch erwischt wurdest"
+        ],
+        "count": 7,
+        "word": "GLITCHES",
+        "gameName": "GTA Online",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-online-glitches-ban-risiko.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-gta6-trailer-rekord",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: 90 Millionen Views in 24 Stunden",
+      "description": "Der erste GTA-VI-Trailer vom Dezember 2023 wurde in 24 Stunden 90.421.491 Mal auf YouTube angesehen. Laut Guinness ist das Rekord für einen Videospiel-Trailer. Quelle: Guinness World Records: Grand Theft Auto VI first look becomes most viewed videogame trailer in 24 hours. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-trailer-rekord",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"90 Millionen Views in 24 Stunden\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "90 Millionen Views in 24 Stunden",
+        "text": "Der erste GTA-VI-Trailer vom Dezember 2023 wurde in 24 Stunden 90.421.491 Mal auf YouTube angesehen. Laut Guinness ist das Rekord für einen Videospiel-Trailer.",
+        "source": "Guinness World Records: Grand Theft Auto VI first look becomes most viewed videogame trailer in 24 hours",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-trailer-rekord.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "wallpaper-8",
+      "type": "wallpaper",
+      "board": "wallpaper",
+      "title": "Handy-Wallpaper \"Miami Night\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
+      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-8",
+      "altText": "Abstraktes Hochformat-Wallpaper \"Miami Night\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
+      "design": {
+        "type": "wallpaper",
+        "seed": 8,
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/wallpaper-8.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-online-start",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Bis zu 30 Spieler in einer Sitzung",
+      "description": "GTA Online startete am 1. Oktober 2013, zwei Wochen nach GTA V. Auf PS4, Xbox One und PC teilen sich bis zu 30 Spieler eine Sitzung. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-start",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Bis zu 30 Spieler in einer Sitzung\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Bis zu 30 Spieler in einer Sitzung",
+        "text": "GTA Online startete am 1. Oktober 2013, zwei Wochen nach GTA V. Auf PS4, Xbox One und PC teilen sich bis zu 30 Spieler eine Sitzung.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-start.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-5-geheime-orte-easter-eggs",
       "type": "guide",
       "board": "guides",
@@ -1271,23 +2131,23 @@
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
-      "id": "fact-vc-rekordstart",
+      "id": "fact-sa-mond",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA Vice City Fakt: 1,4 Millionen Kopien in zwei Tagen",
-      "description": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-rekordstart",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"1,4 Millionen Kopien in zwei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA San Andreas Fakt: Schieß auf den Mond. Wirklich!",
+      "description": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-mond",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Schieß auf den Mond. Wirklich!\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "1,4 Millionen Kopien in zwei Tagen",
-        "text": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare.",
-        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
-        "gameName": "GTA Vice City",
+        "headline": "Schieß auf den Mond. Wirklich!",
+        "text": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
+        "gameName": "GTA San Andreas",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-vc-rekordstart.png",
+      "imagePath": "automation/pinterest/out/fact-sa-mond.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -1316,338 +2176,6 @@
       },
       "imagePath": "automation/pinterest/out/tips-gta-5-geheime-orte-easter-eggs.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "fact-ctw-taxi-pfeifen",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Fakt: Ins Mikro pfeifen, Taxi kommt",
-      "description": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-taxi-pfeifen",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Ins Mikro pfeifen, Taxi kommt\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Ins Mikro pfeifen, Taxi kommt",
-        "text": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen.",
-        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
-        "gameName": "GTA",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-ctw-taxi-pfeifen.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta3-verkaeufe",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 3 Fakt: Der Bestseller des Jahres 2001",
-      "description": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-verkaeufe",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Der Bestseller des Jahres 2001\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Der Bestseller des Jahres 2001",
-        "text": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2.",
-        "source": "Wikipedia (en): Grand Theft Auto III",
-        "gameName": "GTA 3",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta3-verkaeufe.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta4-rekordstart",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 4 Fakt: 310 Millionen Dollar an einem Tag",
-      "description": "GTA IV verkaufte sich ab dem Start am 29. April 2008 in 24 Stunden über 3,6 Millionen Mal und spielte rund 310 Millionen US-Dollar ein. Das brachte Guinness-Weltrekorde. Quelle: Wikipedia (en): Grand Theft Auto IV. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rekordstart",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"310 Millionen Dollar an einem Tag\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "310 Millionen Dollar an einem Tag",
-        "text": "GTA IV verkaufte sich ab dem Start am 29. April 2008 in 24 Stunden über 3,6 Millionen Mal und spielte rund 310 Millionen US-Dollar ein. Das brachte Guinness-Weltrekorde.",
-        "source": "Wikipedia (en): Grand Theft Auto IV",
-        "gameName": "GTA 4",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta4-rekordstart.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta5-milliarde",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 5 Fakt: Eine Milliarde Dollar in drei Tagen",
-      "description": "GTA V verkaufte laut Guinness in den ersten 24 Stunden 11,21 Millionen Exemplare und spielte 815,7 Millionen US-Dollar ein. Am 20. September 2013 war die Milliarde geknackt. Quelle: Guinness World Records: Confirmed: Grand Theft Auto 5 breaks 6 sales world records. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-milliarde",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Eine Milliarde Dollar in drei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Eine Milliarde Dollar in drei Tagen",
-        "text": "GTA V verkaufte laut Guinness in den ersten 24 Stunden 11,21 Millionen Exemplare und spielte 815,7 Millionen US-Dollar ein. Am 20. September 2013 war die Milliarde geknackt.",
-        "source": "Guinness World Records: Confirmed: Grand Theft Auto 5 breaks 6 sales world records",
-        "gameName": "GTA 5",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta5-milliarde.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta6-release-termin",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 6 Fakt: GTA VI: der offizielle Release-Termin",
-      "description": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S. Quelle: Rockstar Games: Grand Theft Auto VI (offizielle Seite). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-release-termin",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"GTA VI: der offizielle Release-Termin\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "GTA VI: der offizielle Release-Termin",
-        "text": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S.",
-        "source": "Rockstar Games: Grand Theft Auto VI (offizielle Seite)",
-        "gameName": "GTA 6",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta6-release-termin.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "wallpaper-6",
-      "type": "wallpaper",
-      "board": "wallpaper",
-      "title": "Handy-Wallpaper \"Teal Dusk\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-6",
-      "altText": "Abstraktes Hochformat-Wallpaper \"Teal Dusk\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
-      "design": {
-        "type": "wallpaper",
-        "seed": 6,
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/wallpaper-6.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "fact-online-ladezeiten",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Online Fakt: Ein Fan machte GTA Online schneller",
-      "description": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-ladezeiten",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Ein Fan machte GTA Online schneller\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Ein Fan machte GTA Online schneller",
-        "text": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar.",
-        "source": "Wikipedia (en): Grand Theft Auto Online",
-        "gameName": "GTA Online",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-online-ladezeiten.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-sa-drei-staedte",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA San Andreas Fakt: Drei Städte in einem Spiel",
-      "description": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-drei-staedte",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Drei Städte in einem Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Drei Städte in einem Spiel",
-        "text": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas.",
-        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
-        "gameName": "GTA San Andreas",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-sa-drei-staedte.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-vc-soundtrack-box",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Vice City Fakt: Ein Soundtrack auf sieben Alben",
-      "description": "Vice City bietet über 113 Songs und Werbespots mit rund neun Stunden Musik. Epic Records veröffentlichte den Soundtrack im Oktober 2002 als Box mit sieben Alben. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-soundtrack-box",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Ein Soundtrack auf sieben Alben\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Ein Soundtrack auf sieben Alben",
-        "text": "Vice City bietet über 113 Songs und Werbespots mit rund neun Stunden Musik. Epic Records veröffentlichte den Soundtrack im Oktober 2002 als Box mit sieben Alben.",
-        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
-        "gameName": "GTA Vice City",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-vc-soundtrack-box.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-ctw-verkaufsflop",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Fakt: Top-Wertungen, schwache Verkäufe",
-      "description": "Trotz Bestnoten verkaufte sich Chinatown Wars auf dem DS in den USA in den ersten zwei Wochen nach dem Start im März 2009 nur knapp 90.000 Mal. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-verkaufsflop",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Top-Wertungen, schwache Verkäufe\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Top-Wertungen, schwache Verkäufe",
-        "text": "Trotz Bestnoten verkaufte sich Chinatown Wars auf dem DS in den USA in den ersten zwei Wochen nach dem Start im März 2009 nur knapp 90.000 Mal.",
-        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
-        "gameName": "GTA",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-ctw-verkaufsflop.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta3-xbox-absage",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 3 Fakt: Microsoft wollte GTA III nicht",
-      "description": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-xbox-absage",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Microsoft wollte GTA III nicht\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Microsoft wollte GTA III nicht",
-        "text": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft.",
-        "source": "Wikipedia (en): Grand Theft Auto III",
-        "gameName": "GTA 3",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta3-xbox-absage.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta4-rickroll",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 4 Fakt: Der Rickroll begann mit GTA IV",
-      "description": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers. Quelle: Wikipedia (en): Rickrolling. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rickroll",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Der Rickroll begann mit GTA IV\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Der Rickroll begann mit GTA IV",
-        "text": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers.",
-        "source": "Wikipedia (en): Rickrolling",
-        "gameName": "GTA 4",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta4-rickroll.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta5-pc-petition",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 5 Fakt: 728.144 Unterschriften für GTA V am PC",
-      "description": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition! Quelle: Guinness World Records: Most signatures for a videogame petition. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-pc-petition",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"728.144 Unterschriften für GTA V am PC\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "728.144 Unterschriften für GTA V am PC",
-        "text": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition!",
-        "source": "Guinness World Records: Most signatures for a videogame petition",
-        "gameName": "GTA 5",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta5-pc-petition.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-gta6-trailer-rekord",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 6 Fakt: 90 Millionen Views in 24 Stunden",
-      "description": "Der erste GTA-VI-Trailer vom Dezember 2023 wurde in 24 Stunden 90.421.491 Mal auf YouTube angesehen. Laut Guinness ist das Rekord für einen Videospiel-Trailer. Quelle: Guinness World Records: Grand Theft Auto VI first look becomes most viewed videogame trailer in 24 hours. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-trailer-rekord",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"90 Millionen Views in 24 Stunden\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "90 Millionen Views in 24 Stunden",
-        "text": "Der erste GTA-VI-Trailer vom Dezember 2023 wurde in 24 Stunden 90.421.491 Mal auf YouTube angesehen. Laut Guinness ist das Rekord für einen Videospiel-Trailer.",
-        "source": "Guinness World Records: Grand Theft Auto VI first look becomes most viewed videogame trailer in 24 hours",
-        "gameName": "GTA 6",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta6-trailer-rekord.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-online-start",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Online Fakt: Bis zu 30 Spieler in einer Sitzung",
-      "description": "GTA Online startete am 1. Oktober 2013, zwei Wochen nach GTA V. Auf PS4, Xbox One und PC teilen sich bis zu 30 Spieler eine Sitzung. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-start",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Bis zu 30 Spieler in einer Sitzung\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Bis zu 30 Spieler in einer Sitzung",
-        "text": "GTA Online startete am 1. Oktober 2013, zwei Wochen nach GTA V. Auf PS4, Xbox One und PC teilen sich bis zu 30 Spieler eine Sitzung.",
-        "source": "Wikipedia (en): Grand Theft Auto Online",
-        "gameName": "GTA Online",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-online-start.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "wallpaper-7",
-      "type": "wallpaper",
-      "board": "wallpaper",
-      "title": "Handy-Wallpaper \"Purple Haze\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-7",
-      "altText": "Abstraktes Hochformat-Wallpaper \"Purple Haze\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und leuchtendes Gitter in Pink, Orange und Lila.",
-      "design": {
-        "type": "wallpaper",
-        "seed": 7,
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/wallpaper-7.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "fact-sa-mond",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA San Andreas Fakt: Schieß auf den Mond. Wirklich!",
-      "description": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-mond",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Schieß auf den Mond. Wirklich!\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Schieß auf den Mond. Wirklich!",
-        "text": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel.",
-        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
-        "gameName": "GTA San Andreas",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-sa-mond.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "fact-vc-vorbilder",
@@ -1808,22 +2336,6 @@
       },
       "imagePath": "automation/pinterest/out/fact-gta-pisswasser.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "wallpaper-8",
-      "type": "wallpaper",
-      "board": "wallpaper",
-      "title": "Handy-Wallpaper \"Miami Night\": Neon-Sonnenuntergang mit Palmen im 80er-Look",
-      "description": "Kostenloses Handy-Hintergrundbild im Synthwave-Stil: Sonnenuntergang, Palmen und eine Neon-Skyline, ganz ohne Logos. Perfekt für die Wartezeit auf GTA 6. Mehr GTA-Stoff gibt es auf Palm Bandits. #wallpaper #synthwave #gta6",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=wallpaper&utm_content=wallpaper-8",
-      "altText": "Abstraktes Hochformat-Wallpaper \"Miami Night\": große gestreifte Sonne über einer Neon-Skyline, Palmen-Silhouetten und Meer mit Spiegelung in Pink, Orange und Lila.",
-      "design": {
-        "type": "wallpaper",
-        "seed": 8,
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/wallpaper-8.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
       "id": "fact-gta-serie-480-millionen",
