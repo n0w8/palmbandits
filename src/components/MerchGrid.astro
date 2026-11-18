@@ -13,24 +13,36 @@ const en = lang === 'en';
 const items = limit ? MERCH_ITEMS.slice(0, limit) : MERCH_ITEMS;
 const shop = href(lang, '/shop/');
 const L = en
-  ? { buy: 'Buy', isNew: 'New', note: 'Printed and shipped by Spreadshirt. Sizes and checkout open right here.' }
-  : { buy: 'Kaufen', isNew: 'Neu', note: 'Gedruckt und versendet von Spreadshirt. Größen und Kasse öffnen sich direkt hier.' };
+  ? { buy: 'Buy', isNew: 'New', soon: 'Coming soon', soonNote: 'In the store very soon', note: 'Printed and shipped by Spreadshirt. Sizes and checkout open right here.' }
+  : { buy: 'Kaufen', isNew: 'Neu', soon: 'Bald im Shop', soonNote: 'Gleich im Shop', note: 'Gedruckt und versendet von Spreadshirt. Größen und Kasse öffnen sich direkt hier.' };
+// soon = Spreadshirt prüft das Design noch: Karte ohne Kauf-Link (sonst landet man im Shop auf "Page not found")
 ---
 <div class="mgrid">
   {items.map((m, i) => (
-    <article class="mcard card" data-reveal style={`--d:${(i % 3) * 0.06}s`}>
-      <a class="mcard__img" href={`${shop}${merchRoute(m)}`} data-astro-reload={!onShopPage || undefined} data-merch-buy aria-label={`${m.name[lang]} ${L.buy}`}>
-        {m.isNew && <span class="chip chip--live mcard__chip">{L.isNew}</span>}
-        <img src={merchImage(m, 600)} srcset={`${merchImage(m, 400)} 400w, ${merchImage(m, 600)} 600w, ${merchImage(m, 900)} 900w`}
-          sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 360px" alt={`${m.name[lang]}, ${m.type[lang]}`}
-          width="600" height="600" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-      </a>
+    <article class={`mcard card${m.soon ? ' mcard--soon' : ''}`} data-reveal style={`--d:${(i % 3) * 0.06}s`}>
+      {m.soon ? (
+        <div class="mcard__img">
+          <span class="chip chip--live mcard__chip">{L.soon}</span>
+          <img src={merchImage(m, 600)} srcset={`${merchImage(m, 400)} 400w, ${merchImage(m, 600)} 600w, ${merchImage(m, 900)} 900w`}
+            sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 360px" alt={`${m.name[lang]}, ${m.type[lang]}`}
+            width="600" height="600" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </div>
+      ) : (
+        <a class="mcard__img" href={`${shop}${merchRoute(m)}`} data-astro-reload={!onShopPage || undefined} data-merch-buy aria-label={`${m.name[lang]} ${L.buy}`}>
+          {m.isNew && <span class="chip chip--live mcard__chip">{L.isNew}</span>}
+          <img src={merchImage(m, 600)} srcset={`${merchImage(m, 400)} 400w, ${merchImage(m, 600)} 600w, ${merchImage(m, 900)} 900w`}
+            sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 360px" alt={`${m.name[lang]}, ${m.type[lang]}`}
+            width="600" height="600" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </a>
+      )}
       <div class="mcard__body">
         <p class="mcard__type cond">{m.type[lang]}</p>
         <h3 class="mcard__name display">{m.name[lang]}</h3>
         <div class="mcard__row">
           <span class="mcard__price display">{merchPrice(m.price, lang)}</span>
-          <a class="btn btn--sun" href={`${shop}${merchRoute(m)}`} data-astro-reload={!onShopPage || undefined} data-merch-buy><Icon name="cart" /> {L.buy}</a>
+          {m.soon
+            ? <span class="mcard__soon cond">{L.soonNote}</span>
+            : <a class="btn btn--sun" href={`${shop}${merchRoute(m)}`} data-astro-reload={!onShopPage || undefined} data-merch-buy><Icon name="cart" /> {L.buy}</a>}
         </div>
       </div>
     </article>
@@ -51,6 +63,8 @@ const L = en
   .mcard__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
   .mcard__price { font-size: 1.5rem; }
   .mgrid__note { margin-top: 12px; font-size: 0.85rem; }
+  .mcard__soon { font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--line); padding: 8px 12px; border-radius: 999px; }
+  .mcard--soon:hover .mcard__img img { transform: none; }
   @media (max-width: 1100px) { .mgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .mgrid { grid-template-columns: 1fr; } }
 </style>
