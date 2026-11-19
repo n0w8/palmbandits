@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T03:16:27.235Z",
+  "updated": "2026-11-19T14:20:52.555Z",
   "pins": [
     {
       "id": "news-2026-11-18-take-two-aktie-gta-6-tests-analysten",
@@ -329,50 +329,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/news-2026-11-17-gta-6-release-uhrzeit-preload-alle-infos.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "news-2026-11-16-gta-6-update-1-002-001-patch-vor-release",
-      "type": "news",
-      "board": "news",
-      "title": "GTA 6 Update 1.002.001: Zweiter Patch noch vor dem Release",
-      "description": "GTA 6 wurde vor dem Start schon zweimal gepatcht: Update 1.002.000 am 13. und 1.002.001 am 16. November. Größe, Rollout und was über Patchnotes bekannt ist. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-16-gta-6-update-1-002-001-patch-vor-release/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-16-gta-6-update-1-002-001-patch-vor-release",
-      "altText": "News-Grafik zu GTA 6: \"GTA 6 Update 1.002.001: Zweiter Patch noch vor dem Release\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA 6 Update 1.002.001: Zweiter Patch noch vor dem Release",
-        "text": "GTA 6 wurde vor dem Start schon zweimal gepatcht: Update 1.002.000 am 13. und 1.002.001 am 16. November. Größe, Rollout und was über Patchnotes bekannt ist.",
-        "hype": 3,
-        "breaking": false,
-        "rumor": false,
-        "date": "16.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-16-gta-6-update-1-002-001-patch-vor-release.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "news-2026-11-16-gta-6-vorbestell-rekord-playstation-xbox",
-      "type": "news",
-      "board": "news",
-      "title": "GTA 6 bricht Vorbestell-Rekorde bei PlayStation und Xbox",
-      "description": "Sony und Microsoft bestätigen: GTA 6 ist das meistvorbestellte Spiel in der Geschichte ihrer Stores. Was offiziell ist und welche Zahlen nur Schätzungen sind. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-16-gta-6-vorbestell-rekord-playstation-xbox/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-16-gta-6-vorbestell-rekord-playstation-xbox",
-      "altText": "News-Grafik zu GTA 6: \"GTA 6 bricht Vorbestell-Rekorde bei PlayStation und Xbox\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA 6 bricht Vorbestell-Rekorde bei PlayStation und Xbox",
-        "text": "Sony und Microsoft bestätigen: GTA 6 ist das meistvorbestellte Spiel in der Geschichte ihrer Stores. Was offiziell ist und welche Zahlen nur Schätzungen sind.",
-        "hype": 4,
-        "breaking": false,
-        "rumor": false,
-        "date": "16.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-16-gta-6-vorbestell-rekord-playstation-xbox.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
