@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T13:57:19.430Z",
+  "updated": "2026-11-20T21:46:29.295Z",
   "pins": [
     {
       "id": "news-2026-11-18-take-two-aktie-gta-6-tests-analysten",
@@ -285,28 +285,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/news-2026-11-18-gta-online-nach-gta-6-release-zukunft.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "news-2026-11-17-game-awards-2026-gta-6-acht-nominierungen",
-      "type": "news",
-      "board": "news",
-      "title": "Game Awards 2026: GTA 6 führt mit acht Nominierungen",
-      "description": "GTA 6 ist bei den Game Awards 2026 achtmal nominiert, auch als Game of the Year, obwohl noch kein Test erschienen ist. Alle Kategorien und die Konkurrenz. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-17-game-awards-2026-gta-6-acht-nominierungen/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-17-game-awards-2026-gta-6-acht-nominierungen",
-      "altText": "News-Grafik zu GTA 6: \"Game Awards 2026: GTA 6 führt mit acht Nominierungen\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "Game Awards 2026: GTA 6 führt mit acht Nominierungen",
-        "text": "GTA 6 ist bei den Game Awards 2026 achtmal nominiert, auch als Game of the Year, obwohl noch kein Test erschienen ist. Alle Kategorien und die Konkurrenz.",
-        "hype": 4,
-        "breaking": false,
-        "rumor": false,
-        "date": "17.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-17-game-awards-2026-gta-6-acht-nominierungen.png",
       "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
