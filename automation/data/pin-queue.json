@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T03:09:24.373Z",
+  "updated": "2026-11-21T13:25:20.649Z",
   "pins": [
     {
       "id": "news-2026-11-20-gta-6-bigfoot-ufo-kein-disney-world",
@@ -286,72 +286,6 @@
       },
       "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-tests-metascore-99-rekord.png",
       "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "news-2026-11-18-gta-6-launch-zeiten-weltweit",
-      "type": "news",
-      "board": "news",
-      "title": "GTA 6 Countdown: Wann das Spiel in welchem Land startet",
-      "description": "GTA 6 startet in Deutschland heute Nacht um 0:00 Uhr. Die Freischaltzeiten weltweit laut PlayStation Store, die 19-Stunden-Spoiler-Lücke und was Xbox-Spieler wissen sollten. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-18-gta-6-launch-zeiten-weltweit/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-launch-zeiten-weltweit",
-      "altText": "News-Grafik zu GTA 6: \"GTA 6 Countdown: Wann das Spiel in welchem Land startet\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA 6 Countdown: Wann das Spiel in welchem Land startet",
-        "text": "GTA 6 startet in Deutschland heute Nacht um 0:00 Uhr. Die Freischaltzeiten weltweit laut PlayStation Store, die 19-Stunden-Spoiler-Lücke und was Xbox-Spieler wissen sollten.",
-        "hype": 5,
-        "breaking": false,
-        "rumor": false,
-        "date": "18.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-launch-zeiten-weltweit.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "news-2026-11-18-gta-6-tests-embargo-metacritic-store-wertungen",
-      "type": "news",
-      "board": "news",
-      "title": "GTA 6 Tests: Embargo heute, frühe Wertungen, Metacritic-Ärger",
-      "description": "Die ersten GTA 6 Tests werden heute, am 18. November, erwartet. Was über das Embargo bekannt ist, was frühe Store-Sterne taugen und was bei Metacritic los war. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-18-gta-6-tests-embargo-metacritic-store-wertungen/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-tests-embargo-metacritic-store-wertungen",
-      "altText": "News-Grafik zu GTA 6: \"GTA 6 Tests: Embargo heute, frühe Wertungen, Metacritic-Ärger\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA 6 Tests: Embargo heute, frühe Wertungen, Metacritic-Ärger",
-        "text": "Die ersten GTA 6 Tests werden heute, am 18. November, erwartet. Was über das Embargo bekannt ist, was frühe Store-Sterne taugen und was bei Metacritic los war.",
-        "hype": 5,
-        "breaking": false,
-        "rumor": false,
-        "date": "18.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-tests-embargo-metacritic-store-wertungen.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "news-2026-11-18-gta-6-trailer-rueckblick-alle-details",
-      "type": "news",
-      "board": "news",
-      "title": "GTA 6 Trailer-Rückblick: Alle Videos bis zum Launch und was sie bestätigt haben",
-      "description": "Von Trailer 1 im Dezember 2023 bis zum Launch-Trailer im Oktober 2026: alle offiziellen GTA-6-Videos, ihre Songs, Rekorde und die wichtigsten bestätigten Details vor dem Release. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-18-gta-6-trailer-rueckblick-alle-details/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-trailer-rueckblick-alle-details",
-      "altText": "News-Grafik zu GTA 6: \"GTA 6 Trailer-Rückblick: Alle Videos bis zum Launch und was sie bestätigt haben\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA 6 Trailer-Rückblick: Alle Videos bis zum Launch und was sie bestätigt haben",
-        "text": "Von Trailer 1 im Dezember 2023 bis zum Launch-Trailer im Oktober 2026: alle offiziellen GTA-6-Videos, ihre Songs, Rekorde und die wichtigsten bestätigten Details vor dem Release.",
-        "hype": 4,
-        "breaking": false,
-        "rumor": false,
-        "date": "18.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-trailer-rueckblick-alle-details.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
       "id": "guide-gta-online-geld-verdienen",
