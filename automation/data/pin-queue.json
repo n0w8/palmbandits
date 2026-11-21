@@ -1,6 +1,116 @@
 {
-  "updated": "2026-11-20T21:46:29.295Z",
+  "updated": "2026-11-21T03:09:24.373Z",
   "pins": [
+    {
+      "id": "news-2026-11-20-gta-6-bigfoot-ufo-kein-disney-world",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6: Rockstar erklärt Bigfoot, UFOs und das fehlende Disney World",
+      "description": "Rob Nelson von Rockstar North erklärt, warum GTA 6 Bigfoot und UFOs zum Entdecken bietet, aber keinen Freizeitpark nach dem Vorbild von Disney World. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-20-gta-6-bigfoot-ufo-kein-disney-world/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-20-gta-6-bigfoot-ufo-kein-disney-world",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6: Rockstar erklärt Bigfoot, UFOs und das fehlende Disney World\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6: Rockstar erklärt Bigfoot, UFOs und das fehlende Disney World",
+        "text": "Rob Nelson von Rockstar North erklärt, warum GTA 6 Bigfoot und UFOs zum Entdecken bietet, aber keinen Freizeitpark nach dem Vorbild von Disney World.",
+        "hype": 3,
+        "breaking": false,
+        "rumor": false,
+        "date": "20.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-20-gta-6-bigfoot-ufo-kein-disney-world.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
+    {
+      "id": "news-2026-11-20-gta-6-ultimate-edition-boni-nur-kapitel-1",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Ultimate Edition: Drei Boni gibt es nur in Kapitel 1",
+      "description": "Drei Extras der GTA 6 Ultimate Edition kannst du nur in Kapitel 1 nutzen, der Rest kommt Kapitel für Kapitel, dazu die Fristen für Vorbesteller-Boni und GTA+. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-20-gta-6-ultimate-edition-boni-nur-kapitel-1/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-20-gta-6-ultimate-edition-boni-nur-kapitel-1",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Ultimate Edition: Drei Boni gibt es nur in Kapitel 1\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Ultimate Edition: Drei Boni gibt es nur in Kapitel 1",
+        "text": "Drei Extras der GTA 6 Ultimate Edition kannst du nur in Kapitel 1 nutzen, der Rest kommt Kapitel für Kapitel, dazu die Fristen für Vorbesteller-Boni und GTA+.",
+        "hype": 3,
+        "breaking": false,
+        "rumor": false,
+        "date": "20.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-20-gta-6-ultimate-edition-boni-nur-kapitel-1.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
+    {
+      "id": "news-2026-11-20-gta-6-weird-al-radiosender-doja-cat",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 Radio: Weird Al moderiert Vice City FM, Doja Cat ist verbittert",
+      "description": "Weird Al Yankovic moderiert in GTA 6 den 80er-Sender Vice City FM. Doja Cat ärgert sich dagegen öffentlich, dass keiner ihrer Songs im Spiel läuft. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-20-gta-6-weird-al-radiosender-doja-cat/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-20-gta-6-weird-al-radiosender-doja-cat",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 Radio: Weird Al moderiert Vice City FM, Doja Cat ist verbittert\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 Radio: Weird Al moderiert Vice City FM, Doja Cat ist verbittert",
+        "text": "Weird Al Yankovic moderiert in GTA 6 den 80er-Sender Vice City FM. Doja Cat ärgert sich dagegen öffentlich, dass keiner ihrer Songs im Spiel läuft.",
+        "hype": 3,
+        "breaking": false,
+        "rumor": false,
+        "date": "20.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-20-gta-6-weird-al-radiosender-doja-cat.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
+    {
+      "id": "news-2026-11-20-gta-6-20-millionen-vorbestellungen-schaetzung",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6: Rund 20 Millionen Vorbestellungen, aber nur geschätzt",
+      "description": "GTA 6 soll vor dem Start rund 20 Millionen Mal vorbestellt worden sein. Die Zahl ist eine Hochrechnung aus Daten von Sensor Tower, Take-Two bestätigt sie nicht. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-20-gta-6-20-millionen-vorbestellungen-schaetzung/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-20-gta-6-20-millionen-vorbestellungen-schaetzung",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6: Rund 20 Millionen Vorbestellungen, aber nur geschätzt\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6: Rund 20 Millionen Vorbestellungen, aber nur geschätzt",
+        "text": "GTA 6 soll vor dem Start rund 20 Millionen Mal vorbestellt worden sein. Die Zahl ist eine Hochrechnung aus Daten von Sensor Tower, Take-Two bestätigt sie nicht.",
+        "hype": 4,
+        "breaking": false,
+        "rumor": false,
+        "date": "20.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-20-gta-6-20-millionen-vorbestellungen-schaetzung.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
+    {
+      "id": "news-2026-11-20-gta-6-erschienen-launch-bilanz-erster-tag",
+      "type": "news",
+      "board": "news",
+      "title": "GTA 6 ist erschienen: Die Bilanz nach dem ersten Launch-Tag",
+      "description": "GTA 6 ist seit dem 19. November für PS5 und Xbox erhältlich. So lief der Launch-Tag: PSN-Störungen, Neuseeland-Trick, Rekorde und Rockstars Dank. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
+      "link": "https://palmbandits.com/news/2026-11-20-gta-6-erschienen-launch-bilanz-erster-tag/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-20-gta-6-erschienen-launch-bilanz-erster-tag",
+      "altText": "News-Grafik zu GTA 6: \"GTA 6 ist erschienen: Die Bilanz nach dem ersten Launch-Tag\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
+      "design": {
+        "type": "news",
+        "headline": "GTA 6 ist erschienen: Die Bilanz nach dem ersten Launch-Tag",
+        "text": "GTA 6 ist seit dem 19. November für PS5 und Xbox erhältlich. So lief der Launch-Tag: PSN-Störungen, Neuseeland-Trick, Rekorde und Rockstars Dank.",
+        "hype": 4,
+        "breaking": false,
+        "rumor": false,
+        "date": "20.11.2026",
+        "cta": "Alle Infos lesen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/news-2026-11-20-gta-6-erschienen-launch-bilanz-erster-tag.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
     {
       "id": "news-2026-11-18-take-two-aktie-gta-6-tests-analysten",
       "type": "news",
@@ -241,50 +351,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-trailer-rueckblick-alle-details.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "news-2026-11-18-gta-6-pc-release-stand-take-two",
-      "type": "news",
-      "board": "news",
-      "title": "GTA 6 auf dem PC: Was Take-Two kurz vor dem Release sagt",
-      "description": "GTA 6 startet nur auf PS5 und Xbox Series X|S. Was Take-Two-Chef Strauss Zelnick zur PC-Version sagt, was hinter dem Bericht über Anfang 2027 steckt und wie lange Rockstar früher gebraucht hat. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gta6 #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-18-gta-6-pc-release-stand-take-two/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-6-pc-release-stand-take-two",
-      "altText": "News-Grafik zu GTA 6: \"GTA 6 auf dem PC: Was Take-Two kurz vor dem Release sagt\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA 6 auf dem PC: Was Take-Two kurz vor dem Release sagt",
-        "text": "GTA 6 startet nur auf PS5 und Xbox Series X|S. Was Take-Two-Chef Strauss Zelnick zur PC-Version sagt, was hinter dem Bericht über Anfang 2027 steckt und wie lange Rockstar früher gebraucht hat.",
-        "hype": 3,
-        "breaking": false,
-        "rumor": false,
-        "date": "18.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-6-pc-release-stand-take-two.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "news-2026-11-18-gta-online-nach-gta-6-release-zukunft",
-      "type": "news",
-      "board": "news",
-      "title": "GTA Online nach dem GTA-6-Start: So geht es weiter",
-      "description": "GTA 6 kommt ohne Online-Modus, GTA Online läuft weiter. Was Take-Two offiziell zugesagt hat, was zu einem neuen Online-Modus noch offen ist und was das für deinen Charakter bedeutet. Alle bestätigten Fakten und was das für dich heißt, liest du auf Palm Bandits. #gtaonline #gtanews #gaming",
-      "link": "https://palmbandits.com/news/2026-11-18-gta-online-nach-gta-6-release-zukunft/?utm_source=pinterest&utm_medium=social&utm_campaign=news&utm_content=news-2026-11-18-gta-online-nach-gta-6-release-zukunft",
-      "altText": "News-Grafik zu GTA Online: \"GTA Online nach dem GTA-6-Start: So geht es weiter\" in großer Schrift, darunter eine kurze Zusammenfassung und das Hype-Level als Sterne.",
-      "design": {
-        "type": "news",
-        "headline": "GTA Online nach dem GTA-6-Start: So geht es weiter",
-        "text": "GTA 6 kommt ohne Online-Modus, GTA Online läuft weiter. Was Take-Two offiziell zugesagt hat, was zu einem neuen Online-Modus noch offen ist und was das für deinen Charakter bedeutet.",
-        "hype": 3,
-        "breaking": false,
-        "rumor": false,
-        "date": "18.11.2026",
-        "cta": "Alle Infos lesen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/news-2026-11-18-gta-online-nach-gta-6-release-zukunft.png",
       "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
@@ -649,6 +715,102 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-fehler-beheben-abstuerze-fehlercodes",
+      "type": "guide",
+      "board": "tipps",
+      "title": "GTA 6 Fehler beheben: Abstürze, Fehlercodes, Verbindungsprobleme",
+      "description": "GTA 6 stürzt ab oder zeigt einen Fehlercode? Was Rockstar und Sony offiziell raten, wie du deine Spielstände schützt und wo du die Einstellungen findest. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-fehler-beheben-abstuerze-fehlercodes/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-fehler-beheben-abstuerze-fehlercodes",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Fehler beheben\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Fehler beheben",
+        "text": "GTA 6 stürzt ab oder zeigt einen Fehlercode? Was Rockstar und Sony offiziell raten, wie du deine Spielstände schützt und wo du die Einstellungen findest.",
+        "bullets": [
+          "Die kurze Antwort",
+          "Wer dir wobei hilft",
+          "Fehlercode nachschlagen",
+          "GTA 6 lädt oder startet nicht (PS5)",
+          "Xbox Series X|S"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-fehler-beheben-abstuerze-fehlercodes.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
+    {
+      "id": "fact-ctw-nintendo-ds",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: GTA auf dem Nintendo DS",
+      "description": "Chinatown Wars erschien im März 2009 zuerst für den Nintendo DS. Held Huang Lee will das gestohlene Familienschwert Yu Jian zurückholen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-nintendo-ds",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA auf dem Nintendo DS\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA auf dem Nintendo DS",
+        "text": "Chinatown Wars erschien im März 2009 zuerst für den Nintendo DS. Held Huang Lee will das gestohlene Familienschwert Yu Jian zurückholen.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-nintendo-ds.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-fehler-beheben-abstuerze-fehlercodes",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Fehler beheben: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Wer dir wobei hilft, Fehlercode nachschlagen und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-fehler-beheben-abstuerze-fehlercodes/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-fehler-beheben-abstuerze-fehlercodes",
+      "altText": "Liste mit 6 Tipps für GTA 6: Die kurze Antwort, Wer dir wobei hilft, Fehlercode nachschlagen, GTA 6 lädt oder startet nicht (PS5), Xbox Series X|S, Abstürze und verlorene Spielstände.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Fehler beheben",
+        "bullets": [
+          "Die kurze Antwort",
+          "Wer dir wobei hilft",
+          "Fehlercode nachschlagen",
+          "GTA 6 lädt oder startet nicht (PS5)",
+          "Xbox Series X|S",
+          "Abstürze und verlorene Spielstände"
+        ],
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-fehler-beheben-abstuerze-fehlercodes.png",
+      "createdAt": "2026-11-21T03:09:24.373Z"
+    },
+    {
+      "id": "fact-gta3-callahan-bridge",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Diese Brücke ist eine Dirty-Harry-Hommage",
+      "description": "Die Callahan Bridge in Liberty City hieß während der Entwicklung noch West Port Bridge. Ihren finalen Namen bekam sie nach Clint Eastwoods Figur aus den Dirty-Harry-Filmen. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-callahan-bridge",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Diese Brücke ist eine Dirty-Harry-Hommage\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Diese Brücke ist eine Dirty-Harry-Hommage",
+        "text": "Die Callahan Bridge in Liberty City hieß während der Entwicklung noch West Port Bridge. Ihren finalen Namen bekam sie nach Clint Eastwoods Figur aus den Dirty-Harry-Filmen.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6)",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-callahan-bridge.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-6-fahrzeuge-autos-boote-flugzeuge",
       "type": "guide",
       "board": "guides",
@@ -677,23 +839,23 @@
       "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
-      "id": "fact-ctw-nintendo-ds",
+      "id": "fact-gta4-fotos-new-york",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA Fakt: GTA auf dem Nintendo DS",
-      "description": "Chinatown Wars erschien im März 2009 zuerst für den Nintendo DS. Held Huang Lee will das gestohlene Familienschwert Yu Jian zurückholen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-nintendo-ds",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA auf dem Nintendo DS\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA 4 Fakt: Über 100.000 Fotos von New York",
+      "description": "Für das Liberty City von GTA IV machte das Team laut Produzent Leslie Benzies über 100.000 Fotos in New York. Das Budget lag laut Benzies bei über 100 Millionen US-Dollar. Quelle: Wikipedia (en): Grand Theft Auto IV. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-fotos-new-york",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Über 100.000 Fotos von New York\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "GTA auf dem Nintendo DS",
-        "text": "Chinatown Wars erschien im März 2009 zuerst für den Nintendo DS. Held Huang Lee will das gestohlene Familienschwert Yu Jian zurückholen.",
-        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
-        "gameName": "GTA",
+        "headline": "Über 100.000 Fotos von New York",
+        "text": "Für das Liberty City von GTA IV machte das Team laut Produzent Leslie Benzies über 100.000 Fotos in New York. Das Budget lag laut Benzies bei über 100 Millionen US-Dollar.",
+        "source": "Wikipedia (en): Grand Theft Auto IV",
+        "gameName": "GTA 4",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-ctw-nintendo-ds.png",
+      "imagePath": "automation/pinterest/out/fact-gta4-fotos-new-york.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -722,102 +884,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-fahrzeuge-autos-boote-flugzeuge.png",
-      "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "fact-gta3-callahan-bridge",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 3 Fakt: Diese Brücke ist eine Dirty-Harry-Hommage",
-      "description": "Die Callahan Bridge in Liberty City hieß während der Entwicklung noch West Port Bridge. Ihren finalen Namen bekam sie nach Clint Eastwoods Figur aus den Dirty-Harry-Filmen. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-callahan-bridge",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Diese Brücke ist eine Dirty-Harry-Hommage\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Diese Brücke ist eine Dirty-Harry-Hommage",
-        "text": "Die Callahan Bridge in Liberty City hieß während der Entwicklung noch West Port Bridge. Ihren finalen Namen bekam sie nach Clint Eastwoods Figur aus den Dirty-Harry-Filmen.",
-        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 6)",
-        "gameName": "GTA 3",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta3-callahan-bridge.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "guide-gta-6-radiosender-musik-soundtrack",
-      "type": "guide",
-      "board": "guides",
-      "title": "GTA 6 Radiosender: Alle bestätigten Sender, Moderatoren und Songs",
-      "description": "Alle offiziellen GTA 6 Radiosender mit Moderatoren und Songs, was die Tests zu Podcasts sagen und wie sich Radio, Album und Score von Justice unterscheiden. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-radiosender-musik-soundtrack/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-radiosender-musik-soundtrack",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Radiosender\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
-      "design": {
-        "type": "guide",
-        "headline": "GTA 6 Radiosender",
-        "text": "Alle offiziellen GTA 6 Radiosender mit Moderatoren und Songs, was die Tests zu Podcasts sagen und wie sich Radio, Album und Score von Justice unterscheiden.",
-        "bullets": [
-          "Die kurze Antwort",
-          "Die sechs offiziellen Sender",
-          "Flash FM: der Gruß an Vice City",
-          "Wie viele Sender gibt es insgesamt?",
-          "Podcasts: zum ersten Mal in GTA"
-        ],
-        "gameName": "GTA 6",
-        "difficulty": "Leicht",
-        "cta": "Ganzen Guide lesen »",
-        "domain": "palmbandits.com",
-        "stars": 4
-      },
-      "imagePath": "automation/pinterest/out/guide-gta-6-radiosender-musik-soundtrack.png",
-      "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "fact-gta4-fotos-new-york",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 4 Fakt: Über 100.000 Fotos von New York",
-      "description": "Für das Liberty City von GTA IV machte das Team laut Produzent Leslie Benzies über 100.000 Fotos in New York. Das Budget lag laut Benzies bei über 100 Millionen US-Dollar. Quelle: Wikipedia (en): Grand Theft Auto IV. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-fotos-new-york",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Über 100.000 Fotos von New York\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Über 100.000 Fotos von New York",
-        "text": "Für das Liberty City von GTA IV machte das Team laut Produzent Leslie Benzies über 100.000 Fotos in New York. Das Budget lag laut Benzies bei über 100 Millionen US-Dollar.",
-        "source": "Wikipedia (en): Grand Theft Auto IV",
-        "gameName": "GTA 4",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta4-fotos-new-york.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "tips-gta-6-radiosender-musik-soundtrack",
-      "type": "tips",
-      "board": "tipps",
-      "title": "GTA 6 Radiosender: 6 Fakten auf einen Blick",
-      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Die sechs offiziellen Sender, Flash FM: der Gruß an Vice City und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-radiosender-musik-soundtrack/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-radiosender-musik-soundtrack",
-      "altText": "Liste mit 6 Fakten für GTA 6: Die kurze Antwort, Die sechs offiziellen Sender, Flash FM: der Gruß an Vice City, Wie viele Sender gibt es insgesamt?, Podcasts: zum ersten Mal in GTA, Werbung und Talk.",
-      "design": {
-        "type": "tips",
-        "headline": "GTA 6 Radiosender",
-        "bullets": [
-          "Die kurze Antwort",
-          "Die sechs offiziellen Sender",
-          "Flash FM: der Gruß an Vice City",
-          "Wie viele Sender gibt es insgesamt?",
-          "Podcasts: zum ersten Mal in GTA",
-          "Werbung und Talk"
-        ],
-        "count": 6,
-        "word": "FAKTEN",
-        "gameName": "GTA 6",
-        "cta": "Alle Details im Guide »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/tips-gta-6-radiosender-musik-soundtrack.png",
       "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
@@ -877,6 +943,102 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-radiosender-musik-soundtrack",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA 6 Radiosender: Alle bestätigten Sender, Moderatoren und Songs",
+      "description": "Alle offiziellen GTA 6 Radiosender mit Moderatoren und Songs, was die Tests zu Podcasts sagen und wie sich Radio, Album und Score von Justice unterscheiden. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-radiosender-musik-soundtrack/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-radiosender-musik-soundtrack",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Radiosender\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Radiosender",
+        "text": "Alle offiziellen GTA 6 Radiosender mit Moderatoren und Songs, was die Tests zu Podcasts sagen und wie sich Radio, Album und Score von Justice unterscheiden.",
+        "bullets": [
+          "Die kurze Antwort",
+          "Die sechs offiziellen Sender",
+          "Flash FM: der Gruß an Vice City",
+          "Wie viele Sender gibt es insgesamt?",
+          "Podcasts: zum ersten Mal in GTA"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-radiosender-musik-soundtrack.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "fact-online-cayo-perico",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Das größte Online-Update seiner Zeit",
+      "description": "Der Cayo Perico Heist erschien am 15. Dezember 2020 und war laut Wikipedia das bis dahin größte Inhalts-Update für GTA Online. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-cayo-perico",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Das größte Online-Update seiner Zeit\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Das größte Online-Update seiner Zeit",
+        "text": "Der Cayo Perico Heist erschien am 15. Dezember 2020 und war laut Wikipedia das bis dahin größte Inhalts-Update für GTA Online.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-cayo-perico.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-radiosender-musik-soundtrack",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Radiosender: 6 Fakten auf einen Blick",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Die sechs offiziellen Sender, Flash FM: der Gruß an Vice City und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-radiosender-musik-soundtrack/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-radiosender-musik-soundtrack",
+      "altText": "Liste mit 6 Fakten für GTA 6: Die kurze Antwort, Die sechs offiziellen Sender, Flash FM: der Gruß an Vice City, Wie viele Sender gibt es insgesamt?, Podcasts: zum ersten Mal in GTA, Werbung und Talk.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Radiosender",
+        "bullets": [
+          "Die kurze Antwort",
+          "Die sechs offiziellen Sender",
+          "Flash FM: der Gruß an Vice City",
+          "Wie viele Sender gibt es insgesamt?",
+          "Podcasts: zum ersten Mal in GTA",
+          "Werbung und Talk"
+        ],
+        "count": 6,
+        "word": "FAKTEN",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-radiosender-musik-soundtrack.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "fact-sa-cj-fitness",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Burger oder Hantelbank? CJ zeigt es",
+      "description": "In San Andreas verändert sich CJs Körper: Viel Fast Food macht ihn dick, das Fitnessstudio muskulös. Auch Fahren, Schwimmen und Schießen lassen sich trainieren. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-cj-fitness",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Burger oder Hantelbank? CJ zeigt es\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Burger oder Hantelbank? CJ zeigt es",
+        "text": "In San Andreas verändert sich CJs Körper: Viel Fast Food macht ihn dick, das Fitnessstudio muskulös. Auch Fahren, Schwimmen und Schießen lassen sich trainieren.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-cj-fitness.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-6-fahndungssystem-polizei-erklaert",
       "type": "guide",
       "board": "tipps",
@@ -905,23 +1067,23 @@
       "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
-      "id": "fact-online-cayo-perico",
+      "id": "fact-vc-ray-liotta",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA Online Fakt: Das größte Online-Update seiner Zeit",
-      "description": "Der Cayo Perico Heist erschien am 15. Dezember 2020 und war laut Wikipedia das bis dahin größte Inhalts-Update für GTA Online. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-cayo-perico",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Das größte Online-Update seiner Zeit\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA Vice City Fakt: Der erste GTA-Held mit eigener Stimme",
+      "description": "Tommy Vercetti aus Vice City (2002) war der erste sprechende Protagonist der Reihe. Seine Stimme lieh ihm Hollywood-Schauspieler Ray Liotta. Quelle: Wikipedia (en): Grand Theft Auto (series). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-ray-liotta",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Der erste GTA-Held mit eigener Stimme\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "Das größte Online-Update seiner Zeit",
-        "text": "Der Cayo Perico Heist erschien am 15. Dezember 2020 und war laut Wikipedia das bis dahin größte Inhalts-Update für GTA Online.",
-        "source": "Wikipedia (en): Grand Theft Auto Online",
-        "gameName": "GTA Online",
+        "headline": "Der erste GTA-Held mit eigener Stimme",
+        "text": "Tommy Vercetti aus Vice City (2002) war der erste sprechende Protagonist der Reihe. Seine Stimme lieh ihm Hollywood-Schauspieler Ray Liotta.",
+        "source": "Wikipedia (en): Grand Theft Auto (series)",
+        "gameName": "GTA Vice City",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-online-cayo-perico.png",
+      "imagePath": "automation/pinterest/out/fact-vc-ray-liotta.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -950,102 +1112,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-fahndungssystem-polizei-erklaert.png",
-      "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "fact-sa-cj-fitness",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA San Andreas Fakt: Burger oder Hantelbank? CJ zeigt es",
-      "description": "In San Andreas verändert sich CJs Körper: Viel Fast Food macht ihn dick, das Fitnessstudio muskulös. Auch Fahren, Schwimmen und Schießen lassen sich trainieren. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-cj-fitness",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Burger oder Hantelbank? CJ zeigt es\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Burger oder Hantelbank? CJ zeigt es",
-        "text": "In San Andreas verändert sich CJs Körper: Viel Fast Food macht ihn dick, das Fitnessstudio muskulös. Auch Fahren, Schwimmen und Schießen lassen sich trainieren.",
-        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
-        "gameName": "GTA San Andreas",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-sa-cj-fitness.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "guide-gta-6-geld-verdienen-story-modus",
-      "type": "guide",
-      "board": "guides",
-      "title": "GTA 6 Geld verdienen: Raubzüge, Hehler und Tipps für den Start",
-      "description": "So verdienst du in GTA 6 Geld im Story-Modus: fünf Raubzug-Stufen, Hehler, Bargeld und Bank, was die Tests zu Beträgen sagen und Tipps für den Start. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtageld",
-      "link": "https://palmbandits.com/guides/gta-6-geld-verdienen-story-modus/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-geld-verdienen-story-modus",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Geld verdienen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
-      "design": {
-        "type": "guide",
-        "headline": "GTA 6 Geld verdienen",
-        "text": "So verdienst du in GTA 6 Geld im Story-Modus: fünf Raubzug-Stufen, Hehler, Bargeld und Bank, was die Tests zu Beträgen sagen und Tipps für den Start.",
-        "bullets": [
-          "Die kurze Antwort",
-          "Warum Geld in GTA 6 wichtiger ist",
-          "Bargeld, Karte, Bankkonto",
-          "Die fünf Raubzug-Stufen",
-          "Hehler: Ohne sie ist Beute nichts wert"
-        ],
-        "gameName": "GTA 6",
-        "difficulty": "Leicht",
-        "cta": "Ganzen Guide lesen »",
-        "domain": "palmbandits.com",
-        "stars": 4
-      },
-      "imagePath": "automation/pinterest/out/guide-gta-6-geld-verdienen-story-modus.png",
-      "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "fact-vc-ray-liotta",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Vice City Fakt: Der erste GTA-Held mit eigener Stimme",
-      "description": "Tommy Vercetti aus Vice City (2002) war der erste sprechende Protagonist der Reihe. Seine Stimme lieh ihm Hollywood-Schauspieler Ray Liotta. Quelle: Wikipedia (en): Grand Theft Auto (series). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-ray-liotta",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Der erste GTA-Held mit eigener Stimme\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Der erste GTA-Held mit eigener Stimme",
-        "text": "Tommy Vercetti aus Vice City (2002) war der erste sprechende Protagonist der Reihe. Seine Stimme lieh ihm Hollywood-Schauspieler Ray Liotta.",
-        "source": "Wikipedia (en): Grand Theft Auto (series)",
-        "gameName": "GTA Vice City",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-vc-ray-liotta.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "tips-gta-6-geld-verdienen-story-modus",
-      "type": "tips",
-      "board": "tipps",
-      "title": "GTA 6 Geld verdienen: 6 Geld-Tipps auf einen Blick",
-      "description": "6 Geld-Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Warum Geld in GTA 6 wichtiger ist, Bargeld, Karte, Bankkonto und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-geld-verdienen-story-modus/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-geld-verdienen-story-modus",
-      "altText": "Liste mit 6 Geld-Tipps für GTA 6: Die kurze Antwort, Warum Geld in GTA 6 wichtiger ist, Bargeld, Karte, Bankkonto, Die fünf Raubzug-Stufen, Hehler: Ohne sie ist Beute nichts wert, Kleinvieh macht auch Mist.",
-      "design": {
-        "type": "tips",
-        "headline": "GTA 6 Geld verdienen",
-        "bullets": [
-          "Die kurze Antwort",
-          "Warum Geld in GTA 6 wichtiger ist",
-          "Bargeld, Karte, Bankkonto",
-          "Die fünf Raubzug-Stufen",
-          "Hehler: Ohne sie ist Beute nichts wert",
-          "Kleinvieh macht auch Mist"
-        ],
-        "count": 6,
-        "word": "GELD-TIPPS",
-        "gameName": "GTA 6",
-        "cta": "Alle Details im Guide »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/tips-gta-6-geld-verdienen-story-modus.png",
       "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
@@ -1105,6 +1171,102 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-geld-verdienen-story-modus",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA 6 Geld verdienen: Raubzüge, Hehler und Tipps für den Start",
+      "description": "So verdienst du in GTA 6 Geld im Story-Modus: fünf Raubzug-Stufen, Hehler, Bargeld und Bank, was die Tests zu Beträgen sagen und Tipps für den Start. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtageld",
+      "link": "https://palmbandits.com/guides/gta-6-geld-verdienen-story-modus/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-geld-verdienen-story-modus",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Geld verdienen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Geld verdienen",
+        "text": "So verdienst du in GTA 6 Geld im Story-Modus: fünf Raubzug-Stufen, Hehler, Bargeld und Bank, was die Tests zu Beträgen sagen und Tipps für den Start.",
+        "bullets": [
+          "Die kurze Antwort",
+          "Warum Geld in GTA 6 wichtiger ist",
+          "Bargeld, Karte, Bankkonto",
+          "Die fünf Raubzug-Stufen",
+          "Hehler: Ohne sie ist Beute nichts wert"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-geld-verdienen-story-modus.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "fact-gta4-lagerfeld",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Karl Lagerfeld als GTA-Radio-DJ",
+      "description": "In GTA IV moderiert Modeschöpfer Karl Lagerfeld den Radiosender K109. Laut GameStar durfte er die Musik des Senders selbst auswählen. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 11). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-lagerfeld",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Karl Lagerfeld als GTA-Radio-DJ\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Karl Lagerfeld als GTA-Radio-DJ",
+        "text": "In GTA IV moderiert Modeschöpfer Karl Lagerfeld den Radiosender K109. Laut GameStar durfte er die Musik des Senders selbst auswählen.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 11)",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-lagerfeld.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-geld-verdienen-story-modus",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Geld verdienen: 6 Geld-Tipps auf einen Blick",
+      "description": "6 Geld-Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Warum Geld in GTA 6 wichtiger ist, Bargeld, Karte, Bankkonto und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-geld-verdienen-story-modus/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-geld-verdienen-story-modus",
+      "altText": "Liste mit 6 Geld-Tipps für GTA 6: Die kurze Antwort, Warum Geld in GTA 6 wichtiger ist, Bargeld, Karte, Bankkonto, Die fünf Raubzug-Stufen, Hehler: Ohne sie ist Beute nichts wert, Kleinvieh macht auch Mist.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Geld verdienen",
+        "bullets": [
+          "Die kurze Antwort",
+          "Warum Geld in GTA 6 wichtiger ist",
+          "Bargeld, Karte, Bankkonto",
+          "Die fünf Raubzug-Stufen",
+          "Hehler: Ohne sie ist Beute nichts wert",
+          "Kleinvieh macht auch Mist"
+        ],
+        "count": 6,
+        "word": "GELD-TIPPS",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-geld-verdienen-story-modus.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "fact-gta5-franklin-cj-sprecher",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 5 Fakt: Franklin und CJ: Die Sprecher sind Cousins",
+      "description": "Shawn Fonteno, Sprecher von Franklin in GTA V, ist der Cousin von Rapper Young Maylay. Der lieh CJ in San Andreas seine Stimme. Quelle: Wikipedia (en): Shawn Fonteno. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-franklin-cj-sprecher",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Franklin und CJ: Die Sprecher sind Cousins\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Franklin und CJ: Die Sprecher sind Cousins",
+        "text": "Shawn Fonteno, Sprecher von Franklin in GTA V, ist der Cousin von Rapper Young Maylay. Der lieh CJ in San Andreas seine Stimme.",
+        "source": "Wikipedia (en): Shawn Fonteno",
+        "gameName": "GTA 5",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta5-franklin-cj-sprecher.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-6-grafik-fps-ps5-pro-xbox",
       "type": "guide",
       "board": "tipps",
@@ -1133,23 +1295,23 @@
       "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
-      "id": "fact-gta4-lagerfeld",
+      "id": "fact-gta6-orte",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA 4 Fakt: Karl Lagerfeld als GTA-Radio-DJ",
-      "description": "In GTA IV moderiert Modeschöpfer Karl Lagerfeld den Radiosender K109. Laut GameStar durfte er die Musik des Senders selbst auswählen. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 11). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-lagerfeld",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Karl Lagerfeld als GTA-Radio-DJ\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA 6 Fakt: Diese Orte warten in Leonida",
+      "description": "Zur Karte von GTA VI gehören neben Vice City auch Grassrivers, die Leonida Keys, Ambrosia, der Mount Kalaga National Park und Port Gellhorn. Quelle: Wikipedia (en): Grand Theft Auto VI. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-orte",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"Diese Orte warten in Leonida\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "Karl Lagerfeld als GTA-Radio-DJ",
-        "text": "In GTA IV moderiert Modeschöpfer Karl Lagerfeld den Radiosender K109. Laut GameStar durfte er die Musik des Senders selbst auswählen.",
-        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 11)",
-        "gameName": "GTA 4",
+        "headline": "Diese Orte warten in Leonida",
+        "text": "Zur Karte von GTA VI gehören neben Vice City auch Grassrivers, die Leonida Keys, Ambrosia, der Mount Kalaga National Park und Port Gellhorn.",
+        "source": "Wikipedia (en): Grand Theft Auto VI",
+        "gameName": "GTA 6",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-gta4-lagerfeld.png",
+      "imagePath": "automation/pinterest/out/fact-gta6-orte.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -1178,102 +1340,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-grafik-fps-ps5-pro-xbox.png",
-      "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "fact-gta5-franklin-cj-sprecher",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 5 Fakt: Franklin und CJ: Die Sprecher sind Cousins",
-      "description": "Shawn Fonteno, Sprecher von Franklin in GTA V, ist der Cousin von Rapper Young Maylay. Der lieh CJ in San Andreas seine Stimme. Quelle: Wikipedia (en): Shawn Fonteno. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-franklin-cj-sprecher",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"Franklin und CJ: Die Sprecher sind Cousins\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Franklin und CJ: Die Sprecher sind Cousins",
-        "text": "Shawn Fonteno, Sprecher von Franklin in GTA V, ist der Cousin von Rapper Young Maylay. Der lieh CJ in San Andreas seine Stimme.",
-        "source": "Wikipedia (en): Shawn Fonteno",
-        "gameName": "GTA 5",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta5-franklin-cj-sprecher.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "guide-gta-6-speicherplatz-download-groesse",
-      "type": "guide",
-      "board": "tipps",
-      "title": "GTA 6 Speicherplatz: So viele GB brauchst du auf PS5 und Xbox",
-      "description": "GTA 6 braucht bis zu 212 GB. Wie viel Platz PS5, PS5 Pro und Xbox Series X|S wirklich haben, welche SSD passt und was die Updates noch obendrauf legen. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-speicherplatz-download-groesse/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-speicherplatz-download-groesse",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Speicherplatz\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
-      "design": {
-        "type": "guide",
-        "headline": "GTA 6 Speicherplatz",
-        "text": "GTA 6 braucht bis zu 212 GB. Wie viel Platz PS5, PS5 Pro und Xbox Series X|S wirklich haben, welche SSD passt und was die Updates noch obendrauf legen.",
-        "bullets": [
-          "Die kurze Antwort",
-          "Die Zahlen im Überblick",
-          "Passt GTA 6 auf deine Konsole?",
-          "So machst du auf der PS5 Platz",
-          "Mehr Platz für GTA 6: M.2-SSD in der PS5"
-        ],
-        "gameName": "GTA 6",
-        "difficulty": "Leicht",
-        "cta": "Ganzen Guide lesen »",
-        "domain": "palmbandits.com",
-        "stars": 4
-      },
-      "imagePath": "automation/pinterest/out/guide-gta-6-speicherplatz-download-groesse.png",
-      "createdAt": "2026-11-18T21:51:34.150Z"
-    },
-    {
-      "id": "fact-gta6-orte",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 6 Fakt: Diese Orte warten in Leonida",
-      "description": "Zur Karte von GTA VI gehören neben Vice City auch Grassrivers, die Leonida Keys, Ambrosia, der Mount Kalaga National Park und Port Gellhorn. Quelle: Wikipedia (en): Grand Theft Auto VI. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-orte",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"Diese Orte warten in Leonida\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Diese Orte warten in Leonida",
-        "text": "Zur Karte von GTA VI gehören neben Vice City auch Grassrivers, die Leonida Keys, Ambrosia, der Mount Kalaga National Park und Port Gellhorn.",
-        "source": "Wikipedia (en): Grand Theft Auto VI",
-        "gameName": "GTA 6",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta6-orte.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "tips-gta-6-speicherplatz-download-groesse",
-      "type": "tips",
-      "board": "tipps",
-      "title": "GTA 6 Speicherplatz: 6 Tipps auf einen Blick",
-      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Die Zahlen im Überblick, Passt GTA 6 auf deine Konsole? und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-speicherplatz-download-groesse/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-speicherplatz-download-groesse",
-      "altText": "Liste mit 6 Tipps für GTA 6: Die kurze Antwort, Die Zahlen im Überblick, Passt GTA 6 auf deine Konsole?, So machst du auf der PS5 Platz, Mehr Platz für GTA 6: M.2-SSD in der PS5, Xbox Series X|S: Erweiterungskarte statt USB-Platte.",
-      "design": {
-        "type": "tips",
-        "headline": "GTA 6 Speicherplatz",
-        "bullets": [
-          "Die kurze Antwort",
-          "Die Zahlen im Überblick",
-          "Passt GTA 6 auf deine Konsole?",
-          "So machst du auf der PS5 Platz",
-          "Mehr Platz für GTA 6: M.2-SSD in der PS5",
-          "Xbox Series X|S: Erweiterungskarte statt USB-Platte"
-        ],
-        "count": 6,
-        "word": "TIPPS",
-        "gameName": "GTA 6",
-        "cta": "Alle Details im Guide »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/tips-gta-6-speicherplatz-download-groesse.png",
       "createdAt": "2026-11-18T21:51:34.150Z"
     },
     {
@@ -1333,6 +1399,102 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-speicherplatz-download-groesse",
+      "type": "guide",
+      "board": "tipps",
+      "title": "GTA 6 Speicherplatz: So viele GB brauchst du auf PS5 und Xbox",
+      "description": "GTA 6 braucht bis zu 212 GB. Wie viel Platz PS5, PS5 Pro und Xbox Series X|S wirklich haben, welche SSD passt und was die Updates noch obendrauf legen. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-speicherplatz-download-groesse/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-speicherplatz-download-groesse",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Speicherplatz\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Speicherplatz",
+        "text": "GTA 6 braucht bis zu 212 GB. Wie viel Platz PS5, PS5 Pro und Xbox Series X|S wirklich haben, welche SSD passt und was die Updates noch obendrauf legen.",
+        "bullets": [
+          "Die kurze Antwort",
+          "Die Zahlen im Überblick",
+          "Passt GTA 6 auf deine Konsole?",
+          "So machst du auf der PS5 Platz",
+          "Mehr Platz für GTA 6: M.2-SSD in der PS5"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-speicherplatz-download-groesse.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "fact-vc-rekordstart",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: 1,4 Millionen Kopien in zwei Tagen",
+      "description": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-rekordstart",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"1,4 Millionen Kopien in zwei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "1,4 Millionen Kopien in zwei Tagen",
+        "text": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-rekordstart.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-speicherplatz-download-groesse",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Speicherplatz: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die kurze Antwort, Die Zahlen im Überblick, Passt GTA 6 auf deine Konsole? und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-speicherplatz-download-groesse/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-speicherplatz-download-groesse",
+      "altText": "Liste mit 6 Tipps für GTA 6: Die kurze Antwort, Die Zahlen im Überblick, Passt GTA 6 auf deine Konsole?, So machst du auf der PS5 Platz, Mehr Platz für GTA 6: M.2-SSD in der PS5, Xbox Series X|S: Erweiterungskarte statt USB-Platte.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Speicherplatz",
+        "bullets": [
+          "Die kurze Antwort",
+          "Die Zahlen im Überblick",
+          "Passt GTA 6 auf deine Konsole?",
+          "So machst du auf der PS5 Platz",
+          "Mehr Platz für GTA 6: M.2-SSD in der PS5",
+          "Xbox Series X|S: Erweiterungskarte statt USB-Platte"
+        ],
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-speicherplatz-download-groesse.png",
+      "createdAt": "2026-11-18T21:51:34.150Z"
+    },
+    {
+      "id": "fact-ctw-taxi-pfeifen",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Fakt: Ins Mikro pfeifen, Taxi kommt",
+      "description": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-taxi-pfeifen",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Ins Mikro pfeifen, Taxi kommt\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ins Mikro pfeifen, Taxi kommt",
+        "text": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen.",
+        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
+        "gameName": "GTA",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-ctw-taxi-pfeifen.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-6-erste-stunden-tipps-spielsysteme",
       "type": "guide",
       "board": "tipps",
@@ -1361,23 +1523,23 @@
       "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
-      "id": "fact-vc-rekordstart",
+      "id": "fact-gta3-verkaeufe",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA Vice City Fakt: 1,4 Millionen Kopien in zwei Tagen",
-      "description": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-rekordstart",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"1,4 Millionen Kopien in zwei Tagen\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA 3 Fakt: Der Bestseller des Jahres 2001",
+      "description": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-verkaeufe",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Der Bestseller des Jahres 2001\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "1,4 Millionen Kopien in zwei Tagen",
-        "text": "Vice City verkaufte sich in den ersten zwei Tagen 1,4 Millionen Mal, damals Rekord als schnellstverkauftes Spiel. Bis März 2008 kam es auf 17,5 Millionen Exemplare.",
-        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
-        "gameName": "GTA Vice City",
+        "headline": "Der Bestseller des Jahres 2001",
+        "text": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-vc-rekordstart.png",
+      "imagePath": "automation/pinterest/out/fact-gta3-verkaeufe.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -1406,102 +1568,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-erste-stunden-tipps-spielsysteme.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "fact-ctw-taxi-pfeifen",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Fakt: Ins Mikro pfeifen, Taxi kommt",
-      "description": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen. Quelle: Wikipedia (en): Grand Theft Auto: Chinatown Wars. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-ctw-taxi-pfeifen",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"Ins Mikro pfeifen, Taxi kommt\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Ins Mikro pfeifen, Taxi kommt",
-        "text": "In Chinatown Wars ruft man ein Taxi, indem man ins Mikrofon des Nintendo DS pfeift. Molotowcocktails und Granaten steuert man über den Touchscreen.",
-        "source": "Wikipedia (en): Grand Theft Auto: Chinatown Wars",
-        "gameName": "GTA",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-ctw-taxi-pfeifen.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "guide-gta-6-editionen-standard-ultimate-vergleich",
-      "type": "guide",
-      "board": "tipps",
-      "title": "GTA 6 Editionen: Standard oder Ultimate, was steckt drin?",
-      "description": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-editionen-standard-ultimate-vergleich",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Editionen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
-      "design": {
-        "type": "guide",
-        "headline": "GTA 6 Editionen",
-        "text": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt.",
-        "bullets": [
-          "Die Editionen im Vergleich",
-          "Alle 16 Inhalte der Ultimate Edition",
-          "Upgrade: jederzeit möglich",
-          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
-          "Box-Version: keine Disc"
-        ],
-        "gameName": "GTA 6",
-        "difficulty": "Leicht",
-        "cta": "Ganzen Guide lesen »",
-        "domain": "palmbandits.com",
-        "stars": 4
-      },
-      "imagePath": "automation/pinterest/out/guide-gta-6-editionen-standard-ultimate-vergleich.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "fact-gta3-verkaeufe",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 3 Fakt: Der Bestseller des Jahres 2001",
-      "description": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-verkaeufe",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Der Bestseller des Jahres 2001\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Der Bestseller des Jahres 2001",
-        "text": "GTA III war 2001 das meistverkaufte Spiel in den USA. Bis März 2008 kam es auf rund 14,5 Millionen verkaufte Exemplare, davon 11,6 Millionen auf der PS2.",
-        "source": "Wikipedia (en): Grand Theft Auto III",
-        "gameName": "GTA 3",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta3-verkaeufe.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "tips-gta-6-editionen-standard-ultimate-vergleich",
-      "type": "tips",
-      "board": "tipps",
-      "title": "GTA 6 Editionen: 6 Tipps auf einen Blick",
-      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-editionen-standard-ultimate-vergleich",
-      "altText": "Liste mit 6 Tipps für GTA 6: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich, Vintage Vice City Pack: letzter Tag ist der Release-Tag, Box-Version: keine Disc, The Vice City Collection: Sammlerbox ohne Spiel.",
-      "design": {
-        "type": "tips",
-        "headline": "GTA 6 Editionen",
-        "bullets": [
-          "Die Editionen im Vergleich",
-          "Alle 16 Inhalte der Ultimate Edition",
-          "Upgrade: jederzeit möglich",
-          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
-          "Box-Version: keine Disc",
-          "The Vice City Collection: Sammlerbox ohne Spiel"
-        ],
-        "count": 6,
-        "word": "TIPPS",
-        "gameName": "GTA 6",
-        "cta": "Alle Details im Guide »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/tips-gta-6-editionen-standard-ultimate-vergleich.png",
       "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
@@ -1561,6 +1627,102 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-editionen-standard-ultimate-vergleich",
+      "type": "guide",
+      "board": "tipps",
+      "title": "GTA 6 Editionen: Standard oder Ultimate, was steckt drin?",
+      "description": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-editionen-standard-ultimate-vergleich",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Editionen\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Editionen",
+        "text": "GTA 6 Standard oder Ultimate Edition: Preise, alle 16 Ultimate-Inhalte, das Vintage Vice City Pack, die Box mit Download-Code und die Sammlerbox ohne Spiel. Mit unserer Einschätzung, für wen sich das Upgrade lohnt.",
+        "bullets": [
+          "Die Editionen im Vergleich",
+          "Alle 16 Inhalte der Ultimate Edition",
+          "Upgrade: jederzeit möglich",
+          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
+          "Box-Version: keine Disc"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-editionen-standard-ultimate-vergleich.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-gta6-release-termin",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 6 Fakt: GTA VI: der offizielle Release-Termin",
+      "description": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S. Quelle: Rockstar Games: Grand Theft Auto VI (offizielle Seite). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-release-termin",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"GTA VI: der offizielle Release-Termin\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "GTA VI: der offizielle Release-Termin",
+        "text": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S.",
+        "source": "Rockstar Games: Grand Theft Auto VI (offizielle Seite)",
+        "gameName": "GTA 6",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta6-release-termin.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-editionen-standard-ultimate-vergleich",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Editionen: 6 Tipps auf einen Blick",
+      "description": "6 Tipps für GTA 6 kompakt zusammengefasst: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-editionen-standard-ultimate-vergleich/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-editionen-standard-ultimate-vergleich",
+      "altText": "Liste mit 6 Tipps für GTA 6: Die Editionen im Vergleich, Alle 16 Inhalte der Ultimate Edition, Upgrade: jederzeit möglich, Vintage Vice City Pack: letzter Tag ist der Release-Tag, Box-Version: keine Disc, The Vice City Collection: Sammlerbox ohne Spiel.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Editionen",
+        "bullets": [
+          "Die Editionen im Vergleich",
+          "Alle 16 Inhalte der Ultimate Edition",
+          "Upgrade: jederzeit möglich",
+          "Vintage Vice City Pack: letzter Tag ist der Release-Tag",
+          "Box-Version: keine Disc",
+          "The Vice City Collection: Sammlerbox ohne Spiel"
+        ],
+        "count": 6,
+        "word": "TIPPS",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-editionen-standard-ultimate-vergleich.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-online-ladezeiten",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Online Fakt: Ein Fan machte GTA Online schneller",
+      "description": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-ladezeiten",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Ein Fan machte GTA Online schneller\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Ein Fan machte GTA Online schneller",
+        "text": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar.",
+        "source": "Wikipedia (en): Grand Theft Auto Online",
+        "gameName": "GTA Online",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-online-ladezeiten.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-6-jason-lucia-figuren-guide",
       "type": "guide",
       "board": "guides",
@@ -1589,23 +1751,23 @@
       "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
-      "id": "fact-gta6-release-termin",
+      "id": "fact-sa-drei-staedte",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA 6 Fakt: GTA VI: der offizielle Release-Termin",
-      "description": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S. Quelle: Rockstar Games: Grand Theft Auto VI (offizielle Seite). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta6 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-6/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta6-release-termin",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 6: \"GTA VI: der offizielle Release-Termin\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA San Andreas Fakt: Drei Städte in einem Spiel",
+      "description": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-drei-staedte",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Drei Städte in einem Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "GTA VI: der offizielle Release-Termin",
-        "text": "Offizieller Release-Termin laut Rockstar: 19. November 2026. Grand Theft Auto VI erscheint für PlayStation 5 und Xbox Series X|S.",
-        "source": "Rockstar Games: Grand Theft Auto VI (offizielle Seite)",
-        "gameName": "GTA 6",
+        "headline": "Drei Städte in einem Spiel",
+        "text": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas.",
+        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
+        "gameName": "GTA San Andreas",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-gta6-release-termin.png",
+      "imagePath": "automation/pinterest/out/fact-sa-drei-staedte.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -1634,102 +1796,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-6-jason-lucia-figuren-guide.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "fact-online-ladezeiten",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Online Fakt: Ein Fan machte GTA Online schneller",
-      "description": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar. Quelle: Wikipedia (en): Grand Theft Auto Online. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtaonline #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-online/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-online-ladezeiten",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Online: \"Ein Fan machte GTA Online schneller\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Ein Fan machte GTA Online schneller",
-        "text": "Ein Spieler namens t0st fand 2021 einen Weg, die Ladezeiten von GTA Online um bis zu 70 Prozent zu verkürzen. Rockstar baute den Fix ein und zahlte ihm 10.000 Dollar.",
-        "source": "Wikipedia (en): Grand Theft Auto Online",
-        "gameName": "GTA Online",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-online-ladezeiten.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "guide-gta-6-map-leonida-vice-city-regionen",
-      "type": "guide",
-      "board": "guides",
-      "title": "GTA 6 Map: Leonida und Vice City, alle Regionen im Überblick",
-      "description": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-map-leonida-vice-city-regionen",
-      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Map\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
-      "design": {
-        "type": "guide",
-        "headline": "GTA 6 Map",
-        "text": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht.",
-        "bullets": [
-          "Leonida auf einen Blick",
-          "Vice City",
-          "Leonida Keys",
-          "Grassrivers",
-          "Port Gellhorn"
-        ],
-        "gameName": "GTA 6",
-        "difficulty": null,
-        "cta": "Ganzen Guide lesen »",
-        "domain": "palmbandits.com",
-        "stars": 4
-      },
-      "imagePath": "automation/pinterest/out/guide-gta-6-map-leonida-vice-city-regionen.png",
-      "createdAt": "2026-11-18T13:52:12.014Z"
-    },
-    {
-      "id": "fact-sa-drei-staedte",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA San Andreas Fakt: Drei Städte in einem Spiel",
-      "description": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas. Quelle: Wikipedia (en): Grand Theft Auto: San Andreas. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-drei-staedte",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Drei Städte in einem Spiel\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Drei Städte in einem Spiel",
-        "text": "San Andreas (2004) spielt 1992 in drei Städten: Los Santos nach Vorbild von Los Angeles, San Fierro nach San Francisco und Las Venturas nach Las Vegas.",
-        "source": "Wikipedia (en): Grand Theft Auto: San Andreas",
-        "gameName": "GTA San Andreas",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-sa-drei-staedte.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "tips-gta-6-map-leonida-vice-city-regionen",
-      "type": "tips",
-      "board": "tipps",
-      "title": "GTA 6 Map: 6 Fakten auf einen Blick",
-      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Leonida auf einen Blick, Vice City, Leonida Keys und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-map-leonida-vice-city-regionen",
-      "altText": "Liste mit 6 Fakten für GTA 6: Leonida auf einen Blick, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia.",
-      "design": {
-        "type": "tips",
-        "headline": "GTA 6 Map",
-        "bullets": [
-          "Leonida auf einen Blick",
-          "Vice City",
-          "Leonida Keys",
-          "Grassrivers",
-          "Port Gellhorn",
-          "Ambrosia"
-        ],
-        "count": 6,
-        "word": "FAKTEN",
-        "gameName": "GTA 6",
-        "cta": "Alle Details im Guide »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/tips-gta-6-map-leonida-vice-city-regionen.png",
       "createdAt": "2026-11-18T13:52:12.014Z"
     },
     {
@@ -1789,6 +1855,102 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-6-map-leonida-vice-city-regionen",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA 6 Map: Leonida und Vice City, alle Regionen im Überblick",
+      "description": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gta6 #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-6-map-leonida-vice-city-regionen",
+      "altText": "Pin-Grafik zum GTA 6 Guide \"GTA 6 Map\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA 6 Map",
+        "text": "Die GTA 6 Map erklärt: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was Rockstar zu jeder Region sagt, bekannte Orte und was zur Kartengröße wirklich feststeht.",
+        "bullets": [
+          "Leonida auf einen Blick",
+          "Vice City",
+          "Leonida Keys",
+          "Grassrivers",
+          "Port Gellhorn"
+        ],
+        "gameName": "GTA 6",
+        "difficulty": null,
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-6-map-leonida-vice-city-regionen.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-gta3-xbox-absage",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 3 Fakt: Microsoft wollte GTA III nicht",
+      "description": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-xbox-absage",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Microsoft wollte GTA III nicht\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Microsoft wollte GTA III nicht",
+        "text": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft.",
+        "source": "Wikipedia (en): Grand Theft Auto III",
+        "gameName": "GTA 3",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta3-xbox-absage.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-6-map-leonida-vice-city-regionen",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA 6 Map: 6 Fakten auf einen Blick",
+      "description": "6 Fakten für GTA 6 kompakt zusammengefasst: Leonida auf einen Blick, Vice City, Leonida Keys und mehr. Alle Details stehen im Guide auf Palm Bandits. #gta6 #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-6-map-leonida-vice-city-regionen/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-6-map-leonida-vice-city-regionen",
+      "altText": "Liste mit 6 Fakten für GTA 6: Leonida auf einen Blick, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA 6 Map",
+        "bullets": [
+          "Leonida auf einen Blick",
+          "Vice City",
+          "Leonida Keys",
+          "Grassrivers",
+          "Port Gellhorn",
+          "Ambrosia"
+        ],
+        "count": 6,
+        "word": "FAKTEN",
+        "gameName": "GTA 6",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-6-map-leonida-vice-city-regionen.png",
+      "createdAt": "2026-11-18T13:52:12.014Z"
+    },
+    {
+      "id": "fact-gta4-rickroll",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA 4 Fakt: Der Rickroll begann mit GTA IV",
+      "description": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers. Quelle: Wikipedia (en): Rickrolling. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rickroll",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Der Rickroll begann mit GTA IV\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Der Rickroll begann mit GTA IV",
+        "text": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers.",
+        "source": "Wikipedia (en): Rickrolling",
+        "gameName": "GTA 4",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-gta4-rickroll.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-san-andreas-mythen-easter-eggs",
       "type": "guide",
       "board": "guides",
@@ -1816,23 +1978,23 @@
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
-      "id": "fact-gta3-xbox-absage",
+      "id": "fact-gta5-pc-petition",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA 3 Fakt: Microsoft wollte GTA III nicht",
-      "description": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft. Quelle: Wikipedia (en): Grand Theft Auto III. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta3 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-3/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta3-xbox-absage",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 3: \"Microsoft wollte GTA III nicht\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA 5 Fakt: 728.144 Unterschriften für GTA V am PC",
+      "description": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition! Quelle: Guinness World Records: Most signatures for a videogame petition. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-pc-petition",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"728.144 Unterschriften für GTA V am PC\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "Microsoft wollte GTA III nicht",
-        "text": "Rockstar bot GTA III Microsoft als Xbox-Exklusivtitel an. Microsoft lehnte ab: zu erwachsen, und die Vorgänger hatten sich zu schwach verkauft.",
-        "source": "Wikipedia (en): Grand Theft Auto III",
-        "gameName": "GTA 3",
+        "headline": "728.144 Unterschriften für GTA V am PC",
+        "text": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition!",
+        "source": "Guinness World Records: Most signatures for a videogame petition",
+        "gameName": "GTA 5",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-gta3-xbox-absage.png",
+      "imagePath": "automation/pinterest/out/fact-gta5-pc-petition.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -1859,103 +2021,6 @@
         "domain": "palmbandits.com"
       },
       "imagePath": "automation/pinterest/out/tips-gta-san-andreas-mythen-easter-eggs.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "fact-gta4-rickroll",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 4 Fakt: Der Rickroll begann mit GTA IV",
-      "description": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers. Quelle: Wikipedia (en): Rickrolling. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta4 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-4/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta4-rickroll",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 4: \"Der Rickroll begann mit GTA IV\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Der Rickroll begann mit GTA IV",
-        "text": "Der Rickroll entstand am 15. Mai 2007: Ein 4chan-Nutzer verlinkte Rick Astleys „Never Gonna Give You Up“ statt des heiß erwarteten GTA-IV-Trailers.",
-        "source": "Wikipedia (en): Rickrolling",
-        "gameName": "GTA 4",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta4-rickroll.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "guide-gta-online-glitches-ban-risiko",
-      "type": "guide",
-      "board": "guides",
-      "title": "GTA Online Glitches: Warum Money-Glitches dich den Account kosten",
-      "description": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtaonline #gtaguide #gtatipps",
-      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-glitches-ban-risiko",
-      "altText": "Pin-Grafik zum GTA Online Guide \"GTA Online Glitches\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
-      "design": {
-        "type": "guide",
-        "headline": "GTA Online Glitches",
-        "text": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst.",
-        "bullets": [
-          "Was ist überhaupt ein Glitch?",
-          "Was Rockstar bei Exploits typischerweise macht",
-          "Echte Fälle aus der Vergangenheit",
-          "Woran du einen riskanten Trick erkennst",
-          "Fake-Generatoren und Phishing"
-        ],
-        "gameName": "GTA Online",
-        "difficulty": "Leicht",
-        "cta": "Ganzen Guide lesen »",
-        "domain": "palmbandits.com",
-        "stars": 4
-      },
-      "imagePath": "automation/pinterest/out/guide-gta-online-glitches-ban-risiko.png",
-      "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "fact-gta5-pc-petition",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA 5 Fakt: 728.144 Unterschriften für GTA V am PC",
-      "description": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition! Quelle: Guinness World Records: Most signatures for a videogame petition. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta5 #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-5/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-gta5-pc-petition",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA 5: \"728.144 Unterschriften für GTA V am PC\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "728.144 Unterschriften für GTA V am PC",
-        "text": "Fans wollten GTA V unbedingt auf dem PC. Ihre Petition auf Change.org kam bis Juni 2014 auf 728.144 Unterschriften. Guinness-Weltrekord für eine Videospiel-Petition!",
-        "source": "Guinness World Records: Most signatures for a videogame petition",
-        "gameName": "GTA 5",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-gta5-pc-petition.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "tips-gta-online-glitches-ban-risiko",
-      "type": "tips",
-      "board": "tipps",
-      "title": "GTA Online Glitches: 7 Glitches auf einen Blick",
-      "description": "7 Glitches für GTA Online kompakt zusammengefasst: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtaonline #gtatipps #gaming",
-      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-glitches-ban-risiko",
-      "altText": "Liste mit 7 Glitches für GTA Online: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit, Woran du einen riskanten Trick erkennst, Fake-Generatoren und Phishing, Mod-Menüs und \"Recovery\"-Angebote, Wenn du doch erwischt wurdest.",
-      "design": {
-        "type": "tips",
-        "headline": "GTA Online Glitches",
-        "bullets": [
-          "Was ist überhaupt ein Glitch?",
-          "Was Rockstar bei Exploits typischerweise macht",
-          "Echte Fälle aus der Vergangenheit",
-          "Woran du einen riskanten Trick erkennst",
-          "Fake-Generatoren und Phishing",
-          "Mod-Menüs und \"Recovery\"-Angebote",
-          "Wenn du doch erwischt wurdest"
-        ],
-        "count": 7,
-        "word": "GLITCHES",
-        "gameName": "GTA Online",
-        "cta": "Alle Details im Guide »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/tips-gta-online-glitches-ban-risiko.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
@@ -2015,6 +2080,103 @@
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
+      "id": "guide-gta-online-glitches-ban-risiko",
+      "type": "guide",
+      "board": "guides",
+      "title": "GTA Online Glitches: Warum Money-Glitches dich den Account kosten",
+      "description": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst. Den kompletten Guide mit allen Schritten findest du auf Palm Bandits, der deutschen GTA-Community. #gtaonline #gtaguide #gtatipps",
+      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=guide&utm_content=guide-gta-online-glitches-ban-risiko",
+      "altText": "Pin-Grafik zum GTA Online Guide \"GTA Online Glitches\" mit 5 nummerierten Punkten auf dunklem Hintergrund mit Sonnenuntergangs-Farbverlauf und fünf Sternen.",
+      "design": {
+        "type": "guide",
+        "headline": "GTA Online Glitches",
+        "text": "GTA Online Glitches und Ban-Risiko: Was Rockstar bei Money- und Dupe-Glitches macht, welche Strafen drohen und wie du stattdessen sicher Geld verdienst.",
+        "bullets": [
+          "Was ist überhaupt ein Glitch?",
+          "Was Rockstar bei Exploits typischerweise macht",
+          "Echte Fälle aus der Vergangenheit",
+          "Woran du einen riskanten Trick erkennst",
+          "Fake-Generatoren und Phishing"
+        ],
+        "gameName": "GTA Online",
+        "difficulty": "Leicht",
+        "cta": "Ganzen Guide lesen »",
+        "domain": "palmbandits.com",
+        "stars": 4
+      },
+      "imagePath": "automation/pinterest/out/guide-gta-online-glitches-ban-risiko.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-sa-mond",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA San Andreas Fakt: Schieß auf den Mond. Wirklich!",
+      "description": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-mond",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Schieß auf den Mond. Wirklich!\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Schieß auf den Mond. Wirklich!",
+        "text": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel.",
+        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
+        "gameName": "GTA San Andreas",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-sa-mond.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
+      "id": "tips-gta-online-glitches-ban-risiko",
+      "type": "tips",
+      "board": "tipps",
+      "title": "GTA Online Glitches: 7 Glitches auf einen Blick",
+      "description": "7 Glitches für GTA Online kompakt zusammengefasst: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit und mehr. Alle Details stehen im Guide auf Palm Bandits. #gtaonline #gtatipps #gaming",
+      "link": "https://palmbandits.com/guides/gta-online-glitches-ban-risiko/?utm_source=pinterest&utm_medium=social&utm_campaign=tips&utm_content=tips-gta-online-glitches-ban-risiko",
+      "altText": "Liste mit 7 Glitches für GTA Online: Was ist überhaupt ein Glitch?, Was Rockstar bei Exploits typischerweise macht, Echte Fälle aus der Vergangenheit, Woran du einen riskanten Trick erkennst, Fake-Generatoren und Phishing, Mod-Menüs und \"Recovery\"-Angebote, Wenn du doch erwischt wurdest.",
+      "design": {
+        "type": "tips",
+        "headline": "GTA Online Glitches",
+        "bullets": [
+          "Was ist überhaupt ein Glitch?",
+          "Was Rockstar bei Exploits typischerweise macht",
+          "Echte Fälle aus der Vergangenheit",
+          "Woran du einen riskanten Trick erkennst",
+          "Fake-Generatoren und Phishing",
+          "Mod-Menüs und \"Recovery\"-Angebote",
+          "Wenn du doch erwischt wurdest"
+        ],
+        "count": 7,
+        "word": "GLITCHES",
+        "gameName": "GTA Online",
+        "cta": "Alle Details im Guide »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/tips-gta-online-glitches-ban-risiko.png",
+      "createdAt": "2026-11-17T01:56:41.986Z"
+    },
+    {
+      "id": "fact-vc-vorbilder",
+      "type": "fact",
+      "board": "fakten",
+      "title": "GTA Vice City Fakt: Diese Filme und Serien stecken in Vice City",
+      "description": "Vice City spielt 1986 in einer Miami-Parodie. Als Vorbilder gelten Filme wie Scarface und Carlito's Way, vor allem aber die TV-Serie Miami Vice. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-vorbilder",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Diese Filme und Serien stecken in Vice City\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "design": {
+        "type": "fact",
+        "headline": "Diese Filme und Serien stecken in Vice City",
+        "text": "Vice City spielt 1986 in einer Miami-Parodie. Als Vorbilder gelten Filme wie Scarface und Carlito's Way, vor allem aber die TV-Serie Miami Vice.",
+        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
+        "gameName": "GTA Vice City",
+        "cta": "Mehr GTA-Wissen »",
+        "domain": "palmbandits.com"
+      },
+      "imagePath": "automation/pinterest/out/fact-vc-vorbilder.png",
+      "createdAt": "2026-11-18T02:52:14.196Z"
+    },
+    {
       "id": "guide-gta-5-geheime-orte-easter-eggs",
       "type": "guide",
       "board": "guides",
@@ -2043,23 +2205,23 @@
       "createdAt": "2026-11-17T01:56:41.986Z"
     },
     {
-      "id": "fact-sa-mond",
+      "id": "fact-dma-design-dundee",
       "type": "fact",
       "board": "fakten",
-      "title": "GTA San Andreas Fakt: Schieß auf den Mond. Wirklich!",
-      "description": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel. Quelle: GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7). Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtasanandreas #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-san-andreas/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-sa-mond",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA San Andreas: \"Schieß auf den Mond. Wirklich!\" in großer Schrift, darunter der Fakt und die Quelle.",
+      "title": "GTA Fakt: GTA kommt aus Schottland",
+      "description": "Das Studio hinter GTA gründete David Jones 1988 als DMA Design in Dundee. Vor GTA landete es mit Lemmings einen Welthit. Seit 2002 heißt es Rockstar North. Quelle: Wikipedia (en): Rockstar North. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
+      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-dma-design-dundee",
+      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA kommt aus Schottland\" in großer Schrift, darunter der Fakt und die Quelle.",
       "design": {
         "type": "fact",
-        "headline": "Schieß auf den Mond. Wirklich!",
-        "text": "In San Andreas kann man mit dem Scharfschützengewehr auf den Mond zielen. Jeder Treffer verändert seine Größe am Nachthimmel.",
-        "source": "GameStar: Grand Theft Auto, 50 (kuriose) Fakten zur GTA-Serie (Seite 7)",
-        "gameName": "GTA San Andreas",
+        "headline": "GTA kommt aus Schottland",
+        "text": "Das Studio hinter GTA gründete David Jones 1988 als DMA Design in Dundee. Vor GTA landete es mit Lemmings einen Welthit. Seit 2002 heißt es Rockstar North.",
+        "source": "Wikipedia (en): Rockstar North",
+        "gameName": "GTA",
         "cta": "Mehr GTA-Wissen »",
         "domain": "palmbandits.com"
       },
-      "imagePath": "automation/pinterest/out/fact-sa-mond.png",
+      "imagePath": "automation/pinterest/out/fact-dma-design-dundee.png",
       "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
@@ -2088,46 +2250,6 @@
       },
       "imagePath": "automation/pinterest/out/tips-gta-5-geheime-orte-easter-eggs.png",
       "createdAt": "2026-11-17T01:56:41.986Z"
-    },
-    {
-      "id": "fact-vc-vorbilder",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Vice City Fakt: Diese Filme und Serien stecken in Vice City",
-      "description": "Vice City spielt 1986 in einer Miami-Parodie. Als Vorbilder gelten Filme wie Scarface und Carlito's Way, vor allem aber die TV-Serie Miami Vice. Quelle: Wikipedia (en): Grand Theft Auto: Vice City. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gtavicecity #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/gta-vice-city/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-vc-vorbilder",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA Vice City: \"Diese Filme und Serien stecken in Vice City\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "Diese Filme und Serien stecken in Vice City",
-        "text": "Vice City spielt 1986 in einer Miami-Parodie. Als Vorbilder gelten Filme wie Scarface und Carlito's Way, vor allem aber die TV-Serie Miami Vice.",
-        "source": "Wikipedia (en): Grand Theft Auto: Vice City",
-        "gameName": "GTA Vice City",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-vc-vorbilder.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
-    },
-    {
-      "id": "fact-dma-design-dundee",
-      "type": "fact",
-      "board": "fakten",
-      "title": "GTA Fakt: GTA kommt aus Schottland",
-      "description": "Das Studio hinter GTA gründete David Jones 1988 als DMA Design in Dundee. Vor GTA landete es mit Lemmings einen Welthit. Seit 2002 heißt es Rockstar North. Quelle: Wikipedia (en): Rockstar North. Mehr GTA-Wissen, Guides und News findest du auf Palm Bandits. #gta #gtafacts #gaming",
-      "link": "https://palmbandits.com/spiele/?utm_source=pinterest&utm_medium=social&utm_campaign=fact&utm_content=fact-dma-design-dundee",
-      "altText": "Pin-Grafik mit einem GTA-Fakt zu GTA: \"GTA kommt aus Schottland\" in großer Schrift, darunter der Fakt und die Quelle.",
-      "design": {
-        "type": "fact",
-        "headline": "GTA kommt aus Schottland",
-        "text": "Das Studio hinter GTA gründete David Jones 1988 als DMA Design in Dundee. Vor GTA landete es mit Lemmings einen Welthit. Seit 2002 heißt es Rockstar North.",
-        "source": "Wikipedia (en): Rockstar North",
-        "gameName": "GTA",
-        "cta": "Mehr GTA-Wissen »",
-        "domain": "palmbandits.com"
-      },
-      "imagePath": "automation/pinterest/out/fact-dma-design-dundee.png",
-      "createdAt": "2026-11-18T02:52:14.196Z"
     },
     {
       "id": "fact-gta4-statue-of-happiness",
