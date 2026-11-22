@@ -87,3 +87,21 @@ jobs:
           server-dir: ${{ vars.FTP_DIR || '/palmbandits/' }}
           state-name: .ftp-deploy-sync-state.json
           log-level: minimal
+      # Mike 22.11.2026: neue Beitraege sollen auch den Discord pushen. Nur bei Push-Deploys (z. B. Cloud-Newsdesk),
+      # nur fuer neu dazugekommene deutsche News, erst NACH dem erfolgreichen Upload (Links funktionieren dann schon).
+      - name: Neue News im Discord ankuendigen
+        if: steps.changes.outputs.go == 'true' && github.event_name == 'push'
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          DISCORD_WEBHOOK_GTA6: ${{ secrets.DISCORD_WEBHOOK_GTA6 }}
+          DISCORD_WEBHOOK_ONLINE: ${{ secrets.DISCORD_WEBHOOK_ONLINE }}
+          DISCORD_WEBHOOK_NEWS: ${{ secrets.DISCORD_WEBHOOK_NEWS }}
+          DISCORD_ROLE_ALERT: ${{ vars.DISCORD_ROLE_ALERT }}
+          DISCORD_ROLE_WEEKLY: ${{ vars.DISCORD_ROLE_WEEKLY }}
+          VORHER: ${{ github.event.before }}
+          NACHHER: ${{ github.sha }}
+        run: |
+          NEU=$(git diff --name-only --diff-filter=A "$VORHER" "$NACHHER" -- 'src/content/news/*.md' 2>/dev/null || true)
+          if [ -z "$NEU" ]; then echo "Keine neuen News in diesem Push."; exit 0; fi
+          node automation/news-bot/announce.mjs $NEU
