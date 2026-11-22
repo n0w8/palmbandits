@@ -5,9 +5,17 @@
 // Nach dem Klick: youtube-nocookie mit Autoplay. Dazu VideoObject als JSON-LD (für die Google-Videosuche).
 import { VIDEO, SITE } from '../config';
 import { langFromUrl, href } from '../i18n';
+import { MERCH_ITEMS, merchImage, merchPrice, merchRoute } from '../data/merch';
 import Icon from './Icon.astro';
 
 const lang = langFromUrl(Astro.url);
+// Mike 22.11.2026: "zum gta video genau dieses merch anbieten unter dem video".
+// Die Crew aus dem Video in der Reihenfolge der Chips, je das Shirt (id "<name>-tee" in src/data/merch.ts).
+// Wer (noch) kein Produkt hat, fehlt einfach (z. B. Domsgard, solange der Hase nicht freigegeben ist).
+const crewMerch = VIDEO.cast
+  .map((c) => MERCH_ITEMS.find((m) => m.id === `${c.name.toLowerCase()}-tee` && !m.soon))
+  .filter((m): m is (typeof MERCH_ITEMS)[number] => Boolean(m));
+const shop = href(lang, '/shop/');
 const id = VIDEO.youtubeId.trim();
 const watch = `https://www.youtube.com/watch?v=${id}`;
 const L = {
@@ -15,11 +23,13 @@ const L = {
     play: 'Musikvideo abspielen', watch: 'Auf YouTube ansehen', sub: 'Kanal abonnieren', shop: 'Merch der Crew',
     cast: 'Die Crew im Video', note: 'Mit dem Klick lädt YouTube (Google), dabei wird deine IP-Adresse übertragen.', more: 'Datenschutz',
     now: 'Jetzt neu', site: 'Website öffnen (neuer Tab)',
+    merch: 'Das Merch aus dem Video', merchText: 'Die Crew als Shirt und Hoodie, hinten PALM BANDITS am Kragen.', allMerch: 'Alle Designs', buy: 'kaufen',
   },
   en: {
     play: 'Play the music video', watch: 'Watch on YouTube', sub: 'Subscribe to the channel', shop: 'Crew merch',
     cast: 'The crew in the video', note: 'Clicking loads YouTube (Google), which receives your IP address.', more: 'Privacy',
     now: 'Out now', site: 'open website (new tab)',
+    merch: 'Merch from the video', merchText: 'The crew on tees and hoodies, PALM BANDITS on the back below the collar.', allMerch: 'All designs', buy: 'buy',
   },
 }[lang];
 const jsonLd = id ? {
@@ -74,6 +84,31 @@ const jsonLd = id ? {
         <p class="vf__note">{L.note} <a href="/datenschutz/">{L.more}</a></p>
       </div>
     </div>
+    {crewMerch.length > 0 && (
+      <div class="vf__merch" id="video-merch">
+        <div class="vf__merch-head">
+          <div>
+            <p class="sec-head__kicker cond"><b>Merch</b> / {L.merch}</p>
+            <p class="vf__merch-text">{L.merchText}</p>
+          </div>
+          <a class="vf__merch-all cond" href={`${shop}#produkte`}>{L.allMerch} <Icon name="arrow" size={14} /></a>
+        </div>
+        <ul class="vf__merch-row">
+          {crewMerch.map((m) => (
+            <li>
+              <a class="vf__mcard" href={`${shop}${merchRoute(m)}`} data-astro-reload data-merch-buy aria-label={`${m.name[lang]} ${L.buy}`}>
+                <span class="vf__mimg">
+                  <img src={merchImage(m, 400)} srcset={`${merchImage(m, 300)} 300w, ${merchImage(m, 400)} 400w`} sizes="180px"
+                    alt={`${m.name[lang]}, ${m.type[lang]}`} width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                </span>
+                <span class="vf__mname cond">{m.name[lang]}</span>
+                <span class="vf__mprice">{merchPrice(m.price, lang)}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </section>
 )}
@@ -118,7 +153,22 @@ const jsonLd = id ? {
   .vf__links a:hover { color: var(--pink); }
   .vf__note { margin: 12px 0 0; font-size: 0.78rem; opacity: 0.6; }
   .vf__note a { text-decoration: underline; }
+  .vf__merch { margin-top: clamp(22px, 3vw, 36px); padding-top: 22px; border-top: 1px solid var(--line); }
+  .vf__merch-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+  .vf__merch-head .sec-head__kicker { margin: 0; }
+  .vf__merch-text { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
+  .vf__merch-all { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .vf__merch-all:hover { color: var(--pink); }
+  .vf__merch-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); gap: 12px; list-style: none; margin: 0; padding: 0 0 6px; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .vf__merch-row li { scroll-snap-align: start; }
+  .vf__mcard { display: flex; flex-direction: column; gap: 4px; padding: 0 0 10px; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--panel); transition: border-color 0.2s ease, transform 0.2s ease; }
+  .vf__mcard:hover, .vf__mcard:focus-visible { border-color: var(--pink); transform: translateY(-2px); }
+  .vf__mimg { display: block; aspect-ratio: 1; background: radial-gradient(circle at 50% 35%, rgba(255, 138, 31, 0.2), rgba(139, 61, 255, 0.1) 55%, transparent 75%); }
+  .vf__mimg img { width: 100%; height: 100%; object-fit: contain; }
+  .vf__mname { padding: 0 10px; font-size: 0.95rem; letter-spacing: 0.04em; }
+  .vf__mprice { padding: 0 10px; font-size: 0.85rem; color: var(--muted); }
   @media (max-width: 960px) {
+    .vf__merch-row { grid-auto-columns: 150px; }
     .vf__grid { grid-template-columns: 1fr; }
     .vf__btn { width: 76px; height: 76px; }
   }
