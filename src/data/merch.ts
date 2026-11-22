@@ -41,29 +41,60 @@ const REMOVED_DESIGNS = [
   '6afd107283173c19cab04cb9', // Runvyr Nordwald
   '6afd10bc83173c19cab184f6', // Ravnir Nordwald
   '6afce57c855804508a521a1d', // Eldruna Nordwald (alte Version)
+  // PALM BANDITS Hase (Entwurf A, 18.11.2026): am 19.11.2026 von Spreadshirt abgelehnt, Grund "Copyright".
+  // Website-Karten am 22.11.2026 entfernt (alte Einträge in der Git-Historie). Einspruch: Mikes Entscheidung offen.
+  '6afd3061855804508a86a421',
 ];
 
-// PALM BANDITS Hase (seit 18.11.2026, Mike: "mach mal nur ein hasenkopf als design", Entwurf A): nur Schwarz.
-// Mike danach: "den haasen am short kleiner und am rücken oben beim kragen immer die 5 sterne" -> Shirt-Motiv von 28 auf 20 cm
-// (Hoodie bleibt 18,4 cm). Die Sterne hinten brauchen ein neues Design (Upload-Limit 18.11. erreicht) -> am 19.11. als
-// neue Kombi (vorne Hase, hinten 5 Sterne am Kragen) anlegen und path/sellable/img hier tauschen.
-// Druck v1 hat am Unterkinn einen halbtransparenten Schleier (QA: Freigabe mit kleinen Mängeln), v2 nicht freigegeben.
-// soon: Spreadshirt prüft das Design noch ("Wird geprüft"), bis dahin ist es im Shop unsichtbar.
-const HASE = '/palm+bandits+hase-A6afd3061855804508a86a421';
+// 22.11.2026 (Mike: "will mehr designs oben haben und zwar schnell"): 7 Figuren im Hasen-Stil und das Kritzel
+// "Palme + Maske" als Kombi, vorne das Motiv (Shirt 20 cm, Hoodie 15,5 bis 18 cm über der Tasche), hinten
+// "PALM BANDITS Logo" 25 cm unter dem Kragen. Nur Schwarz, Shirt 32,99 / Hoodie 45,99. Domsgard fehlt bewusst
+// (trägt die Hasenmaske, die Spreadshirt wegen Copyright abgelehnt hat). Werte aus der Spreadshop-Liste /all.
+const KOMBIS = [
+  { key: 'palme', de: 'Palme + Maske', en: 'Palm + Mask', path: '/palme+maske+palm+bandits-A6b026fdf855804508a3e8832', sell: 'QwvRZxqg30HkRk1r1bxY',
+    tee: 'T3502A2PA8089PT17X90Y64D360868310W20000H12486PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X100Y47D360868310W18000H11237' },
+  { key: 'pronx', de: 'PRONX', en: 'PRONX', path: '/pronx+palm+bandits-A6b02713d855804508a4425ba', sell: '2ndMaBYMX2C0g0qmyjV9',
+    tee: 'T3502A2PA8089PT17X90Y7D360868259W19999H28508PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X100Y2D360868259W17999H25658' },
+  { key: 'eldruna', de: 'Eldruna', en: 'Eldruna', path: '/eldruna+palm+bandits-A6b02729b13bea62fcadd7cb8', sell: 'zv0YyLGmByilwGldEok2',
+    tee: 'T3502A2PA8089PT17X90Y2D360868263W19999H29672PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X101Y3D360868263W17799H26408' },
+  { key: 'skaedra', de: 'Skaedra', en: 'Skaedra', path: '/skaedra+palm+bandits-A6b02724613bea62fcadc6fca', sell: 'yb01xa4bB3fwVvw3Gmyl',
+    tee: 'T3502A2PA8089PT17X90Y2D360868237W19999H29908PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X102Y4D360868237W17499H26170' },
+  { key: 'ravnir', de: 'Ravnir', en: 'Ravnir', path: '/ravnir+palm+bandits-A6b02716013bea62fcad8dfa6', sell: 'aVo4NwnRgGi2rD2VMkmZ',
+    tee: 'T3502A2PA8089PT17X90Y1D360868311W19999H32354PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X110Y5D360868311W15999H25883' },
+  { key: 'skulgard', de: 'Skulgard', en: 'Skulgard', path: '/skulgard+palm+bandits-A6b02717e83173c19ca9486c1', sell: '5wdyRn7yOBfE4lL4rAJp',
+    tee: 'T3502A2PA8089PT17X90Y2D360868260W19999H31618PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X107Y4D360868260W16500H26085' },
+  { key: 'runvyr', de: 'Runvyr', en: 'Runvyr', path: '/runvyr+palm+bandits-A6b0271d5855804508a46c3d0', sell: 'x50LMkjJaEsApAO8Q7bA',
+    tee: 'T3502A2PA8089PT17X90Y0D360868261W19999H34436PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X112Y1D360868261W15499H26688' },
+  { key: 'ravhena', de: 'Ravhena', en: 'Ravhena', path: '/ravhena+palm+bandits-A6b02725f13bea62fcadcc55e', sell: 'EmdJXJAOy8c2aY2BD954',
+    tee: 'T3502A2PA8089PT17X90Y1D360868313W19999H32145PA8090PT17X66Y2D360811485W25000H6550',
+    hoodie: 'T2963A1257PA9737PT17X65Y3D360811485W25000H6550PA9736PT17X107Y2D360868313W16500H26520' },
+];
+
+// Erst alle Shirts (die Startseite zeigt die ersten 6, so sind dort 6 verschiedene Motive), dann alle Hoodies.
+const KOMBI_ITEMS: MerchItem[] = [
+  ...KOMBIS.map((k): MerchItem => ({
+    id: `${k.key}-tee`, isNew: true,
+    name: { de: `${k.de} Shirt`, en: `${k.en} Tee` },
+    type: { de: 'Oversized Heavyweight T-Shirt · Schwarz · hinten PALM BANDITS', en: 'Oversized heavyweight tee · Black · PALM BANDITS on the back' },
+    path: k.path, sellable: `${k.sell}-3502-7`, appearance: 2, img: k.tee, price: 32.99,
+  })),
+  ...KOMBIS.map((k): MerchItem => ({
+    id: `${k.key}-hoodie`, isNew: true,
+    name: { de: `${k.de} Hoodie`, en: `${k.en} Hoodie` },
+    type: { de: 'Oversized Heavyweight Hoodie · Schwarz · hinten PALM BANDITS', en: 'Oversized heavyweight hoodie · Black · PALM BANDITS on the back' },
+    path: k.path, sellable: `${k.sell}-2963-22`, appearance: 1257, img: k.hoodie, price: 45.99,
+  })),
+];
 
 export const MERCH_ITEMS: MerchItem[] = [
-  {
-    id: 'hase-hoodie', name: { de: 'Hasen Hoodie', en: 'Bunny Hoodie' },
-    type: { de: 'Oversized Heavyweight Hoodie · Schwarz', en: 'Oversized heavyweight hoodie · Black' },
-    path: HASE, sellable: '0kdjDJvVaeS040704j5p-2963-22', appearance: 1257, price: 39.99, isNew: true, soon: true,
-    img: 'T2963A1257PA9736PT17X98Y3D360822839W18399H26344',
-  },
-  {
-    id: 'hase-tee', name: { de: 'Hasen Shirt', en: 'Bunny Tee' },
-    type: { de: 'Oversized Heavyweight T-Shirt · Schwarz', en: 'Oversized heavyweight tee · Black' },
-    path: HASE, sellable: '0kdjDJvVaeS040704j5p-3502-7', appearance: 2, price: 26.99, isNew: true, soon: true,
-    img: 'T3502A2PA8089PT17X90Y34D360822839W20000H28636',
-  },
+  ...KOMBI_ITEMS,
   {
     id: 'logo-hoodie',
     name: { de: 'Palm Bandits Logo Hoodie', en: 'Palm Bandits Logo Hoodie' },
